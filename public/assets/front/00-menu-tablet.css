@@ -1,0 +1,490 @@
+/* screen - 00-menu-smartphone */
+
+.x00-menu-smartphone {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100vh;
+  margin: 0px;
+  min-height: 640px;
+  min-width: 360px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+.x00-menu-smartphone .accueil-ccA9yj {
+  background-color: transparent;
+  height: 46px;
+  left: 23px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  top: calc(21.21% - 10px);
+  white-space: nowrap;
+  width: calc(100.00% - 44px);
+}
+.x00-menu-smartphone .composant-101-1-ccA9yj {
+  background-color: transparent;
+  cursor: pointer;
+  height: 21px;
+  position: absolute;
+  right: 23px;
+  top: 25px;
+  width: 21px;
+}
+.x00-menu-smartphone .composant-6-2-ccA9yj {
+  background-color: transparent;
+  bottom: 21px;
+  height: 24px;
+  position: absolute;
+  right: calc(49.78% - 64px);
+  width: 129px;
+}
+.x00-menu-smartphone .contact-ccA9yj {
+  background-color: transparent;
+  bottom: calc(27.61% - 13px);
+  height: 46px;
+  left: 23px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  width: calc(100.00% - 44px);
+}
+.x00-menu-smartphone .crdits-ccA9yj {
+  background-color: transparent;
+  height: 46px;
+  left: 23px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  top: calc(36.03% - 17px);
+  white-space: nowrap;
+  width: calc(100.00% - 44px);
+}
+.x00-menu-smartphone .groupe-163-ccA9yj {
+  background-color: transparent;
+  bottom: -23px;
+  height: 325px;
+  left: -30px;
+  opacity: 0.21;
+  position: absolute;
+  width: calc(100.00% + 1px);
+}
+.x00-menu-smartphone .groupe-2-x0UgEe {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  left: 0px;
+  position: absolute;
+  width: 15px;
+}
+.x00-menu-smartphone .groupe-3-PZeyzr {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 18px;
+}
+.x00-menu-smartphone .groupe-379-MO8Vu4 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-smartphone .logo-espace-credit-n-ccA9yj {
+  background-color: transparent;
+  height: 51px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.80% - 57px);
+  top: 14px;
+  width: 115px;
+}
+.x00-menu-smartphone .notre-philosophie-ccA9yj {
+  background-color: transparent;
+  bottom: calc(44.58% - 38px);
+  height: 86px;
+  left: 23px;
+  letter-spacing: 0.00px;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 44px);
+}
+.x00-menu-smartphone .rectangle-366-ccA9yj {
+  background-color: var(--web-orange);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-smartphone .rectangle-367-GxsMDY {
+  background-color: var(--white);
+  height: calc(100.00% - 19px);
+  left: -3px;
+  position: absolute;
+  top: 9px;
+  transform: rotate(45.00deg);
+  width: calc(100.00% + 6px);
+}
+.x00-menu-smartphone .rectangle-368-GxsMDY {
+  background-color: var(--white);
+  height: calc(100.00% - 19px);
+  left: -3px;
+  position: absolute;
+  top: 9px;
+  transform: rotate(-45.00deg);
+  width: calc(100.00% + 6px);
+}
+.x00-menu-smartphone .rectangle-425-ccA9yj {
+  background-color: transparent;
+  height: 68px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 68px;
+}
+.x00-menu-smartphone .trac-3-xnuiW8 {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-smartphone .trac-386-IOu7W2 {
+  background-color: transparent;
+  bottom: 1px;
+  height: 196px;
+  left: 6px;
+  object-fit: cover;
+  position: absolute;
+  width: 281px;
+}
+.x00-menu-smartphone .trac-387-IOu7W2 {
+  background-color: transparent;
+  height: 199px;
+  left: 28px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 28px);
+}
+.x00-menu-smartphone .trac-388-IOu7W2 {
+  background-color: transparent;
+  height: 52px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(27.89% - 14px);
+  width: 92px;
+}
+.x00-menu-smartphone .trac-389-IOu7W2 {
+  background-color: transparent;
+  height: 10px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(23.71% - 3px);
+  top: calc(36.33% - 4px);
+  width: 11px;
+}
+.x00-menu-smartphone .trac-4-x0UgEe {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 5px;
+}
+.x00-menu-smartphone .trac-5-x0UgEe {
+  background-color: transparent;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  width: 4px;
+}
+.x00-menu-smartphone .trac-6-x0UgEe {
+  background-color: transparent;
+  height: 4px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(31.85% - 1px);
+  top: calc(24.13% - 1px);
+  width: 2px;
+}
+.x00-menu-smartphone .x32-63-677-659-PZeyzr {
+  background-color: transparent;
+  height: 22px;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(200.00% - 44px);
+  width: calc(100.00% - 22px);
+}
+/* screen - 00-menu-tablet */
+
+#overlay-00-menu-tablet {
+  background-color: transparent;
+}
+.overlay .x00-menu-tablet {
+  background-color: #00000000;
+}
+.x00-menu-tablet {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100vh;
+  margin: 0px;
+  min-height: 1024px;
+  min-width: 768px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+.x00-menu-tablet .accueil-gaa875 {
+  background-color: transparent;
+  height: 54px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  right: calc(49.78% - 157px);
+  text-align: center;
+  top: calc(30.21% - 16px);
+  white-space: nowrap;
+  width: 316px;
+}
+.x00-menu-tablet .composant-101-2-gaa875 {
+  background-color: transparent;
+  cursor: pointer;
+  height: 33px;
+  position: absolute;
+  right: 47px;
+  top: 25px;
+  width: 33px;
+}
+.x00-menu-tablet .composant-134-gaa875 {
+  background-color: transparent;
+  bottom: 35px;
+  height: 24px;
+  position: absolute;
+  right: calc(49.92% - 64px);
+  width: 129px;
+}
+.x00-menu-tablet .contact-gaa875 {
+  background-color: transparent;
+  bottom: calc(35.15% - 19px);
+  height: 54px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  right: calc(49.78% - 157px);
+  text-align: center;
+  white-space: nowrap;
+  width: 316px;
+}
+.x00-menu-tablet .crdits-gaa875 {
+  background-color: transparent;
+  height: 54px;
+  letter-spacing: 0.00px;
+  line-height: 50px;
+  position: absolute;
+  right: calc(49.78% - 157px);
+  text-align: center;
+  top: calc(41.75% - 23px);
+  white-space: nowrap;
+  width: 316px;
+}
+.x00-menu-tablet .groupe-2-lqchx9 {
+  background-color: transparent;
+  bottom: 0px;
+  height: 19px;
+  left: 0px;
+  position: absolute;
+  width: 15px;
+}
+.x00-menu-tablet .groupe-264-gaa875 {
+  background-color: transparent;
+  bottom: -43px;
+  height: 407px;
+  left: -75px;
+  opacity: 0.21;
+  position: absolute;
+  width: 451px;
+}
+.x00-menu-tablet .groupe-3-r38xo3 {
+  background-color: transparent;
+  height: 24px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 18px;
+}
+.x00-menu-tablet .groupe-380-gJlrr1 {
+  background-color: transparent;
+  height: 100%;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-tablet .logo-espace-credit-n-gaa875 {
+  background-color: transparent;
+  height: 63px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(49.92% - 70px);
+  top: 37px;
+  width: 141px;
+}
+.x00-menu-tablet .notre-philosophie-gaa875 {
+  background-color: transparent;
+  bottom: calc(46.19% - 25px);
+  height: 54px;
+  left: 180px;
+  letter-spacing: 0.00px;
+  line-height: 40px;
+  position: absolute;
+  text-align: center;
+  width: calc(100.00% - 358px);
+}
+.x00-menu-tablet .rectangle-367-BiJsat {
+  background-color: var(--white);
+  height: calc(100.00% - 30px);
+  left: -5px;
+  position: absolute;
+  top: 15px;
+  transform: rotate(45.00deg);
+  width: calc(100.00% + 10px);
+}
+.x00-menu-tablet .rectangle-368-BiJsat {
+  background-color: var(--white);
+  height: calc(100.00% - 30px);
+  left: -5px;
+  position: absolute;
+  top: 15px;
+  transform: rotate(-45.00deg);
+  width: calc(100.00% + 10px);
+}
+.x00-menu-tablet .rectangle-622-gaa875 {
+  background-color: var(--web-orange);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-tablet .rectangle-623-gaa875 {
+  background-color: transparent;
+  height: 68px;
+  left: calc(41.71% - 28px);
+  position: absolute;
+  top: 0px;
+  width: 68px;
+}
+.x00-menu-tablet .trac-3-eEREyZ {
+  background-color: transparent;
+  height: 100%;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.x00-menu-tablet .trac-386-DqtRsh {
+  background-color: transparent;
+  bottom: 1px;
+  height: 245px;
+  left: 8px;
+  object-fit: cover;
+  position: absolute;
+  width: 352px;
+}
+.x00-menu-tablet .trac-387-DqtRsh {
+  background-color: transparent;
+  height: 249px;
+  left: 35px;
+  object-fit: cover;
+  position: absolute;
+  top: 1px;
+  width: calc(100.00% - 35px);
+}
+.x00-menu-tablet .trac-388-DqtRsh {
+  background-color: transparent;
+  height: 65px;
+  left: 1px;
+  object-fit: cover;
+  position: absolute;
+  top: calc(27.89% - 18px);
+  width: 115px;
+}
+.x00-menu-tablet .trac-389-DqtRsh {
+  background-color: transparent;
+  height: 13px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(23.71% - 3px);
+  top: calc(36.33% - 5px);
+  width: 14px;
+}
+.x00-menu-tablet .trac-4-lqchx9 {
+  background-color: transparent;
+  height: 11px;
+  object-fit: cover;
+  position: absolute;
+  right: 1px;
+  top: 0px;
+  width: 5px;
+}
+.x00-menu-tablet .trac-5-lqchx9 {
+  background-color: transparent;
+  height: 7px;
+  object-fit: cover;
+  position: absolute;
+  right: 3px;
+  top: 2px;
+  width: 4px;
+}
+.x00-menu-tablet .trac-6-lqchx9 {
+  background-color: transparent;
+  height: 4px;
+  object-fit: cover;
+  position: absolute;
+  right: calc(31.85% - 1px);
+  top: calc(24.13% - 1px);
+  width: 2px;
+}
+.x00-menu-tablet .x32-63-677-659-r38xo3 {
+  background-color: transparent;
+  height: 22px;
+  left: 24px;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  position: absolute;
+  text-align: left;
+  top: calc(200.00% - 44px);
+  width: calc(100.00% - 22px);
+}
+@media screen and (max-width: 767px) {
+  .screen.x00-menu-tablet { 
+    display: none;
+   }
+}
+@media screen and (min-width: 768px) {
+  .screen.x00-menu-smartphone { 
+    display: none;
+   }
+}
