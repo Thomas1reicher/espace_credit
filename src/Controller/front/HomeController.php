@@ -46,5 +46,86 @@ class HomeController extends AbstractController
         return $this->render('front/home.html.twig');
     }
 
+    
+    /**
+     * @Route("/pretPerso", name="pretPerso")
+     */
+    public function pretPerso()
+    {
+        return $this->render('front/pret-perso.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/pretAuto", name="pretAuto")
+     */
+    public function pretAuto()
+    {
+        return $this->render('front/pret-auto.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/pretMoto", name="pretMoto")
+     */
+    public function pretMoto()
+    {
+        return $this->render('front/pret-moto.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/pretMobi", name="pretMobi")
+     */
+    public function pretMobi()
+    {
+        return $this->render('front/pret-mobi.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/pretTravaux", name="pretTravaux")
+     */
+    public function pretTravaux()
+    {
+        return $this->render('front/pret-travaux.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/regroupement", name="regroupement")
+     */
+    public function regroupement()
+    {
+        return $this->render('front/regroupement.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/carteCredit", name="carteCredit")
+     */
+    public function carteCredit()
+    {
+        return $this->render('front/carte-credit.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/entreprise", name="entreprise")
+     */
+    public function entreprise()
+    {
+        return $this->render('front/entreprise.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
 
 }
