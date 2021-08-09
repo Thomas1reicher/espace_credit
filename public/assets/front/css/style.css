@@ -113,9 +113,14 @@
 .presentation-pret{
   width: 100%;
   height: 100%;
+  width: 100%;
+    height: 100%;
+    min-height: 566px;
+    background-position-y: -5px;
 }
 .div-presentation{
   background-color: var(--black);
+  min-height: 566px;
 }
 .form-pret{
 
@@ -153,7 +158,6 @@
   border-radius: 7px;
   height: 100%;
   width: 100%;
-  height: 34px;
   width: 100%;
 }
 .link-tel{
@@ -171,7 +175,7 @@
 
 }
 .demande-pret{
-  height: 34px;
+
   padding: 3%;
   margin: 0px;
 
@@ -229,8 +233,14 @@
   
 }
 .sous-titre-taux{
-
+  line-height: 36px;
 }
 .div-btn-t-dec{
   
+}
+.taux-menu{
+  height: 40px;
+  width: 25%;
+  text-align: center;
+  padding-top: 0.4%;
 }
