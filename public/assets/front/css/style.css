@@ -140,7 +140,7 @@
     line-height: 14px;
 }
 .btn-tel{
-
+  border-radius: 7px;
 }
 .btn-pret{
   background-color: var(--web-orange);
