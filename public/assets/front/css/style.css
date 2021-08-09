@@ -1,0 +1,179 @@
+
+
+:root {
+    --black: 
+  rgba(0, 0, 0, 0.502);
+    --mine-shaft: 
+  rgba(47, 47, 47, 1);
+    --cape-cod: 
+  rgba(64, 64, 64, 1);
+    --tundora: 
+  rgba(70, 70, 70, 1);
+    --nevada: 
+  rgba(107, 109, 126, 1);
+    --dove-gray: 
+  rgba(112, 112, 112, 1);
+    --silver-chalice: 
+  rgba(173, 173, 173, 1);
+    --celeste: 
+  rgba(204, 204, 204, 1);
+    --alabaster: 
+#fafafa;
+    --web-orange: 
+  rgba(255, 170, 0, 1);
+    --white-2: 
+  rgba(255, 255, 255, 0.8);
+    --white: 
+  rgba(255, 255, 255, 1);
+  
+    --font-size-xxs: 10px;
+    --font-size-xs: 12px;
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 20px;
+    --font-size-xl: 32px;
+    --font-size-xxl: 46px;
+  
+    --font-family-montserrat:"Montserrat";
+  }
+
+  @import url("https://fonts.googleapis.com/css?family=Montserrat:300,700,500");
+.header-container{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1800px;
+    padding-top: 1%;
+}
+.div-header-image{
+    float: left;
+    width: 22%;
+    padding-top: 1%;
+}
+.gap-header{
+
+}
+.div-cat-header{
+    width: 45%;
+    float: left;
+    padding-top: 1%;
+}
+
+.btn-header{
+    width: 33%;
+    float: left;
+    padding-top: 1%;
+}
+.btn-div-h{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.cat-header{
+    width: 25%;
+    float: left;
+}
+.img-header{
+    max-height: 70px;
+    object-fit: cover;
+    max-width: 153px;
+}
+.bande-header{
+    width: 90%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.div-bande-header{
+    width: 12.5%;
+    float: left;
+}
+.logo-div-header{
+    width: 20%;
+    max-width: 85px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.titre-bande-header{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 2%;
+    font-family: 'Montserrat';
+}
+
+
+.container-pret{
+
+}
+.presentation-pret{
+
+}
+.div-presentation{
+
+}
+.form-pret{
+
+}
+.div-form-pret{
+
+}
+.container-presentation{
+    
+}
+.img-home-header{
+    margin-right: auto;
+    max-width: 200px;
+    width: 12%;
+    margin-left: 40%;
+    text-align: center;
+    margin-top: 5%;
+}
+.h3-title-header{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 200px;
+    width: 90%;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+.btn-tel{
+
+}
+.btn-pret{
+
+}
+.link-tel{
+
+}
+.link-pret{
+    
+}
+.num-tel{
+
+}
+.demande-pret{
+
+}
+.num-tel{
+
+}
+.img-num-tel{
+
+}
+.img-h{
+    width: 100%;
+}
+.gray-div{
+
+    background-color: #f8f8f8;
+    box-shadow: 0px 3px 6px #0000000d;
+    float: left;
+    width: 100%;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+  
+   
+}

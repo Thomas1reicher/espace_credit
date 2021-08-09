@@ -6,11 +6,96 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>menu</title>
+    <link rel="stylesheet" href="{{ asset('assets/front/css/style_base.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=lvvb1kdgdkmznvwrfv4xlihguzmf2guncbmdan91383b38g4"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,700,500"><link rel="shortcut icon" href="https://www.redsquare.lu/wp-content/themes/redsquare/css/favicon.gif" type="image/x-icon"/>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
     {# <link rel="stylesheet" href="{{ asset('assets/css/front/') }}"> #}
 
 </head>
 <body class="app">
-{% block front %}
+<header>
+    <div class="header-container">
+        <div class="div-header-image">
+            <img class="img-header" src="{{asset('assets/front/img/image-1.png')}}">
+        </div>
+        <div class="gap-header"></div>
+        <div class="div-cat-header">
+            <div class="cat-header">
+                <img class="img-home-header" src="{{asset('assets/front/img/trac-2.png')}}">
+            </div>
+            <div class="cat-header">
+                <h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3>
+            </div>
+            <div class="cat-header">
+                <h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Notre philosophie</h3>
+            </div>
+            <div class="cat-header">
+                <h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Contact</h3>
+            </div>
+        </div>
+        <div class="btn-header">
+            <div class="btn-div-h">
+                <div class="btn-tel">
+                    <a class="link-tel">
+                        <img src="{{asset('assets/front/img/trac-3.png')}}">
+                        <p class="num-tel montserrat-medium-dove-gray-14px"> +32 63 677 659 </p>
+                    </a>
+                </div>
+            </div>
+            <div class="btn-div-h">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">DEMANDER UN PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gray-div">
+    <div class="bande-header">
+        <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+               <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+                <div class="div-bande-header">
+            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac-9.png')}}"></div>
+            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+        </div>
+    </div>
+    </div>
+</header>
+{% block body %}
 
 {% endblock %}
 </body>
