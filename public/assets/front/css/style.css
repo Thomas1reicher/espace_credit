@@ -143,7 +143,12 @@
 
 }
 .btn-pret{
-
+  background-color: var(--web-orange);
+  border-radius: 7px;
+  height: 100%;
+  width: 100%;
+  height: 34px;
+  width: 100%;
 }
 .link-tel{
 
@@ -153,8 +158,13 @@
 }
 .num-tel{
 
+  text-align: left;
+  margin-left: 12%;
+
 }
 .demande-pret{
+  height: 34px;
+  padding: 3%;
 
 }
 .num-tel{
@@ -176,4 +186,8 @@
     padding-bottom: 0.8%;
   
    
+}
+.img-phone{
+  float: left;
+    width: 18px;
 }
