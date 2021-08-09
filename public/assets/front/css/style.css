@@ -123,7 +123,12 @@
   min-height: 566px;
 }
 .form-pret{
-
+  background-color: var(--nevada);
+  height: 100%;
+  width: 40%;
+  float: left;
+  min-height: 566px;
+  padding: 4%;
 }
 .div-form-pret{
 
@@ -240,7 +245,45 @@
 }
 .taux-menu{
   height: 40px;
-  width: 25%;
+  width: 22%;
   text-align: center;
   padding-top: 0.4%;
+}
+.div-titre-form{
+
+}
+.titre-form{
+  color: var(--white);
+  font-family: var(--font-family-montserrat);
+  font-size: 32px;
+  font-weight: 700;
+  height: 41px;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-25px, 0);
+}
+.label-form{
+
+}
+.input-form{
+
+}
+.animate-enter1 {
+  animation: animate-enter1-frames 0.50s ease-in-out 0.20s 1 normal forwards;
+  opacity: 0;
+transform: translate(-25px, 0);
+}
+
+@keyframes animate-enter1-frames {
+  from{opacity: 0;
+transform: translate(-25px, 0);
+}
+to{opacity: 1;
+transform: translate(0,0);
+}
+}
+.div-btn-cred{
+  width: 36%;
 }
