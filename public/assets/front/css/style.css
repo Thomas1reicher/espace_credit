@@ -48,7 +48,7 @@
 .div-header-image{
     float: left;
     width: 22%;
-    padding-top: 1%;
+    margin-bottom: 1%;
 }
 .gap-header{
 
@@ -105,13 +105,17 @@
 
 
 .container-pret{
-
+  float: left;
+  width: 60%;
+  height: 100%;
+  max-height: 200px;
 }
 .presentation-pret{
-
+  width: 100%;
+  height: 100%;
 }
 .div-presentation{
-
+  background-color: var(--black);
 }
 .form-pret{
 
@@ -141,6 +145,8 @@
 }
 .btn-tel{
   border-radius: 7px;
+  width: 70%;
+  height: 34px;
 }
 .btn-pret{
   background-color: var(--web-orange);
@@ -159,12 +165,15 @@
 .num-tel{
 
   text-align: left;
-  margin-left: 12%;
+  margin-left: 6%;
+  float: left;
+  margin-top: 4%;
 
 }
 .demande-pret{
   height: 34px;
   padding: 3%;
+  margin: 0px;
 
 }
 .num-tel{
@@ -188,6 +197,40 @@
    
 }
 .img-phone{
-  float: left;
+
+    float: left;
+    margin-left: 8%;
+    margin-top: 2%;
     width: 18px;
+
+}
+.div-marg-taux{
+
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 5%;
+
+}
+.div-titre-taux{
+  
+}
+.titre-taux{
+  margin: 0px;
+
+  color: var(--white);
+  font-weight: 700;
+  font-family: var(--font-family-montserrat);
+  font-size: 60px;
+  letter-spacing: 0;
+  line-height: 70px;
+  min-height: 125px;
+}
+.div-sous-titre-taux{
+  
+}
+.sous-titre-taux{
+
+}
+.div-btn-t-dec{
+  
 }

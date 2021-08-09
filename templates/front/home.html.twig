@@ -1,8 +1,24 @@
 {% extends "front/base-front.html.twig" %}
 {% block body %}
 <div class="container-pret">
-  <div class="presentation-pret" style="{{asset('assets/front/img/image@1x.png')}}">
-    <div class="div-presentation"></div>
+  <div class="presentation-pret" style="background-image:url({{asset('assets/front/img/image@1x.png')}})">
+    <div class="div-presentation">
+      <div class="div-marg-taux">
+        <div class="div-titre-taux">
+          <h1 class="titre-taux">Les meilleurs <br>taux du marché</h1>
+        </div>
+        <div class="div-sous-titre-taux">
+          <h1 class="sous-titre-taux">Votre courtier en Belgique <br>et au Luxembourg</h1>
+        </div>
+        <div class="div-btn-t-dec">
+             <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">DEMANDER UN PRÊT</p>
+                    </a>
+                </div>
+        </div>
+      </div>
+    </div>
   
   </div>
   <div class="form-pret">
