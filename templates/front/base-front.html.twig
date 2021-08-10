@@ -114,5 +114,99 @@
 {% block body %}
 
 {% endblock %}
+
+<footer>
+    <div style="background-color: #404040;width: 100%;float: left;min-height: 250px;padding-top: 50px;line-height:1.7">
+        <div class="div-footer txt-black" style="width: 25%!important;color: white!important">
+            <ul class="txt-black" style="color: white!important">
+                <li>
+                    <img src="/assets/front/img/logo-espace-credit-n-8@1x.png" style="width: 40%">
+                </li>
+                <li style="font-weight: 300">
+                    Courtier spécialisé dans les crédits personnels,<br>
+                    les regroupements de crédits et les crédits<br>
+                    entreprises au Luxembourg et en Belgique.
+                </li>
+            </ul>
+        </div>
+
+        <div class="div-footer">
+            <ul class="txt-black" style="color: white!important">
+                <li><a href="{{ path('pretPerso') }}">Prêt perso</a></li>
+                <li><a href="{{ path('pretAuto') }}">Prêt auto</a></li>
+                <li><a href="{{ path('pretMoto') }}">Prêt moto</a></li>
+                <li><a href="{{ path('pretMobi') }}">Prêt mobilité</a></li>
+            </ul>
+        </div>
+
+        <div class="div-footer">
+             <ul class="txt-black" style="color: white!important">
+                <li><a href="{{ path('pretTravaux') }}">Prêt travaux</a></li>
+                <li><a href="{{ path('regroupement') }}">Regroupement</a></li>
+                <li><a href="{{ path('carteCredit') }}">Carte de crédit</a></li>
+                <li><a href="{{ path('entreprise') }}">Entreprise</a></li>
+            </ul>
+        </div>
+
+        <div class="div-footer">
+            <ul class="txt-black" style="color: white!important;font-weight:300">
+                <a href=""><li class="p1">   +32 63 677 659</li></a>
+                <a href=""><li class="p2">   +32 4 74 120 507</li></a>
+                <a href=""><li class="p2">   +352 691 625 137</li></a>
+                <a href=""><li class="p3">   credit@espace-credits.be</li></a>
+            </ul>
+        </div>
+
+        <div class="div-footer">
+            <ul class="txt-black" style="color: white!important;font-weight:300">
+                <a href="">
+                    <li class="p4">Grand-Rue, 5<br>
+                    B-6791 Athus<br>
+                    Belgique</li>
+                </a>
+                <li class="p5">Lu-Ve: 9h00 - 18h00</li>
+            </ul>
+        </div>
+        <div style="float:left;width: 100%;text-align: center;padding-bottom: 30px">
+            <a target="_blank" href="https://www.facebook.com/espacecreditsathus/"><img style="width: 15px" src="/assets/front/img/trac--35-10@1x.png"></a>
+            <span style="color: transparent">espace</span>
+            <a target="_blank" href="https://be.linkedin.com/company/espace-cr%C3%A9dits"><img style="width: 30px" src="/assets/front/img/linkedin-11@1x.png"></a>
+        </div>
+    </div>
+    <div class="txt-black" style="float: left;width: 100%;text-align: center;background-color: #2f2f2f;color: white;padding-top: 10px;padding-bottom: 10px;
+    font-weight: 300!important;font-size:13px;">
+        Mentions légales - Gestion des données - CGU<br>@2021 - Agence de communication A3COM
+    </div>
+</footer>
 </body>
 </html>
+
+<style>
+    .p1{
+        list-style-image: url("/assets/front/img/trac--247-10@1x.png");
+    }
+    .p2{
+        list-style-image: url("/assets/front/img/trac--248-10@1x.png");
+    }
+    .p3{
+        list-style-image: url("/assets/front/img/trac--250-10@1x.png");
+    }
+    .p4{
+        list-style-image: url("/assets/front/img/trac--251-10@1x.png");
+    }
+    .p5{
+        list-style-image: url("/assets/front/img/trac--247-10@1x.png");
+    }
+    .div-footer{
+        width: 18.75%;
+        float: left;
+    }
+
+    .div-footer ul {
+        list-style-type: none;
+        font-size: 15px;
+    }
+    a:visited{
+        color: white!important;
+    }
+</style>
