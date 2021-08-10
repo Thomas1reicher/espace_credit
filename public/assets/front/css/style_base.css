@@ -282,7 +282,7 @@
   .montserrat-bold-web-orange-50px {
     color: var(--web-orange);
     font-family: var(--font-family-montserrat);
-    font-size: 50;
+    font-size: 50px;  
     font-weight: 700;
     font-style: normal;
   }
