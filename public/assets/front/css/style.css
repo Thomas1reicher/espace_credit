@@ -43,12 +43,13 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 1800px;
-    padding-top: 1%;
+
 }
 .div-header-image{
     float: left;
     width: 22%;
     margin-bottom: 1%;
+    padding-top: 1%;
 }
 .gap-header{
 
@@ -56,7 +57,7 @@
 .div-cat-header{
     width: 45%;
     float: left;
-    padding-top: 1%;
+   
 }
 
 .btn-header{
@@ -72,6 +73,12 @@
 .cat-header{
     width: 25%;
     float: left;
+    padding-top: 4%;
+}
+.main-cat{
+  border-top: solid 6px var(--web-orange);
+  padding-top: 3%!important;
+
 }
 .img-header{
     max-height: 70px;
@@ -93,6 +100,7 @@
     max-width: 85px;
     margin-right: auto;
     margin-left: auto;
+    height: 44px;
 }
 .titre-bande-header{
     width: 80%;
@@ -499,5 +507,24 @@ transform: translate(0, 25px);
 
 }
 .div-partenaire-conf{
-  
+  height: 700px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: contain;
+}
+.div-partenaire-txt{
+  width: 43%;
+  margin-left: 44%;
+}
+.titre-partenaire-conf{
+
+}
+.ligne-yellow-left{
+
+}
+.txt-noir-p{
+
+}
+.div-btn-partenaire{
+
 }
