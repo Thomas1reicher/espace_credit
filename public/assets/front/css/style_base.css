@@ -1357,8 +1357,86 @@
 
 /*fin style page carte-credit*/
 
+/*CSS réalisé pour la page regroupement et qui va être utilisé pour toutes les autres*/
 .left-form{
     width: 60%;
     float: left;
-    min-height: 700px
+    min-height: 700px;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-right: 10%;
 }
+
+.div-emprunte-argent{
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: lightgrey;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.div-top-ul{
+  padding-left: 10%;
+  padding-top: 5%;
+  padding-right: 10%;
+}
+
+.div-bottom-ul{
+  padding-left: 10%;
+  padding-top: 2%;
+  width: 45%;
+}
+
+.ul-validate{
+  list-style-type: none;
+  padding-left: 10%;
+  font-weight: bold;
+}
+
+.padding-validate{
+  padding-left: 25px;
+}
+
+.img-validate{
+  width: 30px;
+}
+
+li .validate {
+display: flex; /* allows align-items to work below */
+align-items: center; /* vertical */
+height: 45px;
+}
+
+.orange-title{
+  color: orange;
+  padding-top: 60px;
+}
+
+.txt-low-weight-black{
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.txt-low-weight-white{
+  font-weight: 300;
+  font-size: 15px;
+  color: white;
+}
+
+.big-number-orange{
+  color: orange;
+  font-size: 40px
+}
+
+.numbers-right{
+  font-weight: 900;
+  font-size: 17px
+}
+
+.div-lightgrey{
+  background-color: #f8f8f8;
+  float: left;
+}
+
+/*fin du CSS commun à toutes les pages*/
