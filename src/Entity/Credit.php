@@ -38,4 +38,38 @@ class Credit
 
         return $this;
     }
+    public function vars() :array
+    {
+        $tbl = [];
+        $tbl[0]="nom";
+        return $tbl;
+
+
+    }
+    public function typeVars() :array
+    {
+        $tbl = [];
+
+        $tbl[0]="String";
+
+        return $tbl;
+
+
+    }
+    public function val() :array
+    {
+        $tbl = [];
+        $tbl[0]=$this->getNom();
+        return $tbl;
+
+
+    }
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+
+        $tbl="";
+        return $tbl;
+    }
+
 }

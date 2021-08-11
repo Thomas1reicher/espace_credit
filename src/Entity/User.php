@@ -124,7 +124,7 @@ class User implements UserInterface
     {
         $tbl = [];
         $tbl[0]="email";
-        $tbl[1]="full name";
+        $tbl[1]="fullName";
         $tbl[2]="password";
         $tbl[3]="username";
         return $tbl;

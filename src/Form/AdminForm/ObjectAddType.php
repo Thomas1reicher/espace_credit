@@ -3,7 +3,8 @@
 
 namespace App\Form\AdminForm;
 
-
+use App\Entity\Credit;
+use App\Entity\Taux;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -37,40 +38,47 @@ class ObjectAddType extends AbstractType
         $this->setObject($options['attr']['object']);
 
         $var=$this->object->typeVars();
+        $namevar=$this->object->vars();
         for($i=0;$i<count($var);$i++){
             switch ($var[$i]) {
               case 'string':
-                    $builder->add($var[$i],TextType::class);
+                    $builder->add($namevar[$i],TextType::class);
                     break;
                 case 'textarea':
-                    $builder->add($var[$i],TextareaType::class);
+                    $builder->add($namevar[$i],TextareaType::class);
                     break;
+                case 'String':
+                        $builder->add($namevar[$i],TextType::class);
+                 break;
                 case 'int' :
-                    $builder->add($var[$i],IntegerType::class);
+                    $builder->add($namevar[$i],IntegerType::class);
                     break;
                 case 'num':
-                    $builder->add($var[$i],NumberType::class);
+                    $builder->add($namevar[$i],NumberType::class);
                     break;
                 case "email":
-                    $builder->add($var[$i],EmailType::class);
+                    $builder->add("$namevar[$i]",EmailType::class);
                     break;
                 case 'password':
-                    $builder->add($var[$i],PasswordType::class);
+                    $builder->add($namevar[$i],PasswordType::class);
                     break;
                 case 'tel':
-                    $builder->add($var[$i],TelType::class);
+                    $builder->add($namevar[$i],TelType::class);
                     break;
                 case 'date':
-                    $builder->add($var[$i],DateType::class);
+                    $builder->add($namevar[$i],DateType::class);
                     break;
                 case 'datetime':
-                    $builder->add($var[$i],DateTimeType::class);
+                    $builder->add($namevar[$i],DateTimeType::class);
                     break;
                 case 'choice':
                    /* $builder->add($var[$i],*/
                     break;
+                case 'float':
+                     $builder->add($namevar[$i],NumberType::class);
+                    break;
                 case 'range':
-                    $builder->add($var[$i],RangeType::class);
+                    $builder->add($namevar[$i],RangeType::class);
                     break;
 
             }
@@ -111,11 +119,24 @@ class ObjectAddType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
-
+        if($this->nameOfClass == "user"){
         $resolver->setDefaults([
             'data_class' => User::class,
+            
         ]);
-
+    }
+    else if($this->nameOfClass == "credit"){
+        $resolver->setDefaults([
+            'data_class' => Credit::class,
+            
+        ]);
+    }
+    else if($this->nameOfClass == "taux"){
+        $resolver->setDefaults([
+            'data_class' => Taux::class,
+            
+        ]);
+    }
     }
 
 }

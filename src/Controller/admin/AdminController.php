@@ -5,12 +5,15 @@ namespace App\Controller\admin;
 
 
 use App\Entity\User;
+use App\Entity\Credit;
 use App\Form\AdminForm\ObjectAddType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\BddCms;
+use App\Entity\Taux;
+use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 
 class AdminController extends AbstractController
@@ -54,7 +57,8 @@ class AdminController extends AbstractController
   
         $repository = $this->nameClass($name,"repository");
         $Objects = $repository->findAll();
-        $tbl_var =$Objects[0]->vars();
+        $obj = $this->nameClass($name,"class");
+        $tbl_var = $obj->vars();
         return $this->render('admin/admin_tbl_view.html.twig', [
                 'itemsMenu' => $this->itemsMenu,
                 'objects' => $Objects,
@@ -70,7 +74,7 @@ class AdminController extends AbstractController
      *
      * @Route("/admin/create/{name}", name="catAdminAdd")
      */
-    public function CatCmsAdd(string $name)
+    public function CatCmsAdd(string $name,Request $request) : Response
     {
      
         $entityManager = $this->getDoctrine()->getManager();
@@ -79,14 +83,38 @@ class AdminController extends AbstractController
             'attr' => array('class' => $name ,
                 'object' => $object,
             )));
+        if($_POST){
+            var_dump($object->typeVars());
+            /*for($i=0;$i<count($object->typeVars());$i++){
+            if($tbl[$object->typeVars()[$i]] != null){
 
+            }*/
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
+            $obj = $form->getData(); 
+            $entityManager->persist($obj);
+            $entityManager->flush();
+            return $this->redirectToRoute("catAdmin", array(
+                'name' => $name
+            ));
+        }
         return $this->render('admin/admin_add_object.html.twig', [
-                'itemsMenu' => $this->itemsMenu,
-                'name' => $name,
-                'form' => $form->createView(),
+            'itemsMenu' => $this->itemsMenu,
+            'name' => $name,
+            'form' => $form->createView()
 
-            ]
-        );
+        ]
+    );
+        }
+        else{
+            return $this->render('admin/admin_add_object.html.twig', [
+                    'itemsMenu' => $this->itemsMenu,
+                    'name' => $name,
+                    'form' => $form->createView()
+
+                ]
+            );
+        }
     }
     /**
      *
@@ -123,16 +151,25 @@ class AdminController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repository = $this->nameClass($name,"repository");
         $object =$repository->find($id);
+        var_dump($id);
         $entityManager->remove($object);
         $entityManager->flush();
+        return $this->redirectToRoute("catAdmin", array(
+            'name' => $name
+        ));
 
     }
     private function nameClass(string $name ,string $type){
         if($name=="user"){
             $repository = $this->getDoctrine()->getRepository(User::class);
             $class = new User();
-        }else{
-
+        }else if($name=="credit"){
+            $repository = $this->getDoctrine()->getRepository(Credit::class);
+            $class = new Credit();
+        }
+        else if($name=="taux"){
+            $repository = $this->getDoctrine()->getRepository(Taux::class);
+            $class = new Taux();
         }
 
 
