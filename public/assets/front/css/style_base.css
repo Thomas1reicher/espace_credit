@@ -1378,14 +1378,15 @@
 
 .div-top-ul{
   padding-left: 10%;
-  padding-top: 5%;
+  padding-top: 80px;
   padding-right: 10%;
 }
 
 .div-bottom-ul{
   padding-left: 10%;
   padding-top: 2%;
-  width: 45%;
+  width: 80%;
+  line-height: 1.5;
 }
 
 .ul-validate{
@@ -1402,10 +1403,10 @@
   width: 30px;
 }
 
-li .validate {
-display: flex; /* allows align-items to work below */
-align-items: center; /* vertical */
-height: 45px;
+.li-validate{
+  display: flex; /* allows align-items to work below */
+  align-items: center; /* vertical */
+  height: 45px;
 }
 
 .orange-title{
@@ -1438,5 +1439,64 @@ height: 45px;
   background-color: #f8f8f8;
   float: left;
 }
+
+/*css tooltip page pret-auto*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-txt {
+  visibility: hidden;
+  background-color: #f8f8f8;
+  color: var(--nevada);
+  border-radius: 6px;
+  padding: 5px 0;
+
+ width: max-content;
+ max-width: 350px;
+ white-space: normal;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  right: -220px;
+  bottom: -215px;
+}
+
+.tooltip:hover .tooltip-txt {
+  visibility: visible;
+}
+/*fin css tooltip page pret-auto*/
+
+/*css footer*/
+.p1{
+  list-style-image: url("/assets/front/img/trac--247-10@1x.png");
+}
+.p2{
+  list-style-image: url("/assets/front/img/trac--248-10@1x.png");
+}
+.p3{
+  list-style-image: url("/assets/front/img/trac--250-10@1x.png");
+}
+.p4{
+  list-style-image: url("/assets/front/img/trac--251-10@1x.png");
+}
+.p5{
+  list-style-image: url("/assets/front/img/trac--247-10@1x.png");
+}
+.div-footer{
+  width: 18.75%;
+  float: left;
+}
+
+.div-footer ul {
+  list-style-type: none;
+  font-size: 15px;
+}
+a:visited{
+  color: white!important;
+}
+/*fin css footer*/
 
 /*fin du CSS commun à toutes les pages*/

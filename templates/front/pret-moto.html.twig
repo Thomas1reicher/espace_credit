@@ -1,8 +1,87 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
 <div class="left-form">
+    <div class="titre-taux-black" style="min-height: auto">Prêt moto</div>
+    <div class="txt-black" style="color: orange">Neuf : TAEG à partir de <span class="big-number-orange">1,99%*</span></div>
+    <div class="txt-black" style="color: orange">Occasion : TAEG à partir de <span class="big-number-orange">3,59%*</span></div><br><br>
+    <div class="txt-black">Financez l'achat de votre moto et prenez la route sans soucis</div><br>
+    <div class="txt-black txt-low-weight-black">
+        Le prêt moto vous permet de financer votre véhicule neuf ou d'occasion.<br><br>
+        Vous remboursez des mensualités fixes, prévues à l'avance sur une durée déterminée.<br><br>
+        Ainsi, vous pouvez gérer votre budget sans mauvaise surprise.
+    </div>
+    <div class="orange-title">
+        *Taux préférentiel sous réserve d'acceptation du dossier par la société de crédit.
+    </div>
 </div>
 
 <div class="form-pret">
+   <div class="div-form-pret">
+        <div class="div-titre-form">
+          <h1 class="titre-form animate-enter1">
+              Simulez votre crédit</h1>
+        </div>
+        <table class="label-form  montserrat-medium-white-14px">
+          <tr>
+              <td colspan="2">Votre projet</td>
+          </tr>
+          <tr>
+              <td colspan="2"><select style="width: 100%" class="input-form" placeholder="Rénovation"/>
+                <option></option>
+              </td>
+          </tr>
+          <tr>
+              <td>Montant</td>
+              <td>Durée</td>
+          </tr>
+          <tr>
+              <td><input style="width: auto" class="input-form" placeholder="Entez un montant"/></td>
+              <td><input style="width: auto" class="input-form" placeholder="Sélectionnez une durée"/></td>
+          </tr>
+        </table>
+
+        <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
+        <div class="txt-black big-number-orange">526<span style="font-size: 25px">,23</span>€</div>
+        <div style="line-height: 1.5;">
+            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right">14.000€</span></div>
+            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right">2.330€</span></div>
+            <div class="txt-black txt-low-weight-white">TAEG: <span class="numbers-right">5,95%*</span></div>
+            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right">60 mois</span></div>
+        </div>
+        <div class="div-btn-cred" style="margin-bottom: 40px;margin-top: 40px">
+            <div class="btn-pret">
+                 <a href="" class="link-pret">
+                     <p class="demande-pret montserrat-medium-white-14px">FAIRE UNE DEMANDE</p>
+                 </a>
+            </div>
+        </div>
+        <div style="color: lightgrey">La simulation réalisée avec l'outil n'est pas considérée <br>comme une offre et/ou une acceptation du crédit.</div>
+   </div>
+</div>
+
+<div class="txt-black txt-low-weight-black div-lightgrey" style="min-height: 550px;width: 100%;">
+    <div class="div-lightgrey" style="width: 50%;min-height: 550px;padding-left: 100px">
+        <div class="div-top-ul">Grâce à votre prêt travaux, financez des travaux comme :</div>
+        <ul class="ul-validate">
+            <li class="li-validate"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Achat de motos</span></li>
+            <li class="li-validate"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Achat de side-car</span></li>
+            <li class="li-validate"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Achat de trike</span></li>
+        </ul>
+        <div class="div-bottom-ul">Vous avez besoin de plus d'informations concernant le prêt moto
+            , les taux ou des questions ?<br>Notre équipe est à votre service.
+        </div>
+        <div class="div-btn-cred" style="margin-top: 50px;margin-left: 10%;width: 25%!important">
+            <div class="btn-pret" style="width: 100%">
+                <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">NOUS CONTACTER</p></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-lightgrey" style="width: 50%;min-height: 550px;background-image:url({{asset('assets/front/img/adobestock-143463998-copie-768x512@1x.png')}});background-repeat: no-repeat;background-size: 500px;background-position: 25% 40%;">
+    </div>
+</div>
+
+<div class="txt-black div-emprunte-argent">
+    Attention : emprunter de l'argent coûte aussi de l'argent
 </div>
 {% endblock %}

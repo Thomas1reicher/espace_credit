@@ -46,7 +46,36 @@ class HomeController extends AbstractController
         return $this->render('front/home.html.twig');
     }
 
-    
+    /**
+     * @Route("/credits", name="credits")
+     */
+    public function credits()
+    {
+        return $this->render('front/credits.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/philosophie", name="philosophie")
+     */
+    public function philosophie()
+    {
+        return $this->render('front/philosophie.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return $this->render('front/contact.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
     /**
      * @Route("/pretPerso", name="pretPerso")
      */
