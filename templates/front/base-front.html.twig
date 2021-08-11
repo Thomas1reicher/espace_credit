@@ -23,12 +23,16 @@
 <header>
     <div class="header-container">
         <div class="div-header-image">
+        <a href="{{ path('accueil') }}">
             <img class="img-header" src="{{asset('assets/front/img/image-1.png')}}">
+        </a>
         </div>
         <div class="gap-header"></div>
-        <div class="div-cat-header">
-            <div class="cat-header">
+        <div class="div-cat-header ">
+            <div class="cat-header {% if( title == "home") %} main-cat  {% endif %}">
+            <a href="{{ path('accueil') }}">
                 <img class="img-home-header" src="{{asset('assets/front/img/trac-2.png')}}">
+            </a>
             </div>
             <div class="cat-header">
                 <a href="{{ path('credits') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3></a>

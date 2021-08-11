@@ -43,7 +43,9 @@ class HomeController extends AbstractController
         $context = stream_context_create($aHTTP);
         $client=new SoapClient("http://grids.anysoft.lu/interclip/interclip.asmx",array('trace' => 1,"stream_context" => $context));
         dd($client);*/
-        return $this->render('front/home.html.twig');
+        return $this->render('front/home.html.twig', [
+            'title' => 'home',
+        ]);
     }
 
     /**
@@ -83,6 +85,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'peso'
         ]);
     }
 
@@ -93,6 +96,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'auto'
         ]);
     }
 
@@ -103,6 +107,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'moto',
         ]);
     }
 
@@ -113,6 +118,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'mobi',
         ]);
     }
 
@@ -123,6 +129,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'traveau',
         ]);
     }
 
@@ -133,6 +140,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'regroupement',
         ]);
     }
 
@@ -143,6 +151,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/carte-credit.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'cartecred',
         ]);
     }
 
@@ -153,6 +162,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/entreprise.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'entreprise',
         ]);
     }
 
