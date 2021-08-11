@@ -35,13 +35,13 @@
             </a>
             </div>
             <div class="cat-header">
-                <a href=""><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3></a>
+                <a href="{{ path('credits') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3></a>
             </div>
             <div class="cat-header">
-                <a href=""><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Notre philosophie</h3></a>
+                <a href="{{ path('philosophie') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Notre philosophie</h3></a>
             </div>
             <div class="cat-header">
-                <a href=""><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Contact</h3></a>
+                <a href="{{ path('contact') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Contact</h3></a>
             </div>
         </div>
         <div class="btn-header">
@@ -78,13 +78,13 @@
         </a>
         <a href="{{ path('pretMoto') }}">
                <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div>
+            <div class="logo-div-header" style="width: 30%;"><img class="img-h" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div>
             <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div>
         </div>
         </a>
                <div class="div-bande-header">
         <a href="{{ path('pretMobi') }}">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></div>
+            <div class="logo-div-header" style="width: 27%;"><img class="img-h" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></div>
             <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div>
         </div>
         </a>
@@ -102,7 +102,7 @@
         </a>
         <a href="{{ path('carteCredit') }}">
                <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--343-9@1x.png')}}"></div>
+            <div class="logo-div-header" style="width: 28%;"><img class="img-h" src="{{asset('assets/front/img/trac--343-9@1x.png')}}"></div>
             <div class="titre-bande-header montserrat-bold-dove-gray-12px">CARTE DE CRÉDIT</div>
         </div>
         </a>
@@ -184,33 +184,3 @@
 </footer>
 </body>
 </html>
-
-<style>
-    .p1{
-        list-style-image: url("/assets/front/img/trac--247-10@1x.png");
-    }
-    .p2{
-        list-style-image: url("/assets/front/img/trac--248-10@1x.png");
-    }
-    .p3{
-        list-style-image: url("/assets/front/img/trac--250-10@1x.png");
-    }
-    .p4{
-        list-style-image: url("/assets/front/img/trac--251-10@1x.png");
-    }
-    .p5{
-        list-style-image: url("/assets/front/img/trac--247-10@1x.png");
-    }
-    .div-footer{
-        width: 18.75%;
-        float: left;
-    }
-
-    .div-footer ul {
-        list-style-type: none;
-        font-size: 15px;
-    }
-    a:visited{
-        color: white!important;
-    }
-</style>
