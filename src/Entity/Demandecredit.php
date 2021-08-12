@@ -27,10 +27,6 @@ class Demandecredit
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $société;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -121,17 +117,7 @@ class Demandecredit
         return $this;
     }
 
-    public function getSociété(): ?string
-    {
-        return $this->société;
-    }
 
-    public function setSociété(?string $société): self
-    {
-        $this->société = $société;
-
-        return $this;
-    }
 
     public function getMail(): ?string
     {
@@ -275,5 +261,70 @@ class Demandecredit
         $this->annee_belgique = $annee_belgique;
 
         return $this;
+    }
+    public function vars() :array
+    {
+        $tbl = [];
+        $tbl[0]="prenom";
+        $tbl[1]="nom";
+        $tbl[2]="société";
+        $tbl[3]="mail";
+        $tbl[4]="société";
+        $tbl[5]="tel";
+        $tbl[6]="info_comp";
+        $tbl[7]="token";
+        $tbl[8]="secu_social";
+        $tbl[9]="num_carte_identite";
+        $tbl[10]="nationalite";
+        $tbl[11]="echeance_carte_identite";
+        $tbl[12]="file_carte_identite";
+        $tbl[13]="date_naissance";
+        $tbl[14]="pays_naissance";
+        $tbl[15]="annee_belgique";
+        return $tbl;
+
+
+    }
+    public function typeVars() :array
+    {
+        $tbl = [];
+        $tbl[0]="prenom";
+        $tbl[1]="nom";
+        $tbl[2]="société";
+        $tbl[3]="mail";
+        $tbl[4]="société";
+        $tbl[5]="tel";
+        $tbl[6]="info_comp";
+        $tbl[7]="token";
+        $tbl[8]="secu_social";
+        $tbl[9]="num_carte_identite";
+        $tbl[10]="nationalite";
+        $tbl[11]="echeance_carte_identite";
+        $tbl[12]="file_carte_identite";
+        $tbl[13]="date_naissance";
+        $tbl[14]="pays_naissance";
+        $tbl[15]="annee_belgique";
+        return $tbl;
+
+
+    }
+    public function val() :array
+    {
+       $tbl = [];
+        /* $tbl[0]=$this->getEmail();
+        $tbl[1]=$this->getFullName();
+        $tbl[2]=$this->getPassword();
+        $tbl[3]=$this->getUsername();*/
+        return $tbl;
+
+
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+
+       /* $tbl=$this->getEmail()."-".$this->getFullName().'-'.$this->getPassword().'-'.$this->getUsername();
+        */return "";
     }
 }

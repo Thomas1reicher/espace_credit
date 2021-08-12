@@ -31,7 +31,12 @@
                    <tr>
                        {% set vals =  object.val  %}
                        {% for key3, val  in vals %}
+                            
+                        {% if val|length == 0 %}
+                            <td >{{ val.nom }}</td>
+                          {% else %}
                        <td >{{ val }}</td>
+                            {% endif %}
                        {% endfor %}
                        <td class="center">
                             <form method="DELETE" action="{{url('catAdminDelete',{'name': name , 'id' : object.id})}}">

@@ -27,11 +27,6 @@ class Demandecartecredit
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $société;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -77,17 +72,7 @@ class Demandecartecredit
         return $this;
     }
 
-    public function getSociété(): ?string
-    {
-        return $this->société;
-    }
 
-    public function setSociété(?string $société): self
-    {
-        $this->société = $société;
-
-        return $this;
-    }
 
 
     public function getMail(): ?string

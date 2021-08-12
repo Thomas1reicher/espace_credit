@@ -13,7 +13,11 @@
 				Création d'un {{name}}
 			</h4>
 			
-            <form action="{{ path('catAdminAdd',{name: name}) }}" method="post">
+            {% if (edit)%}
+			<form action="{{ path('catAdminUpdate',{id: id,name: name}) }}" method="post">
+			{% else %}
+			<form action="{{ path('catAdminAdd',{name: name}) }}" method="post">
+			{% endif %}
 			<div id="exTab3" class="">
 				<div class="mT-30">
 					<div class="tab-content clearfix">

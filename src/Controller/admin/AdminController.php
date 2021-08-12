@@ -33,6 +33,7 @@ class AdminController extends AbstractController
         for ( $i =0; $i<count($categorieCms);$i++){
             $this->itemsMenu[$i] = array("nom" => $categorieCms[$i]->getName(), "lien" => "admin/".$categorieCms[$i]->getName(), "picto" =>$categorieCms[$i]->getIcon(),"color" =>$categorieCms[$i]->getColor() , "div_num"=>$categorieCms[$i]->getDivNum());
         }
+
     }
     /**
      *
@@ -84,7 +85,7 @@ class AdminController extends AbstractController
                 'object' => $object,
             )));
         if($_POST){
-            var_dump($object->typeVars());
+        
             /*for($i=0;$i<count($object->typeVars());$i++){
             if($tbl[$object->typeVars()[$i]] != null){
 
@@ -110,8 +111,8 @@ class AdminController extends AbstractController
             return $this->render('admin/admin_add_object.html.twig', [
                     'itemsMenu' => $this->itemsMenu,
                     'name' => $name,
-                    'form' => $form->createView()
-
+                    'form' => $form->createView(),
+                    'edit' => false
                 ]
             );
         }
@@ -121,7 +122,7 @@ class AdminController extends AbstractController
      *
      * @Route("/admin/update/{name}/{id}", name="catAdminUpdate")
      */
-    public function CatCmsUpdate (string $name,int $id)
+    public function CatCmsUpdate (string $name,int $id,Request $request):Response
     {   
    
         $entityManager = $this->getDoctrine()->getManager();
@@ -131,11 +132,24 @@ class AdminController extends AbstractController
             'attr' => array('class' => $name ,
                 'object' => $object,
             )));
-      
+            if($_POST){
+     
+                $form->handleRequest($request);
+                if ($form->isSubmitted() && $form->isValid()) {
+              
+            
+                $entityManager->flush();
+                return $this->redirectToRoute("catAdmin", array(
+                    'name' => $name
+                ));
+            }
+        }
             return $this->render('admin/admin_add_object.html.twig', [
                 'itemsMenu' => $this->itemsMenu,
                 'name' => $name,
                 'form' => $form->createView(),
+                'edit' => true,
+                'id'   => $id
 
             ]
         );
@@ -151,7 +165,7 @@ class AdminController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repository = $this->nameClass($name,"repository");
         $object =$repository->find($id);
-        var_dump($id);
+     
         $entityManager->remove($object);
         $entityManager->flush();
         return $this->redirectToRoute("catAdmin", array(
@@ -159,24 +173,40 @@ class AdminController extends AbstractController
         ));
 
     }
-    private function nameClass(string $name ,string $type){
+    public function nameClass(string $name ,string $type,bool $form = false,EntityManagerInterface $entityManager = null){
+
+     
+        if($form){
+            $orm = $entityManager;
+        }else{
+            $orm=$this->getDoctrine();
+        }
+  
         if($name=="user"){
-            $repository = $this->getDoctrine()->getRepository(User::class);
+            $repository = $orm->getRepository(User::class);
             $class = new User();
+            $class_v=User::class;
         }else if($name=="credit"){
-            $repository = $this->getDoctrine()->getRepository(Credit::class);
+            $repository = $orm->getRepository(Credit::class);
             $class = new Credit();
+            $class_v=Credit::class;
         }
         else if($name=="taux"){
-            $repository = $this->getDoctrine()->getRepository(Taux::class);
+            $repository = $orm->getRepository(Taux::class);
             $class = new Taux();
+            $class_v=Taux::class;
         }
 
 
         if($type == "repository"){
             return $repository;
-        }else{
+        }else if ($type="class"){
+
             return $class;
+        }
+        
+        else{
+            return $class_v;
         }
 
     }
