@@ -1,0 +1,100 @@
+{% extends 'front/base-front.html.twig' %}
+{% block body %}
+    <div style="width: 100%;float: left">
+        <div class="div-centre-titre"> 
+           <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+               Prenons contact
+           </h1>
+        </div>
+        <div class="ligne-yellow"></div>
+
+        <div style="width: 35%;margin: auto;padding-top: 20px;padding-bottom: 50px">
+            <table class="txt-black p-contact" style="font-weight: 300">
+                <tr>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--251-10@1x.png"></td>
+                    <td class="td-contact">5, Grand-Rue</td>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--247-10@1x.png"></td>
+                    <td class="td-contact">+32 63 677 659</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="td-contact"> B-6791 Athus</td>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--248-10@1x.png"></td>
+                    <td class="td-contact">+32 4 74 120 507</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="td-contact">BELGIQUE</td>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--248-10@1x.png"></td>
+                    <td class="td-contact">+352 691 625 137</td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--247-10@1x.png"></td>
+                    <td class="td-contact">Lu-Ve: 9h00 - 18h00</td>
+                    <td style="text-align: center"><img src="/assets/front/img/trac--250-10@1x.png"></td>
+                    <td class="td-contact">credit@espace-credits.be</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Objet</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Objet de votre demande"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Prénom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre prénom"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Nom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Email</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre adresse email"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Téléphone</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre numéro de téléphone"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Message</div></div></div>
+        <div class="div-input-contact"><input style="height: 120px" class="input-form input-contact" placeholder="Que pouvons-nous faire pour vous?"/></div>
+        <div class="div-input-contact">
+            <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
+                <input type="radio">
+                En soumettant ce formulaire, j'accepte que les informations saisies soient acceptées dans le cadre de ma demande et de la relation commerciale qui 
+                peut en découler. Les données personnelles collectées sont uniquement destinées à un usage interne chez Espace Crédits, en conformité avec la législation
+                 sur la protection des données. En aucun cas ces données ne seront cédées ou vendues à des tiers.<br>Pour plus d'informations, <a href="" style="font-weight: bold">cliquez-ici</a>.
+                <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
+                    <div class="btn-pret" style="width: 20%;margin: auto">
+                        <a href="" class="link-pret"><p style="padding: 6%" class="demande-pret montserrat-medium-white-14px">ENVOYER</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="div-img" style="width: 100%;min-height: 400px;background-image:url({{asset('assets/front/img/capture-d-e-cran-2021-05-05-a--17-08-11-2@1x.png')}});background-size: contain;">
+    </div>
+
+    <style>
+        .input-title-contact a:visited {
+            color: black!important;
+        }
+        .td-contact{
+            width: 58%;
+        }
+        .input-title-contact{
+            width: 35%;
+            text-align: left;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+        .input-contact{
+            width: 35%;
+            border-color: var(--black);
+            margin-bottom: 15px;
+        }
+        .div-input-contact{
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        .input-form::placeholder{
+            color: grey;
+        }
+    </style>
+{% endblock %}

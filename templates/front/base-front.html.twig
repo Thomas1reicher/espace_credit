@@ -34,13 +34,13 @@
                 <img class="img-home-header" src="{{asset('assets/front/img/trac-2.png')}}">
             </a>
             </div>
-            <div class="cat-header">
+            <div class="cat-header {% if( title == "credits") %} main-cat  {% endif %}">
                 <a href="{{ path('credits') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3></a>
             </div>
-            <div class="cat-header">
+            <div class="cat-header {% if( title == "philo") %} main-cat  {% endif %}">
                 <a href="{{ path('philosophie') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Notre philosophie</h3></a>
             </div>
-            <div class="cat-header">
+            <div class="cat-header {% if( title == "contact") %} main-cat  {% endif %}">
                 <a href="{{ path('contact') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Contact</h3></a>
             </div>
         </div>
@@ -71,46 +71,46 @@
             </div>
         </a>
         <a href="{{ path('pretAuto') }}">
-             <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--11-4@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--11-4@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+            </div>
         </a>
         <a href="{{ path('pretMoto') }}">
-               <div class="div-bande-header">
-            <div class="logo-div-header" style="width: 30%;"><img class="img-h" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header" style="width: 30%;"><img class="img-h" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div>
+            </div>
         </a>
                <div class="div-bande-header">
         <a href="{{ path('pretMobi') }}">
             <div class="logo-div-header" style="width: 27%;"><img class="img-h" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div>
-        </div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div>
+                </div>
         </a>
         <a href="{{ path('pretTravaux') }}">
-               <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--13-10@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--13-10@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div>
+            </div>
         </a>
         <a href="{{ path('regroupement') }}">
-               <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--15-10@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--15-10@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div>
+            </div>
         </a>
         <a href="{{ path('carteCredit') }}">
-               <div class="div-bande-header">
-            <div class="logo-div-header" style="width: 28%;"><img class="img-h" src="{{asset('assets/front/img/trac--343-9@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">CARTE DE CRÉDIT</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header" style="width: 28%;"><img class="img-h" src="{{asset('assets/front/img/trac--343-9@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">CARTE DE CRÉDIT</div>
+            </div>
         </a>
         <a href="{{ path('entreprise') }}">
-                <div class="div-bande-header">
-            <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--20-10@1x.png')}}"></div>
-            <div class="titre-bande-header montserrat-bold-dove-gray-12px">ENTREPRISE</div>
-        </div>
+            <div class="div-bande-header">
+                <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--20-10@1x.png')}}"></div>
+                <div class="titre-bande-header montserrat-bold-dove-gray-12px">ENTREPRISE</div>
+            </div>
         </a>
     </div>
     </div>
@@ -166,7 +166,7 @@
                 <a href="">
                     <li class="p4">Grand-Rue, 5<br>
                     B-6791 Athus<br>
-                    Belgique</li>
+                    BELGIQUE</li>
                 </a>
                 <li class="p5">Lu-Ve: 9h00 - 18h00</li>
             </ul>

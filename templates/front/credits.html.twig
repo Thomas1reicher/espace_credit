@@ -1,17 +1,240 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
-<div style="float: left;width: 100%;min-height: 248px;background-image:url({{asset('assets/front/img/shutterstock-1890826546-3@1x.png')}});background-repeat: no-repeat;background-size: cover">
+<div class="img-header-homes" style="min-height: 248px;background-image:url({{asset('assets/front/img/shutterstock-1890826546-3@1x.png')}});">
     <div style="background-color: var(--black);min-height: 248px">
-        <div style="color: white" class="titre-taux-black">Nos crédits <br>aux meilleurs taux</div>
+        <div style="color: white;padding-top: 50px;padding-left: 50px;" class="titre-taux-black">Nos crédits <br>aux meilleurs taux</div>
     </div>
 </div>
 
+<script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 <div class="div-lightgrey" style="width: 100%;min-height: 500px;">
-    <div class="titre-form" style="color: var(--black);transform: revert;opacity: 1;text-align: center">Les solutions Espace Crédits</div>
-    <div style="text-align: center">Chez Espace Crédits, nous vous proposons plusieurs types de crédits<br> aux meilleurs taux* spécialement adaptés à vos besoins et envies</div>
+    <div class="div-centre-titre"> 
+        <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+            Les solutions Espace Crédits
+        </h1>
+    </div>
+    <div class="ligne-yellow"></div>
+    <div class="txt-low-weight-black" style="text-align: center;padding-bottom: 30px">Chez Espace Crédits, nous vous proposons plusieurs types de crédits<br> aux meilleurs taux* spécialement adaptés à vos besoins et envies</div>
+    <div class="slider">
+        <div class="slide" style="width: 5%">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt personnel </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le prêt personnel permet de faire face à des imprévus ou de financer vos projets.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt automobile </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">1,99%</span><span class="montserrat-bold-web-orange-46px">*</span>
+                <br>
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">3,59%</span><span class="montserrat-bold-web-orange-46px">*</span>
+
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le prêt auto vous permet de financer votre véhicule neuf ou d'occasion.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt moto </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le prêt moto vous permet de financer votre moto. Vous remboursez des mensualités fixes, prévues à l'avance sur une durée déterminée.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt mobilité </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le prêt mobilité permet de financer votre vélo et/ou autres engins de mobilité douce, type trottinette, overboard. Qu'ils soient électrique ou non.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt travaux </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">2,48%</span><span class="montserrat-bold-web-orange-46px">*</span>
+                <br>
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">2,28%</span><span class="montserrat-bold-web-orange-46px">*</span>
+
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le prêt travaux vous permet de financer divers travaux d'aménagement dans votre habitation.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <p class="montserrat-bold-nevada-20px" style="text-align:center">   Regroupement de crédit </p>
+            <div class="taeg montserrat-bold-web-orange-20px">
+                <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
+            </div>
+            <p class="surname montserrat-light-tundora-16px">
+                Le regroupement de crédits vous permet de rassembler plusieurs prêts personnels (travaux, auto, etc) en un seul.
+            </p>
+            <div class="div-dec-btn">
+                <div class="btn-pret">
+                    <a class="link-pret">
+                        <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: right;font-size: 13px;color: var(--nevada);padding-right: 30px;padding-bottom: 20px;padding-top: 100px">
+        Taux préférenciel, sous réserve d'acceptation du dossier par la société de crédit.
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $('.slider').slick({
+        dots: false,
+        vertical: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: false,
+        autoplaySpeed: 2000,
+    });
+</script>
+
+
+<div style="width: 100%;float: left;min-height: 600px;">
+    <div class="div-centre-titre"> 
+        <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+            Tout savoir sur les crédits
+        </h1>
+    </div>
+    <div class="ligne-yellow"></div>
+    <div style="width: 50%;float: left;padding-left: 10%;">
+        <div class="txt-black txt-low-weight-black div-bottom-ul">
+            <div class="txt-black">Un crédit, qu'est-ce que c'est,<br> et pourquoi faire un prêt ?</div><br>
+            Au cours de votre vie, vous avez des projets tels que des achats, un mariage, une ou des naissances, des envies de
+             nouvelles voitures, de voyager ou de réaliser des travaux dans votre habitat. Cependant, ces projets ont un coût !
+            <br><br>
+            C'est pourquoi il est utile de souscrire un crédit. Nous vous prêtons la somme dont vous avez besoin et vous payerez
+             des mensualités sur une période définie jusqu'à remboursement total du prêt et de ses intérêts.
+            <div class="orange-title" style="font-weight: bold">
+                Attention toutefois, emprunter de l'argent coûte aussi de l'argent.
+            </div>
+        </div>
+        
+    </div>
+    <div class="div-img" style="background-image:url({{asset('assets/front/img/image-7@1x.png')}});background-position: 35% 55%;background-size: 450px">
+        <img src="assets/front/img/image-8-1@1x.png" style="width: 40%;border: solid white 10px;">
+    </div>
+</div>
+
+<div class="txt-black" style="width: 100%;float: left;min-height: 400px;background-color: var(--nevada);color: white;padding-left: 10%">
+    <div class="ul-validate" style="color: white;padding-top: 50px;padding-left: 4%">Puis-je demander un prêt ?</div>
+    <div class="txt-low-weight-black div-top-ul" style="padding-top: 40px;padding-left: 4%">Vous pouvez contracter un crédit à quelques conditions :</div>
+    <ul class="ul-validate" style="columns: 2;width: 100%;padding-left: 4%">
+        <li class="li-validate" style="height: 70px"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Être résident belge ou luxembourgeois<br><span class="txt-low-weight-black">Lorem ipsum</span></span></li>
+        <li class="li-validate" style="height: 70px"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Avoir entre 25 et 65 ans<br><span class="txt-low-weight-black">Lorem ipsum</span></span></li>
+        <li class="li-validate" style="height: 70px"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Avoir un contrat de travail<br><span class="txt-low-weight-black">Revenus fixes et réguliers</span></span></li>
+        <li class="li-validate" style="height: 70px"><img class="img-validate" src="assets/front/img/trac--338@1x.png"><span class="padding-validate">Avoir une situation financière saine<br><span class="txt-low-weight-black">Reste à vivre suffisant. Taux d'endettement faible</span></span></li>
+    </ul>
+</div>
+
+<div style="width: 100%;float: left;min-height: 350px;color: var(--nevada)">
+    <div class="div-centre-titre"> 
+        <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+            Nos partenaires pour vos crédits
+        </h1>
+    </div>
+    <div class="ligne-yellow"></div>
+
+    <ul style="display: inline-flex;align-items: center;list-style: none;padding-left: 10%">
+        <li><img style="width: 70%;padding-right: 40px;;" src="assets/front/img/image-10-1@1x.png"></li>
+        <li><img style="width: 70%;padding-right: 40px;;" src="assets/front/img/image-11-1@1x.png"></li>
+        <li><img style="width: 70%;padding-right: 40px;;" src="assets/front/img/image-12-1@1x.png"></li>
+        <li><img style="width: 70%;padding-right: 40px;;" src="assets/front/img/image-13-1@1x.png"></li>
+    </ul>
 </div>
 
 <div class="txt-black div-emprunte-argent">
     Attention : emprunter de l'argent coûte aussi de l'argent
 </div>
+
+<style>
+    .slide{
+        margin-left: 20px;
+    }
+    .slick-list{
+        width: 70%;
+        margin: auto;
+    }
+    .slick-arrow{
+        background-image: url("assets/front/img/trac--227-1@1x.png");
+        background-repeat: no-repeat;
+        color: transparent;
+        background-color: transparent;
+        background-position: center;
+        border: none;
+        position: absolute;
+        z-index: 1000;
+        height: 40px;
+        width: 75px;
+        background-size: 50px;
+    }
+    .slick-prev{
+        margin-left: 46%;
+        top: 100%;
+    }
+    .slick-next{
+        margin-left: 50%;
+        transform: rotate(180deg); 
+    }
+</style>
 {% endblock %}

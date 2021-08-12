@@ -55,6 +55,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/credits.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'credits',
         ]);
     }
 
@@ -65,6 +66,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/philosophie.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'philo',
         ]);
     }
 
@@ -75,6 +77,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/contact.html.twig', [
             'controller_name' => 'HomeController',
+            'title' => 'contact',
         ]);
     }
 
@@ -85,7 +88,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'peso'
+            'title' => 'credits',
         ]);
     }
 
@@ -96,7 +99,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'auto'
+            'title' => 'credits',
         ]);
     }
 
@@ -107,7 +110,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'moto',
+            'title' => 'credits',
         ]);
     }
 
@@ -118,7 +121,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'mobi',
+            'title' => 'credits',
         ]);
     }
 
@@ -129,7 +132,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'traveau',
+            'title' => 'credits',
         ]);
     }
 
@@ -140,7 +143,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'regroupement',
+            'title' => 'credits',
         ]);
     }
 
@@ -151,7 +154,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/carte-credit.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'cartecred',
+            'title' => 'credits',
         ]);
     }
 
@@ -162,7 +165,7 @@ class HomeController extends AbstractController
     {
         return $this->render('front/entreprise.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'entreprise',
+            'title' => 'credits',
         ]);
     }
 
