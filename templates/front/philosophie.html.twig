@@ -1,0 +1,102 @@
+{% extends 'front/base-front.html.twig' %}
+{% block body %}
+
+<div class="img-header-homes" style="min-height: 228px;background-image:url({{asset('assets/front/img/yritystreffit-banneri-somekuva-2@1x.png')}});">
+    <div style="background-color: var(--black);min-height: 228px">
+        <div style="color: white;padding-top: 50px;padding-left: 50px;" class="titre-taux-black">Notre philosophie</div>
+    </div>
+</div>
+
+<div style="float: left;width: 100%;min-height: 500px">
+    <div class="div-centre-titre"> 
+        <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+            Espace de crédits : une affaire de famille
+        </h1>
+    </div>
+    <div class="ligne-yellow"></div>
+    <div class="div-img" style="min-height: 500px;background-image:url({{asset('assets/front/img/eycucg8xeaeanvn-2@1x.png')}});background-size: 500px;background-position: 100% 10%;">
+    </div>
+    <div style="min-height: 500px;width: 50%;float: left;">
+        <div class="txt-black txt-low-weight-black div-bottom-ul" style="width: 70%">
+            <div class="txt-black">Espace Crédits est une entreprise<br> à taille humaine.</div><br>
+            Fort d'une expérience de XX années, nous jouons le rôle d'intermédiaire entre les clients et les
+             établissements prêteurs comme les banques, organismes de crédits ou des entreprises.
+            <br><br>
+            Nous sommes composés de deux personnes, Lorem ipsum et Dolor Sit-Amet.
+        </div>
+    </div>
+
+    <div class="div-btn-cred" style="width: 100%!important;float: left;margin-top: -90px">
+            <div class="btn-pret" style="width: 13%;margin: auto">
+                <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">NOUS RENCONTRER</p></a>
+            </div>
+    </div>
+</div>
+
+<div class="div-lightgrey" style="min-height: 450px;width: 100%">
+    <div class="div-centre-titre"> 
+        <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+            Les forces d'Espace Crédits
+        </h1>
+    </div>
+    <div class="ligne-yellow"></div>
+
+    <div style="min-height: 450px;width: 50%;float: left;padding-left: 10%">
+        <div class="txt-black txt-low-weight-black div-bottom-ul" style="width: auto">
+            <div class="txt-black">Espace Crédits vous propose des prêts aux<br> meilleurs taux du marché</div><br>
+            Parce que chez Espace Crédits nous accordons de l'importance à vos projets, vos envies et vos besoins, 
+            nous faisons en sorte de trouver les solutions les plus adaptées à votre situation. Ainsi, nous travaillons
+             en collaboration avec des Lorem ipsum et des dolors sit amet les plus fiables et intéressantes financièrement.<br><br>
+            C'est d'ailleurs grâce à ces Lorem ipsum dolor sit amet et à nos consectetur adipiscing elit que nous sommes
+             en mesure de vous proposer des taux défiant toutes concurrences.
+        </div>
+    </div>
+
+    <div style="min-height: 450px;width: 50%;float: left;">
+        <table style="padding-top: 50px;padding-left: 50px">
+            <tr>
+                <td><a href="{{ path('pretPerso') }}"><img class="img-philo" src="{{asset('assets/front/img/trac-9.png')}}"></a></td>
+                <td><a href="{{ path('pretAuto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--11-4@1x.png')}}"></a></td>
+                <td><a href="{{ path('pretMoto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ path('pretPerso') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div></a></td>
+                <td><a href="{{ path('pretAuto') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div></a></td>
+                <td><a href="{{ path('pretMoto') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div></a></td>
+            </tr>
+
+            <tr>
+                <td><a href="{{ path('pretMobi') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></a></td>
+                <td><a href="{{ path('pretTravaux') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--13-10@1x.png')}}"></a></td>
+                <td><a href="{{ path('regroupement') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--15-10@1x.png')}}"></a></td>
+            </tr>
+            <tr>
+                <td><a href="{{ path('pretMobi') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div></a></td>
+                <td><a href="{{ path('pretTravaux') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div></a></td>
+                <td><a href="{{ path('regroupement') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div></a></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<div style="min-height:350px;width: 100%;float: left;padding-left: 10%;padding-top: 30px">
+    <img style="float: left;width: 15%;padding-top: 40px;padding-left: 10%" src="/assets/front/img/trac--20-10@1x.png">
+    <div class="txt-black txt-low-weight-black div-bottom-ul" style="width: 55%;padding-left: 20%"> 
+        <div class="txt-black">Espace Crédits accompagne aussi les entreprises</div><br>
+        Vous êtes une entreprise, artisan ou indépendant, Espace Crédits est là pour vous aider
+            à monter ou développer votre société, à travers différentes solutions.
+        <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;height: auto">
+            <div class="btn-pret" style="width: 35%;">
+                <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">EN SAVOIR PLUS</p></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</div>
+
+<style>
+    
+</style>
+{% endblock %}

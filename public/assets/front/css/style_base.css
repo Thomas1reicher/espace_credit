@@ -1417,12 +1417,14 @@
 .txt-low-weight-black{
   font-weight: 300;
   font-size: 17px;
+  font-family: var(--font-family-montserrat);
 }
 
 .txt-low-weight-white{
   font-weight: 300;
   font-size: 15px;
   color: white;
+  font-family: var(--font-family-montserrat);
 }
 
 .big-number-orange{
@@ -1438,6 +1440,13 @@
 .div-lightgrey{
   background-color: #f8f8f8;
   float: left;
+}
+
+.img-header-homes{
+  float: left;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*css tooltip page pret-auto*/
@@ -1469,6 +1478,11 @@
 }
 /*fin css tooltip page pret-auto*/
 
+.p-contact{
+  color: black;
+  font-size: 15px;
+}
+
 /*css footer*/
 .p1{
   list-style-image: url("/assets/front/img/trac--247-10@1x.png");
@@ -1499,4 +1513,16 @@ a:visited{
 }
 /*fin css footer*/
 
+.img-philo{
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 150px;
+}
+
 /*fin du CSS commun à toutes les pages*/
+
+/*CSS slick*/
+.slick-slide{
+  min-height: 400px!important;
+}
+/*fin CSS slick*/
