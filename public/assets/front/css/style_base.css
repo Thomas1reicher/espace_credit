@@ -1512,9 +1512,7 @@
   list-style-type: none;
   font-size: 15px;
 }
-.td-footer a:visited{
-  color: white!important;
-}
+
 /*fin css footer*/
 
 .img-philo{
@@ -1530,5 +1528,34 @@
 /*CSS slick*/
 .slick-slide{
   min-height: 400px!important;
+}
+
+.slide{
+  margin-left: 20px;
+}
+.slick-list{
+  width: 70%;
+  margin: auto;
+}
+.slick-arrow{
+  background-image: url("assets/front/img/trac--227-1@1x.png");
+  background-repeat: no-repeat;
+  color: transparent;
+  background-color: transparent;
+  background-position: center;
+  border: none;
+  position: absolute;
+  z-index: 1000;
+  height: 40px;
+  width: 75px;
+  background-size: 50px;
+}
+.slick-prev{
+  margin-left: 46%;
+  top: 100%;
+}
+.slick-next{
+  margin-left: 50%;
+  transform: rotate(180deg); 
 }
 /*fin CSS slick*/
