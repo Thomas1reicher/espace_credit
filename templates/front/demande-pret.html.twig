@@ -1,0 +1,100 @@
+{% extends 'front/base-front.html.twig' %}
+{% block body %}
+    <div class="txt-black" style="width: 100%;float: left;color: var(--nevada);">
+        <div class="div-centre-titre"> 
+           <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+               Demande de prêt
+           </h1>
+        </div>
+        <div class="ligne-yellow"></div>
+        <div>
+            Simulation de prêt
+        </div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Prénom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre prénom"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Nom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom"/></div>
+        <table class="label-form">
+          <tr>
+              <td colspan="2">Votre projet</td>
+          </tr>
+          <tr>
+              <td colspan="2"><select style="width: 100%" class="input-form" placeholder="Rénovation"/>
+                <option></option>
+              </td>
+          </tr>
+          <tr>
+              <td>Montant</td>
+              <td>Durée</td>
+          </tr>
+          <tr>
+              <td><input style="width: auto" class="input-form input-contact" placeholder="Entez un montant"/></td>
+              <td><input style="width: auto" class="input-form input-contact" placeholder="Sélectionnez une durée"/></td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="div-lightgrey">
+        <div class="txt-black" style="color: var(--nevada)">
+            Coordonnées
+        </div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Prénom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre prénom"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Nom</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Société</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom de société"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Email</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre adresse email"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Téléphone</div></div>
+        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre numéro de téléphone"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">informations complémentaires</div></div>
+        <div class="div-input-contact"><input style="height: 120px" class="input-form input-contact" placeholder="Vous pouvez ajouter des précisions si besoin"/></div>
+        <div class="div-input-contact">
+            <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
+                <div style="width: 5%;float: left"><input type="checkbox"></div>
+                <div style="width: 95%;float: left">En soumettant ce formulaire, j'accepte que les informations saisies soient acceptées dans le cadre de ma demande et de la relation commerciale qui 
+                    peut en découler. Les données personnelles collectées sont uniquement destinées à un usage interne chez Espace Crédits, en conformité avec la législation
+                     sur la protection des données. En aucun cas ces données ne seront cédées ou vendues à des tiers.<br>Pour plus d'informations, <a href="" style="font-weight: bold">cliquez-ici</a>.
+                </div>
+                <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
+                    <div class="btn-pret" style="width: 35%;margin: auto">
+                        <a href="" class="link-pret"><p style="padding: 6%" class="demande-pret montserrat-medium-white-14px">ENVOYER MA DEMANDE</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="txt-black div-emprunte-argent">
+            Attention : emprunter de l'argent coûte aussi de l'argent
+        </div>
+    </div>
+
+    <style>
+    .td-contact a:visited{
+            color: black!important;
+        }
+        .td-contact{
+            width: 58%;
+        }
+        .input-title-contact{
+            width: 35%;
+            text-align: left;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+        .input-contact{
+            width: 35%;
+            border-color: var(--black);
+            margin-bottom: 15px;
+            height: 40px;
+        }
+        .div-input-contact{
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        .input-form::placeholder{
+            color: grey;
+        }
+    </style>
+{% endblock %}

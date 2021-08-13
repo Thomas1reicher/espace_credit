@@ -898,10 +898,6 @@
     visibility: visible;
   }
   
-  * {
-    box-sizing: border-box;
-  }
-  
   .accroche {
     align-items: flex-start;
     background-position: -40% 50%;
@@ -1479,7 +1475,6 @@
 /*fin css tooltip page pret-auto*/
 
 .p-contact{
-  color: black;
   font-size: 15px;
 }
 
@@ -1499,6 +1494,15 @@
 .p5{
   list-style-image: url("/assets/front/img/trac--247-10@1x.png");
 }
+
+.td-footer{
+  width: 15.75%;
+}
+
+.td-left-footer{
+  width: 3%;
+}
+
 .div-footer{
   width: 18.75%;
   float: left;
@@ -1508,7 +1512,7 @@
   list-style-type: none;
   font-size: 15px;
 }
-a:visited{
+.td-footer a:visited{
   color: white!important;
 }
 /*fin css footer*/
@@ -1518,6 +1522,8 @@ a:visited{
   padding-right: 50px;
   width: 150px;
 }
+
+
 
 /*fin du CSS commun à toutes les pages*/
 

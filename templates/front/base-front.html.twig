@@ -56,7 +56,7 @@
             <div class="btn-div-h">
                 <div class="btn-pret">
                     <a class="link-pret">
-                        <a href=""><p class="demande-pret montserrat-medium-white-14px">DEMANDER UN PRÊT</p></a>
+                        <a href="{{ path('demandePret') }}"><p class="demande-pret montserrat-medium-white-14px">DEMANDER UN PRÊT</p></a>
                     </a>
                 </div>
             </div>
@@ -134,43 +134,54 @@
             </ul>
         </div>
 
-        <div class="div-footer">
-            <ul class="txt-black" style="color: white!important">
-                <li><a href="{{ path('pretPerso') }}">Prêt perso</a></li>
-                <li><a href="{{ path('pretAuto') }}">Prêt auto</a></li>
-                <li><a href="{{ path('pretMoto') }}">Prêt moto</a></li>
-                <li><a href="{{ path('pretMobi') }}">Prêt mobilité</a></li>
-            </ul>
-        </div>
 
-        <div class="div-footer">
-             <ul class="txt-black" style="color: white!important">
-                <li><a href="{{ path('pretTravaux') }}">Prêt travaux</a></li>
-                <li><a href="{{ path('regroupement') }}">Regroupement</a></li>
-                <li><a href="{{ path('carteCredit') }}">Carte de crédit</a></li>
-                <li><a href="{{ path('entreprise') }}">Entreprise</a></li>
-            </ul>
-        </div>
+        <table class="txt-black p-contact" style="font-weight: 300;width: -webkit-fill-available;color: white">
+            <tr>
+                <td></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('pretPerso') }}">Prêt perso</a></td>
+                <td class="td-left-footer"></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('pretTravaux') }}">Prêt travaux</a></td>
+                <td class="td-left-footer" style="text-align: center"><img src="/assets/front/img/trac--247-10@1x.png"></td>
+                <td class="td-footer">+32 63 677 659</td>
+                <td class="td-left-footer" style="text-align: center"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=espace+credit+aubange+belgique"><img src="/assets/front/img/trac--251-10@1x.png"></a></td>
+                <td class="td-footer"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=espace+credit+aubange+belgique">5, Grand-Rue</a></td>
 
-        <div class="div-footer">
-            <ul class="txt-black" style="color: white!important;font-weight:300">
-                <a href=""><li class="p1">   +32 63 677 659</li></a>
-                <a href=""><li class="p2">   +32 4 74 120 507</li></a>
-                <a href=""><li class="p2">   +352 691 625 137</li></a>
-                <a href=""><li class="p3">   credit@espace-credits.be</li></a>
-            </ul>
-        </div>
+            </tr>
 
-        <div class="div-footer">
-            <ul class="txt-black" style="color: white!important;font-weight:300">
-                <a href="">
-                    <li class="p4">Grand-Rue, 5<br>
-                    B-6791 Athus<br>
-                    BELGIQUE</li>
-                </a>
-                <li class="p5">Lu-Ve: 9h00 - 18h00</li>
-            </ul>
-        </div>
+            <tr>
+                <td class="td-left-footer"></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('pretAuto') }}">Prêt auto</a></td>
+                <td class="td-left-footer"></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('regroupement') }}">Regroupement</a></td>
+                <td class="td-left-footer" style="text-align: center"><img src="/assets/front/img/trac--248-10@1x.png"></td>
+                <td class="td-footer"><a style="color: white" href="tel:+32 4 74 120 507">+32 4 74 120 507</a></td>
+                <td class="td-left-footer"></td>
+                <td class="td-footer"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=espace+credit+aubange+belgique">B-6791 Athus</a></td>
+
+            </tr>
+
+            <tr>
+                <td class="td-left-footer"></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('pretMoto') }}">Prêt moto</a></td>
+                <td class="td-left-footer">
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('carteCredit') }}">Carte de crédit</a></td>
+                <td class="td-left-footer" style="text-align: center"><img src="/assets/front/img/trac--248-10@1x.png"></td>
+                <td class="td-footer"><a style="color: white" href="tel:+352 691 625 137">+352 691 625 137</a></td>
+                <td class="td-left-footer">
+                <td class="td-footer"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=espace+credit+aubange+belgique">BELGIQUE</a></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('pretMobi') }}">Prêt mobilité</a></td>
+                <td class="td-left-footer"></td>
+                <td style="font-weight: bold" class="td-footer"><a href="{{ path('entreprise') }}">Entreprise</a></td>
+                <td class="td-left-footer" style="text-align: center"><img src="/assets/front/img/trac--250-10@1x.png"></td>
+                <td class="td-footer"><a style="color: white" href="mailto:credit@espace-credits.be">credit@espace-credits.be</a></td>
+                <td class="td-left-footer" style="text-align: center"><img src="/assets/front/img/trac--247-10@1x.png"></td>
+                <td class="td-footer">Lu-Ve: 9h00 - 18h00</td>
+            </tr>
+        </table>
         <div style="float:left;width: 100%;text-align: center;padding-bottom: 30px">
             <a target="_blank" href="https://www.facebook.com/espacecreditsathus/"><img style="width: 15px" src="/assets/front/img/trac--35-10@1x.png"></a>
             <span style="color: transparent">espace</span>
