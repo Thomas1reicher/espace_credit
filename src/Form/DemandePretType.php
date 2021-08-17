@@ -15,6 +15,7 @@ class DemandePretType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        /*
         ->add('Type', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
@@ -34,40 +35,42 @@ class DemandePretType extends AbstractType
             ],
             'label' => 'Durée'
         ])
-        ->add('Prenom', TextType::class,[
+        */
+        ->add('prenom', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre prénom',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Prénom'
         ])
-        ->add('Nom', TextType::class,[
+        ->add('nom', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre nom',
                 'class' => 'input-form input-contact'
             ]
         ])
-        ->add('Societe', TextType::class,[
+        ->add('societe', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le nom de votre société',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Société'
+            'label' => 'Société',
+            'mapped' => false
         ])
-        ->add('Email', TextType::class,[
+        ->add('mail', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre adrese email',
                 'class' => 'input-form input-contact'
             ]
         ])
-        ->add('Telephone', TextType::class,[
+        ->add('tel', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de téléphone',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Téléphone'
         ])
-        ->add('Infos', TextType::class,[
+        ->add('info_comp', TextType::class,[
             'attr' => [
                 'placeholder' => 'Vous pouvez ajouter des précisions si besoin',
                 'class' => 'input-form input-contact big-text-area'
@@ -75,7 +78,8 @@ class DemandePretType extends AbstractType
             'label' => 'Informations complémentaires'
         ])
         ->add('RGPD', CheckboxType::class,[
-            'label' => false
+            'label' => false,
+            'mapped' => false
         ])
         ->add('Envoyer', SubmitType::class, [
             'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],

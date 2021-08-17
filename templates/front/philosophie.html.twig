@@ -52,28 +52,18 @@
         </div>
     </div>
 
-    <div style="min-height: 450px;width: 50%;float: left;">
+    <div class="icones-philo" style="min-height: 450px;width: 50%;float: left;">
         <table style="padding-top: 50px;padding-left: 50px">
             <tr>
-                <td><a href="{{ path('pretPerso') }}"><img class="img-philo" src="{{asset('assets/front/img/trac-9.png')}}"></a></td>
-                <td><a href="{{ path('pretAuto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--11-4@1x.png')}}"></a></td>
-                <td><a href="{{ path('pretMoto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></a></td>
-            </tr>
-            <tr>
-                <td><a href="{{ path('pretPerso') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div></a></td>
-                <td><a href="{{ path('pretAuto') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div></a></td>
-                <td><a href="{{ path('pretMoto') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div></a></td>
+                <td><a href="{{ path('pretPerso') }}"><img class="img-philo" style="margin-left: 10px" src="{{asset('assets/front/img/trac--9-13@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div></a></td>
+                <td><a href="{{ path('pretAuto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--11-13@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div></a></td>
+                <td><a href="{{ path('pretMoto') }}"><img class="img-philo" style="width: 170px" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div></a></td>
             </tr>
 
             <tr>
-                <td><a href="{{ path('pretMobi') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></a></td>
-                <td><a href="{{ path('pretTravaux') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--13-10@1x.png')}}"></a></td>
-                <td><a href="{{ path('regroupement') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--15-10@1x.png')}}"></a></td>
-            </tr>
-            <tr>
-                <td><a href="{{ path('pretMobi') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div></a></td>
-                <td><a href="{{ path('pretTravaux') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div></a></td>
-                <td><a href="{{ path('regroupement') }}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div></a></td>
+                <td><a href="{{ path('pretMobi') }}"><img class="img-philo" style="width: 170px" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div></a></td>
+                <td><a href="{{ path('pretTravaux') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--13-11@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div></a></td>
+                <td><a href="{{ path('regroupement') }}"><img class="img-philo" style="margin-left: 10px" src="{{asset('assets/front/img/trac--15-17@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div></a></td>
             </tr>
         </table>
     </div>
@@ -88,7 +78,7 @@
             à monter ou développer votre société, à travers différentes solutions.
         <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;height: auto">
             <div class="btn-pret" style="width: 35%;">
-                <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">EN SAVOIR PLUS</p></a>
+                <a href="{{ path('entreprise') }}" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">EN SAVOIR PLUS</p></a>
             </div>
         </div>
     </div>

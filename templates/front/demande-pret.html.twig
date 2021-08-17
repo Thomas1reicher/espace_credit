@@ -12,15 +12,15 @@
             Simulation de prêt
         </div>
 
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Type)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Type)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type</div></div>
+        <div class="div-input-contact"><select class="input-form input-contact"/></select></div>
         <div style="width: 50%;float: left;padding-right: 5px">
-            <div class="div-input-contact" style="text-align: right"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-left: 33%;">{{form_label(form.Montant)}}</div></div>
-            <div class="div-input-contact" style="text-align: right">{{form_widget(form.Montant)}}</div>
+            <div class="div-input-contact" style="text-align: right"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-left: 33%;">Montant</div></div>
+            <div class="div-input-contact" style="text-align: right"><input class="input-form input-contact" placeholder="14.000"/></div>
         </div>
         <div style="width: 50%;float: left;padding-left: 5px">
-            <div class="div-input-contact" style="text-align: left"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-right: 100%">{{form_label(form.Duree)}}</div></div>
-            <div class="div-input-contact" style="text-align: left">{{form_widget(form.Duree)}}</div>
+            <div class="div-input-contact" style="text-align: left"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-right: 100%">Durée</div></div>
+            <div class="div-input-contact" style="text-align: left"><input class="input-form input-contact" placeholder="60 mois"/></div>
         </div>
 
         <table class="label-form" style="width: 35%;margin: auto;font-size: 15px;">
@@ -53,18 +53,18 @@
         <div class="txt-black div-center-demande-pret" style="color: var(--nevada)">
             Coordonnées
         </div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Prenom)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Prenom)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Nom)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Nom)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Societe)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Societe)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Email)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Email)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Telephone)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Telephone)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Infos)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.Infos)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.prenom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.prenom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.societe)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.societe)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.mail)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.mail)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.tel)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.tel)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.info_comp)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.info_comp)}}</div>
         
         <div class="div-input-contact">
             <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">

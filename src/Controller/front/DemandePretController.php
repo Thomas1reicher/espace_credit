@@ -2,6 +2,7 @@
 
 namespace App\Controller\front;
 
+use App\Entity\Demandecredit;
 use App\Form\DemandePretType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,11 +18,12 @@ class DemandePretController extends AbstractController{
      */
     public function demandePret(Request $request): Response
     {
-        $form = $this->createForm(DemandePretType::class);
+        $demande = new Demandecredit();
+        $form = $this->createForm(DemandePretType::class, $demande);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
-            //$em->persist();
+            $em->persist($demande);
             $em->flush();
             return $this->redirectToRoute('accueil');
         }
