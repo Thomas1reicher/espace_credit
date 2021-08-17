@@ -84,28 +84,6 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
-     */
-    public function contact()
-    {
-        return $this->render('front/contact.html.twig', [
-            'controller_name' => 'HomeController',
-            'title' => 'contact',
-        ]);
-    }
-
-    /**
-     * @Route("/demandePret", name="demandePret")
-     */
-    public function demandePret()
-    {
-        return $this->render('front/demande-pret.html.twig', [
-            'controller_name' => 'HomeController',
-            'title' => 'demandePret',
-        ]);
-    }
-
-    /**
      * @Route("/pretPerso", name="pretPerso")
      */
     public function pretPerso()
