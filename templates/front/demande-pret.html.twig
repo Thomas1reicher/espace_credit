@@ -1,6 +1,7 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
     <div class="txt-black" style="width: 100%;float: left;color: var(--nevada);">
+    {{ form_start(form) }}
         <div class="div-centre-titre"> 
            <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
                Demande de prêt
@@ -10,23 +11,19 @@
         <div class="div-center-demande-pret">
             Simulation de prêt
         </div>
+
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Type)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Type)}}</div>
+        <div style="width: 50%;float: left;padding-right: 5px">
+            <div class="div-input-contact" style="text-align: right"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-left: 33%;">{{form_label(form.Montant)}}</div></div>
+            <div class="div-input-contact" style="text-align: right">{{form_widget(form.Montant)}}</div>
+        </div>
+        <div style="width: 50%;float: left;padding-left: 5px">
+            <div class="div-input-contact" style="text-align: left"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px;padding-right: 100%">{{form_label(form.Duree)}}</div></div>
+            <div class="div-input-contact" style="text-align: left">{{form_widget(form.Duree)}}</div>
+        </div>
+
         <table class="label-form" style="width: 35%;margin: auto;font-size: 15px;">
-          <tr>
-              <td colspan="2">Type de prêt</td>
-          </tr>
-          <tr>
-              <td colspan="2"><select style="width: 100%" class="input-form input-contact" placeholder="Rénovation"/>
-                <option></option>
-              </td>
-          </tr>
-          <tr>
-              <td>Montant</td>
-              <td>Durée</td>
-          </tr>
-          <tr>
-              <td><input style="width: 97%" class="input-form input-contact" placeholder="Entez un montant"/></td>
-              <td><input style="width: 97%" class="input-form input-contact" placeholder="Sélectionnez une durée"/></td>
-          </tr>
           <tr>
               <td>Mensualité</td>
           </tr>
@@ -42,11 +39,12 @@
               <td><span class="txt-low-weight-black" style="font-size: 15px">Durée : </span>60 mois</td>
           </tr>
         </table>
+
         <div class="txt-low-weight-black" style="margin: auto;width: 35%;padding-top: 30px;padding-bottom: 30px">
             La simulation réalisée avec l'outil n'est pas considérée comme une offre et/ou 
             une acceptation du crédit.
         </div>
-        <div style="margin: auto;width: 35%;padding-top: 30px;padding-bottom: 30px;font-size: 13px;font-weight: 300">
+        <div class="typo" style="margin: auto;width: 35%;padding-bottom: 30px;font-weight: 300">
             *Taux préférentiel sous réserve d'acceptation du dossier par la société de crédit.
         </div>
     </div>
@@ -55,38 +53,48 @@
         <div class="txt-black div-center-demande-pret" style="color: var(--nevada)">
             Coordonnées
         </div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Prénom</div></div>
-        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre prénom"/></div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Nom</div></div>
-        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom"/></div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Société</div></div>
-        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre nom de société"/></div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Email</div></div>
-        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre adresse email"/></div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Téléphone</div></div>
-        <div class="div-input-contact"><input class="input-form input-contact" placeholder="Entrez votre numéro de téléphone"/></div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">informations complémentaires</div></div>
-        <div class="div-input-contact"><input style="height: 120px" class="input-form input-contact" placeholder="Vous pouvez ajouter des précisions si besoin"/></div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Prenom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Prenom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Nom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Nom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Societe)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Societe)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Email)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Email)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Telephone)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Telephone)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.Infos)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.Infos)}}</div>
+        
         <div class="div-input-contact">
             <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
-                <div style="width: 5%;float: left"><input type="checkbox"></div>
+                <div style="width: 5%;float: left">{{form_widget(form.RGPD)}}</div>
                 <div style="width: 80%;float: left;line-height: 1.4">En soumettant ce formulaire, j'accepte que les informations saisies soient acceptées dans le cadre de ma demande et de la relation commerciale qui 
                     peut en découler. Les données personnelles collectées sont uniquement destinées à un usage interne chez Espace Crédits, en conformité avec la législation
                      sur la protection des données. En aucun cas ces données ne seront cédées ou vendues à des tiers.<br>Pour plus d'informations, <a href="" style="font-weight: bold">cliquez-ici</a>.
                 </div>
                 <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
-                    <div class="btn-pret" style="width: 35%;margin: auto">
-                        <a href="" class="link-pret"><p style="padding: 6%" class="demande-pret montserrat-medium-white-14px">ENVOYER MA DEMANDE</p></a>
+                    <div class="btn-pret" style="width: 45%;margin: auto">
+                        <a href="" class="link-pret" style="padding: 6%">{{form_widget(form.Envoyer)}}</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="txt-black div-emprunte-argent">
-            Attention : emprunter de l'argent coûte aussi de l'argent
-        </div>
+    {{ form_end(form) }}
     </div>
 
+    <div class="txt-black div-emprunte-argent">
+                Attention : emprunter de l'argent coûte aussi de l'argent
+    </div>
+        
     <style>
+        #demande_pret_Envoyer{
+            border: none;
+            background-color: orange;
+        }
+        .big-text-area{
+            height: 120px!important;
+        }
         .td-contact{
             width: 58%;
         }

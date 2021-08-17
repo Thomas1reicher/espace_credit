@@ -130,7 +130,7 @@
             </div>
         </div>
     </div>
-    <div style="text-align: right;font-size: 13px;color: var(--nevada);padding-right: 30px;padding-bottom: 20px;padding-top: 100px">
+    <div class="typo" style="text-align: right;color: var(--nevada);padding-right: 30px;padding-bottom: 20px;padding-top: 80px">
         Taux préférenciel, sous réserve d'acceptation du dossier par la société de crédit.
     </div>
 </div>
@@ -207,4 +207,36 @@
     Attention : emprunter de l'argent coûte aussi de l'argent
 </div>
 
+<style>
+    .slide{
+        margin-left: 20px;
+    }
+    .slick-list{
+        width: 70%;
+        margin: auto;
+        padding-bottom: 50px;
+        overflow: inherit;
+    }
+    .slick-arrow{
+        background-image: url("assets/front/img/trac--227-1@1x.png");
+        background-repeat: no-repeat;
+        color: transparent;
+        background-color: transparent;
+        background-position: center;
+        border: none;
+        position: absolute;
+        z-index: 1000;
+        height: 40px;
+        width: 75px;
+        background-size: 50px;
+    }
+    .slick-prev{
+        margin-left: 46%;
+        top: 100%;
+    }
+    .slick-next{
+        margin-left: 50%;
+        transform: rotate(180deg); 
+    }
+</style>
 {% endblock %}
