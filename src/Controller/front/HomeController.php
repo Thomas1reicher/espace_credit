@@ -10,11 +10,24 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Component\Request;
+use App\Entity\Credit;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Doctrine\ORM\EntityManagerInterface;
 //require("wsbaseany_pat2.php");
 
 class HomeController extends AbstractController
 {
+
+
+
+
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+      
+        
+
+    }
     /**
      * Page d'accueil
      *
@@ -96,10 +109,16 @@ class HomeController extends AbstractController
      * @Route("/pretPerso", name="pretPerso")
      */
     public function pretPerso()
-    {
+    {   
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
+    
+
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -108,9 +127,13 @@ class HomeController extends AbstractController
      */
     public function pretAuto()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT AUTO']);
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -119,9 +142,13 @@ class HomeController extends AbstractController
      */
     public function pretMoto()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT MOTO']);
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -130,9 +157,13 @@ class HomeController extends AbstractController
      */
     public function pretMobi()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -141,9 +172,13 @@ class HomeController extends AbstractController
      */
     public function pretTravaux()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT TRAVAUX']);
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -155,6 +190,7 @@ class HomeController extends AbstractController
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            
         ]);
     }
 

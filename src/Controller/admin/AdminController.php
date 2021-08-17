@@ -6,6 +6,8 @@ namespace App\Controller\admin;
 
 use App\Entity\User;
 use App\Entity\Credit;
+use App\Entity\Page;
+use App\Entity\Info;
 use App\Form\AdminForm\ObjectAddType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -195,6 +197,16 @@ class AdminController extends AbstractController
             $repository = $orm->getRepository(Taux::class);
             $class = new Taux();
             $class_v=Taux::class;
+        }
+        else if($name=="page"){
+            $repository = $orm->getRepository(Page::class);
+            $class = new Page();
+            $class_v=Page::class;
+        }
+        else if($name=="info"){
+            $repository = $orm->getRepository(Info::class);
+            $class = new Info();
+            $class_v=Info::class;
         }
 
 

@@ -23,11 +23,15 @@ class Credit
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
+       /**
+     * @ORM\Column(type="string", length=255,nullable=true)
+     */
+    private $img;
 
     /**
-     * @ORM\OneToMany(targetEntity=Test::class, mappedBy="test")
+     * @ORM\OneToMany(targetEntity=Taux::class, mappedBy="credit")
      */
-    private $tests;
+    private $taux;
 
     public function __construct()
     {
@@ -50,10 +54,23 @@ class Credit
 
         return $this;
     }
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): self
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
     public function vars() :array
     {
         $tbl = [];
         $tbl[0]="nom";
+        $tbl[1]="img";
         return $tbl;
 
 
@@ -63,6 +80,7 @@ class Credit
         $tbl = [];
 
         $tbl[0]="String";
+        $tbl[1]="file";
 
         return $tbl;
 
@@ -72,6 +90,7 @@ class Credit
     {
         $tbl = [];
         $tbl[0]=$this->getNom();
+        $tbl[1]=$this->getImg();
         return $tbl;
 
 
@@ -87,27 +106,27 @@ class Credit
     /**
      * @return Collection|Test[]
      */
-    public function getTests(): Collection
+    public function getTaux(): Collection
     {
-        return $this->tests;
+        return $this->taux;
     }
 
-    public function addTest(Test $test): self
+    public function addTest(Taux $taux): self
     {
-        if (!$this->tests->contains($test)) {
-            $this->tests[] = $test;
-            $test->setTest($this);
+        if (!$this->taux->contains($taux)) {
+            $this->taux[] = $taux;
+            $taux->setTaux($this);
         }
 
         return $this;
     }
 
-    public function removeTest(Test $test): self
+    public function removeTaux(Taux $taux): self
     {
-        if ($this->tests->removeElement($test)) {
+        if ($this->tests->removeElement($taux)) {
             // set the owning side to null (unless already changed)
-            if ($test->getTest() === $this) {
-                $test->setTest(null);
+            if ($taux->getTaux() === $this) {
+                $taux->setTaux(null);
             }
         }
 

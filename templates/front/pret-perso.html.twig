@@ -2,7 +2,9 @@
 {% block body %}
 <div class="left-form">
     <div class="titre-taux-black" style="min-height: auto">Prêt personnel</div>
-    <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">5,95%*</span></div><br><br>
+    {% for taux in pret.taux %}
+    <div class="txt-black" style="color: orange">{{taux.nom}} TAEG à partir de <span class="big-number-orange">{{taux.taux}}%*</span></div><br><br>
+    {% endfor %}
     <div class="txt-black">Un besoin d'argent immédiat ?</div><br>
     <div class="txt-black txt-low-weight-black">
         Le prêt personnel permet de faire face à des imprévus ou de financer vos projets.<br><br>

@@ -24,13 +24,13 @@ class Taux
     private $taux;
         /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     *  @Assert\NotBlank(allowNull = true)
+     *  
      */
     private $nom;
 
         /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(allowNull = true)
+     * 
      */
     private $nom_projet;
 
@@ -49,7 +49,7 @@ class Taux
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    public function setNom(?string $nom): self
     {
         $this->nom = $nom;
 
@@ -71,7 +71,7 @@ class Taux
         return $this->nom_projet;
     }
 
-    public function setNomProjet(string $nom_projet): self
+    public function setNomProjet(?string $nom_projet): self
     {
         $this->nom_projet = $nom_projet;
 
