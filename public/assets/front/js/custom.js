@@ -4,6 +4,7 @@ jQuery(function ($) {
        recalculate(); 
        montant=parseInt($(this).val());
        $(".montant-info").text(montant+"€");
+
     });
     $(".duree-form").change(function() {
         recalculate(); 

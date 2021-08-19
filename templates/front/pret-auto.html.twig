@@ -39,7 +39,14 @@
           </tr>
           <tr>
               <td><select style="width: 100%" class="txt-low-weight-white input-form select-credit" placeholder="Rénovation"/>
+                 {% set first = true %}
+                {% set objFirst = "" %}
                 {% for taux in pret.taux %}
+                {% if first %}
+                  {% set objFirst = taux %}
+                  {% set first = false %}
+
+              {% endif %}
                 <option value="{{taux.taux}}">{{taux.nom}}</option>
                 {% endfor %}
               </td>
