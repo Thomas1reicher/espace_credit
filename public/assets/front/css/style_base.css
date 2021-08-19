@@ -1286,7 +1286,6 @@
     margin-bottom: -1px;
     margin-top: 31px;
     min-height: 15px;
-    white-space: nowrap;
     width: 462px;
   }
   
@@ -1526,7 +1525,7 @@
   font-size: 13px;
 }
 
-.div-slide-butto-align{/*utilisé dans les pages home et crédits*/
+.div-slide-button-align{/*utilisé dans les pages home et crédits*/
   min-height: 190px;
 }
 
@@ -1548,4 +1547,57 @@
 
 .btn-pret:hover{
   background-color: #fd5912;
+}
+
+
+/*CSS RESPONSIVE*/
+
+@media(max-width: 930px){
+  .gray-div{
+    display: none!important;
+  }
+  .slider-header{
+    display: block!important;
+  }
+}
+
+
+@media(max-width: 768px){
+  /*footer*/
+  .td-desk{
+      display: none;
+  }
+  .txt-footer{
+      display: none;
+  }
+  .img-footer{
+      width: 300px;
+      margin: auto;
+      text-align: center;
+  }
+  footer .div-footer{
+      width: 100%!important;
+  }
+  .div-footer ul {
+    padding: 0;
+  }
+  .td-footer{
+    padding-left: 5%;
+  }
+  .td-left-footer{
+    padding-left: 5%;
+  }
+}
+
+@media(max-width: 1385px){
+  /*header*/
+  .btn-div-h{
+    width: 65%!important;
+  }
+  .btn-tel{
+    width: 100%!important;
+  }
+  .btn-header{
+    padding-top: 1%!important;
+  }
 }

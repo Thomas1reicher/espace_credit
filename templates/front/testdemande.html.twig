@@ -1,0 +1,172 @@
+{% extends 'front/base-front.html.twig' %}
+{% block body %}
+    <div class="div-lightgrey">
+        <div class="txt-black div-center-demande-pret" style="color: var(--nevada)">
+            Formulaire de demande
+        </div>
+    {{ form_start(form) }}
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.prenom)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.prenom)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_naissance)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_naissance)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.ville_naissance)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.ville_naissance)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pays_naissance)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pays_naissance)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.habitation)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.habitation)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_rue)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom_rue)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.numero_rue)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.numero_rue)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.boite)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.boite)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.code_postal)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.code_postal)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.ville_residence)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.ville_residence)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pays_residence)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pays_residence)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_adresse)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_adresse)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.tel)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.tel)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.telephone_mobile)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.telephone_mobile)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.mail)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.mail)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.numero_compte)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.numero_compte)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_compte)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_compte)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_emploi)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_emploi)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.emploi)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.emploi)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.secteur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.secteur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.temps_contrat)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.temps_contrat)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_contrat)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_contrat)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_contrat)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_contrat)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.adresse_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.adresse_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.tel_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.tel_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.code_postal_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.code_postal_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.ville_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.ville_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pays_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pays_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.salaire)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.salaire)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pension_alimentaire)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pension_alimentaire)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.invalidite)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.invalidite)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.allocation)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.allocation)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pension)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pension)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.mutuelle)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.mutuelle)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.chomage)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.chomage)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.handicap)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.handicap)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.revenu_locatif)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.revenu_locatif)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.cheque_repas)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.cheque_repas)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.voiture_societe)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.voiture_societe)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.autres_revenus)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.autres_revenus)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.description_autres_revenus)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.description_autres_revenus)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.loyer)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.loyer)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pension_alimentaire_payer)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.pension_alimentaire_payer)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.autres_charges)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.autres_charges)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.description_autres_charges)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.description_autres_charges)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nombre_enfants)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nombre_enfants)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nombre_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nombre_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.organisme_preteur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.organisme_preteur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.montant_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.duree_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.taux_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.taux_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_echeance)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.montant_echeance)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.debut_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.debut_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.remboursement_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.remboursement_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.solde_credit)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.solde_credit)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_bien)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_bien)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.valeur_venale)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.valeur_venale)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat_hypo)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.montant_achat_hypo)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit_hypo)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.duree_credit_hypo)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_echeance_hypo)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_echeance_hypo)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_debut_credit_hypo)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.date_debut_credit_hypo)}}</div>
+        
+        <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
+            <div class="btn-pret" style="width: 45%;margin: auto">
+                <a href="" class="link-pret" style="padding: 6%">{{form_widget(form.Envoyer)}}</a>
+            </div>
+        </div>
+    {{ form_end(form) }}
+    </div>
+    <style>
+        .big-text-area{
+            height: 120px!important;
+        }
+        .input-title-contact{
+            width: 35%;
+            text-align: left;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+        .input-contact{
+            width: 35%;
+            border-color: var(--black);
+            margin-bottom: 15px;
+            height: 40px;
+        }
+        .div-input-contact{
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+        .input-form::placeholder{
+            color: grey;
+        }
+        .form-inline{
+            margin: auto;
+        }
+    </style>
+{% endblock %}
