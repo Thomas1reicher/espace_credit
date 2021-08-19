@@ -33,6 +33,12 @@ class Demandecredit
      */
     private $mail;
 
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $societe;
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -44,47 +50,47 @@ class Demandecredit
     private $info_comp;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $token;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $secu_social;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $num_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 ,nullable=true)
      */
     private $nationalite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $echeance_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      */
     private $file_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      */
     private $date_naissance;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255,nullable=true)
      */
     private $pays_naissance;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 ,nullable=true)
      */
     private $annee_belgique;
 
@@ -127,6 +133,17 @@ class Demandecredit
     public function setMail(string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+    public function getSociete(): ?string
+    {
+        return $this->mail;
+    }
+
+    public function setSociete(string $societe): self
+    {
+        $this->societe = $societe;
 
         return $this;
     }
@@ -267,20 +284,12 @@ class Demandecredit
         $tbl = [];
         $tbl[0]="prenom";
         $tbl[1]="nom";
-        $tbl[2]="société";
-        $tbl[3]="mail";
-        $tbl[4]="société";
-        $tbl[5]="tel";
-        $tbl[6]="info_comp";
-        $tbl[7]="token";
-        $tbl[8]="secu_social";
-        $tbl[9]="num_carte_identite";
-        $tbl[10]="nationalite";
-        $tbl[11]="echeance_carte_identite";
-        $tbl[12]="file_carte_identite";
-        $tbl[13]="date_naissance";
-        $tbl[14]="pays_naissance";
-        $tbl[15]="annee_belgique";
+        $tbl[2]="mail";
+        $tbl[3]="societe";
+        $tbl[4]="tel";
+        $tbl[5]="info_comp";
+        $tbl[6]="token";
+
         return $tbl;
 
 
@@ -290,20 +299,12 @@ class Demandecredit
         $tbl = [];
         $tbl[0]="prenom";
         $tbl[1]="nom";
-        $tbl[2]="société";
-        $tbl[3]="mail";
-        $tbl[4]="société";
-        $tbl[5]="tel";
-        $tbl[6]="info_comp";
-        $tbl[7]="token";
-        $tbl[8]="secu_social";
-        $tbl[9]="num_carte_identite";
-        $tbl[10]="nationalite";
-        $tbl[11]="echeance_carte_identite";
-        $tbl[12]="file_carte_identite";
-        $tbl[13]="date_naissance";
-        $tbl[14]="pays_naissance";
-        $tbl[15]="annee_belgique";
+        $tbl[2]="mail";
+        $tbl[3]="societe";
+        $tbl[4]="tel";
+        $tbl[5]="info_comp";
+        $tbl[6]="token";
+
         return $tbl;
 
 
@@ -311,10 +312,15 @@ class Demandecredit
     public function val() :array
     {
        $tbl = [];
-        /* $tbl[0]=$this->getEmail();
-        $tbl[1]=$this->getFullName();
-        $tbl[2]=$this->getPassword();
-        $tbl[3]=$this->getUsername();*/
+        $tbl[0]=$this->getPrenom();
+        $tbl[1]=$this->getNom();
+        $tbl[2]=$this->getMail();
+        $tbl[3]=$this->getSociete();
+        $tbl[4]=$this->getTel();
+        $tbl[5]=$this->getInfoComp();
+        $tbl[6]=$this->getToken();
+
+        
         return $tbl;
 
 

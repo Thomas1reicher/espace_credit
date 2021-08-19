@@ -38,11 +38,14 @@
               </td>
           </tr>
           <tr>
-              <td><select style="width: 100%" class="input-form" placeholder="Rénovation"/>
-                <option></option>
+              <td><select style="width: 100%" class="input-form select-credit" placeholder="Rénovation"/>
+                {% for taux in pret.taux %}
+                <option value="{{taux.taux}}">{{taux.nom}}</option>
+                {% endfor %}
               </td>
-              <td><select style="width: 100%" class="input-form" placeholder="Rénovation"/>
-                <option></option>
+              <td><select style="width: 100%" class="input-form select-taux" placeholder="Rénovation"/>
+                <option>Taux normal</option>
+                <option>Taux ballon</option>
               </td>
           </tr>
           <tr>

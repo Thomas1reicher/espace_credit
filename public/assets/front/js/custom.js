@@ -1,4 +1,43 @@
 jQuery(function ($) {
+
+    $(".montant-form").change(function() {
+       recalculate(); 
+       montant=parseInt($(this).val());
+       $(".montant-info").text(montant+"€");
+    });
+    $(".duree-form").change(function() {
+        recalculate(); 
+        duree=parseInt($(this).val());
+        $(".duree-info").text(duree+" mois");
+     });
+     $(".select-credit").change(function() {
+        taeg=parseFloat($(".select-credit option:selected").val());
+        $(".taux-info").attr("data",taeg);
+        $(".taux-info").text(taeg+"%*");
+        recalculate(); 
+        
+     });
+    function recalculate(){
+        montant =parseInt($(".montant-form").val());
+        taeg = parseFloat($(".taux-info").attr("data"));
+        taeg = taeg/100;
+        duree=parseInt($(".duree-form").val());
+        v1=(Math.pow(( 1+taeg ) ,( 1/12 )) - 1 );
+        v2=( 1 - Math.pow(( 1 / ( 1+ taeg ) ) , ( duree / 12 )));
+        constante3 = ( montant  * v1 / v2 );
+        constante3_b = Math.floor(constante3);
+        constante3_l = (constante3*100)-(constante3_b*100);
+        elmt=$(".litle-num-orange");
+        $(".big-num-orange").text(constante3_b);
+        $(".big-num-orange").append(elmt);
+        $(".big-num-orange").append("€");
+        $(".litle-num-orange").text(','+Math.floor(constante3_l));
+        interet=constante3*(1+taeg);
+        $(".interet-info").text(interet.toFixed(2)+"€");
+
+        
+
+    };
     $(".div-bande-header").hover(function() {
         $(this).find(".titre-bande-header").css('color', 'orange');
         if($(this).find(".img-h").attr("src") == "/assets/front/img/trac--9-13@1x.png"){
@@ -110,5 +149,8 @@ jQuery(function ($) {
     });
 
 
+
 });
+
+
 
