@@ -71,7 +71,7 @@ class HomeController extends AbstractController
             $fin = $fin +1;
             }
         }*/
-
+        
         return $this->render('front/home.html.twig', [
             'title' => 'home',
             'objets' => $objets,

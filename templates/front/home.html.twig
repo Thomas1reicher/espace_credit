@@ -41,9 +41,10 @@
               {% if first %}
                   {% set objFirst = objet %}
                   {% set first = false %}
-                                  <option class="txt-low-weight-white" value="{{objet.taux}}">{% if objet.nom != "" %}({{objet.nom}}){% endif %}{{objet.credit.nom}}</option>
 
               {% endif %}
+                                                <option class="txt-low-weight-white" value="{{objet.taux}}">{% if objet.nom != "" %}({{objet.nom}}){% endif %}{{objet.credit.nom}}</option>
+
                 {% endfor %}
               </td>
           </tr>

@@ -26,8 +26,10 @@
               <td colspan="2">Votre projet</td>
           </tr>
           <tr>
-              <td colspan="2"><select style="width: 100%" class="input-form" placeholder="Rénovation"/>
-                <option></option>
+              <td colspan="2"><select style="width: 100%" class="select-credit input-form" placeholder="Rénovation"/>
+                {% for taux in pret.taux %}
+                    <option value="{{taux.taux}}">{{taux.nom}}</option>
+                {% endfor %}
               </td>
           </tr>
           <tr>
@@ -35,18 +37,18 @@
               <td>Durée</td>
           </tr>
           <tr>
-              <td><input style="width: auto" class="input-form" placeholder="Entez un montant"/></td>
-              <td><input style="width: auto" class="input-form" placeholder="Sélectionnez une durée"/></td>
+              <td><input style="width: auto" class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></td>
+              <td><input style="width: auto" class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60" /></td>
           </tr>
         </table>
 
         <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
-        <div class="txt-black big-number-orange">526<span style="font-size: 25px">,23</span>€</div>
+        <div class="txt-black big-number-orange big-num-orange">526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
         <div style="line-height: 1.5;">
-            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right">14.000€</span></div>
-            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right">2.330€</span></div>
-            <div class="txt-black txt-low-weight-white">TAEG: <span class="numbers-right">5,95%*</span></div>
-            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right">60 mois</span></div>
+            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right montant-info">14.000€</span></div>
+            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right interet-info">2.330€</span></div>
+            <div class="txt-black txt-low-weight-white">TAEG: <span class="numbers-right taux-info">5,95%*</span></div>
+            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
         </div>
         <div class="div-btn-cred" style="margin-bottom: 40px;margin-top: 40px">
             <div class="btn-pret">
