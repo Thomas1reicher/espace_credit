@@ -19,6 +19,7 @@ use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityManagerInterface;
@@ -50,43 +51,99 @@ class ObjectAddType extends AbstractType
         for($i=0;$i<count($var);$i++){
             switch ($var[$i]) {
               case 'string':
-                    $builder->add($namevar[$i],TextType::class);
+                    $builder->add($namevar[$i],TextType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'textarea':
-                    $builder->add($namevar[$i],TextareaType::class);
+                    $builder->add($namevar[$i],TextareaType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'String':
-                        $builder->add($namevar[$i],TextType::class);
+                        $builder->add($namevar[$i],TextType::class,[
+
+                            'required' => false,
+    
+                        ]);
                  break;
                 case 'int' :
-                    $builder->add($namevar[$i],IntegerType::class);
+                    $builder->add($namevar[$i],IntegerType::class,[
+
+                        'required' => false,
+
+                    ]);
+                    break;
+                case 'file' :
+                        $builder->add($namevar[$i],FileType::class, [
+                            'mapped' => false,
+
+                            'required' => false,
+ 
+                        ]);
                     break;
                 case 'num':
-                    $builder->add($namevar[$i],NumberType::class);
+                    $builder->add($namevar[$i],NumberType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case "email":
-                    $builder->add("$namevar[$i]",EmailType::class);
+                    $builder->add("$namevar[$i]",EmailType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'password':
-                    $builder->add($namevar[$i],PasswordType::class);
+                    $builder->add($namevar[$i],PasswordType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'tel':
-                    $builder->add($namevar[$i],TelType::class);
+                    $builder->add($namevar[$i],TelType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'date':
-                    $builder->add($namevar[$i],DateType::class);
+                    $builder->add($namevar[$i],DateType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'datetime':
-                    $builder->add($namevar[$i],DateTimeType::class);
+                    $builder->add($namevar[$i],DateTimeType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'choice':
                    /* $builder->add($var[$i],*/
                     break;
                 case 'float':
-                     $builder->add($namevar[$i],NumberType::class);
+                     $builder->add($namevar[$i],NumberType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 case 'range':
-                    $builder->add($namevar[$i],RangeType::class);
+                    $builder->add($namevar[$i],RangeType::class,[
+
+                        'required' => false,
+
+                    ]);
                     break;
                 default :
                     $categorieCms = $this->repository->findAll();

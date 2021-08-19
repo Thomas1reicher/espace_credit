@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Contact;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -15,45 +16,43 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Objet', TextType::class,[
+            ->add('objet', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Objet de votre demande',
                     'class' => 'input-form input-contact'
                 ]
             ])
-            ->add('Prenom', TextType::class,[
+            ->add('prenom', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Entrez votre prénom',
                     'class' => 'input-form input-contact'
                 ]
             ])
-            ->add('Nom', TextType::class,[
+            ->add('nom', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Entrez votre nom',
                     'class' => 'input-form input-contact'
                 ]
             ])
-            ->add('Email', TextType::class,[
+            ->add('email', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Entrez votre adresse email',
                     'class' => 'input-form input-contact'
                 ]
             ])
-            ->add('Telephone', TextType::class,[
+            ->add('telephone', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Entrez votre numéro de téléphone',
                     'class' => 'input-form input-contact'
                 ]
             ])
-            ->add('Message', TextType::class,[
+            ->add('message', TextType::class,[
                 'attr' => [
                     'placeholder' => 'Que pouvons nous faire pour vous',
                     'class' => 'input-form input-contact big-text-area'
                 ]
             ])
-            ->add('RGPD', CheckboxType::class,[
-                    'label' => false
-            ])
+   
             ->add('Envoyer', SubmitType::class, [
                 'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],
                 'label' => 'ENVOYER'
@@ -63,7 +62,7 @@ class ContactType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => Contact::class,
         ]);
     }
 }

@@ -33,7 +33,11 @@
                        {% for key3, val  in vals %}
                             
                         {% if val|length == 0 %}
+                            {% if val.nom is defined %}
                             <td >{{ val.nom }}</td>
+                             {% else %}
+                            <td >{{ val }}</td>
+                             {% endif %}
                           {% else %}
                        <td >{{ val }}</td>
                             {% endif %}

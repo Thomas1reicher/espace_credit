@@ -6,12 +6,16 @@ namespace App\Controller\admin;
 
 use App\Entity\User;
 use App\Entity\Credit;
+use App\Entity\Page;
+use App\Entity\Info;
 use App\Form\AdminForm\ObjectAddType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\BddCms;
+use App\Entity\Contact;
+use App\Entity\Demandecredit;
 use App\Entity\Taux;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
@@ -195,6 +199,26 @@ class AdminController extends AbstractController
             $repository = $orm->getRepository(Taux::class);
             $class = new Taux();
             $class_v=Taux::class;
+        }
+        else if($name=="page"){
+            $repository = $orm->getRepository(Page::class);
+            $class = new Page();
+            $class_v=Page::class;
+        }
+        else if($name=="info"){
+            $repository = $orm->getRepository(Info::class);
+            $class = new Info();
+            $class_v=Info::class;
+        }
+        else if($name=="contact"){
+            $repository = $orm->getRepository(Contact::class);
+            $class = new Contact();
+            $class_v=Contact::class;
+        }
+        else if($name=="demandecredit"){
+            $repository = $orm->getRepository(Demandecredit::class);
+            $class = new Demandecredit();
+            $class_v=Demandecredit::class;
         }
 
 

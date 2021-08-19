@@ -54,4 +54,39 @@ class Info
 
         return $this;
     }
+    public function vars() :array
+    {
+        $tbl = [];
+        $tbl[0]="info_label";
+        $tbl[1]="info_string";
+        return $tbl;
+
+
+    }
+    public function typeVars() :array
+    {
+        $tbl = [];
+        $tbl[0]="String";
+        $tbl[1]="String";
+        return $tbl;
+
+
+    }
+    public function val() :array
+    {
+        $tbl = [];
+        $tbl[0]=$this->getInfoLabel();
+        $tbl[1]=$this->getInfoString();
+        return $tbl;
+
+
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+
+        $tbl="";
+        return $tbl;
+    }
 }

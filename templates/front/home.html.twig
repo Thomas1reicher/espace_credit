@@ -44,8 +44,18 @@
               <td colspan="2">Types de prêt</td>
           </tr>
           <tr>
-              <td colspan="2"><select style="width: 100%" class="input-form"/>
-                <option></option>
+              <td colspan="2"><select style="width: 100%" class="input-form select-credit txt-low-weight-white" placeholder="Rénovation"/>
+              {% set first = true %}
+              {% set objFirst = "" %}
+              {% for i , objet in objets %}
+              {% if first %}
+                  {% set objFirst = objet %}
+                  {% set first = false %}
+
+              {% endif %}
+                                                <option class="txt-low-weight-white" value="{{objet.taux}}">{% if objet.nom != "" %}({{objet.nom}}){% endif %}{{objet.credit.nom}}</option>
+
+                {% endfor %}
               </td>
           </tr>
           <tr>
@@ -53,19 +63,19 @@
               <td>Durée</td>
           </tr>
           <tr>
-              <td><input style="width: auto" class="input-form" placeholder="Entez un montant"/></td>
-              <td><input style="width: auto" class="input-form" placeholder="Sélectionnez une durée"/></td>
+              <td><input style="width: auto" class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></td>
+              <td><input style="width: auto" class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></td>
           </tr>
         </table>
         -->
 
-        <div class="label-form  montserrat-medium-white-14px" style="width: 100%;float: left;margin-top: 20px;margin-bottom: 0">Mensualités</div>
-        <div class="txt-black big-number-orange" style="float: left;width: 100%;">526<span style="font-size: 25px">,23</span>€</div>
+        <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
+        <div class="txt-black big-number-orange big-num-orange">526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
         <div style="line-height: 1.5;">
-            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right">14.000€</span></div>
-            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right">2.330€</span></div>
-            <div class="txt-black txt-low-weight-white">TAEG: <span class="numbers-right">5,95%*</span></div>
-            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right">60 mois</span></div>
+            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right montant-form montant-info">14.000€</span></div>
+            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right interet-info">2.330€</span></div>
+            <div class="txt-black txt-low-weight-white">TAEG: <span data="{{objFirst.taux}}" class="numbers-right taux-info">5,95%*</span></div>
+            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
         </div>
         <div class="div-btn-cred" style="margin-bottom: 40px;margin-top: 40px">
             <div class="btn-pret">

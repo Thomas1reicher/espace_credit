@@ -89,4 +89,46 @@ class Page
 
         return $this;
     }
+
+    public function vars() :array
+    {
+        $tbl = [];
+        $tbl[0]="titre";
+        $tbl[1]="sous_titre";
+        $tbl[2]="description";
+        $tbl[3]="alias";
+        return $tbl;
+
+
+    }
+    public function typeVars() :array
+    {
+        $tbl = [];
+        $tbl[0]="String";
+        $tbl[1]="String";
+        $tbl[2]="textarea";
+        $tbl[3]="String";
+        return $tbl;
+
+
+    }
+    public function val() :array
+    {
+        $tbl = [];
+        $tbl[0]=$this->getTitre();
+        $tbl[1]=$this->getSousTitre();
+        $tbl[2]=$this->getDescription();
+        $tbl[3]=$this->getAlias();
+        return $tbl;
+
+
+    }
+
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+
+        $tbl="";
+        return $tbl;
+    }
 }

@@ -10,11 +10,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Component\Request;
+use App\Entity\Credit;
+use App\Entity\Taux;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Doctrine\ORM\EntityManagerInterface;
 //require("wsbaseany_pat2.php");
 
 class HomeController extends AbstractController
 {
+
+
+
+
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+      
+        
+
+    }
     /**
      * Page d'accueil
      *
@@ -43,8 +57,25 @@ class HomeController extends AbstractController
         $context = stream_context_create($aHTTP);
         $client=new SoapClient("http://grids.anysoft.lu/interclip/interclip.asmx",array('trace' => 1,"stream_context" => $context));
         dd($client);*/
+
+     
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Taux::class);
+        $objets = $repo->findAll();
+        $tbl = [];
+        $fin = 0;
+        /*for($i=0;$i<count($objets);$i++){
+            $objet =$objets[$i]->getTaux()[0];
+            if($objet != null){
+            $tbl[$i] = $objet->getTaux();
+            $fin = $fin +1;
+            }
+        }*/
+        
         return $this->render('front/home.html.twig', [
             'title' => 'home',
+            'objets' => $objets,
+         
         ]);
     }
 
@@ -74,10 +105,16 @@ class HomeController extends AbstractController
      * @Route("/pretPerso", name="pretPerso")
      */
     public function pretPerso()
-    {
+    {   
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
+    
+
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -86,9 +123,13 @@ class HomeController extends AbstractController
      */
     public function pretAuto()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT AUTO']);
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -97,9 +138,13 @@ class HomeController extends AbstractController
      */
     public function pretMoto()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT MOTO']);
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -108,9 +153,13 @@ class HomeController extends AbstractController
      */
     public function pretMobi()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -119,9 +168,13 @@ class HomeController extends AbstractController
      */
     public function pretTravaux()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT TRAVAUX']);
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'pret' => $obj
         ]);
     }
 
@@ -133,6 +186,7 @@ class HomeController extends AbstractController
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            
         ]);
     }
 
