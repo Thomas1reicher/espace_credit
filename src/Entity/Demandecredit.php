@@ -23,29 +23,34 @@ class Demandecredit
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
+     */
+    private $titre;
+
+    /**
+     * @ORM\Column(type="string", length=50)
      */
     private $prenom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $nom;
 
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=100)
      */
     private $mail;
 
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $societe;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $tel;
 
@@ -60,17 +65,17 @@ class Demandecredit
     private $token;
 
     /**
-     * @ORM\Column(type="string", length=255 , nullable=true)
+     * @ORM\Column(type="string", length=50 , nullable=true)
      */
     private $secu_social;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $num_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=255 ,nullable=true)
+     * @ORM\Column(type="string", length=20 ,nullable=true)
      */
     private $nationalite;
 
@@ -85,197 +90,227 @@ class Demandecredit
     private $file_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=30)
      */
     private $date_naissance;
 
     /**
-     * @ORM\Column(type="string", length=255,nullable=true)
+     * @ORM\Column(type="string", length=30,nullable=true)
      */
     private $ville_naissance;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $pays_naissance;
 
     /**
-     * @ORM\Column(type="string", length=255 ,nullable=true)
+     * @ORM\Column(type="string", length=30)
+     */
+    private $registre_national_belge;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $numero_carte_identite;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $numero_attestation_enregistrement;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $pays_carte_identite;
+
+    /**
+     * @ORM\Column(type="datetime", length=30)
+     */
+    private $validite_carte_identite;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $etat_civil;
+
+    /**
+     * @ORM\Column(type="string", length=30 ,nullable=true)
      */
     private $annee_belgique;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $habitation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=3)
      */
     private $numero_rue;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $nom_rue;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $boite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $code_postal;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $ville_residence;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $pays_residence;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $date_adresse;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $telephone_mobile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $numero_compte;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $date_compte;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $type_emploi;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $emploi;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $secteur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $temps_contrat;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $type_contrat;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $date_contrat;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $nom_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $adresse_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $tel_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $code_postal_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $ville_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      */
     private $pays_employeur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $salaire;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $pension_alimentaire;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $invalidite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $allocation;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $pension;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $mutuelle;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $chomage;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="string", length=10)
      */
     private $handicap;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $revenu_locatif;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $cheque_repas;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $voiture_societe;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $autres_revenus;
 
@@ -290,12 +325,12 @@ class Demandecredit
     private $loyer;
 
     /**
-     * @ORM\Column(type="string", length=2)
+     * @ORM\Column(type="string", length=10)
      */
     private $pension_alimentaire_payer;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $autres_charges;
 
@@ -315,82 +350,91 @@ class Demandecredit
     private $nombre_credit;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=30)
      */
     private $type_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=30)
      */
     private $organisme_preteur;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $montant_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $duree_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $taux_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $montant_echeance;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $debut_credit;
 
     /**
-     * @ORM\Column(type="boolean", length=255)
+     * @ORM\Column(type="boolean", length=20)
      */
     private $remboursement_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $solde_credit;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $type_bien;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $valeur_venale;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=10)
      */
     private $montant_achat_hypo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $duree_credit_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $date_echeance_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=255)
+     * @ORM\Column(type="datetime", length=20)
      */
     private $date_debut_credit_hypo;
 
 
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
 
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+        return $this;
+    }
 
     public function getId(): ?int
     {
@@ -574,6 +618,78 @@ class Demandecredit
     public function setPaysNaissance(string $pays_naissance): self
     {
         $this->pays_naissance = $pays_naissance;
+
+        return $this;
+    }
+
+    public function getRegistreNationalBelge(): ?string
+    {
+        return $this->registre_national_belge;
+    }
+
+    public function setRegistreNationalBelge(string $registre_national_belge): self
+    {
+        $this->registre_national_belge = $registre_national_belge;
+
+        return $this;
+    }
+
+    public function getNumeroCarteIdentite(): ?string
+    {
+        return $this->numero_carte_identite;
+    }
+
+    public function setNumeroCarteIdentite(string $numero_carte_identite): self
+    {
+        $this->numero_carte_identite = $numero_carte_identite;
+
+        return $this;
+    }
+
+    public function getNumeroAttestationEnregistrement(): ?string
+    {
+        return $this->numero_attestation_enregistrement;
+    }
+
+    public function setNumeroAttestationEnregistrement(string $numero_attestation_enregistrement): self
+    {
+        $this->numero_attestation_enregistrement = $numero_attestation_enregistrement;
+
+        return $this;
+    }
+
+    public function getPaysCarteIdentite(): ?string
+    {
+        return $this->pays_carte_identite;
+    }
+
+    public function setPaysCarteIdentite(string $pays_carte_identite): self
+    {
+        $this->pays_carte_identite = $pays_carte_identite;
+
+        return $this;
+    }
+
+    public function getValiditeCarteIdentite(): ?DateTime
+    {
+        return $this->validite_carte_identite;
+    }
+
+    public function setValiditeCarteIdentite(DateTime $validite_carte_identite): self
+    {
+        $this->validite_carte_identite = $validite_carte_identite;
+
+        return $this;
+    }
+
+    public function getEtatCivil(): ?string
+    {
+        return $this->etat_civil;
+    }
+
+    public function setEtatCivil(string $etat_civil): self
+    {
+        $this->etat_civil = $etat_civil;
 
         return $this;
     }
@@ -1196,7 +1312,7 @@ class Demandecredit
         return $this->solde_credit;
     }
 
-    public function setSoldCredit(string $solde_credit): self
+    public function setSoldeCredit(string $solde_credit): self
     {
         $this->solde_credit = $solde_credit;
 
