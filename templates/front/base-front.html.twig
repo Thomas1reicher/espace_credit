@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/css/style_base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/front/js/index.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/front/js/custom.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -62,6 +63,34 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="menu-burger">
+          	<button id="burger" onclick="burger()" class="open-main-nav">
+			<span class="burger"></span>
+			<span class="burger-text">Menu</span>
+		</button>
+		<nav class="main-nav" id="main-nav">
+			<ul>
+				<li>
+					<a href="#">About me</a>
+				</li>
+				<li>
+					<a href="#">Speaker &amp; Writer</a>
+				</li>
+				<li>
+					<a href="#">Work</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+			</ul>
+		</nav>
+        
+        
+        
         </div>
     </div>
     <div class="gray-div">

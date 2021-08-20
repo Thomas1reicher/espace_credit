@@ -265,6 +265,27 @@
         autoplay: false,
         autoplaySpeed: 2000,
     });
+    $(".open-main-nav"){
+
+      
+    }
+   function burger() {
+
+    burger = $('.open-main-nav');
+    nav = document.getElementById('main-nav'),
+    slowmo = document.getElementById('slowmo');
+    this
+        .classList
+        .toggle('is-open');
+    nav
+        .classList
+        .toggle('is-open');
+}
+
+/* Onload demo - dirty timeout */
+let clickEvent = new Event('click');
+
+
     </script>
 
 <div class="div-partenaire-conf" style="background-image:url({{asset('assets/front/img/image-21-1@1x.png')}});">

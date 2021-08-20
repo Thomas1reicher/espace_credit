@@ -1,5 +1,11 @@
+
+
 jQuery(function ($) {
 
+    burger = $('.open-main-nav');
+    nav    = document.getElementById('main-nav'),
+    slowmo = document.getElementById('slowmo');
+console.log(burger);
     $(".montant-form").change(function () {
         recalculate();
         montant = parseInt($(this).val());
@@ -192,3 +198,4 @@ jQuery(function ($) {
     });
 
 });
+
