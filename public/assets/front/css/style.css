@@ -528,7 +528,7 @@ transform: translate(0, 25px);
 
     }
 
-@media(max-width: 450px){
+@media(max-width: 930px){
 
 
   .div-cat-header{
@@ -906,13 +906,8 @@ transform: translate(0, 25px);
   width:100%!important;
 }
 }
-@media(min-width: 450px){
-
-.menu-burger{
-  display: none;
-}
-
-
-
-
+@media(min-width: 930px){
+  .menu-burger{
+    display: none;
+  }
 }

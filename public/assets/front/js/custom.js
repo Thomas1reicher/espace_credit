@@ -129,5 +129,25 @@ console.log(burger);
         $(this).find(".tab").css('color', 'var(--dove-gray)');
     });
 
+    $(".open-main-nav").click(function () {
+        burger = $('.open-main-nav');
+        nav = document.getElementById('main-nav'),
+        slowmo = document.getElementById('slowmo');
+        this.classList.toggle('is-open');
+        nav.classList.toggle('is-open');
+    });
+
+   function burger() {
+    burger = $('.open-main-nav');
+    nav = document.getElementById('main-nav'),
+    slowmo = document.getElementById('slowmo');
+    this.classList.toggle('is-open');
+    nav.classList.toggle('is-open');
+    }
+
+    /* Onload demo - dirty timeout */
+    let clickEvent = new Event('click');
+
+
 });
 
