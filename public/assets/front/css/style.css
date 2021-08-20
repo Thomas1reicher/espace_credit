@@ -279,7 +279,6 @@
   height: 25px;
   letter-spacing: 0.28px;
   line-height: 20px;
-  white-space: nowrap;
   margin-bottom: 2%;
 }
 .input-form{
@@ -533,6 +532,15 @@ transform: translate(0, 25px);
 
 @media(max-width: 450px){
 
+
+  .div-cat-header{
+    display: none;
+
+  }
+  .btn-header{
+    display: none;
+
+  }
  /* .menu-burger label {
     display:flex;
      flex-direction:column;
@@ -684,7 +692,7 @@ transform: translate(0, 25px);
 .main-nav a {
 	display: block;
 	padding: 12px 0;
-	color: #5A3B5D;
+	color: var(--web-orange);
 	font-size: 1.4em;
 	text-decoration: none;
 	font-weight: bold;
@@ -693,7 +701,7 @@ transform: translate(0, 25px);
 /* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
 .open-main-nav {
 	position: absolute;
-	top: 15px;
+	top: 39px;
 	padding-top: 20px;
 	right: 15px;
 	z-index: 1000;
@@ -710,7 +718,7 @@ transform: translate(0, 25px);
 	width: 28px;
 	height: 4px;
 	margin: 0 auto;
-	background: #5A3B5D;
+	background: var(--web-orange);
 	transform: skew(5deg);
 	transition: all .275s;
 }
@@ -720,7 +728,7 @@ transform: translate(0, 25px);
 	content: '';
 	display: block;
 	height: 100%;
-	background: #5A3B5D;
+	background: var(--web-orange);
 	transition: all .275s;
 }
 
@@ -850,6 +858,17 @@ transform: translate(0, 25px);
 	background: #FEDC2A;
 	text-decoration: none;
 }
+.container-pre
+
+
+
+}
+@media(min-width: 450px){
+
+.menu-burger{
+  display: none;
+}
+
 
 
 
