@@ -29,6 +29,29 @@
           <h1 class="titre-form animate-enter1">
               Simulez votre crédit</h1>
         </div>
+        
+        <div class="inputs label-form montserrat-medium-white-14px" style="width: 100%;">
+          <div style="width: 100%;float: left">Types de prêt</div>
+          <div style="width: 100%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
+          {% set first = true %}
+              {% set objFirst = "" %}
+              {% for i , objet in objets %}
+                {% if first %}
+                    {% set objFirst = objet %}
+                    {% set first = false %}
+                {% endif %}
+                  <option class="txt-low-weight-white" value="{{objet.taux}}">{% if objet.nom != "" %}({{objet.nom}}){% endif %}{{objet.credit.nom}}</option>
+
+              {% endfor %}
+              </select>
+          </div>
+          <div style="width: 100%;float: left">Montant</div>
+          <div style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
+          <div style="width: 100%;float: left">Durée</div>
+          <div style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
+        </div>
+
+        <!--
         <table class="label-form  montserrat-medium-white-14px">
           <tr>
               <td colspan="2">Types de prêt</td>
@@ -57,6 +80,7 @@
               <td><input style="width: auto" class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></td>
           </tr>
         </table>
+        -->
 
         <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
         <div class="txt-black big-number-orange big-num-orange">526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
@@ -132,7 +156,7 @@
   <div class="slider">
     <div class="slide" style="width: 5%">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt personnel </p>
-        <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
               <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
           </div>
@@ -150,8 +174,8 @@
     </div>
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt automobile </p>
-        <div class="div-slide-butto-align">
-          <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
+          <div class="div-slide-button-align">
             <div class="taeg montserrat-bold-web-orange-20px">
                 <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">1,99%</span><span class="montserrat-bold-web-orange-46px">*</span>
                 <br>
@@ -173,7 +197,7 @@
 
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt moto </p>
-        <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
               <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
           </div>
@@ -192,7 +216,7 @@
 
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt mobilité </p>
-        <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
               <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
           </div>
@@ -211,7 +235,7 @@
 
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt travaux </p>
-        <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
               <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">2,48%</span><span class="montserrat-bold-web-orange-46px">*</span>
               <br>
@@ -232,7 +256,7 @@
 
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Regroupement de crédit </p>
-        <div class="div-slide-butto-align">
+        <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
               <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
           </div>
@@ -264,6 +288,22 @@
         slidesToScroll: 3,
         autoplay: false,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+        ]
     });
     </script>
 
@@ -576,16 +616,16 @@
     Attention : emprunter de l'argent coûte aussi de l'argent
 </div>
 <style>
-    .slide{
+    .slider .slide{
         margin-left: 20px;
     }
-    .slick-list{
+    .slider .slick-list{
         width: 70%;
         margin: auto;
         padding-bottom: 90px;
-        overflow: inherit;
+        overflow: hidden;
     }
-    .slick-arrow{
+    .slider .slick-arrow{
         background-image: url("assets/front/img/trac--227-1@1x.png");
         background-repeat: no-repeat;
         color: transparent;
@@ -598,11 +638,11 @@
         width: 75px;
         background-size: 50px;
     }
-    .slick-prev{
+    .slider .slick-prev{
         margin-left: 46%;
         top: 100%;
     }
-    .slick-next{
+    .slider .slick-next{
         margin-left: 50%;
         transform: rotate(180deg); 
     }

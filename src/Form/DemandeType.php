@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -19,18 +21,16 @@ class DemandeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        /*
-        ->add('Titre', ChoiceType::class,[
+        ->add('titre', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
             ],
             'choices'  => [
-                'Madame' => true,
-                'Monsieur' => true,
-                'Mademoiselle' => true,
+                'Madame' => 'Madame',
+                'Monsieur' => 'Monsieur',
+                'Mademoiselle' => 'Mademoiselle',
             ]
         ])
-        */
         ->add('nom', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre nom',
@@ -59,65 +59,63 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Ville de naissance'
         ])
-
         ->add('pays_naissance', CountryType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Pays de naissance'
         ])
-        /*
-        ->add('Registre', TextType::class,[
+        ->add('registre_national_belge', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre registre national',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Registre national (uniquement pour les belges)'
         ])
-        ->add('Identite', TextType::class,[
+        ->add('numero_carte_identite', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de carte d\'identité',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Numéro de carte d\'identité'
         ])
-        ->add('Enregistrement', TextType::class,[
+        ->add('numero_attestation_enregistrement', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro d\'attestation d\'enregistrement',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Numéro d\'attestation d\'enregistrement'
         ])
-        ->add('PaysIdentite', TextType::class,[
+        ->add('pays_carte_identite', CountryType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la nationnalité de votre carte d\'identité',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Pays de la carte d\'identité'
         ])
-        ->add('DateIdentite', DateType::class,[
+        ->add('validite_carte_identite', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la date limite de validité de votre carte d\'identité',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Date de validité de la carte d\'identité'
         ])
-        ->add('EtatCivil', ChoiceType::class,[
+        ->add('etat_civil', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
             ],
             'label' => 'État Civil',
             'choices'  => [
-                'Célibataire' => true,
-                'Cohabitation' => true,
-                'Divorcé' => true,
-                'Marié' => true,
-                'Séparé corps et bien' => true,
-                'Séparé de fait' => true,
-                'Veuf(ve)' => true
+                'Célibataire' => 'Célibataire',
+                'Cohabitation' => 'Cohabitation',
+                'Divorcé' => 'Divorcé',
+                'Marié' => 'Marié',
+                'Séparé corps et bien' => 'Séparé corps et bien',
+                'Séparé de fait' => 'Séparé de fait',
+                'Veuf(ve)' => 'Veuf'
             ]
-        ])
-        */            
+        ])            
+
 
 
         ->add('habitation', ChoiceType::class,[
@@ -126,9 +124,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Type d\'habitation',
             'choices'  => [
-                'Locataire' => true,
-                'Propriétaire' => true,
-                'Cohabitation' => true
+                'Locataire' => 'Locataire',
+                'Propriétaire' => 'Propriétaire',
+                'Cohabitation' => 'Cohabitation'
             ]
             
         ])
@@ -182,21 +180,21 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Installé depuis'
         ])
-        ->add('tel', TextType::class,[
+        ->add('tel', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de téléphone fixe',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Téléphone'
         ])
-        ->add('telephone_mobile', TextType::class,[
+        ->add('telephone_mobile', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de téléphone mobile',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'GSM'
         ])
-        ->add('mail', TextType::class,[
+        ->add('mail', EmailType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre email',
                 'class' => 'input-form input-contact'
@@ -225,20 +223,20 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Type d\'Emploi',
             'choices'  => [
-                'Chomeur' => true,
-                'Diplomate' => true,
-                'Employé' => true,
-                'Etudiant' => true,
-                'Fonctionnaire' => true,
-                'Indépendant' => true,
-                'Invalide' => true,
-                'Maitresse de maison' => true,
-                'Membre du clergé' => true,
-                'Mutuelle' => true,
-                'Ouvrier' => true,
-                'Prépensionné' => true,
-                'Retiré' => true,
-                'Retraite' => true
+                'Chomeur' => 'Chomeur',
+                'Diplomate' => 'Diplomate',
+                'Employé' => 'Employé',
+                'Etudiant' => 'Etudiant',
+                'Fonctionnaire' => 'Fonctionnaire',
+                'Indépendant' => 'Indépendant',
+                'Invalide' => 'Invalide',
+                'Maitresse de maison' => 'Maitresse de maison',
+                'Membre du clergé' => 'Membre du clergé',
+                'Mutuelle' => 'Mutuelle',
+                'Ouvrier' => 'Ouvrier',
+                'Prépensionné' => 'Prépensionné',
+                'Retiré' => 'Retiré',
+                'Retraite' => 'Retraite'
             ]
         ])
         ->add('emploi', ChoiceType::class,[
@@ -247,28 +245,28 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Emploi',
             'choices'  => [
-                'Cadre' => true,
-                'Commerçant' => true,
-                'Conducteur/Chauffeur' => true,
-                'Dirigeant' => true,
-                'Employé de bureau' => true,
-                'Enseignement' => true,
-                'Forces de l\'ordre/Pompier' => true,
-                'Gardien/Sécurité' => true,
-                'Manoeuvre' => true,
-                'Menage/Entretien' => true,
-                'Officier des forces armées' => true,
-                'Personnel ambassade' => true,
-                'Prestataire de service (para)médical' => true,
-                'Profession agricole' => true,
-                'Profession artistique' => true,
-                'Profession techniques' => true,
-                'Profession libérale' => true,
-                'Sans objet' => true,
-                'Travailleur extérieur (docker)' => true,
-                'Travailleur à la production' => true,
-                'Travailleur horeca' => true,
-                'Vendeur/Représentant' => true,
+                'Cadre' => 'Cadre',
+                'Commerçant' => 'Commerçant',
+                'Conducteur/Chauffeur' => 'Conducteur/Chauffeur',
+                'Dirigeant' => 'Dirigeant',
+                'Employé de bureau' => 'Employé de bureau',
+                'Enseignement' => 'Enseignement',
+                'Forces de l\'ordre/Pompier' => 'Forces de l\'ordre/Pompier',
+                'Gardien/Sécurité' => 'Gardien/Sécurité',
+                'Manoeuvre' => 'Manoeuvre',
+                'Menage/Entretien' => 'Menage/Entretien',
+                'Officier des forces armées' => 'Officier des forces armées',
+                'Personnel ambassade' => 'Personnel ambassade',
+                'Prestataire de service (para)médical' => 'Prestataire de service (para)médical',
+                'Profession agricole' => 'Profession agricole',
+                'Profession artistique' => 'Profession artistique',
+                'Profession techniques' => 'Profession techniques',
+                'Profession libérale' => 'Profession libérale',
+                'Sans objet' => 'Sans objet',
+                'Travailleur extérieur (docker)' => 'Travailleur extérieur (docker)',
+                'Travailleur à la production' => 'Travailleur à la production',
+                'Travailleur horeca' => 'Travailleur horeca',
+                'Vendeur/Représentant' => 'Vendeur/Représentant'
             ]
         ])
         ->add('secteur', ChoiceType::class,[
@@ -277,15 +275,15 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Secteur d\'activité',
             'choices'  => [
-                'Agriculture' => true,
-                'Banque/Assurance' => true,
-                'Construction' => true,
-                'Grande entreprise (+50 personnes)' => true,
-                'Horeca/Courrier/Fitness/Taxe' => true,
-                'Industrie' => true,
-                'Petite entreprise (-50 personnes)' => true,
-                'Public' => true,
-                'Sans objet' => true
+                'Agriculture' => 'Agriculture',
+                'Banque/Assurance' => 'Banque/Assurance',
+                'Construction' => 'Construction',
+                'Grande entreprise (+50 personnes)' => 'Grande entreprise (+50 personnes)',
+                'Horeca/Courrier/Fitness/Taxe' => 'Horeca/Courrier/Fitness/Taxe',
+                'Industrie' => 'Industrie',
+                'Petite entreprise (-50 personnes)' => 'Petite entreprise (-50 personnes)',
+                'Public' => 'Public',
+                'Sans objet' => 'Sans objet'
             ]
         ])
         ->add('temps_contrat', ChoiceType::class,[
@@ -294,8 +292,8 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Temps plein / Temps partiel',
             'choices'  => [
-                'Temps plein' => true,
-                'Temps partiel' => true
+                'Temps plein' => 'Temps plein',
+                'Temps partiel' => 'Temps partiel'
             ]
         ])
         ->add('type_contrat', ChoiceType::class,[
@@ -304,8 +302,8 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Type de contrat',
             'choices'  => [
-                'CDI' => true,
-                'CDD' => true
+                'CDI' => 'CDI',
+                'CDD' => 'CDD'
             ]
         ])
         ->add('date_contrat', DateType::class,[
@@ -331,7 +329,7 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Adresse de l\'employeur'
         ])
-        ->add('tel_employeur', TextType::class,[
+        ->add('tel_employeur', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le numéro de téléphone de votre employeur',
                 'class' => 'input-form input-contact'
@@ -507,9 +505,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Type de crédit',
             'choices'  => [
-                'Prêt à tempérament' => true,
-                'Prêt travaux' => true,
-                'Prêt voiture' => true
+                'Prêt à tempérament' => 'Prêt à tempérament',
+                'Prêt travaux' => 'Prêt travaux',
+                'Prêt voiture' => 'Prêt voiture'
             ]
         ])
         ->add('organisme_preteur', TextType::class,[
@@ -576,9 +574,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Type de bien',
             'choices'  => [
-                'Maison d\'habitation' => true,
-                'Maison de commerce' => true,
-                'Seconde résidence' => true
+                'Maison d\'habitation' => 'Maison d\'habitation',
+                'Maison de commerce' => 'Maison de commerce',
+                'Seconde résidence' => 'Seconde résidence'
             ]
         ])
         ->add('valeur_venale', TextType::class,[

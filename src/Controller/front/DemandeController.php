@@ -27,7 +27,7 @@ class DemandeController extends AbstractController{
             $em->flush();
             return $this->redirectToRoute('accueil');
         }
-        return $this->render('front/testdemande.html.twig', [
+        return $this->render('front/demande.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
             'title' => 'demande',
