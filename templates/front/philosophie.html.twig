@@ -16,7 +16,7 @@
     <div class="ligne-yellow"></div>
     <div class="div-img" style="min-height: 500px;background-image:url({{asset('assets/front/img/eycucg8xeaeanvn-2@1x.png')}});background-size: 500px;background-position: 100% 10%;">
     </div>
-    <div style="min-height: 500px;width: 50%;float: left;">
+    <div class="div-img" style="min-height: 500px;width: 50%;float: left;">
         <div class="txt-black txt-low-weight-black div-bottom-ul" style="width: 70%">
             <div class="txt-black">Espace Crédits est une entreprise<br> à taille humaine.</div><br>
             Fort d'une expérience de XX années, nous jouons le rôle d'intermédiaire entre les clients et les
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="div-btn-cred" style="width: 100%!important;float: left;margin-top: -90px">
+    <div class="div-btn-cred" style="width: 100%!important;float: left;padding-bottom: 20px;">
             <div class="btn-pret" style="width: 13%;margin: auto">
                 <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">NOUS RENCONTRER</p></a>
             </div>
@@ -41,7 +41,7 @@
     </div>
     <div class="ligne-yellow"></div>
 
-    <div style="min-height: 450px;width: 50%;float: left;padding-left: 10%">
+    <div class="div-img" style="min-height: 450px;width: 50%;float: left;padding-left: 10%">
         <div class="txt-black txt-low-weight-black div-bottom-ul" style="width: auto">
             <div class="txt-black">Espace Crédits vous propose des prêts aux<br> meilleurs taux du marché</div><br>
             Parce que chez Espace Crédits nous accordons de l'importance à vos projets, vos envies et vos besoins, 
@@ -52,20 +52,16 @@
         </div>
     </div>
 
-    <div class="icones-philo" style="min-height: 450px;width: 50%;float: left;">
-        <table style="padding-top: 50px;padding-left: 50px">
-            <tr>
-                <td><a href="{{ path('pretPerso') }}"><img class="img-philo" style="margin-left: 10px" src="{{asset('assets/front/img/trac--9-13@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div></a></td>
-                <td><a href="{{ path('pretAuto') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--11-13@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div></a></td>
-                <td><a href="{{ path('pretMoto') }}"><img class="img-philo" style="width: 170px" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div></a></td>
-            </tr>
-
-            <tr>
-                <td><a href="{{ path('pretMobi') }}"><img class="img-philo" style="width: 170px" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div></a></td>
-                <td><a href="{{ path('pretTravaux') }}"><img class="img-philo" src="{{asset('assets/front/img/trac--13-11@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div></a></td>
-                <td><a href="{{ path('regroupement') }}"><img class="img-philo" style="margin-left: 10px" src="{{asset('assets/front/img/trac--15-17@1x.png')}}"><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div></a></td>
-            </tr>
-        </table>
+    <div class="icones-philo div-img" style="min-height: 450px;width: 50%;float: left;">
+        
+        <ul style="columns: 3;list-style: none;width: 70%;margin: auto" class="ul-philo">
+            <li><a href="{{ path('pretPerso') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--9-13@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div></a></li>
+            <li><a href="{{ path('pretAuto') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--11-13@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div></a></li>
+            <li><a href="{{ path('pretMoto') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div></a></li>
+            <li><a href="{{ path('pretMobi') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div></a></li>
+            <li><a href="{{ path('pretTravaux') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--13-11@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div></a></li>
+            <li><a href="{{ path('regroupement') }}"><div><img class="img-philo" src="{{asset('assets/front/img/trac--15-17@1x.png')}}"></div><div style="padding-bottom: 50px" class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div></a></li>
+        </ul>
     </div>
 
 </div>
@@ -76,7 +72,7 @@
         <div class="txt-black">Espace Crédits accompagne aussi les entreprises</div><br>
         Vous êtes une entreprise, artisan ou indépendant, Espace Crédits est là pour vous aider
             à monter ou développer votre société, à travers différentes solutions.
-        <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;height: auto">
+        <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;height: auto;padding-bottom: 20px">
             <div class="btn-pret" style="width: 35%;">
                 <a href="{{ path('entreprise') }}" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">EN SAVOIR PLUS</p></a>
             </div>
@@ -87,6 +83,11 @@
 </div>
 
 <style>
-    
+    .ul-philo li{
+        text-align: center;
+        display: flex;
+        height: 150px;
+        align-items: center;
+    }
 </style>
 {% endblock %}
