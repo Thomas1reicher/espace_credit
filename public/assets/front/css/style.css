@@ -858,10 +858,55 @@ transform: translate(0, 25px);
 	background: #FEDC2A;
 	text-decoration: none;
 }
-.container-pre
-
-
-
+.container-pret{
+  width: 100%;
+  min-height: 500px;
+}
+.form-pret{
+  width: 100%;
+}
+.presentation-pret{
+  min-height: 500px;
+  background-size: cover;
+}
+.div-presentation{
+  min-height: 500px;
+}
+.titre-taux{
+  font-size: 35px;
+  letter-spacing: 0;
+  line-height: initial;
+  min-height: initial;
+}
+.taux-menu{
+  width: 65%;
+}
+.sous-titre-taux{
+  line-height:initial;
+  font-size:20px;
+}
+.label-form div{
+  margin-top: 3%;
+}
+.inputs{
+  margin-bottom: 3%;
+}
+.big-number-orange{
+  display: inline-block;
+  margin-top: 5%;
+}
+.div-btn-cred{
+  width: 75%;
+}
+.titre-part{
+  font-size: 25px;
+}
+.div-lightgrey{
+  padding-left: 0px!important;
+}
+.div-mob-100{
+  width:100%!important;
+}
 }
 @media(min-width: 450px){
 
