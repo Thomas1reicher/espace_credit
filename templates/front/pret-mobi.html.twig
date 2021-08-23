@@ -23,7 +23,7 @@
 
         <div class="inputs label-form montserrat-medium-white-14px" style="width: 100%;">
           <div style="width: 100%;float: left">Votre projet</div>
-          <div style="width: 100%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
+          <div class="div-input-preview" style="width: 100%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
           {% set first = true %}
                 {% set objFirst = "" %}
                 {% for taux in pret.taux %}
@@ -37,13 +37,13 @@
               </select>
           </div>
           <div style="width: 100%;float: left">Montant</div>
-          <div style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
+          <div class="div-input-preview" style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
           <div style="width: 100%;float: left">Durée</div>
-          <div style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
+          <div class="div-input-preview" style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
         </div>
-
-        <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
-        <div class="txt-black big-number-orange big-num-orange">526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
+        
+        <div class="txt-black big-number-orange big-num-orange" style="width: 100%;float: left;padding-top: 10px;padding-bottom: 5px">
+        <div class="label-form  montserrat-medium-white-14px" style="width: 100%;float: left;">Mensualités</div>526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
         <div style="line-height: 1.5;">
             <div class="txt-black txt-low-weight-white">Total à rembourser: <span class=" montant-info numbers-right">14.000€</span></div>
             <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="interet-info numbers-right">2.330€</span></div>

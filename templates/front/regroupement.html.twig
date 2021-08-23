@@ -1,7 +1,7 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
 <div class="left-form">
-    <div class="titre-taux-black" style="min-height: auto">Regroupements de crédits</div>
+    <div class="titre-taux-black">Regroupements de crédits</div>
     <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">5,95%*</span></div><br><br>
     <div class="txt-black">Tous vos prêts en un!</div><br>
     <div class="txt-black txt-low-weight-black">
@@ -23,13 +23,14 @@
 
         <div class="inputs label-form montserrat-medium-white-14px" style="width: 100%;">
           <div style="width: 100%;float: left">Montant</div>
-          <div style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
+          <div class="div-input-preview" style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
           <div style="width: 100%;float: left">Durée</div>
-          <div style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
+          <div class="div-input-preview" style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
         </div>
 
-        <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
-        <div class="txt-black big-number-orange">526<span style="font-size: 25px">,23</span>€</div>
+
+        <div class="txt-black big-number-orange" style="width: 100%;float: left;padding-top: 10px;padding-bottom: 5px">
+        <div class="label-form  montserrat-medium-white-14px" style="width: 100%;float: left;">Mensualités</div>526<span style="font-size: 25px">,23</span>€</div>
         <div style="line-height: 1.5;">
             <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right">14.000€</span></div>
             <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right">2.330€</span></div>
