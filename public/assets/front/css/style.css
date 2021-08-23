@@ -539,6 +539,25 @@ transform: translate(0, 25px);
     display: none;
 
   }
+  .img-main-nav{
+    opacity: 1;
+    transform: translateY(0);
+  } 
+  .img-main-nav img{
+    width: 73%;
+    margin-bottom: 9%;
+  } 
+  .li-tel{
+    margin-top: 70%!important;
+  }
+  .li-tel a{
+    font-size: 13px!important;
+    font-weight:initial!important;
+  }
+  .li-tel img{
+    width: 11%;
+    margin-right: 2%;
+  }
  /* .menu-burger label {
     display:flex;
      flex-direction:column;
@@ -617,6 +636,7 @@ transform: translate(0, 25px);
     opacity: 1;
     z-index: 100;
     visibility: visible;
+    overflow: hidden;
 }
 
 /* Yellow band effect */
@@ -627,31 +647,30 @@ transform: translate(0, 25px);
     bottom: 0;
     left: 0;
     right: -15px;
-    background: #FEDC2A;
+    background: var(--web-orange);
     transform-origin: 0 0;
     transform: skew(-14deg) translateX(-120%);
     transition: all .275s .1s;
 }
 
 .main-nav.is-open::before {
-    transform: skew(-14deg) translateX(0);
+    transform: skew(-0deg) translateX(0);
 }
 
 /* Skewing effect on menu links */
 .main-nav ul {
-    display: inline-flex;
-    flex-direction: column;
-    height: 93%; /* Should be 100%, but we have a notice message :D */
-    align-items: flex-end;
-    justify-content: center;
-    transform: translateX(-18%) skew(-16deg);
+  width: 50%;
+  margin-right: auto;
+  height: 93%;
+  margin-left: auto; /* Should be 100%, but we have a notice message :D */
+  
 }
 
 .main-nav li {
     display: block;
     margin: .5rem 0;
-    text-align: right;
-    transform: skew(16deg);
+    text-align: center;
+  
 }
 
 /* Apparition effect on links */
@@ -690,8 +709,8 @@ transform: translate(0, 25px);
 .main-nav a {
 	display: block;
 	padding: 12px 0;
-	color: var(--web-orange);
-	font-size: 1.4em;
+	color: white;
+	font-size: 1.8em;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -699,7 +718,7 @@ transform: translate(0, 25px);
 /* Burger Style: @see: https://codepen.io/CreativeJuiz/full/oMZNXy */
 .open-main-nav {
 	position: absolute;
-	top: 39px;
+	top: 28px;
 	padding-top: 20px;
 	right: 15px;
 	z-index: 1000;
@@ -741,14 +760,17 @@ transform: translate(0, 25px);
 /* Toggle State part */
 .is-open .burger {
 	transform: skew(5deg) translateY(-8px) rotate(-45deg);
+  background-color: white;
 }
 
 .is-open .burger:before {
 	transform: translateY(0px) skew(-10deg) rotate(75deg);
+  background-color: white;
 }
 
 .is-open .burger:after {
 	transform: translateY(-12px) translateX(10px) skew(-20deg);
+  background-color: white;
     opacity: 0;
 }
 

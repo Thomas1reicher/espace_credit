@@ -68,24 +68,52 @@
           	<button id="burger" onclick="burger()" class="open-main-nav">
 			<span class="burger"></span>
 		</button>
-		<nav class="main-nav" id="main-nav">
+		<nav class="main-nav" id="main-nav" style="background-image: url({{asset('assets/front/img/oiseau_espace_credit.svg')}})">
+        
 			<ul>
-				<li>
-					<a href="{{ path('accueil') }}">Accueil</a>
+            <li>
+					<div class="img-main-nav">
+            <img src="{{asset('assets/front/img/logo-espace-credit-n-10@1x.png')}}">
+        </div>
 				</li>
 				<li>
-					<a href="{{ path('credits') }}">Crédits</a>
+					<a class="montserrat-bold-white-32px" href="{{ path('accueil') }}">Accueil</a>
 				</li>
 				<li>
-					<a href="{{ path('philosophie') }}">Notre philosophie</a>
+					<a class="montserrat-bold-white-32px" href="{{ path('credits') }}">Crédits</a>
 				</li>
 				<li>
-					<a href="{{ path('contact') }}">Contact</a>
+					<a class="montserrat-bold-white-32px" href="{{ path('philosophie') }}">Notre philosophie</a>
 				</li>
 				<li>
-					<a href="{{ path('demandePret') }}">Demander un prêt</a>
+					<a class="montserrat-bold-white-32px" href="{{ path('contact') }}">Contact</a>
 				</li>
+                <li class="li-tel">
+					<a class="montserrat-light-white-16px" href=""><img src="{{asset('assets/front/img/phone_responsive.svg')}}" >+32 63 677 659</a>
+				</li>
+			
 			</ul>
+            <!--
+            <div class="img-main-nav">
+            <img src="{{asset('assets/front/img/logo-espace-credit-n-10@1x.png')}}">
+        </div>
+			<div class="div-ul">
+				<div class="div-li">
+					<a href="{{ path('accueil') }}">Accueil</a>
+				</div>
+				<div class="div-li">
+					<a href="{{ path('credits') }}">Crédits</a>
+				</div>
+				<div class="div-li">
+					<a href="{{ path('philosophie') }}">Notre philosophie</a>
+				</div>
+				<div class="div-li">
+					<a href="{{ path('contact') }}">Contact</a>
+				</div>
+				<div class="div-li">
+					<a href="{{ path('demandePret') }}">Demander un prêt</a>
+				</div>
+			</div>-->
 		</nav>
         
         
