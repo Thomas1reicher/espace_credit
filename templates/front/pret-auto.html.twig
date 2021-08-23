@@ -21,49 +21,34 @@
           <h1 class="titre-form animate-enter1">
               Simulez votre crédit</h1>
         </div>
-        <table class="label-form  montserrat-medium-white-14px">
-          <tr>
-              <td>Votre projet</td>
-              <td>Choisir un taux 
-                <div class="tooltip">
-                    <img style="width: 12px" src="assets/front/img/trac--238@1x.png">
-                    <div class="tooltip-txt" style="padding-top: 10px;padding-left: 10px">
-                        <span style="font-weight: 700">Taux normal</span><br><br>
-                        teste<br><br>
-                        <span style="font-weight: 700">Taux ballon</span><br><br>
-                        atzgr<br><br>
-                        Valable uniquement pour les véhicules neufs ou de moins de 3 ans
-                    </div>
-                </div>
-              </td>
-          </tr>
-          <tr>
-              <td><select style="width: 100%" class="txt-low-weight-white input-form select-credit" placeholder="Rénovation"/>
-                 {% set first = true %}
-                {% set objFirst = "" %}
-                {% for taux in pret.taux %}
-                {% if first %}
-                  {% set objFirst = taux %}
-                  {% set first = false %}
+        
 
-              {% endif %}
-                <option value="{{taux.taux}}">{{taux.nom}}</option>
-                {% endfor %}
-              </td>
-              <td><select style="width: 100%" class="txt-low-weight-white input-form select-taux" placeholder="Rénovation"/>
-                <option>Taux normal</option>
-                <option>Taux ballon</option>
-              </td>
-          </tr>
-          <tr>
-              <td>Montant</td>
-              <td>Durée</td>
-          </tr>
-          <tr>
-              <td><input style="width: auto" class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000" /></td>
-              <td><input style="width: auto" class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60" /></td>
-          </tr>
-        </table>
+        <div class="inputs label-form montserrat-medium-white-14px" style="width: 100%;">
+            <div style="width: 100%;float: left">Votre projet</div>
+            <div style="width: 100%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
+            {% set first = true %}
+                  {% set objFirst = "" %}
+                  {% for taux in pret.taux %}
+                  {% if first %}
+                    {% set objFirst = taux %}
+                    {% set first = false %}
+
+                {% endif %}
+                      <option value="{{taux.taux}}">{{taux.nom}}</option>
+                  {% endfor %}
+                </select>
+            </div>
+            <div style="width: 100%;float: left">Choisir un taux</div>
+            <div style="width: 100%;float: left"><select class="txt-low-weight-white input-form select-taux"/>
+                    <option>Taux normal</option>
+                    <option>Taux ballon</option>
+                </select>
+            </div>
+            <div style="width: 100%;float: left">Montant</div>
+            <div style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
+            <div style="width: 100%;float: left">Durée</div>
+            <div style="width: 100%;float: left"><input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/></div>
+        </div>
 
         <div class="label-form  montserrat-medium-white-14px">Mensualités</div>
         <div class="txt-black big-number-orange big-num-orange">526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>

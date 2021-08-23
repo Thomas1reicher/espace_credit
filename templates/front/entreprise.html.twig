@@ -9,17 +9,19 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 <div>
-    <div class="div-img" style="background-size: contain;background-position-y: -60px;background-image:url({{asset('assets/front/img/image-49@1x.png')}});width: 50%;min-height: 600px;background-position-y: top"></div>
-    <div class="div-img" style="background-color: white;width: 50%;min-height: 600px;padding-left: 40px;padding-top: 50px;padding-right: 250px;">
-        <div class="titre-taux-black" style="padding-bottom:50px">Nos crédits pour <br>les entreprises</div>
-        <div class="txt-black">Espace Crédits propose des solutions de financement pour les entreprises, artisans, et indépendants</div>
+    <img class="img-left" style="float: left;width: 50%" src="assets/front/img/image-49@1x.png">
+    <div class="titre-div-row">
+        <div class="div-img" style="background-color: white;width: 50%;min-height: 600px;padding-left: 40px;padding-top: 50px;padding-right: 80px;">
+            <div class="titre-taux-black" style="padding-bottom:50px">Nos crédits pour <br>les entreprises</div>
+            <div class="txt-black" style="padding-bottom: 30px;">Espace Crédits propose des solutions de financement pour les entreprises, artisans, et indépendants</div>
+        </div>
     </div>
 </div>
 
 <div style="float left;width: 100%">
-    <div class="slider" style="float: left;width: 100%">
+    <div class="slider company" style="float: left;width: 100%">
         <div style="width: 100%;float: left;background-color: #f8f8f8" title="LEASING FINANCIER">
-            <div class="txt-black" style="width: 50%;float: left;padding-left: 200px;">
+            <div class="div-slider-entreprise txt-black" style="width: 50%;float: left;padding-left: 200px;">
                 <span>Le Leasing financier</span><br><br><span style="font-size: 17px">Il s'agit d'une formule de crédit souple: les charges sont réparties en fonction de la durée de vie économique des investissements.</span><br><br>
                 <span style="font-size: 17px;font-weight: 300">Le leasing financier peut financer presque tous les biens mobiliers destinés à des fins professionelles:
                     <ul>
@@ -34,12 +36,12 @@
                 </span>
             </div>
 
-            <div style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
+            <div class="div-img-entreprise" style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
             </div>
         </div>
 
         <div style="width: 100%;float: left;background-color: #f8f8f8" title="RENTING">
-            <div class="txt-black" style="width: 50%;float: left;padding-left: 200px;">
+            <div class="div-slider-entreprise txt-black" style="width: 50%;float: left;padding-left: 200px;">
                 <span>Le Renting</span><br><br><span style="font-size: 17px">Le Renting est un contrat qui permet de financer les véhicules possédant un certificat d'immatriculation tels que les voitures particulères,
                  camionnettes, camions, véhicules agricoles...</span><br><br>
                 <span style="font-size: 17px;font-weight: 300">
@@ -48,12 +50,12 @@
                 </span>
             </div>
 
-            <div style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
+            <div class="div-img-entreprise" style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
             </div>
         </div>
 
         <div style="width: 100%;float: left;background-color: #f8f8f8" title="CRÉDIT D'AFFAIRES">
-            <div class="txt-black" style="width: 50%;float: left;padding-left: 200px;">
+            <div class="div-slider-entreprise txt-black" style="width: 50%;float: left;padding-left: 200px;">
                 <span>Le Crédits d'affaires</span><br><br><span style="font-size: 17px">Le crédit d'affaires est un crédit classique spécialement adapté pour les entreprises.</span><br><br>
                 <span style="font-size: 17px;font-weight: 300">
                     Il permet de financer des biens mobiliers ou immobiliers, un fonds de commerce, des machines industrielles, etc.<br><br>
@@ -62,7 +64,7 @@
                 </span>
             </div>
 
-            <div style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
+            <div class="div-img-entreprise" style="width: 50%;float: left;background-image:url({{asset('assets/front/img/image-23@1x.png')}});background-size: 400px;min-height: 300px;background-repeat: no-repeat;background-position: 50% 50%">
             </div>
         </div>
 
@@ -104,6 +106,10 @@
         color: orange;
     }
 
+    .slick-track{
+        background-color: #f8f8f8;
+    }
+
     .slick-dots{
         list-style: none;
         display: inline-flex;
@@ -111,8 +117,8 @@
         margin: auto;
         background-color: rgb(248, 248, 248);
         position: absolute;
-        top: -118px;
-        padding-bottom: 85px;
+        top: 0px;
+        padding-bottom: 20px;
         padding-top: 50px;
     }
     [role=presentation] {
@@ -120,10 +126,6 @@
         margin-left: 10%;
         margin-right: 10%;
         text-align: center;
-    }
-
-    .slick-track{
-        margin-top: 60px;
     }
     
     .tab{
@@ -133,10 +135,6 @@
         border: none;
         background-color: rgb(248, 248, 248);
         outline: none;
-    }
-
-    .slick-slide{
-        height: 400px!important;
     }
 
     li.slick-active{
