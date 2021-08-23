@@ -907,6 +907,11 @@ transform: translate(0, 25px);
 .div-mob-100{
   width:100%!important;
 }
+.div-img{
+  background-position: center!important;
+    background-size: 91%!important;
+    width: 100%!important;
+}
 }
 @media(min-width: 450px){
 
