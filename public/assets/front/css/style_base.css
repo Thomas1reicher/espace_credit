@@ -1713,6 +1713,11 @@
   .titre-taux-black{
     font-size: 40px!important;
   }
+  .img-header{
+    max-width: 115px!important;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
 }
 
 @media(min-width: 320px){
