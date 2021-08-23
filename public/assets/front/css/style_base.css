@@ -1303,12 +1303,17 @@
   
   /*style page carte-credit*/
 
-  .div-img{
-    background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 600px;
-    width: 50%;
-    float: left;
+.div-img{
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 600px;
+  width: 50%;
+  float: left;
+}
+
+.div-img-special{
+  padding-left: 10%;
+  padding-right: 45%;
 }
 
 .txt-black{
@@ -1325,7 +1330,6 @@
     font-family: var(--font-family-montserrat);
     font-size: 60px;
     letter-spacing: 0;
-    line-height: 70px;
     min-height: 125px;
 }
 
@@ -1336,18 +1340,13 @@
     font-weight: 700;
     height: 41px;
     letter-spacing: 0;
-    white-space: nowrap;
     transform: translate(-25px, 0);
-    background-image: url(/assets/front/img/trac--225-1@1x.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 40px;
     padding-bottom: 70px;
     margin-bottom: 30px;
 }
 
 .titre-div-row{
-    padding-top: 70px;    
+    padding-top: 20px;    
 }
 
 /*fin style page carte-credit*/
@@ -1401,7 +1400,7 @@
 .li-validate{
   display: flex; /* allows align-items to work below */
   align-items: center; /* vertical */
-  height: 45px;
+  height: 65px;
 }
 
 .orange-title{
@@ -1544,6 +1543,9 @@
   background-color: #fd5912;
 }
 
+.company .slick-slide{
+  padding-top: 4%!important;
+}
 
 /*CSS RESPONSIVE*/
 
@@ -1554,8 +1556,13 @@
   .slider-header{
     display: block!important;
   }
+  .left-form{
+    width: 100%!important;
+  }
+  .div-lightgrey{
+    width: 100%!important;
+  }
 }
-
 
 @media(max-width: 768px){
   /*footer*/
@@ -1606,6 +1613,20 @@
   .img-part{
     padding-right: 0!important;
   }
+
+  .img-visa{
+    width: 30%!important;
+  }
+
+  .img-master-maestro{
+    width: 20%!important;
+  }
+  .div-slider-entreprise{
+    padding-top: 10%!important;
+  }
+  .company .slick-slide{
+    padding-top: 6%!important;
+  }
 }
 
 @media(max-width: 1050px){
@@ -1613,6 +1634,8 @@
   .div-img{
     width: 100%!important;
     background-position: 50%!important;
+    padding-left: 0!important;
+    padding-right: 0!important;
   }
   .ul-validate{
     columns: 1!important;
@@ -1626,6 +1649,38 @@
   }
   .ul-credit .li-validate{
     height: 95px!important;
+  }
+  .div-bottom-ul{
+    width: 80%!important;
+  }
+  .img-left{
+    width: 100%!important;
+  }
+  .div-img-special{
+    padding-left: 0%;
+    padding-right: 0%;
+    background-position: 50% 40%!important;
+  }
+  .titre-div-row{
+    padding-left: 10%!important;
+    padding-right: 10%!important;
+    width: 100%!important;
+  }
+  .div-img-carte{
+    min-height: 200px!important;
+    background-size: 250px!important;
+    background-repeat: no-repeat;
+    background-position: 50%!important;
+    width: 100%!important;
+  }
+  .div-slider-entreprise{
+    padding-left: 10%!important;
+    padding-right: 10%!important;
+    width: 100%!important;
+    padding-top: 5%!important;
+  }
+  .div-img-entreprise{
+    width: 100%!important;
   }
 }
 
@@ -1685,5 +1740,39 @@
   .ul-philo{
     columns: 2!important;
     padding: 0!important;
+  }
+}
+
+@media(max-width: 550px){
+  .company .slick-slide{
+    padding-top: 8%!important;
+  }
+}
+
+@media(max-width: 450px){
+  .company .slick-slide{
+    padding-top: 10%!important;
+  }
+  .div-img-entreprise{
+    background-size: 300px!important;
+    background-position: 50%!important;
+  }
+}
+
+@media(max-width: 360px){
+  .company .slick-slide{
+    padding-top: 13%!important;
+  }
+}
+
+@media(max-width: 705px){
+  
+  [role=presentation] {
+    width: 30%!important;
+    margin-left: 5%!important;
+    margin-right: 5%!important;
+  }
+  .slick-dots{
+    margin-left: -43px!important;
   }
 }

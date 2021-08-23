@@ -617,6 +617,59 @@ class DemandeType extends AbstractType
 
 
 
+        ->add('montant_achat_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le montant du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant du véhicule'
+        ])
+        ->add('acompte_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le montant de l\'acompte',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant de l\'acompte du véhicule'
+        ])
+        ->add('marque_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez la marque du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Marque du véhicule'
+        ])
+        ->add('modele_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le modèle du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Modèle du véhicule'
+        ])
+        ->add('type_vendeur_voiture', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Type de vendeur',
+            'choices'  => [
+                'Garage' => 'Garage',
+                'Particulier' => 'Particulier'
+            ]
+        ])
+        ->add('nom_vendeur_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le nom du vendeur du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant du véhicule'
+        ])
+        ->add('montant_achat_voiture', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le montant du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant du véhicule'
+        ])
+
         ->add('Envoyer', SubmitType::class, [
             'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],
             'label' => 'ENVOYER MA DEMANDE'
