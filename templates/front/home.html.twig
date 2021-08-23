@@ -274,8 +274,8 @@
     </div> 
   </div>
   <div class="typo" style="text-align: right;color: var(--white);padding-right: 30px;padding-bottom: 20px">
-        *Taux préférenciel, sous réserve d'acceptation du dossier par la société de crédit.
-    </div>
+    *Taux préférenciel, sous réserve d'acceptation du dossier par la société de crédit.
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -290,14 +290,14 @@
         autoplaySpeed: 2000,
         responsive: [
             {
-              breakpoint: 950,
+              breakpoint: 1250,
               settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2
               }
             },
             {
-              breakpoint: 500,
+              breakpoint: 850,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -305,36 +305,8 @@
             }
         ]
     });
-    $(".open-main-nav").click(function () {
 
-         burger = $('.open-main-nav');
-    nav = document.getElementById('main-nav'),
-    slowmo = document.getElementById('slowmo');
-    this
-        .classList
-        .toggle('is-open');
-    nav
-        .classList
-        .toggle('is-open');
-    });
-   function burger() {
-
-    burger = $('.open-main-nav');
-    nav = document.getElementById('main-nav'),
-    slowmo = document.getElementById('slowmo');
-    this
-        .classList
-        .toggle('is-open');
-    nav
-        .classList
-        .toggle('is-open');
-}
-
-/* Onload demo - dirty timeout */
-let clickEvent = new Event('click');
-
-
-    </script>
+</script>
 
 <div class="div-partenaire-conf" style="background-image:url({{asset('assets/front/img/image-21-1@1x.png')}});">
   <div style="width: 50%;float: right;background-color: white;min-height: 700px;opacity: 0.7;margin-top: 60px;">
@@ -647,12 +619,6 @@ let clickEvent = new Event('click');
 <style>
     .slider .slide{
         margin-left: 20px;
-    }
-    .slider .slick-list{
-        width: 70%;
-        margin: auto;
-        padding-bottom: 90px;
-        overflow: hidden;
     }
     .slider .slick-arrow{
         background-image: url("assets/front/img/trac--227-1@1x.png");

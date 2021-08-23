@@ -1514,11 +1514,6 @@
 
 /*fin css footer*/
 
-.img-philo{
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 150px;
-}
 
 .typo{
   font-family: var(--font-family-montserrat);
@@ -1587,6 +1582,51 @@
   .td-left-footer{
     padding-left: 5%;
   }
+  /*page philo*/
+  .div-img{
+    width: 100%!important;
+    background-position: 50%!important;
+  }
+  .div-bottom-ul{
+    margin: auto!important;
+    padding-left: 0!important;
+  }
+  .btn-pret{
+    width: 60%!important;
+  }
+
+  .div-info-contact{
+    width: 60%!important;
+  }
+
+  .input-contact, .input-title-contact{
+    width: 70%!important;
+  }
+
+  .img-part{
+    padding-right: 0!important;
+  }
+}
+
+@media(max-width: 1050px){
+  /*page philo*/
+  .div-img{
+    width: 100%!important;
+    background-position: 50%!important;
+  }
+  .ul-validate{
+    columns: 1!important;
+  }
+  .img-page-credit{
+    display: none;
+  }
+  .ul-part{
+    display: block!important;
+    columns: 2!important;
+  }
+  .ul-credit .li-validate{
+    height: 95px!important;
+  }
 }
 
 @media(max-width: 1385px){
@@ -1599,5 +1639,46 @@
   }
   .btn-header{
     padding-top: 1%!important;
+  }
+  .slick-arrow{
+    display: none!important;
+  }
+}
+
+@media(max-width: 420px){
+  /*page philo*/
+  .titre-taux-black{
+    font-size: 40px!important;
+  }
+}
+
+@media(min-width: 320px){
+  .div-img{
+    min-height: 400px!important;
+    background-size: 300px!important;
+  }
+}
+
+@media(min-width: 420px){
+  .div-img{
+    min-height: 400px!important;
+    background-size: 350px!important;
+  }
+}
+
+@media(max-width: 500px){
+  /*page philo*/
+  .div-img{
+    min-height: 400px!important;
+    background-size: 400px!important;
+  }
+  /*page contact*/
+  .div-info-contact{
+    width: 100%!important;
+  }
+
+  .ul-philo{
+    columns: 2!important;
+    padding: 0!important;
   }
 }
