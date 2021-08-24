@@ -125,7 +125,7 @@ class Demandecredit
     private $pays_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=30)
+     * @ORM\Column(type="datetime", length=30, nullable=true)
      */
     private $validite_carte_identite;
 
@@ -175,7 +175,7 @@ class Demandecredit
     private $pays_residence;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20,  nullable=true)
      */
     private $date_adresse;
 
@@ -190,7 +190,7 @@ class Demandecredit
     private $numero_compte;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_compte;
 
@@ -220,7 +220,7 @@ class Demandecredit
     private $type_contrat;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_contrat;
 
@@ -380,7 +380,7 @@ class Demandecredit
     private $montant_echeance;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $debut_credit;
 
@@ -415,12 +415,12 @@ class Demandecredit
     private $duree_credit_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_echeance_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_debut_credit_hypo;
 
@@ -453,9 +453,46 @@ class Demandecredit
      */
     private $nom_vendeur_voiture;
 
+    /**
+     * @ORM\Column(type="datetime", length=20, nullable=true)
+     */
+    private $date_premiere_circulation_voiture;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $montant_achat_moto;
+    
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $acompte_moto;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $marque_moto;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $modele_moto;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $type_vendeur_moto;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $nom_vendeur_moto;
+
+    /**
+     * @ORM\Column(type="datetime", length=20, nullable=true)
+     */
+    private $date_premiere_circulation_moto;
+    
 
     public function getTitre(): ?string
     {
@@ -512,7 +549,7 @@ class Demandecredit
     }
     public function getSociete(): ?string
     {
-        return $this->mail;
+        return $this->societe;
     }
 
     public function setSociete(string $societe): self
@@ -1422,72 +1459,6 @@ class Demandecredit
 
         return $this;
     }
-    public function getMontantAchatVoiture(): ?String
-    {
-        return $this->montant_achat_voiture;
-    }
-
-    public function setMontantAchatVoiture(String $montant_achat_voiture): self
-    {
-        $this->montant_achat_voiture = $montant_achat_voiture;
-
-        return $this;
-    }
-    public function getAcompteVoiture(): ?String
-    {
-        return $this->acompte_voiture;
-    }
-
-    public function setAcompteVoiture(String $acompte_voiture): self
-    {
-        $this->acompte_voiture = $acompte_voiture;
-
-        return $this;
-    }
-    public function getMarqueVoiture(): ?String
-    {
-        return $this->marque_voiture;
-    }
-
-    public function setMarqueVoiture(String $marque_voiture): self
-    {
-        $this->marque_voiture = $marque_voiture;
-
-        return $this;
-    }
-    public function getModeleVoiture(): ?String
-    {
-        return $this->marque_voiture;
-    }
-
-    public function setModeleVoiture(String $modele_voiture): self
-    {
-        $this->modele_voiture = $modele_voiture;
-
-        return $this;
-    }
-    public function getTypeVendeurVoiture(): ?String
-    {
-        return $this->type_vendeur_voiture;
-    }
-
-    public function setTypeVendeurVoiture(String $type_vendeur_voiture): self
-    {
-        $this->type_vendeur_voiture = $type_vendeur_voiture;
-
-        return $this;
-    }
-    public function getNomVendeurVoiture(): ?String
-    {
-        return $this->nom_vendeur_voiture;
-    }
-
-    public function setNomVendeurVoiture(String $nom_vendeur_voiture): self
-    {
-        $this->nom_vendeur_voiture = $nom_vendeur_voiture;
-
-        return $this;
-    }
 
 
     public function getMontantAchatVoiture(): ?string
@@ -1556,14 +1527,91 @@ class Demandecredit
         return $this;
     }
 
-    public function getDatePremiereCirculationVoiture(): ?string
+    public function getDatePremiereCirculationVoiture(): ?DateTime
     {
         return $this->date_premiere_circulation_voiture;
     }
 
-    public function setDatePremiereCirculationVoiture(string $date_premiere_circulation_voiture): self
+    public function setDatePremiereCirculationVoiture(DateTime $date_premiere_circulation_voiture): self
     {
         $this->date_premiere_circulation_voiture = $date_premiere_circulation_voiture;
+        return $this;
+    }
+
+    public function getMontantAchatMoto(): ?string
+    {
+        return $this->montant_achat_moto;
+    }
+
+    public function setMontantAchatMoto(string $montant_achat_moto): self
+    {
+        $this->montant_achat_moto = $montant_achat_moto;
+        return $this;
+    }
+
+    public function getAcompteMoto(): ?string
+    {
+        return $this->acompte_moto;
+    }
+
+    public function setAcompteMoto(string $acompte_moto): self
+    {
+        $this->acompte_moto = $acompte_moto;
+        return $this;
+    }
+
+    public function getMarqueMoto(): ?string
+    {
+        return $this->marque_moto;
+    }
+
+    public function setMarqueMoto(string $marque_moto): self
+    {
+        $this->marque_moto = $marque_moto;
+        return $this;
+    }
+
+    public function getModeleMoto(): ?string
+    {
+        return $this->modele_moto;
+    }
+
+    public function setModeleMoto(string $modele_moto): self
+    {
+        $this->modele_moto = $modele_moto;
+        return $this;
+    }
+
+    public function getTypeVendeurMoto(): ?string
+    {
+        return $this->type_vendeur_moto;
+    }
+
+    public function setTypeVendeurMoto(string $type_vendeur_moto): self
+    {
+        $this->type_vendeur_moto = $type_vendeur_moto;
+        return $this;
+    }
+
+    public function getNomVendeurMoto(): ?string
+    {
+        return $this->nom_vendeur_moto;
+    }
+
+    public function setNomVendeurMoto(string $nom_vendeur_moto): self
+    {
+        $this->nom_vendeur_moto = $nom_vendeur_moto;
+        return $this;
+    }
+
+    public function getDatePremiereCirculationMoto(): ?DateTime
+    {
+        return $this->date_premiere_circulation_moto;
+    }
+
+    public function setDatePremiereCirculationMoto(DateTime $date_premiere_circulation_moto): self
+    {
+        $this->date_premiere_circulation_moto = $date_premiere_circulation_moto;
         return $this;
     }
 
@@ -1624,12 +1672,212 @@ class Demandecredit
 
     public static function loadValidatorMetadata(ClassMetadata $metadata){
         $metadata->addPropertyConstraint('nom', new Validator\Regex([
-            'pattern' => '/[a-zA-Z]+/',
-            'message' => 'Votre nom doit contenir uniquement des lettres'
+            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'message' => 'Votre nom doit contenir uniquement des lettres',
         ]));
         $metadata->addPropertyConstraint('prenom', new Validator\Regex([
-            'pattern' => '/[a-zA-Z]+/',
+            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
             'message' => 'Votre prénom doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('ville_naissance', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+$/',
+            'message' => 'Votre ville de naissance doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('registre_national_belge', new Validator\Regex([
+            'pattern' => '/^[0-9]{11}$/',
+            'message' => 'Votre registre doit contenir uniquement 11 chiffres'
+        ]));
+        $metadata->addPropertyConstraint('numero_carte_identite', new Validator\Regex([
+            'pattern' => '/^[0-9A-Z]{9}$/',
+            'message' => 'Votre numéro de carte doit contenir 9 caractères pour le Luxembourg et 12 caractères pour la Belgique (lettres majuscules ou chiffres)'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('nom_rue', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+$/',
+            'message' => 'Votre nom de rue doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('numero_rue', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Votre numéro de rue doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('ville_residence', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+$/',
+            'message' => 'Votre ville de résidence doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('tel', new Validator\Regex([
+            'pattern' => '/^[+]{0,1}[0-9]{8,11}$/',
+            'message' => 'Votre numéro de téléphone doit contenir entre 8 et 11 chiffres'
+        ]));
+        $metadata->addPropertyConstraint('telephone_mobile', new Validator\Regex([
+            'pattern' => '/^[+]{0,1}[0-9]{8,11}$/',
+            'message' => 'Votre numéro de téléphone mobile doit contenir entre 8 et 11 chiffres'
+        ]));
+        $metadata->addPropertyConstraint('numero_compte', new Validator\Regex([
+            'pattern' => '/^[0-9A-Z]{14,34}$/',
+            'message' => 'Votre numéro de compte doit contenir entre 14 et 34 caractères, majuscules et chiffres'
+        ]));
+        
+        
+        
+        $metadata->addPropertyConstraint('nom_employeur', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'message' => 'Le nom de votre employeur doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('tel_employeur', new Validator\Regex([
+            'pattern' => '/^[+]{0,1}[0-9]{8,11}$/',
+            'message' => 'Le numéro de téléphone mobile de votre employeur doit contenir entre 8 et 11 chiffres'
+        ]));
+        $metadata->addPropertyConstraint('code_postal_employeur', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le code postal de votre employeur doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('ville_employeur', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+$/',
+            'message' => 'La ville de résidence de votre employeur doit contenir uniquement des lettres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('salaire', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('pension_alimentaire', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('invalidite', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('allocation', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('pension', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('mutuelle', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('chomage', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('handicap', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('revenu_locatif', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('cheque_repas', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('voiture_societe', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('autres_revenus', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('loyer', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('pension_alimentaire_payer', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('autres_charges', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('nombre_enfants', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le nombre d\'enfant(s) doit contenir uniquement des chiffres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('nombre_credit', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le nombre de crédit(s) doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('montant_credit', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('duree_credit', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'La durée doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('taux_credit', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le taux doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('montant_echeance', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('solde_credit', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le solde doit contenir uniquement des chiffres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('valeur_venale', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('montant_achat_hypo', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('duree_credit_hypo', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('montant_achat_voiture', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('acompte_voiture', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('nom_vendeur_voiture', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
+        ]));
+
+
+
+        $metadata->addPropertyConstraint('montant_achat_moto', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('acompte_moto', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le montant doit contenir uniquement des chiffres'
+        ]));
+        $metadata->addPropertyConstraint('nom_vendeur_moto', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
         ]));
     }
 

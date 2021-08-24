@@ -30,7 +30,7 @@ class DemandeController extends AbstractController{
         return $this->render('front/demande.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
-            'title' => 'demande',
+            'title' => 'demande'
         ]);
     }
 }

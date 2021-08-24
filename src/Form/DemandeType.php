@@ -8,9 +8,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -48,7 +48,7 @@ class DemandeType extends AbstractType
         
         ->add('date_naissance', BirthdayType::class,[
             'attr' => [
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
             'label' => 'Date de naissance',
         ])
@@ -97,9 +97,10 @@ class DemandeType extends AbstractType
         ->add('validite_carte_identite', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la date limite de validité de votre carte d\'identité',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Date de validité de la carte d\'identité'
+            'label' => 'Date de validité de la carte d\'identité',
+            'years' => range(date('Y'), date('Y') + 30),
         ])
         ->add('etat_civil', ChoiceType::class,[
             'attr' => [
@@ -177,9 +178,10 @@ class DemandeType extends AbstractType
         
         ->add('date_adresse', DateType::class,[
             'attr' => [
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Installé depuis'
+            'label' => 'Installé depuis',
+            'years' => range(date('Y')-100, date('Y')),
         ])
         ->add('tel', TelType::class,[
             'attr' => [
@@ -207,13 +209,14 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre numéro de compte',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Numéro de compte'
+            'label' => 'Numéro de compte (IBAN)'
         ])
         ->add('date_compte', DateType::class,[
             'attr' => [
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Date d\'ouverture du compte'
+            'label' => 'Date d\'ouverture du compte',
+            'years' => range(date('Y')-100, date('Y')),
         ])
 
 
@@ -309,9 +312,10 @@ class DemandeType extends AbstractType
         ])
         ->add('date_contrat', DateType::class,[
             'attr' => [
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Date du contrat'
+            'label' => 'Date du contrat',
+            'years' => range(date('Y')-100, date('Y')),
         ])
 
 
@@ -351,7 +355,7 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Ville de l\'employeur'
         ])
-        ->add('pays_employeur', TextType::class,[
+        ->add('pays_employeur', CountryType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le pays de votre employeur',
                 'class' => 'input-form input-contact'
@@ -549,13 +553,14 @@ class DemandeType extends AbstractType
         ->add('debut_credit', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la date de début du crédit',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Taux du crédit'
+            'label' => 'Date de début du crédit',
+            'years' => range(date('Y')-100, date('Y')),
         ])
         ->add('remboursement_credit', CheckboxType::class,[
             'attr' => [
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact checkbox-css-symfony'
             ],
             'label' => 'Remboursement d\'un crédit'
         ])
@@ -604,16 +609,18 @@ class DemandeType extends AbstractType
         ->add('date_echeance_hypo', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la date d\'échéance',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Échéance'
+            'label' => 'Échéance',
+            'years' => range(date('Y'), date('Y') + 100),
         ])
         ->add('date_debut_credit_hypo', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la date de début',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Date de début'
+            'label' => 'Date de début',
+            'years' => range(date('Y')-100, date('Y')),
         ])
 
 
@@ -661,24 +668,70 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le nom du vendeur du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant du véhicule'
+            'label' => 'Nom du vendeur'
         ])
         ->add('date_premiere_circulation_voiture', DateType::class,[
             'attr' => [
-                'placeholder' => 'Entrez le montant du véhicule',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Montant du véhicule'
+            'label' => 'Date de première circulation du véhicule',
+            'years' => range(date('Y')-100, date('Y')),
         ])
 
 
 
-        ->add('montant_achat_moto', DateType::class,[
+
+        ->add('montant_achat_moto', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant du véhicule',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Montant du véhicule'
+        ])
+        ->add('acompte_moto', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le montant de l\'acompte',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant de l\'acompte du véhicule'
+        ])
+        ->add('marque_moto', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez la marque du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Marque du véhicule'
+        ])
+        ->add('modele_moto', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le modèle du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Modèle du véhicule'
+        ])
+        ->add('type_vendeur_moto', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Type de vendeur',
+            'choices'  => [
+                'Garage' => 'Garage',
+                'Particulier' => 'Particulier'
+            ]
+        ])
+        ->add('nom_vendeur_moto', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le nom du vendeur du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Nom du vendeur'
+        ])
+        ->add('date_premiere_circulation_moto', DateType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact date-css-symfony'
+            ],
+            'label' => 'Date de première circulation du véhicule',
+            'years' => range(date('Y')-100, date('Y')),
         ])
 
 

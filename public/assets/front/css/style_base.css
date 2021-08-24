@@ -1552,6 +1552,63 @@
   margin-bottom: 2%!important;
 }
 
+#demande_date_naissance_month, #demande_validite_carte_identite_month, #demande_date_adresse_month, #demande_date_compte_month, 
+#demande_date_contrat_month, #demande_debut_credit_month, #demande_date_echeance_hypo_month, #demande_date_debut_credit_hypo_month, 
+#demande_date_premiere_circulation_voiture_month, #demande_date_premiere_circulation_moto_month{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#demande_date_naissance_year, #demande_validite_carte_identite_year, #demande_date_adresse_year, #demande_date_compte_year, 
+#demande_date_contrat_year, #demande_debut_credit_year, #demande_date_echeance_hypo_year, #demande_date_debut_credit_hypo_year, 
+#demande_date_premiere_circulation_voiture_year, #demande_date_premiere_circulation_moto_year{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.date-css-symfony select{
+  height: 39px;
+  width: 33.4%;
+}
+
+.date-select{
+  padding-bottom: 1%;
+}
+
+.checkbox-css-symfony{
+  height: 16px!important;
+  width: 5%!important;
+}
+
+.div-demande-form{
+  color: var(--nevada);
+  margin: auto;
+  float: left;
+  width: auto;
+  margin-left: 25%;
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
+.form-check{
+  width: 35%;
+  text-align: left;
+  margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.form-error-icon{
+  display: none;
+}
+
+.form-error-message{
+  width: 100%;
+  color: red;
+  float: left;
+  font-weight: 300;
+}
+
 /*CSS RESPONSIVE*/
 
 @media(max-width: 930px){
