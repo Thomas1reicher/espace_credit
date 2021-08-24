@@ -1,9 +1,18 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
+    {{ form_start(form) }}
     <div class="div-lightgrey">
-        <div class="txt-black div-center-demande-pret" style="color: var(--nevada);margin: auto;width: 60%">
-            Formulaire de demande
+        <div class="div-centre-titre"> 
+            <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
+                Demande de prêt
+            </h1>
         </div>
+        <div class="ligne-yellow"></div>
+
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Identité
+        </div>
+        
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.titre)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.titre)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom)}}</div></div>
@@ -28,6 +37,11 @@
         <div class="div-input-contact date-select">{{form_widget(form.validite_carte_identite)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.etat_civil)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.etat_civil)}}</div>
+        
+
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Adresse
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.habitation)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.habitation)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_rue)}}</div></div>
@@ -54,6 +68,11 @@
         <div class="div-input-contact">{{form_widget(form.numero_compte)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_compte)}}</div></div>
         <div class="div-input-contact date-select">{{form_widget(form.date_compte)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Profession
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_emploi)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.type_emploi)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.emploi)}}</div></div>
@@ -66,6 +85,11 @@
         <div class="div-input-contact">{{form_widget(form.type_contrat)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_contrat)}}</div></div>
         <div class="div-input-contact date-select">{{form_widget(form.date_contrat)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Employeur
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_employeur)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.nom_employeur)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.adresse_employeur)}}</div></div>
@@ -78,6 +102,11 @@
         <div class="div-input-contact">{{form_widget(form.ville_employeur)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pays_employeur)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.pays_employeur)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Revenu
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.salaire)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.salaire)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pension_alimentaire)}}</div></div>
@@ -104,6 +133,11 @@
         <div class="div-input-contact">{{form_widget(form.autres_revenus)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.description_autres_revenus)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.description_autres_revenus)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Charges
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.loyer)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.loyer)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.pension_alimentaire_payer)}}</div></div>
@@ -114,6 +148,11 @@
         <div class="div-input-contact">{{form_widget(form.description_autres_charges)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nombre_enfants)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.nombre_enfants)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Crédits en cours
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nombre_credit)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.nombre_credit)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_credit)}}</div></div>
@@ -129,11 +168,16 @@
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_echeance)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.montant_echeance)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.debut_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.debut_credit)}}</div>
+        <div class="div-input-contact date-select">{{form_widget(form.debut_credit)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.remboursement_credit)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.remboursement_credit)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.solde_credit)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.solde_credit)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Crédit hypothécaire
+        </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_bien)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.type_bien)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.valeur_venale)}}</div></div>
@@ -143,16 +187,57 @@
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit_hypo)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.duree_credit_hypo)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_echeance_hypo)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.date_echeance_hypo)}}</div>
+        <div class="div-input-contact date-select">{{form_widget(form.date_echeance_hypo)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_debut_credit_hypo)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.date_debut_credit_hypo)}}</div>
+        <div class="div-input-contact date-select">{{form_widget(form.date_debut_credit_hypo)}}</div>
+        
+        
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Crédit voiture
+        </div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.montant_achat_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.acompte_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.acompte_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.marque_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.marque_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.modele_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.modele_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_vendeur_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_vendeur_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_vendeur_voiture)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom_vendeur_voiture)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_premiere_circulation_voiture)}}</div></div>
+        <div class="div-input-contact date-select">{{form_widget(form.date_premiere_circulation_voiture)}}</div>
+
+
+        <div class="div-demande-form txt-black div-center-demande-pret">
+            Crédit moto
+        </div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.montant_achat_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.acompte_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.acompte_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.marque_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.marque_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.modele_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.modele_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_vendeur_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.type_vendeur_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_vendeur_moto)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom_vendeur_moto)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_premiere_circulation_moto)}}</div></div>
+        <div class="div-input-contact date-select">{{form_widget(form.date_premiere_circulation_moto)}}</div>
+
         <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
             <div class="btn-pret" style="width: 45%;margin: auto">
                 <a href="" class="link-pret" style="padding: 6%">{{form_widget(form.Envoyer)}}</a>
             </div>
         </div>
+
     {{ form_end(form) }}
     </div>
+    
     <style>
         .big-text-area{
             height: 120px!important;
