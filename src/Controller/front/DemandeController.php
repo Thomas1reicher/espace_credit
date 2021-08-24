@@ -12,18 +12,19 @@ use Symfony\Component\Routing\Annotation\Route;
 class DemandeController extends AbstractController{
 
     /**
-     * @Route("/demande", name="demande")
+     * @Route("/demande/{token}", name="demande")
      * @param Request $request
      * @return Response
      */
-    public function demande(Request $request): Response
-    {
-        $data = new Demandecredit();
-        $form = $this->createForm(DemandeType::class, $data);
+    public function demande(string $token ,Request $request): Response
+    {   
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Demandecredit::class);
+        $objet = $repo->findBy(['token' => $token]);
+        $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
-            $em->persist($data);
             $em->flush();
             return $this->redirectToRoute('accueil');
         }
