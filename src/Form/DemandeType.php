@@ -435,10 +435,10 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Chèques Repas'
         ])
-        ->add('voiture_societe', TextType::class,[
+        ->add('voiture_societe', CheckboxType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre voiture de société',
-                'class' => 'input-form input-contact'
+                'class' => 'input-form input-contact checkbox-css-symfony'
             ],
             'label' => 'Voiture de société'
         ])
