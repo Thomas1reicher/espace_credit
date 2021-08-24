@@ -23,7 +23,7 @@ class Demandecredit
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10 , nullable=true)
      */
     private $titre;
 
@@ -90,7 +90,7 @@ class Demandecredit
     private $file_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=30)
+     * @ORM\Column(type="datetime", length=30 ,nullable=true)
      */
     private $date_naissance;
 
@@ -100,37 +100,37 @@ class Demandecredit
     private $ville_naissance;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $pays_naissance;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $registre_national_belge;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $numero_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $numero_attestation_enregistrement;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $pays_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=30)
+     * @ORM\Column(type="datetime", length=30, nullable=true)
      */
     private $validite_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $etat_civil;
 
@@ -140,316 +140,316 @@ class Demandecredit
     private $annee_belgique;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $habitation;
 
     /**
-     * @ORM\Column(type="string", length=3)
+     * @ORM\Column(type="string", length=3, nullable=true)
      */
     private $numero_rue;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $nom_rue;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $boite;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $code_postal;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $ville_residence;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $pays_residence;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_adresse;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $telephone_mobile;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $numero_compte;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_compte;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $type_emploi;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $emploi;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $secteur;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $temps_contrat;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $type_contrat;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_contrat;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nom_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $adresse_employeur;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $tel_employeur;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $code_postal_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $ville_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $pays_employeur;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $salaire;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $pension_alimentaire;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $invalidite;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $allocation;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $pension;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $mutuelle;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $chomage;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $handicap;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $revenu_locatif;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $cheque_repas;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $voiture_societe;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $autres_revenus;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description_autres_revenus;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $loyer;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $pension_alimentaire_payer;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $autres_charges;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description_autres_charges;
 
     /**
-     * @ORM\Column(type="string", length=2)
+     * @ORM\Column(type="string", length=2, nullable=true)
      */
     private $nombre_enfants;
 
     /**
-     * @ORM\Column(type="string", length=2)
+     * @ORM\Column(type="string", length=2, nullable=true)
      */
     private $nombre_credit;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $type_credit;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $organisme_preteur;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $montant_credit;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $duree_credit;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $taux_credit;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $montant_echeance;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $debut_credit;
 
     /**
-     * @ORM\Column(type="boolean", length=20)
+     * @ORM\Column(type="boolean", length=20, nullable=true)
      */
     private $remboursement_credit;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $solde_credit;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $type_bien;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $valeur_venale;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $montant_achat_hypo;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $duree_credit_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_echeance_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20)
+     * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_debut_credit_hypo;
 
    /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $montant_achat_voiture;
        /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $acompte_voiture;
 
            /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $marque_voiture;
 
              /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $modele_voiture;
 
              /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $type_vendeur_voiture;
 
              /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nom_vendeur_voiture;
 

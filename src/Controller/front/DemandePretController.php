@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 class DemandePretController extends AbstractController{
 
@@ -25,20 +26,18 @@ class DemandePretController extends AbstractController{
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
-            $random = random_bytes(20);
-            $demande->setToken($random);
+            $random = random_bytes(10);
+            $demande->setToken(bin2hex($random));
             $em->persist($demande);
             $em->flush();
-            /*$email = (new Email())
-            ->from($demande->getMail())
+            $email = (new TemplatedEmail())
+            ->from('thomas1.reicher@gmail.com')
             ->to('thomas1.reicher@gmail.com')
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
-
-        $mailer->send($email);
-        die();*/
-        
+            ->subject('Thanks for signing up!')
+            ->htmlTemplate('emails/token.html.twig')
+            ->context([
+                'token' => $demande->getToken()]);
+                $mailer->send($email);    
             return $this->redirectToRoute('accueil');
         }
         return $this->render('front/demande-pret.html.twig', [
