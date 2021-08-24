@@ -424,6 +424,38 @@ class Demandecredit
      */
     private $date_debut_credit_hypo;
 
+   /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $montant_achat_voiture;
+       /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $acompte_voiture;
+
+           /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $marque_voiture;
+
+             /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $modele_voiture;
+
+             /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $type_vendeur_voiture;
+
+             /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $nom_vendeur_voiture;
+
+
+
+
 
     public function getTitre(): ?string
     {
@@ -1390,6 +1422,73 @@ class Demandecredit
 
         return $this;
     }
+    public function getMontantAchatVoiture(): ?String
+    {
+        return $this->montant_achat_voiture;
+    }
+
+    public function setMontantAchatVoiture(String $montant_achat_voiture): self
+    {
+        $this->montant_achat_voiture = $montant_achat_voiture;
+
+        return $this;
+    }
+    public function getAcompteVoiture(): ?String
+    {
+        return $this->acompte_voiture;
+    }
+
+    public function setAcompteVoiture(String $acompte_voiture): self
+    {
+        $this->acompte_voiture = $acompte_voiture;
+
+        return $this;
+    }
+    public function getMarqueVoiture(): ?String
+    {
+        return $this->marque_voiture;
+    }
+
+    public function setMarqueVoiture(String $marque_voiture): self
+    {
+        $this->marque_voiture = $marque_voiture;
+
+        return $this;
+    }
+    public function getModeleVoiture(): ?String
+    {
+        return $this->marque_voiture;
+    }
+
+    public function setModeleVoiture(String $modele_voiture): self
+    {
+        $this->modele_voiture = $modele_voiture;
+
+        return $this;
+    }
+    public function getTypeVendeurVoiture(): ?String
+    {
+        return $this->type_vendeur_voiture;
+    }
+
+    public function setTypeVendeurVoiture(String $type_vendeur_voiture): self
+    {
+        $this->type_vendeur_voiture = $type_vendeur_voiture;
+
+        return $this;
+    }
+    public function getNomVendeurVoiture(): ?String
+    {
+        return $this->nom_vendeur_voiture;
+    }
+
+    public function setNomVendeurVoiture(String $nom_vendeur_voiture): self
+    {
+        $this->nom_vendeur_voiture = $nom_vendeur_voiture;
+
+        return $this;
+    }
+
 
     public function vars() :array
     {

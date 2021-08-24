@@ -22,7 +22,9 @@
         </div>
 
         <div class="inputs label-form montserrat-medium-white-14px" style="width: 100%;">
+          {% if pret.taux|length > 1 %}
           <div style="width: 100%;float: left">Votre projet</div>
+          
           <div style="width: 100%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
           {% set first = true %}
                 {% set objFirst = "" %}
@@ -36,6 +38,9 @@
                 {% endfor %}
               </select>
           </div>
+          {% else %}
+          {% set objFirst = pret.taux[0] %}
+          {% endif %}
           <div style="width: 100%;float: left">Montant</div>
           <div style="width: 100%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
           <div style="width: 100%;float: left">Durée</div>
@@ -47,7 +52,7 @@
         <div style="line-height: 1.5;">
             <div class="txt-black txt-low-weight-white">Total à rembourser: <span class=" montant-info numbers-right">14.000€</span></div>
             <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="interet-info numbers-right">2.330€</span></div>
-            <div class="txt-black txt-low-weight-white">TAEG: <span class="numbers-right taux-info">5,95%*</span></div>
+            <div class="txt-black txt-low-weight-white">TAEG: <span data="{{objFirst.taux}}" class="numbers-right taux-info">{{objFirst.taux}}%*</span></div>
             <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
         </div>
         <div class="div-btn-cred" style="margin-bottom: 40px;margin-top: 40px">
