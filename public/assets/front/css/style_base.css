@@ -1547,6 +1547,11 @@
   padding-top: 4%!important;
 }
 
+.div-input-preview{
+  margin-top: 1%!important;
+  margin-bottom: 2%!important;
+}
+
 /*CSS RESPONSIVE*/
 
 @media(max-width: 930px){
@@ -1561,6 +1566,9 @@
   }
   .div-lightgrey{
     width: 100%!important;
+  }
+  .div-input-preview{
+    margin-bottom: 0!important;
   }
 }
 
