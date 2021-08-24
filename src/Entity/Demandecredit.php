@@ -424,6 +424,41 @@ class Demandecredit
      */
     private $date_debut_credit_hypo;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $montant_achat_voiture;
+    
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $acompte_voiture;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $marque_voiture;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $modele_voiture;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $type_vendeur_voiture;
+
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $nom_vendeur_voiture;
+
+    /**
+     * @ORM\Column(type="datetime", length=20)
+     */
+    private $date_premiere_circulation_voiture;
+    
 
     public function getTitre(): ?string
     {
@@ -1388,6 +1423,83 @@ class Demandecredit
     {
         $this->date_debut_credit_hypo = $date_debut_credit_hypo;
 
+        return $this;
+    }
+
+    public function getMontantAchatVoiture(): ?string
+    {
+        return $this->montant_achat_voiture;
+    }
+
+    public function setMontantAchatVoiture(string $montant_achat_voiture): self
+    {
+        $this->montant_achat_voiture = $montant_achat_voiture;
+        return $this;
+    }
+
+    public function getAcompteVoiture(): ?string
+    {
+        return $this->acompte_voiture;
+    }
+
+    public function setAcompteVoiture(string $acompte_voiture): self
+    {
+        $this->acompte_voiture = $acompte_voiture;
+        return $this;
+    }
+
+    public function getMarqueVoiture(): ?string
+    {
+        return $this->marque_voiture;
+    }
+
+    public function setMarqueVoiture(string $marque_voiture): self
+    {
+        $this->marque_voiture = $marque_voiture;
+        return $this;
+    }
+
+    public function getModeleVoiture(): ?string
+    {
+        return $this->modele_voiture;
+    }
+
+    public function setModeleVoiture(string $modele_voiture): self
+    {
+        $this->modele_voiture = $modele_voiture;
+        return $this;
+    }
+
+    public function getTypeVendeurVoiture(): ?string
+    {
+        return $this->type_vendeur_voiture;
+    }
+
+    public function setTypeVendeurVoiture(string $type_vendeur_voiture): self
+    {
+        $this->type_vendeur_voiture = $type_vendeur_voiture;
+        return $this;
+    }
+
+    public function getNomVendeurVoiture(): ?string
+    {
+        return $this->nom_vendeur_voiture;
+    }
+
+    public function setNomVendeurVoiture(string $nom_vendeur_voiture): self
+    {
+        $this->nom_vendeur_voiture = $nom_vendeur_voiture;
+        return $this;
+    }
+
+    public function getDatePremiereCirculationVoiture(): ?string
+    {
+        return $this->date_premiere_circulation_voiture;
+    }
+
+    public function setDatePremiereCirculationVoiture(string $date_premiere_circulation_voiture): self
+    {
+        $this->date_premiere_circulation_voiture = $date_premiere_circulation_voiture;
         return $this;
     }
 

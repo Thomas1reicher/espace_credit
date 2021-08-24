@@ -662,13 +662,25 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Montant du véhicule'
         ])
-        ->add('montant_achat_voiture', TextType::class,[
+        ->add('date_premiere_circulation_voiture', DateType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant du véhicule',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Montant du véhicule'
         ])
+
+
+
+        ->add('montant_achat_moto', DateType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le montant du véhicule',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Montant du véhicule'
+        ])
+
+
 
         ->add('Envoyer', SubmitType::class, [
             'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],
