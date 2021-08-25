@@ -256,9 +256,10 @@
 }
 .taux-menu{
   height: 40px;
-  width: 22%;
+  width: 41%;
   text-align: center;
   padding-top: 0.4%;
+  max-width: 250px;
 }
 .div-titre-form{
 
@@ -653,6 +654,9 @@ transform: translate(0, 25px);
 
 .main-nav.is-open::before {
     transform: skew(-0deg) translateX(0);
+    background-image: url("/assets/front/img/oiseau_espace_credit.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 /* Skewing effect on menu links */

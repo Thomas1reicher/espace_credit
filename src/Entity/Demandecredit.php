@@ -23,7 +23,7 @@ class Demandecredit
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10 , nullable=true)
+     * @ORM\Column(type="string", length=15 , nullable=true)
      */
     private $titre;
 
@@ -175,11 +175,7 @@ class Demandecredit
     private $pays_residence;
 
     /**
-<<<<<<< HEAD
      * @ORM\Column(type="datetime", length=20, nullable=true)
-=======
-     * @ORM\Column(type="datetime", length=20,  nullable=true)
->>>>>>> 2760cefae216a9b7c61d485b69678cbdbfbeb997
      */
     private $date_adresse;
 
@@ -463,32 +459,32 @@ class Demandecredit
     private $date_premiere_circulation_voiture;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $montant_achat_moto;
     
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $acompte_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $marque_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $modele_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $type_vendeur_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nom_vendeur_moto;
 
@@ -663,7 +659,7 @@ class Demandecredit
         return $this->date_naissance;
     }
 
-    public function setDateNaissance(DateTime $date_naissance): self
+    public function setDateNaissance(?DateTime $date_naissance): self
     {
         $this->date_naissance = $date_naissance;
 
@@ -747,7 +743,7 @@ class Demandecredit
         return $this->validite_carte_identite;
     }
 
-    public function setValiditeCarteIdentite(DateTime $validite_carte_identite): self
+    public function setValiditeCarteIdentite(?DateTime $validite_carte_identite): self
     {
         $this->validite_carte_identite = $validite_carte_identite;
 
@@ -976,7 +972,7 @@ class Demandecredit
         return $this->date_contrat;
     }
 
-    public function setDateContrat(DateTime $date_contrat): self
+    public function setDateContrat(?DateTime $date_contrat): self
     {
         $this->date_contrat = $date_contrat;
 
@@ -1360,7 +1356,7 @@ class Demandecredit
         return $this->debut_credit;
     }
 
-    public function setDebutCredit(DateTime $debut_credit): self
+    public function setDebutCredit(?DateTime $debut_credit): self
     {
         $this->debut_credit = $debut_credit;
 
@@ -1444,7 +1440,7 @@ class Demandecredit
         return $this->date_echeance_hypo;
     }
 
-    public function setDateEcheanceHypo(DateTime $date_echeance_hypo): self
+    public function setDateEcheanceHypo(?DateTime $date_echeance_hypo): self
     {
         $this->date_echeance_hypo = $date_echeance_hypo;
 
@@ -1456,7 +1452,7 @@ class Demandecredit
         return $this->date_debut_credit_hypo;
     }
 
-    public function setDateDebutCreditHypo(DateTime $date_debut_credit_hypo): self
+    public function setDateDebutCreditHypo(?DateTime $date_debut_credit_hypo): self
     {
         $this->date_debut_credit_hypo = $date_debut_credit_hypo;
 
@@ -1535,7 +1531,7 @@ class Demandecredit
         return $this->date_premiere_circulation_voiture;
     }
 
-    public function setDatePremiereCirculationVoiture(DateTime $date_premiere_circulation_voiture): self
+    public function setDatePremiereCirculationVoiture(?DateTime $date_premiere_circulation_voiture): self
     {
         $this->date_premiere_circulation_voiture = $date_premiere_circulation_voiture;
         return $this;
@@ -1612,7 +1608,7 @@ class Demandecredit
         return $this->date_premiere_circulation_moto;
     }
 
-    public function setDatePremiereCirculationMoto(DateTime $date_premiere_circulation_moto): self
+    public function setDatePremiereCirculationMoto(?DateTime $date_premiere_circulation_moto): self
     {
         $this->date_premiere_circulation_moto = $date_premiere_circulation_moto;
         return $this;
