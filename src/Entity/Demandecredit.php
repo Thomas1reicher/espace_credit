@@ -559,7 +559,6 @@ class Demandecredit
     public function setSociete(string $societe): self
     {
         $this->societe = $societe;
-
         return $this;
     }
 

@@ -133,6 +133,11 @@ console.log(burger);
         burger = $('.open-main-nav');
         nav = document.getElementById('main-nav'),
         slowmo = document.getElementById('slowmo');
+        if($(this).hasClass('is-open')){
+            $('.body-content').show();
+        }else{
+            setTimeout(function(){ $('.body-content').hide() }, 800);
+        }
         this.classList.toggle('is-open');
         nav.classList.toggle('is-open');
     });
@@ -143,6 +148,7 @@ console.log(burger);
     slowmo = document.getElementById('slowmo');
     this.classList.toggle('is-open');
     nav.classList.toggle('is-open');
+    $('.body-content').hide();
     }
 
     /* Onload demo - dirty timeout */
