@@ -4,8 +4,13 @@
 //********                                                                                                                 ********
 //********                                                                                                                 ********
 //*********************************************************************************************************************************
+namespace App\Api;
+use \DOMDocument;
 
-function ANYSOFT_GETPARAM($p){
+
+class Api
+{
+public function ANYSOFT_GETPARAM($p){
 	switch($p){
 		case 'URL_WS': return 'http://grids.anysoft.lu/interclip/interclip.asmx'; break;
 		case 'USR_WS': return 'TEST'; break;
@@ -13,11 +18,11 @@ function ANYSOFT_GETPARAM($p){
 	}
 }
 
-function any50_htmlspecialchars(&$s){
+public function any50_htmlspecialchars(&$s){
 	return str_replace(">","&gt;",str_replace("<","&lt;",str_replace("\"","&quot;",str_replace("&","&amp;","$s"))));
 }
 
-function any50_decifutf8($s){
+public function any50_decifutf8($s){
 	$c1=0;
 	$c2=0;
 	$c3=0;
@@ -42,7 +47,7 @@ function any50_decifutf8($s){
 
 
 //http post
-function any50_xml_helper($url, $postdata = '')
+public function any50_xml_helper($url, $postdata = '')
 {
 	$verb="POST";
   $cparams = array(
@@ -73,7 +78,7 @@ function any50_xml_helper($url, $postdata = '')
 	return $res;
 }
 
-function any50_myparse_xml($x){
+public function any50_myparse_xml($x){
 	$dom=new DOMDocument();
 	$dom->preserveWhiteSpace=false;
 	$c='"utf-8"?>';
@@ -99,7 +104,7 @@ function any50_myparse_xml($x){
 	return $dom;
 }
 
-function any50_base66switch($s){
+public function any50_base66switch($s){
 	$r='';
 	$l=strlen($s);
 	for($i=0;$i<$l;$i++){
@@ -124,18 +129,18 @@ function any50_base66switch($s){
 	return $r;
 }
 
-function any50_base66encode($s){
-	return any50_base66switch(base64_encode($s));
+public function any50_base66encode($s){
+	return $this->any50_base66switch(base64_encode($s));
 }
-function any50_base66decode($s){
-	return base64_decode(any50_base66switch($s));
+public function any50_base66decode($s){
+	return base64_decode($this->any50_base66switch($s));
 }
 
-function any50_call_simple_method($methodname,$datafields){
+public function any50_call_simple_method($methodname,$datafields){
 	//compo dynamique fields message
 	$xfields='';
 	foreach($datafields as $k=>$v){
-		$xfields.="<$k>".any50_htmlspecialchars($v)."</$k>";
+		$xfields.="<$k>".$this->any50_htmlspecialchars($v)."</$k>";
 	}
 	//composition message soap
 	$xml='<?xml version="1.0" encoding="iso-8859-1"?>'
@@ -149,9 +154,9 @@ function any50_call_simple_method($methodname,$datafields){
 	;
 	//recuperation xml et gestion d'erreur
 	
-	$ws_out=any50_xml_helper(ANYSOFT_GETPARAM("URL_WS"),$xml);
+	$ws_out=$this->any50_xml_helper($this->ANYSOFT_GETPARAM("URL_WS"),$xml);
 	if($ws_out=="") throw new Exception("empty xml [500]");
-	$dom=any50_myparse_xml($ws_out);
+	$dom=$this->any50_myparse_xml($ws_out);
 	$node=$dom->getElementsByTagName($methodname."Result");
 	@$node=&$node->item(0);
 	if($node=="")  throw new Exception("failed to decode ws as xml");
@@ -163,7 +168,7 @@ function any50_call_simple_method($methodname,$datafields){
 
 
 
-function any50_callWS($forminject, $in_ref_credit=""){
+public function any50_callWS($forminject, $in_ref_credit=""){
 	$forminject=@$forminject.'';
 	$in_ref_credit=@$in_ref_credit.'';
 	$XmlRequest="";
@@ -183,14 +188,14 @@ function any50_callWS($forminject, $in_ref_credit=""){
 		@$randstr.=substr($randstr,strlen($randstr)-$i-1,1);
 	}
 	try{
-		$r=any50_call_simple_method("InterCLIPInject",array("XmlRequest"=>any50_base66encode(''.str_replace("|","",$randstr).'|'.str_replace("|","",ANYSOFT_GETPARAM("USR_WS")).'|'.str_replace("|","",ANYSOFT_GETPARAM("PWD_WS")).'|'.$XmlRequest), "in_ref_credit"=>$in_ref_credit));
+		$r=$this->any50_call_simple_method("InterCLIPInject",array("XmlRequest"=>$this->any50_base66encode(''.str_replace("|","",$randstr).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("USR_WS")).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("PWD_WS")).'|'.$XmlRequest), "in_ref_credit"=>$in_ref_credit));
 	}catch(Exception $ex){
 		$r=''.$ex->getMessage();
 		$err=1;
 	}
 	
 	if($err==0) {
-		$r=any50_base66decode($r);
+		$r=$this->any50_base66decode($r);
 		if(substr($r,0,1)!="\t"){
 			$err=1;
 		}
@@ -219,4 +224,4 @@ function any50_callWS($forminject, $in_ref_credit=""){
 //********                                                                                                                 ********
 //*********************************************************************************************************************************
 //>BIA WS CALL
-?>
+}

@@ -1,10 +1,12 @@
 <?php
 
-require("wsbaseany_pat2.php");
+/*require("wsbaseany_pat2.php");
 
 // +
-// cette chaine doit contenir la chaine de caracteres injectable envoyée par email
+// cette chaine doit contenir la chaine de caracteres injectable envoyï¿½e par email
 // -
+function UpdateApi($id){
+	
 $clip_form_data="nom1: test\nprenom1: webservice\nmontant: 5000\n...etc";
 
 
@@ -22,6 +24,7 @@ if($resultat["erreur"]!=""){
 }else{
 	//si OK
 }
-// -
-?>
+//
+ }
+
 
