@@ -2036,6 +2036,9 @@ min-height: 650px !important;
   .btn-sav-plus .btn-pret{
     width: 100%!important;
   }
+  .slider-credits .slide{
+    background-color:white !important;
+  }
 }
 
 @media(max-width: 360px){
