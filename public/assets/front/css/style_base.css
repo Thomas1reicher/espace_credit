@@ -1664,7 +1664,8 @@
     padding-left: 0!important;
   }
   .btn-pret{
-    width: 60%!important;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .div-info-contact{
@@ -1692,6 +1693,12 @@
   .company .slick-slide{
     padding-top: 6%!important;
   }
+  .partenaires-desktop{
+    display: none!important;
+  }
+  .slider-partenaires{
+    display: block!important;
+  }
 }
 
 @media(max-width: 1050px){
@@ -1717,6 +1724,9 @@
   }
   .div-bottom-ul{
     width: 80%!important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0!important;
   }
   .img-left{
     width: 100%!important;
@@ -1746,6 +1756,15 @@
   }
   .div-img-entreprise{
     width: 100%!important;
+  }
+  .div-mob-100{
+    width:100%!important;
+    text-align: center;
+    padding-left: 0!important;
+  }
+  .home-btn-pret{
+    margin-left: auto!important;
+    margin-right: auto!important;
   }
 }
 
@@ -1895,8 +1914,7 @@ header{
   font-size: 10px;
 }
 .container-taux .slick-slider{
-
-  margin-top: 15%;
+  margin-top: 10%;
 }
 .container-taux  .slick-active{
 
@@ -1914,10 +1932,6 @@ header{
   margin-right: auto;
   margin-left: auto;
   width: 80%!important;
-}
-.container-taux .slide{
-  width: 340px!important;
-  margin-left: 27px!important;
 }
 .form-pret {
 
@@ -2008,6 +2022,11 @@ min-height: 650px !important;
   .offrepretslide{
     margin-bottom: 3%;
   }
-
-
 }
+/*
+@media(max-width: 1200px){
+  .div-right-opacity{
+    width: 100%!important;
+  }
+}
+*/

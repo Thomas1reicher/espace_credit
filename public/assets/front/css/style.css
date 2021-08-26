@@ -464,7 +464,6 @@ transform: translate(0,0);
   height: 800px;
 }
 .text-1 {
-  height: 66px;
   letter-spacing: 0;
   line-height: 26px;
   text-align: center;
@@ -926,12 +925,10 @@ transform: translate(0, 25px);
 .div-lightgrey{
   padding-left: 0px!important;
 }
-.div-mob-100{
-  width:100%!important;
-}
+
 .div-img{
   background-position: center!important;
-    background-size: 91%!important;
+    background-size: 80%!important;
     width: 100%!important;
 }
 }
