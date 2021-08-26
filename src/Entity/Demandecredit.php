@@ -305,7 +305,7 @@ class Demandecredit
     private $cheque_repas;
 
     /**
-     * @ORM\Column(type="boolean", length=20)
+     * @ORM\Column(type="boolean", length=20, nullable=true)
      */
     private $voiture_societe;
 
@@ -459,32 +459,32 @@ class Demandecredit
     private $date_premiere_circulation_voiture;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $montant_achat_moto;
     
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $acompte_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $marque_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $modele_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $type_vendeur_moto;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nom_vendeur_moto;
 
