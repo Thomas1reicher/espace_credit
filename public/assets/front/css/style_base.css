@@ -1664,8 +1664,9 @@
     padding-left: 0!important;
   }
   .btn-pret{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    width: 60%!important;
   }
 
   .div-info-contact{
@@ -2044,17 +2045,28 @@ min-height: 650px !important;
   }
 }
 
-@media(max-width: 705px){
-  
-  [role=presentation] {
-    width: 30%!important;
-    margin-left: 5%!important;
-    margin-right: 5%!important;
-  }
-  .slick-dots{
-    margin-left: -43px!important;
+@media(max-width: 800px){
+  .div-right-opacity{
+    width: 100%!important;
+    font-size: 10px!important;
   }
 }
+
+@media(max-width: 600px){
+  .btn-home-pret-special{
+    width: 100%!important;
+  }
+  .container-taux-home{
+    height: 670px!important;
+  }
+}
+
+@media(max-width: 465px){
+  .div-partenaire-conf{
+    height: 60vh!important;
+  }
+}
+
 @media(min-width: 420px){
   .demandecred{
     width: 45%!important;
