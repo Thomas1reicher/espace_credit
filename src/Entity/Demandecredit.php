@@ -305,7 +305,7 @@ class Demandecredit
     private $cheque_repas;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="boolean", length=20, nullable=true)
      */
     private $voiture_societe;
 
@@ -1171,12 +1171,12 @@ class Demandecredit
         return $this;
     }
 
-    public function getVoitureSociete(): ?string
+    public function getVoitureSociete(): ?bool
     {
         return $this->voiture_societe;
     }
 
-    public function setVoitureSociete(string $voiture_societe): self
+    public function setVoitureSociete(bool $voiture_societe): self
     {
         $this->voiture_societe = $voiture_societe;
 
@@ -1776,10 +1776,6 @@ class Demandecredit
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('cheque_repas', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
-        $metadata->addPropertyConstraint('voiture_societe', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
