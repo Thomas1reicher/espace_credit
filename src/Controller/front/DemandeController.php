@@ -20,7 +20,7 @@ class DemandeController extends AbstractController{
     {   
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Demandecredit::class);
-        $objet = $repo->findBy(['token' => $token]);
+        $objet = $repo->findOneBy(['token' => $token]);
         $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
@@ -31,7 +31,8 @@ class DemandeController extends AbstractController{
         return $this->render('front/demande.html.twig', [
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
-            'title' => 'demande'
+            'title' => 'demande',
+            'objet' => $objet
         ]);
     }
 }

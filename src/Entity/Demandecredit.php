@@ -23,7 +23,7 @@ class Demandecredit
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=10 , nullable=true)
+     * @ORM\Column(type="string", length=15 , nullable=true)
      */
     private $titre;
 
@@ -555,7 +555,6 @@ class Demandecredit
     public function setSociete(string $societe): self
     {
         $this->societe = $societe;
-
         return $this;
     }
 
@@ -660,7 +659,7 @@ class Demandecredit
         return $this->date_naissance;
     }
 
-    public function setDateNaissance(DateTime $date_naissance): self
+    public function setDateNaissance(?DateTime $date_naissance): self
     {
         $this->date_naissance = $date_naissance;
 
@@ -744,7 +743,7 @@ class Demandecredit
         return $this->validite_carte_identite;
     }
 
-    public function setValiditeCarteIdentite(DateTime $validite_carte_identite): self
+    public function setValiditeCarteIdentite(?DateTime $validite_carte_identite): self
     {
         $this->validite_carte_identite = $validite_carte_identite;
 
@@ -973,7 +972,7 @@ class Demandecredit
         return $this->date_contrat;
     }
 
-    public function setDateContrat(DateTime $date_contrat): self
+    public function setDateContrat(?DateTime $date_contrat): self
     {
         $this->date_contrat = $date_contrat;
 
@@ -1357,7 +1356,7 @@ class Demandecredit
         return $this->debut_credit;
     }
 
-    public function setDebutCredit(DateTime $debut_credit): self
+    public function setDebutCredit(?DateTime $debut_credit): self
     {
         $this->debut_credit = $debut_credit;
 
@@ -1441,7 +1440,7 @@ class Demandecredit
         return $this->date_echeance_hypo;
     }
 
-    public function setDateEcheanceHypo(DateTime $date_echeance_hypo): self
+    public function setDateEcheanceHypo(?DateTime $date_echeance_hypo): self
     {
         $this->date_echeance_hypo = $date_echeance_hypo;
 
@@ -1453,7 +1452,7 @@ class Demandecredit
         return $this->date_debut_credit_hypo;
     }
 
-    public function setDateDebutCreditHypo(DateTime $date_debut_credit_hypo): self
+    public function setDateDebutCreditHypo(?DateTime $date_debut_credit_hypo): self
     {
         $this->date_debut_credit_hypo = $date_debut_credit_hypo;
 
@@ -1532,7 +1531,7 @@ class Demandecredit
         return $this->date_premiere_circulation_voiture;
     }
 
-    public function setDatePremiereCirculationVoiture(DateTime $date_premiere_circulation_voiture): self
+    public function setDatePremiereCirculationVoiture(?DateTime $date_premiere_circulation_voiture): self
     {
         $this->date_premiere_circulation_voiture = $date_premiere_circulation_voiture;
         return $this;
@@ -1609,7 +1608,7 @@ class Demandecredit
         return $this->date_premiere_circulation_moto;
     }
 
-    public function setDatePremiereCirculationMoto(DateTime $date_premiere_circulation_moto): self
+    public function setDatePremiereCirculationMoto(?DateTime $date_premiere_circulation_moto): self
     {
         $this->date_premiere_circulation_moto = $date_premiere_circulation_moto;
         return $this;

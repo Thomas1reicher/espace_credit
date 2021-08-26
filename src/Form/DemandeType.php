@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -30,20 +31,23 @@ class DemandeType extends AbstractType
                 'Madame' => 'Madame',
                 'Monsieur' => 'Monsieur',
                 'Mademoiselle' => 'Mademoiselle',
-            ]
+            ],
+            'required' => false
         ])
         ->add('nom', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre nom',
                 'class' => 'input-form input-contact'
-            ]
+            ],
+            'required' => false
         ])
         ->add('prenom', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre prénom',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Prénom'
+            'label' => 'Prénom',
+            'required' => false
         ])
         
         ->add('date_naissance', BirthdayType::class,[
@@ -51,6 +55,9 @@ class DemandeType extends AbstractType
                 'class' => 'input-form input-contact date-css-symfony'
             ],
             'label' => 'Date de naissance',
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => '1900-01-01'
         ])
         
         ->add('ville_naissance', TextType::class,[
@@ -58,41 +65,48 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre ville de naissance',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Ville de naissance'
+            'label' => 'Ville de naissance',
+            'required' => false
         ])
         ->add('pays_naissance', CountryType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pays de naissance'
+            'label' => 'Pays de naissance',
+            'required' => false,
+           
         ])
         ->add('registre_national_belge', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre registre national',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Registre national (uniquement pour les belges)'
+            'label' => 'Registre national (uniquement pour les belges)',
+            'required' => false
         ])
         ->add('numero_carte_identite', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de carte d\'identité',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Numéro de carte d\'identité'
+            'label' => 'Numéro de carte d\'identité',
+            'required' => false
         ])
         ->add('numero_attestation_enregistrement', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro d\'attestation d\'enregistrement',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Numéro d\'attestation d\'enregistrement'
+            'label' => 'Numéro d\'attestation d\'enregistrement',
+            'required' => false
         ])
         ->add('pays_carte_identite', CountryType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la nationnalité de votre carte d\'identité',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pays de la carte d\'identité'
+            'label' => 'Pays de la carte d\'identité',
+            'required' => false
         ])
         ->add('validite_carte_identite', DateType::class,[
             'attr' => [
@@ -101,6 +115,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de validité de la carte d\'identité',
             'years' => range(date('Y'), date('Y') + 30),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
         ->add('etat_civil', ChoiceType::class,[
             'attr' => [
@@ -115,7 +132,8 @@ class DemandeType extends AbstractType
                 'Séparé corps et bien' => 'Séparé corps et bien',
                 'Séparé de fait' => 'Séparé de fait',
                 'Veuf(ve)' => 'Veuf'
-            ]
+            ],
+            'required' => false
         ])            
 
 
@@ -129,7 +147,8 @@ class DemandeType extends AbstractType
                 'Locataire' => 'Locataire',
                 'Propriétaire' => 'Propriétaire',
                 'Cohabitation' => 'Cohabitation'
-            ]
+            ],
+            'required' => false
             
         ])
         ->add('nom_rue', TextType::class,[
@@ -137,14 +156,16 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le nom de votre rue',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nom de rue'
+            'label' => 'Nom de rue',
+            'required' => false
         ])
         ->add('numero_rue', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de rue',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Numéro de rue'
+            'label' => 'Numéro de rue',
+            'required' => false
         ])
      
         ->add('boite', TextType::class,[
@@ -152,28 +173,32 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre boîte',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Boîte'
+            'label' => 'Boîte',
+            'required' => false
         ])
         ->add('code_postal', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre code postal',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Code Postal'
+            'label' => 'Code Postal',
+            'required' => false
         ])
         ->add('ville_residence', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre ville de résidence',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Ville'
+            'label' => 'Ville',
+            'required' => false
         ])
         ->add('pays_residence', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre pays de résidence',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pays'
+            'label' => 'Pays',
+            'required' => false
         ])
         
         ->add('date_adresse', DateType::class,[
@@ -182,34 +207,41 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Installé depuis',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
         ->add('tel', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de téléphone fixe',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Téléphone'
+            'label' => 'Téléphone',
+            'required' => false
         ])
         ->add('telephone_mobile', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de téléphone mobile',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'GSM'
+            'label' => 'GSM',
+            'required' => false
         ])
         ->add('mail', EmailType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre email',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Email'
+            'label' => 'Email',
+            'required' => false
         ])
         ->add('numero_compte', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de compte',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Numéro de compte (IBAN)'
+            'label' => 'Numéro de compte (IBAN)',
+            'required' => false
         ])
         ->add('date_compte', DateType::class,[
             'attr' => [
@@ -217,6 +249,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date d\'ouverture du compte',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
 
 
@@ -241,7 +276,8 @@ class DemandeType extends AbstractType
                 'Prépensionné' => 'Prépensionné',
                 'Retiré' => 'Retiré',
                 'Retraite' => 'Retraite'
-            ]
+            ],
+            'required' => false
         ])
         ->add('emploi', ChoiceType::class,[
             'attr' => [
@@ -271,7 +307,8 @@ class DemandeType extends AbstractType
                 'Travailleur à la production' => 'Travailleur à la production',
                 'Travailleur horeca' => 'Travailleur horeca',
                 'Vendeur/Représentant' => 'Vendeur/Représentant'
-            ]
+            ],
+            'required' => false
         ])
         ->add('secteur', ChoiceType::class,[
             'attr' => [
@@ -288,7 +325,8 @@ class DemandeType extends AbstractType
                 'Petite entreprise (-50 personnes)' => 'Petite entreprise (-50 personnes)',
                 'Public' => 'Public',
                 'Sans objet' => 'Sans objet'
-            ]
+            ],
+            'required' => false
         ])
         ->add('temps_contrat', ChoiceType::class,[
             'attr' => [
@@ -298,7 +336,8 @@ class DemandeType extends AbstractType
             'choices'  => [
                 'Temps plein' => 'Temps plein',
                 'Temps partiel' => 'Temps partiel'
-            ]
+            ],
+            'required' => false
         ])
         ->add('type_contrat', ChoiceType::class,[
             'attr' => [
@@ -308,7 +347,8 @@ class DemandeType extends AbstractType
             'choices'  => [
                 'CDI' => 'CDI',
                 'CDD' => 'CDD'
-            ]
+            ],
+            'required' => false
         ])
         ->add('date_contrat', DateType::class,[
             'attr' => [
@@ -316,6 +356,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date du contrat',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
 
 
@@ -325,42 +368,48 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le nom de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nom de l\'employeur'
+            'label' => 'Nom de l\'employeur',
+            'required' => false
         ])
         ->add('adresse_employeur', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez l\'adresse de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Adresse de l\'employeur'
+            'label' => 'Adresse de l\'employeur',
+            'required' => false
         ])
         ->add('tel_employeur', TelType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le numéro de téléphone de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Téléphone de l\'employeur'
+            'label' => 'Téléphone de l\'employeur',
+            'required' => false
         ])
         ->add('code_postal_employeur', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le code postal de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Code postal de l\'employeur'
+            'label' => 'Code postal de l\'employeur',
+            'required' => false
         ])
         ->add('ville_employeur', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la ville de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Ville de l\'employeur'
+            'label' => 'Ville de l\'employeur',
+            'required' => false
         ])
         ->add('pays_employeur', CountryType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le pays de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pays de l\'employeur'
+            'label' => 'Pays de l\'employeur',
+            'required' => false
         ])
 
 
@@ -370,91 +419,104 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre salaire',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Salaire'
+            'label' => 'Salaire',
+            'required' => false
         ])
         ->add('pension_alimentaire', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre pension alimentaire',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pension alimentaire'
+            'label' => 'Pension alimentaire',
+            'required' => false
         ])
         ->add('invalidite', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre invalidite',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Invalidite'
+            'label' => 'Invalidite',
+            'required' => false
         ])
         ->add('allocation', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos allocations familiales',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Allocations familiales'
+            'label' => 'Allocations familiales',
+            'required' => false
         ])
         ->add('pension', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre pension',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pension'
+            'label' => 'Pension',
+            'required' => false
         ])
         ->add('mutuelle', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre mutuelle',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Mutuelle'
+            'label' => 'Mutuelle',
+            'required' => false
         ])
         ->add('chomage', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre chomage',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Chomage'
+            'label' => 'Chomage',
+            'required' => false
         ])
         ->add('handicap', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos aides liées à un éventuel handicap',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Handicap'
+            'label' => 'Handicap',
+            'required' => false
         ])
         ->add('revenu_locatif', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos revenus locatifs',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Revenu locatif'
+            'label' => 'Revenu locatif',
+            'required' => false
         ])
         ->add('cheque_repas', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos chèques repas',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Chèques Repas'
+            'label' => 'Chèques Repas',
+            'required' => false
         ])
         ->add('voiture_societe', CheckboxType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre voiture de société',
                 'class' => 'input-form input-contact checkbox-css-symfony'
             ],
-            'label' => 'Voiture de société'
+            'label' => 'Voiture de société',
+            'required' => false
         ])
         ->add('autres_revenus', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos autres revenus',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Autres revenus'
+            'label' => 'Autres revenus',
+            'required' => false
         ])
         ->add('description_autres_revenus', TextType::class,[
             'attr' => [
                 'placeholder' => 'Décrivez vos autres revenus',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Description des autres revenus'
+            'label' => 'Description des autres revenus',
+            'required' => false
         ])
 
 
@@ -464,35 +526,40 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le montant de votre loyer',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Loyer'
+            'label' => 'Loyer',
+            'required' => false
         ])
         ->add('pension_alimentaire_payer', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant des pensions alimentaires que vous payez',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Pension alimentaire payée'
+            'label' => 'Pension alimentaire payée',
+            'required' => false
         ])
         ->add('autres_charges', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos autres charges',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Autres charges'
+            'label' => 'Autres charges',
+            'required' => false
         ])
         ->add('description_autres_charges', TextType::class,[
             'attr' => [
                 'placeholder' => 'Décrivez vos autres charges',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Description des autres charges'
+            'label' => 'Description des autres charges',
+            'required' => false
         ])
         ->add('nombre_enfants', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre nombre d\'enfant(s)',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nombre d\'enfant(s)'
+            'label' => 'Nombre d\'enfant(s)',
+            'required' => false
         ])
 
 
@@ -502,7 +569,8 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre nombre de crédits en cours',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nombre de crédits en cours'
+            'label' => 'Nombre de crédits en cours',
+            'required' => false
         ])
         ->add('type_credit', ChoiceType::class,[
             'attr' => [
@@ -513,42 +581,48 @@ class DemandeType extends AbstractType
                 'Prêt à tempérament' => 'Prêt à tempérament',
                 'Prêt travaux' => 'Prêt travaux',
                 'Prêt voiture' => 'Prêt voiture'
-            ]
+            ],
+            'required' => false
         ])
         ->add('organisme_preteur', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre organisme prêteur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Organisme prêteur'
+            'label' => 'Organisme prêteur',
+            'required' => false
         ])
         ->add('montant_credit', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de vos crédits',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant crédits'
+            'label' => 'Montant crédits',
+            'required' => false
         ])
         ->add('duree_credit', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la durée du crédit',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Durée en mois du crédit'
+            'label' => 'Durée en mois du crédit',
+            'required' => false
         ])
         ->add('taux_credit', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le taux du crédit',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Taux du crédit'
+            'label' => 'Taux du crédit',
+            'required' => false
         ])
         ->add('montant_echeance', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'échéance',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant échéance'
+            'label' => 'Montant échéance',
+            'required' => false
         ])
         ->add('debut_credit', DateType::class,[
             'attr' => [
@@ -557,19 +631,24 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de début du crédit',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
         ->add('remboursement_credit', CheckboxType::class,[
             'attr' => [
                 'class' => 'input-form input-contact checkbox-css-symfony'
             ],
-            'label' => 'Remboursement d\'un crédit'
+            'label' => 'Remboursement d\'un crédit',
+            'required' => false
         ])
         ->add('solde_credit', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le solde du crédit',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Solde du crédit (si disponible)'
+            'label' => 'Solde du crédit (si disponible)',
+            'required' => false
         ])
 
 
@@ -583,28 +662,32 @@ class DemandeType extends AbstractType
                 'Maison d\'habitation' => 'Maison d\'habitation',
                 'Maison de commerce' => 'Maison de commerce',
                 'Seconde résidence' => 'Seconde résidence'
-            ]
+            ],
+            'required' => false
         ])
         ->add('valeur_venale', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la valeur vénale du bien',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Valeur vénale'
+            'label' => 'Valeur vénale',
+            'required' => false
         ])
         ->add('montant_achat_hypo', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'achat',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant de l\'achat'
+            'label' => 'Montant de l\'achat',
+            'required' => false
         ])
         ->add('duree_credit_hypo', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la durée du crédit',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Durée du crédit'
+            'label' => 'Durée du crédit',
+            'required' => false
         ])
         ->add('date_echeance_hypo', DateType::class,[
             'attr' => [
@@ -613,6 +696,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Échéance',
             'years' => range(date('Y'), date('Y') + 100),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
         ->add('date_debut_credit_hypo', DateType::class,[
             'attr' => [
@@ -621,6 +707,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de début',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
 
 
@@ -630,28 +719,32 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le montant du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant du véhicule'
+            'label' => 'Montant du véhicule',
+            'required' => false
         ])
         ->add('acompte_voiture', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'acompte',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant de l\'acompte du véhicule'
+            'label' => 'Montant de l\'acompte du véhicule',
+            'required' => false
         ])
         ->add('marque_voiture', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la marque du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Marque du véhicule'
+            'label' => 'Marque du véhicule',
+            'required' => false
         ])
         ->add('modele_voiture', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le modèle du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Modèle du véhicule'
+            'label' => 'Modèle du véhicule',
+            'required' => false
         ])
         ->add('type_vendeur_voiture', ChoiceType::class,[
             'attr' => [
@@ -661,14 +754,16 @@ class DemandeType extends AbstractType
             'choices'  => [
                 'Garage' => 'Garage',
                 'Particulier' => 'Particulier'
-            ]
+            ],
+            'required' => false
         ])
         ->add('nom_vendeur_voiture', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le nom du vendeur du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nom du vendeur'
+            'label' => 'Nom du vendeur',
+            'required' => false
         ])
         ->add('date_premiere_circulation_voiture', DateType::class,[
             'attr' => [
@@ -676,6 +771,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de première circulation du véhicule',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
 
 
@@ -686,28 +784,32 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez le montant du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant du véhicule'
+            'label' => 'Montant du véhicule',
+            'required' => false
         ])
         ->add('acompte_moto', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'acompte',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Montant de l\'acompte du véhicule'
+            'label' => 'Montant de l\'acompte du véhicule',
+            'required' => false
         ])
         ->add('marque_moto', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la marque du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Marque du véhicule'
+            'label' => 'Marque du véhicule',
+            'required' => false
         ])
         ->add('modele_moto', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le modèle du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Modèle du véhicule'
+            'label' => 'Modèle du véhicule',
+            'required' => false
         ])
         ->add('type_vendeur_moto', ChoiceType::class,[
             'attr' => [
@@ -717,14 +819,16 @@ class DemandeType extends AbstractType
             'choices'  => [
                 'Garage' => 'Garage',
                 'Particulier' => 'Particulier'
-            ]
+            ],
+            'required' => false
         ])
         ->add('nom_vendeur_moto', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le nom du vendeur du véhicule',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Nom du vendeur'
+            'label' => 'Nom du vendeur',
+            'required' => false
         ])
         ->add('date_premiere_circulation_moto', DateType::class,[
             'attr' => [
@@ -732,6 +836,9 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de première circulation du véhicule',
             'years' => range(date('Y')-100, date('Y')),
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => ''
         ])
 
 
