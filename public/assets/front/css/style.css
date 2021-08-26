@@ -173,8 +173,6 @@
   background-color: var(--web-orange);
   border-radius: 7px;
   height: 100%;
-  width: 100%;
-  width: 100%;
 }
 .link-tel{
 
@@ -498,11 +496,13 @@ transform: translate(0, 25px);
 
 }
 .div-partenaire-conf{
-  height: 700px;
+  height: 50vh;
   background-repeat: no-repeat;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
 }
+
 .div-partenaire-txt{
   width: 43%;
   margin-left: 44%;
