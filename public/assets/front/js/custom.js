@@ -155,5 +155,8 @@ console.log(burger);
     let clickEvent = new Event('click');
 
 
+    $('.slide').on('afterChange', function(event, slick, currentSlide){
+        console.log(currentSlide);
+      }); 
 });
 

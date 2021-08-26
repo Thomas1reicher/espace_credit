@@ -1789,6 +1789,44 @@
   .titre-taux-black{
     font-size: 40px!important;
   }
+  .dem-cred-btn{
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0!important;
+}
+.ul-credit li.li-validate span{
+  font-size: 15px;
+}
+.padding-validate{
+
+
+}
+  
+  .btn-pret-credit{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%!important;
+  }
+  .slider-credits .slide{
+    padding-bottom: 10px;
+  }
+  .titre-part-cred{
+    font-size: 24px!important;
+    width: 53%!important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .txt-part-cred{
+    font-weight: lighter;
+    line-height: 25px;
+  }
+  .cred-typo{
+
+    padding-top:0px!important;
+  }
   .img-header{
     max-width: 115px!important;
     margin-top: 10%;
@@ -1906,7 +1944,7 @@ header{
 
 
 .div-lightgrey .typo{
-  padding-top: 340px!important;
+  padding-top: 340px;
   font-size: 10px;
     padding-left: 5%;
 }
@@ -1991,6 +2029,13 @@ min-height: 650px !important;
     background-size: 300px!important;
     background-position: 50%!important;
   }
+  .div-img-philo .img-philo{
+    float: initial !important;
+    width: 25%;
+  }
+  .btn-sav-plus .btn-pret{
+    width: 100%!important;
+  }
 }
 
 @media(max-width: 360px){
@@ -2022,6 +2067,7 @@ min-height: 650px !important;
   .offrepretslide{
     margin-bottom: 3%;
   }
+<<<<<<< HEAD
 }
 /*
 @media(max-width: 1200px){
@@ -2030,3 +2076,29 @@ min-height: 650px !important;
   }
 }
 */
+=======
+
+
+}
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-active{
+  background-color: orange;
+}
+.div-dot{
+  width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 3%;
+}
+.td-contact a{
+  color: black!important;
+}
+
+>>>>>>> 1ceb4608ebc9dad0e492dd143b767b7234f854eb
