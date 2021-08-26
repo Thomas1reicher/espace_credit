@@ -10,7 +10,7 @@ console.log(burger);
         recalculate();
         montant = parseInt($(this).val());
         $(".montant-info").text(montant + "€");
-
+        alert('test');
     });
     $(".duree-form").change(function () {
         recalculate();

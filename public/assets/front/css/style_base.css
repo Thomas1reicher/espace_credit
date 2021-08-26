@@ -1876,6 +1876,9 @@ header{
 .big-number-orange{
   padding-left: 2%;
 }
+.desc-div{
+  padding: 2%;
+}
 .open-main-nav{
   top: 36px!important;
 }

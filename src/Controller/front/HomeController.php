@@ -183,10 +183,13 @@ class HomeController extends AbstractController
      */
     public function regroupement()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
-            
+            'pret' => $obj
         ]);
     }
 
