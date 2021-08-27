@@ -65,7 +65,7 @@ class Demandecredit
     private $info_comp;
 
     /**
-     * @ORM\Column(type="string", length=255 , nullable=true)
+     * @ORM\Column(type="string", length=200 , nullable=true)
      */
     private $token;
 
@@ -165,7 +165,7 @@ class Demandecredit
     private $boite;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $code_postal;
 
@@ -183,6 +183,7 @@ class Demandecredit
      * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_adresse;
+    
 
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
@@ -234,18 +235,25 @@ class Demandecredit
      */
     private $nom_employeur;
 
+
+    /**
+     * @ORM\Column(type="string", length=3, nullable=true)
+     */
+    private $numero_rue_employeur;
+
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $adresse_employeur;
+    private $nom_rue_employeur;
 
+    
     /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $tel_employeur;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $code_postal_employeur;
 
@@ -969,14 +977,26 @@ class Demandecredit
         return $this;
     }
 
-    public function getAdresseEmployeur(): ?string
+    public function getNumeroRueEmployeur(): ?string
     {
-        return $this->adresse_employeur;
+        return $this->numero_rue_employeur;
     }
 
-    public function setAdresseEmployeur(string $adresse_employeur): self
+    public function setNumeroRueEmployeur(string $numero_rue_employeur): self
     {
-        $this->adresse_employeur = $adresse_employeur;
+        $this->numero_rue_employeur = $numero_rue_employeur;
+
+        return $this;
+    }
+
+    public function getNomRueEmployeur(): ?string
+    {
+        return $this->nom_rue_employeur;
+    }
+
+    public function setNomRueEmployeur(string $nom_rue_employeur): self
+    {
+        $this->nom_rue_employeur = $nom_rue_employeur;
 
         return $this;
     }
@@ -1618,6 +1638,14 @@ class Demandecredit
         $metadata->addPropertyConstraint('tel_employeur', new Validator\Regex([
             'pattern' => '/^[+]{0,1}[0-9]{8,11}$/',
             'message' => 'Le numéro de téléphone mobile de votre employeur doit contenir entre 8 et 11 chiffres'
+        ]));
+        $metadata->addPropertyConstraint('nom_rue_employeur', new Validator\Regex([
+            'pattern' => '/^[a-zA-Z]+$/',
+            'message' => 'Le nom de rue de votre employeur doit contenir uniquement des lettres'
+        ]));
+        $metadata->addPropertyConstraint('numero_rue_employeur', new Validator\Regex([
+            'pattern' => '/^[0-9]+$/',
+            'message' => 'Le numéro de rue de votre employeur doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('code_postal_employeur', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',

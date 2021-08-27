@@ -1,7 +1,7 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
     {{ form_start(form) }}
-    <form method="post">
+  
     <div class="div-lightgrey">
         <div class="div-centre-titre"> 
             <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
@@ -99,10 +99,12 @@
         </div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_employeur)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.nom_employeur)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.adresse_employeur)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.adresse_employeur)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.tel_employeur)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.tel_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_rue_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.nom_rue_employeur)}}</div>
+        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.numero_rue_employeur)}}</div></div>
+        <div class="div-input-contact">{{form_widget(form.numero_rue_employeur)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.code_postal_employeur)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.code_postal_employeur)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.ville_employeur)}}</div></div>
@@ -204,7 +206,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt perso</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form select-credit"/>
+                <select class="input-contact input-form select-credit" name="tauxPerso"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretPerso.taux %}
@@ -224,7 +226,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt auto</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form select-credit"/>
+                <select class="input-contact input-form select-credit" name="tauxVoiture"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretAuto.taux %}
@@ -244,7 +246,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt moto</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form select-credit"/>
+                <select class="input-contact input-form select-credit" name="tauxMoto"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretMoto.taux %}
@@ -301,7 +303,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt travaux</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form select-credit"/>
+                <select class="input-contact input-form select-credit" name="tauxTravaux"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretTravaux.taux %}
@@ -323,7 +325,7 @@
                 <a href="" class="link-pret" style="padding: 6%">{{form_widget(form.Envoyer)}}</a>
             </div>
         </div>
-    </form>
+    
     {{ form_end(form) }}
     </div>
     

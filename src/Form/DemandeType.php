@@ -386,12 +386,20 @@ class DemandeType extends AbstractType
             'label' => 'Nom de l\'employeur',
             'required' => false
         ])
-        ->add('adresse_employeur', TextType::class,[
+        ->add('nom_rue_employeur', TextType::class,[
             'attr' => [
-                'placeholder' => 'Entrez l\'adresse de votre employeur',
+                'placeholder' => 'Entrez le nom de rue de votre employeur',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Adresse de l\'employeur',
+            'label' => 'Nom de rue de l\'employeur',
+            'required' => false
+        ])
+        ->add('numero_rue_employeur', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le numéro de rue de votre employeur',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Numéro de rue de l\'employeur',
             'required' => false
         ])
         ->add('tel_employeur', TelType::class,[

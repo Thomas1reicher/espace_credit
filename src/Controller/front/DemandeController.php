@@ -32,9 +32,12 @@ class DemandeController extends AbstractController{
         $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+            var_dump($_POST['tauxVoiture']);
+            var_dump($_POST['tauxMoto']);
+            var_dump($_POST['tauxTravaux']);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            $this->UpdateApi($objet);
+            //$this->UpdateApi($objet);
             return $this->redirectToRoute('accueil');
         } 
 

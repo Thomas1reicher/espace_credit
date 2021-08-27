@@ -1552,23 +1552,23 @@
   margin-bottom: 2%!important;
 }
 
-#demande_date_naissance_month, #demande_validite_carte_identite_month, #demande_date_adresse_month, #demande_date_compte_month, 
-#demande_date_contrat_month, #demande_debut_credit_month, #demande_date_echeance_hypo_month, #demande_date_debut_credit_hypo_month, 
-#demande_date_premiere_circulation_voiture_month, #demande_date_premiere_circulation_moto_month{
+#demande_date_naissance_year, #demande_validite_carte_identite_year, #demande_date_adresse_year, #demande_date_compte_year, 
+#demande_date_contrat_year, #demande_debut_credit_year, #demande_date_echeance_hypo_year, #demande_date_debut_credit_hypo_year, 
+#demande_date_premiere_circulation_voiture_year, #demande_date_premiere_circulation_moto_year{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-#demande_date_naissance_year, #demande_validite_carte_identite_year, #demande_date_adresse_year, #demande_date_compte_year, 
-#demande_date_contrat_year, #demande_debut_credit_year, #demande_date_echeance_hypo_year, #demande_date_debut_credit_hypo_year, 
-#demande_date_premiere_circulation_voiture_year, #demande_date_premiere_circulation_moto_year{
+#demande_date_naissance_day, #demande_validite_carte_identite_day, #demande_date_adresse_day, #demande_date_compte_day, 
+#demande_date_contrat_day, #demande_debut_credit_day, #demande_date_echeance_hypo_day, #demande_date_debut_credit_hypo_day, 
+#demande_date_premiere_circulation_voiture_day, #demande_date_premiere_circulation_moto_day{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .date-css-symfony select{
   height: 39px;
-  width: 33.4%;
+  width: 32.7%;
 }
 
 .date-select{
@@ -2049,6 +2049,9 @@ min-height: 650px !important;
     padding: 0!important;
   }
   .div-img-home{
+    background-size: 320px!important;
+  }
+  .div-img{
     background-size: 320px!important;
   }
 }
