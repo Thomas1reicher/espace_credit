@@ -33,9 +33,18 @@ class Credit
      */
     private $taux;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Demandecredit", mappedBy="type_credit_demande")
+     */
+    private $credit;
+
     public function __construct()
     {
-        $this->tests = new ArrayCollection();
+        $this->credit = new ArrayCollection();
+    }
+    public function getCredit(): Collection
+    {
+        return $this->credit;
     }
 
     public function getId(): ?int

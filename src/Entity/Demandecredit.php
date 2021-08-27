@@ -22,8 +22,8 @@ class Demandecredit
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=30 , nullable=true)
+      /**
+     * @ORM\ManyToOne(targetEntity="Credit", inversedBy="credit")
      */
     private $type_credit_demande;
 
@@ -476,12 +476,12 @@ class Demandecredit
 
     
 
-    public function getTypeCreditDemande(): ?string
+    public function getTypeCreditDemande(): ?Credit
     {
         return $this->type_credit_demande;
     }
 
-    public function setTypeCreditDemande(string $type_credit_demande): self
+    public function setTypeCreditDemande(Credit $type_credit_demande): self
     {
         $this->type_credit_demande = $type_credit_demande;
         return $this;

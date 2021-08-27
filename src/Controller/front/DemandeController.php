@@ -29,7 +29,11 @@ class DemandeController extends AbstractController{
         $tauxMoto = $repo1->findOneBy(['nom' => 'PRÊT MOTO']);
         $tauxMobilite = $repo1->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
         $tauxTravaux = $repo1->findOneBy(['nom' => 'PRÊT TRAVAUX']);
-        $form = $this->createForm(DemandeType::class, $objet);
+        $creditAll = $repo->findAll();
+        $form = $this->createForm(DemandeType::class, $objet, array(
+            'attr' => array(
+                'credits' => $creditAll,
+            )));
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             var_dump($_POST['tauxVoiture']);
