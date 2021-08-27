@@ -42,7 +42,7 @@ class Credit
     {
         $this->credit = new ArrayCollection();
     }
-    public function getCredit(): Collection
+    public function getCredit(): ArrayCollection
     {
         return $this->credit;
     }

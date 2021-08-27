@@ -13,7 +13,6 @@
         <div class="div-demande-form txt-black div-center-demande-pret">
             Type de crédit
         </div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_credit_demande)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.type_credit_demande)}}</div>
 
         <div class="div-demande-form txt-black div-center-demande-pret">
@@ -279,22 +278,7 @@
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit mobilité
             </div>
-            <!--
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt mobilité</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretMobilite.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            -->
+ 
         </div>
 
         <div class="credit-form credit-travaux-form" style="display: none">
@@ -326,7 +310,7 @@
             </div>
         </div>
     
-    {{ form_end(form) }}
+    {{ form_end(form ,{render_rest: false}) }}
     </div>
     
     <style>

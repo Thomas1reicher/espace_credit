@@ -30,10 +30,7 @@ class DemandeController extends AbstractController{
         $tauxMobilite = $repo1->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
         $tauxTravaux = $repo1->findOneBy(['nom' => 'PRÊT TRAVAUX']);
         $creditAll = $repo->findAll();
-        $form = $this->createForm(DemandeType::class, $objet, array(
-            'attr' => array(
-                'credits' => $creditAll,
-            )));
+        $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
             var_dump($_POST['tauxVoiture']);
@@ -41,7 +38,7 @@ class DemandeController extends AbstractController{
             var_dump($_POST['tauxTravaux']);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            //$this->UpdateApi($objet);
+            $this->UpdateApi($objet);
             return $this->redirectToRoute('accueil');
         } 
 
@@ -142,6 +139,8 @@ class DemandeController extends AbstractController{
         if(!$first){
             $clip_form_data.=", ".$ref;
         }
+        var_dump($clip_form_data);
+        die();
         $api = new Api();
         $resultat=$api->any50_callWS($clip_form_data);
    
