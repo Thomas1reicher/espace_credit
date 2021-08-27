@@ -28,7 +28,7 @@ class LoginController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // retrouver le dernier identifiant de connexion utilisé
         $lastUsername = $authenticationUtils->getLastUsername();
-        var_dump($error);
+        
         return $this->render('admin/admin.html.twig', [
                 'last_username' => $lastUsername,
                 'error' => $error,

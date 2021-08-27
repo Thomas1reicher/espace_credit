@@ -43,7 +43,10 @@ class Demandecredit
      */
     private $mail;
 
-
+      /**
+     * @ORM\Column(type="integer", length=100)
+     */
+    private $etapeform;
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
@@ -63,6 +66,10 @@ class Demandecredit
      * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $token;
+ /**
+     * @ORM\Column(type="string", length=255 , nullable=true)
+     */
+    private $strongId;
 
     /**
      * @ORM\Column(type="string", length=50 , nullable=true)
@@ -590,6 +597,29 @@ class Demandecredit
     public function setToken(string $token): self
     {
         $this->token = $token;
+
+        return $this;
+    }
+
+    public function getStrongId(): ?string
+    {
+        return $this->strongId;
+    }
+
+    public function setStrongId(string $strongId): self
+    {
+        $this->strongId = $strongId;
+
+        return $this;
+    }
+    public function getEtapeForm(): ?int
+    {
+        return $this->etapeform;
+    }
+
+    public function setEtapeForm(int $etapeform): self
+    {
+        $this->etapeform = $etapeform;
 
         return $this;
     }
