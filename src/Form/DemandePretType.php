@@ -82,10 +82,10 @@ class DemandePretType extends AbstractType
             'mapped' => false
         ])
         ->add('Envoyer', SubmitType::class, [
-            'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],
+            'attr' => ['class' => 'demande-pret montserrat-medium-white-14px',
+                        'style' => 'background-color: orange;border: none;border-radius: 10px'],
             'label' => 'ENVOYER MA DEMANDE'
         ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

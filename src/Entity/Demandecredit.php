@@ -49,7 +49,7 @@ class Demandecredit
     private $mail;
 
       /**
-     * @ORM\Column(type="integer", length=100)
+     * @ORM\Column(type="integer", length=100, nullable=true)
      */
     private $etapeform;
     /**
@@ -423,6 +423,11 @@ class Demandecredit
      * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $valeur_venale;
+
+    /**
+     * @ORM\Column(type="string", length=20, nullable=true)
+     */
+    private $type_taux_voiture;
 
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
@@ -1439,6 +1444,18 @@ class Demandecredit
         return $this;
     }
 
+    public function getTypeTauxVoiture(): ?string
+    {
+        return $this->type_taux_voiture;
+    }
+
+    public function setTypeTauxVoiture(string $type_taux_voiture): self
+    {
+        $this->type_taux_voiture = $type_taux_voiture;
+
+        return $this;
+    }
+
     public function getMontantAchat(): ?string
     {
         return $this->montant_achat;
@@ -1612,15 +1629,15 @@ class Demandecredit
 
     public static function loadValidatorMetadata(ClassMetadata $metadata){
         $metadata->addPropertyConstraint('nom', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Votre nom doit contenir uniquement des lettres',
         ]));
         $metadata->addPropertyConstraint('prenom', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Votre prénom doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('ville_naissance', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Votre ville de naissance doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('registre_national_belge', new Validator\Regex([
@@ -1635,7 +1652,7 @@ class Demandecredit
 
 
         $metadata->addPropertyConstraint('nom_rue', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Votre nom de rue doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('numero_rue', new Validator\Regex([
@@ -1643,7 +1660,7 @@ class Demandecredit
             'message' => 'Votre numéro de rue doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('ville_residence', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Votre ville de résidence doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('tel', new Validator\Regex([
@@ -1662,7 +1679,7 @@ class Demandecredit
         
         
         $metadata->addPropertyConstraint('nom_employeur', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Le nom de votre employeur doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('tel_employeur', new Validator\Regex([
@@ -1670,7 +1687,7 @@ class Demandecredit
             'message' => 'Le numéro de téléphone mobile de votre employeur doit contenir entre 8 et 11 chiffres'
         ]));
         $metadata->addPropertyConstraint('nom_rue_employeur', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Le nom de rue de votre employeur doit contenir uniquement des lettres'
         ]));
         $metadata->addPropertyConstraint('numero_rue_employeur', new Validator\Regex([
@@ -1682,7 +1699,7 @@ class Demandecredit
             'message' => 'Le code postal de votre employeur doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('ville_employeur', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'La ville de résidence de votre employeur doit contenir uniquement des lettres'
         ]));
 
@@ -1801,7 +1818,7 @@ class Demandecredit
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('nom_vendeur', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
+            'pattern' => '/^[a-zA-Z ]+[\-]?[ a-zA-Z]*$/',
             'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
         ]));
 

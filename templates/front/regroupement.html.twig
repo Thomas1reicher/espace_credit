@@ -1,8 +1,13 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
 <div class="left-form">
-    <div class="titre-taux-black">Regroupements de crédits</div>
+    <div class="titre-taux-black big-titre-taux-black" style="font-size: 50px;">Regroupements de crédits</div>
     <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">5,95%*</span></div><br><br>
+    <div class="div-btn-cred redirect-button" style="margin-bottom: 20px;margin-left: auto;margin-right: auto;width: 100%;display: none">
+        <div style="width: 100%;background-color: var(--web-orange);border-radius: 7px;">
+            <a href="#redirect-simulation" class="link-pret"><p class="demande-pret nous-cont montserrat-medium-white-14px">SIMULER UN PRET</p></a>
+        </div>
+    </div>
     <div class="txt-black">Tous vos prêts en un!</div><br>
     <div class="txt-black txt-low-weight-black">
         Le regroupement de crédits vous permet de rassembler plusieurs prêts personnels (travaux, auto, etc) en un seul.<br><br>
@@ -14,7 +19,7 @@
     </div>
 </div>
 
-<div class="form-pret">
+<div id="redirect-simulation" class="form-pret">
    <div class="div-form-pret">
         <div class="div-titre-form">
           <h1 class="titre-form animate-enter1">

@@ -61,8 +61,7 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre prénom',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Prénom',
-            'required' => false
+            'label' => 'Prénom'
         ])
         
         ->add('date_naissance', BirthdayType::class,[
@@ -696,6 +695,17 @@ class DemandeType extends AbstractType
             'label' => 'Valeur vénale',
             'required' => false
         ])
+        ->add('type_taux_voiture', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Type de taux pour votre voiture',
+            'choices'  => [
+                'Taux normal' => 'Taux normal',
+                'Taux ballon' => 'Taux ballon'
+            ],
+            'required' => false
+        ])
         ->add('montant_achat', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'achat',
@@ -794,10 +804,10 @@ class DemandeType extends AbstractType
 
 
         ->add('Envoyer', SubmitType::class, [
-            'attr' => ['class' => 'demande-pret montserrat-medium-white-14px'],
+            'attr' => ['class' => 'demande-pret montserrat-medium-white-14px',
+                        'style' => 'background-color: orange;border: none;border-radius: 10px;'],
             'label' => 'ENVOYER MA DEMANDE'
         ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

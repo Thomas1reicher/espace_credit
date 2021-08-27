@@ -1554,14 +1554,14 @@
 
 #demande_date_naissance_year, #demande_validite_carte_identite_year, #demande_date_adresse_year, #demande_date_compte_year, 
 #demande_date_contrat_year, #demande_debut_credit_year, #demande_date_echeance_hypo_year, #demande_date_debut_credit_hypo_year, 
-#demande_date_premiere_circulation_voiture_year, #demande_date_premiere_circulation_moto_year{
+#demande_date_premiere_circulation_year{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 #demande_date_naissance_day, #demande_validite_carte_identite_day, #demande_date_adresse_day, #demande_date_compte_day, 
 #demande_date_contrat_day, #demande_debut_credit_day, #demande_date_echeance_hypo_day, #demande_date_debut_credit_hypo_day, 
-#demande_date_premiere_circulation_voiture_day, #demande_date_premiere_circulation_moto_day{
+#demande_date_premiere_circulation_day{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -1616,6 +1616,9 @@
     display: none!important;
   }
   .slider-header{
+    display: block!important;
+  }
+  .redirect-button{
     display: block!important;
   }
   .left-form{
@@ -1819,6 +1822,15 @@
   .div-lightgrey{
     width: 100%!important;
   }
+  .div-btn-cred-contacter{
+    margin: auto!important;
+    padding-top: 50px!important;
+    padding-bottom: 0!important;
+  }
+}
+
+.div-btn-cred-contacter{
+  padding-bottom: 50px;
 }
 
 @media(max-width: 1385px){
@@ -1839,9 +1851,7 @@
 
 @media(max-width: 420px){
   /*page philo*/
-  .titre-taux-black{
-    font-size: 40px!important;
-  }
+
   .dem-cred-btn{
     position: relative;
     left: 0;
@@ -1849,15 +1859,13 @@
     top: 0;
     bottom: 0;
     margin: 0!important;
-}
-.ul-credit li.li-validate span{
-  font-size: 15px;
-}
-.padding-validate{
+  }
+  .ul-credit li.li-validate span{
+    font-size: 15px;
+  }
+  .padding-validate{
 
-
-}
-  
+  }
   .btn-pret-credit{
     margin-left: auto;
     margin-right: auto;
@@ -1890,11 +1898,6 @@
     padding-left: 2%!important;
     position: absolute;
     text-align: center;
-}
-.div-form-pret .div-btn-cred .demande-pret { 
-
-  position: absolute;
-  padding-left: 4%;
 }
 .div-form-pret .div-btn-cred .btn-pret { 
   margin-left: auto;
@@ -2042,6 +2045,11 @@ min-height: 650px !important;
   /*page contact*/
   .div-info-contact{
     width: 100%!important;
+  }
+
+  .big-titre-taux-black{
+    font-size: 35px!important;
+    min-height: 100px;
   }
 
   .ul-philo{

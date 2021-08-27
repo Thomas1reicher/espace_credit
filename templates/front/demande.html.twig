@@ -238,6 +238,8 @@
                     {% endfor %}
                 </select>
             </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_taux_voiture)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.type_taux_voiture)}}</div>
         </div>
 
         <div class="credit-form credit-moto-form" style="display: none">
@@ -320,11 +322,13 @@
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.montant_achat)}}</div>
 
-        <div class="div-btn-cred" style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto">
-            <div class="btn-pret" style="width: 45%;margin: auto">
-                <a href="" class="link-pret" style="padding: 6%">{{form_widget(form.Envoyer)}}</a>
+
+        <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
+            <div style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto;text-align: center;">            
+                {{form_widget(form.Envoyer)}}
             </div>
         </div>
+
     
     {{ form_end(form) }}
     </div>
