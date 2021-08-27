@@ -19,11 +19,25 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Form\DataTransformer\CategoriesToNumbersTransformer;
 
 class DemandeType extends AbstractType
 {
+ 
+    public function __construct($nameOfClass = null,$object = null,EntityManagerInterface $entityManager)
+    {
+        
+
+        $this->repository = $entityManager->getRepository(Credit::class);
+        $this->entityManager = $entityManager;
+        $this->credits = $this->repository->findAll();
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        $credits = $this->credits;
+
         $builder
         ->add('type_credit_demande', EntityType::class,[
             'attr' => [
@@ -37,7 +51,17 @@ class DemandeType extends AbstractType
             'multiple' => false
         ])
 
-
+       /* ->add('type_credit_demande', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'choices'  => $this->credits,
+            'choice_value' => 'nom',
+            'choice_label' => function(?Credit $credit) {
+                return $credit ? strtoupper($credit->getNom()) : '';
+            },
+            'required' => false
+        ])*/
         ->add('titre', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
@@ -814,6 +838,7 @@ class DemandeType extends AbstractType
     {
         $resolver->setDefaults([
             // Configure your form options here
+          
         ]);
     }
 }
