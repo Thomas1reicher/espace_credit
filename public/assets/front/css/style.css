@@ -927,13 +927,8 @@ transform: translate(0, 25px);
 .div-lightgrey{
   padding-left: 0px!important;
 }
+}
 
-.div-img{
-  background-position: center!important;
-    background-size: 80%!important;
-    width: 100%!important;
-}
-}
 @media(min-width: 930px){
   .menu-burger{
     display: none;

@@ -5,6 +5,7 @@ namespace App\Controller\front;
 use App\Entity\Demandecredit;
 use App\Form\DemandeType;
 use App\Api\Api;
+use App\Entity\Credit;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +22,13 @@ class DemandeController extends AbstractController{
     {   
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Demandecredit::class);
+        $repo1=$entityManager->getRepository(Credit::class);
         $objet = $repo->findOneBy(['token' => $token]);
+        $tauxPerso = $repo1->findOneBy(['nom' => 'PRÊT PERSO']);
+        $tauxVoiture = $repo1->findOneBy(['nom' => 'PRÊT AUTO']);
+        $tauxMoto = $repo1->findOneBy(['nom' => 'PRÊT MOTO']);
+        $tauxMobilite = $repo1->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
+        $tauxTravaux = $repo1->findOneBy(['nom' => 'PRÊT TRAVAUX']);
         $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
@@ -35,7 +42,12 @@ class DemandeController extends AbstractController{
             'controller_name' => 'HomeController',
             'form' => $form->createView(),
             'title' => 'demande',
-            'objet' => $objet
+            'objet' => $objet,
+            'pretPerso' => $tauxPerso,
+            'pretAuto' => $tauxVoiture,
+            'pretMoto' => $tauxMoto,
+            'pretMobilite' => $tauxMobilite,
+            'pretTravaux' => $tauxTravaux
         ]);
     }
     public function UpdateApi($objet){

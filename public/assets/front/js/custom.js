@@ -158,5 +158,30 @@ console.log(burger);
     $('.slide').on('afterChange', function(event, slick, currentSlide){
         console.log(currentSlide);
       }); 
+
+    $( "#demande_type_credit_demande").change(function() {
+        type = $("#demande_type_credit_demande option:selected").html();
+        $('.credit-form').each(function(index, value) {
+          $(this).hide();
+        });
+        if(type == "PRÊT PERSO"){
+            $('.credit-perso-form').show();
+        }
+        else if(type == "PRÊT AUTO"){
+            $('.credit-auto-form').show();
+        }
+        else if(type == "PRÊT MOTO"){
+            $('.credit-moto-form').show();
+        }
+        else if(type == "PRÊT MOBILITÉ"){
+            $('.credit-mobilite-form').show();
+        }
+        else if(type == "PRÊT TRAVAUX"){
+            $('.credit-travaux-form').show();
+        }
+        if(type == "PRÊT AUTO" || type == "PRÊT MOTO"){
+            $('.credit-vehicule-form').show();
+        }
+    });
 });
 

@@ -23,6 +23,11 @@ class Demandecredit
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=30 , nullable=true)
+     */
+    private $type_credit_demande;
+
+    /**
      * @ORM\Column(type="string", length=15 , nullable=true)
      */
     private $titre;
@@ -414,7 +419,7 @@ class Demandecredit
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
      */
-    private $montant_achat_hypo;
+    private $montant_achat;
 
     /**
      * @ORM\Column(type="string", length=20, nullable=true)
@@ -431,75 +436,48 @@ class Demandecredit
      */
     private $date_debut_credit_hypo;
 
-   /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $montant_achat_voiture;
        /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
-    private $acompte_voiture;
+    private $acompte;
 
            /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
-    private $marque_voiture;
+    private $marque;
 
              /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
-    private $modele_voiture;
+    private $modele;
 
              /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
-    private $type_vendeur_voiture;
+    private $type_vendeur;
 
              /**
      * @ORM\Column(type="string", length=20, nullable=true)
      */
-    private $nom_vendeur_voiture;
+    private $nom_vendeur;
 
     /**
      * @ORM\Column(type="datetime", length=20, nullable=true)
      */
-    private $date_premiere_circulation_voiture;
+    private $date_premiere_circulation;
 
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $montant_achat_moto;
     
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $acompte_moto;
 
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $marque_moto;
+    public function getTypeCreditDemande(): ?string
+    {
+        return $this->type_credit_demande;
+    }
 
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $modele_moto;
-
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $type_vendeur_moto;
-
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $nom_vendeur_moto;
-
-    /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
-     */
-    private $date_premiere_circulation_moto;
-    
+    public function setTypeCreditDemande(string $type_credit_demande): self
+    {
+        $this->type_credit_demande = $type_credit_demande;
+        return $this;
+    }
 
     public function getTitre(): ?string
     {
@@ -1441,14 +1419,14 @@ class Demandecredit
         return $this;
     }
 
-    public function getMontantAchatHypo(): ?string
+    public function getMontantAchat(): ?string
     {
-        return $this->montant_achat_hypo;
+        return $this->montant_achat;
     }
 
-    public function setMontantAchatHypo(string $montant_achat_hypo): self
+    public function setMontantAchat(string $montant_achat): self
     {
-        $this->montant_achat_hypo = $montant_achat_hypo;
+        $this->montant_achat = $montant_achat;
 
         return $this;
     }
@@ -1490,159 +1468,72 @@ class Demandecredit
     }
 
 
-    public function getMontantAchatVoiture(): ?string
+    public function getAcompte(): ?string
     {
-        return $this->montant_achat_voiture;
+        return $this->acompte;
     }
 
-    public function setMontantAchatVoiture(string $montant_achat_voiture): self
+    public function setAcompte(string $acompte): self
     {
-        $this->montant_achat_voiture = $montant_achat_voiture;
+        $this->acompte = $acompte;
         return $this;
     }
 
-    public function getAcompteVoiture(): ?string
+    public function getMarque(): ?string
     {
-        return $this->acompte_voiture;
+        return $this->marque;
     }
 
-    public function setAcompteVoiture(string $acompte_voiture): self
+    public function setMarque(string $marque): self
     {
-        $this->acompte_voiture = $acompte_voiture;
+        $this->marque = $marque;
         return $this;
     }
 
-    public function getMarqueVoiture(): ?string
+    public function getModele(): ?string
     {
-        return $this->marque_voiture;
+        return $this->modele;
     }
 
-    public function setMarqueVoiture(string $marque_voiture): self
+    public function setModele(string $modele): self
     {
-        $this->marque_voiture = $marque_voiture;
+        $this->modele = $modele;
         return $this;
     }
 
-    public function getModeleVoiture(): ?string
+    public function getTypeVendeur(): ?string
     {
-        return $this->modele_voiture;
+        return $this->type_vendeur;
     }
 
-    public function setModeleVoiture(string $modele_voiture): self
+    public function setTypeVendeur(string $type_vendeur): self
     {
-        $this->modele_voiture = $modele_voiture;
+        $this->type_vendeur = $type_vendeur;
         return $this;
     }
 
-    public function getTypeVendeurVoiture(): ?string
+    public function getNomVendeur(): ?string
     {
-        return $this->type_vendeur_voiture;
+        return $this->nom_vendeur;
     }
 
-    public function setTypeVendeurVoiture(string $type_vendeur_voiture): self
+    public function setNomVendeur(string $nom_vendeur): self
     {
-        $this->type_vendeur_voiture = $type_vendeur_voiture;
+        $this->nom_vendeur = $nom_vendeur;
         return $this;
     }
 
-    public function getNomVendeurVoiture(): ?string
+    public function getDatePremiereCirculation(): ?DateTime
     {
-        return $this->nom_vendeur_voiture;
+        return $this->date_premiere_circulation;
     }
 
-    public function setNomVendeurVoiture(string $nom_vendeur_voiture): self
+    public function setDatePremiereCirculation(?DateTime $date_premiere_circulation): self
     {
-        $this->nom_vendeur_voiture = $nom_vendeur_voiture;
+        $this->date_premiere_circulation = $date_premiere_circulation;
         return $this;
     }
 
-    public function getDatePremiereCirculationVoiture(): ?DateTime
-    {
-        return $this->date_premiere_circulation_voiture;
-    }
-
-    public function setDatePremiereCirculationVoiture(?DateTime $date_premiere_circulation_voiture): self
-    {
-        $this->date_premiere_circulation_voiture = $date_premiere_circulation_voiture;
-        return $this;
-    }
-
-    public function getMontantAchatMoto(): ?string
-    {
-        return $this->montant_achat_moto;
-    }
-
-    public function setMontantAchatMoto(string $montant_achat_moto): self
-    {
-        $this->montant_achat_moto = $montant_achat_moto;
-        return $this;
-    }
-
-    public function getAcompteMoto(): ?string
-    {
-        return $this->acompte_moto;
-    }
-
-    public function setAcompteMoto(string $acompte_moto): self
-    {
-        $this->acompte_moto = $acompte_moto;
-        return $this;
-    }
-
-    public function getMarqueMoto(): ?string
-    {
-        return $this->marque_moto;
-    }
-
-    public function setMarqueMoto(string $marque_moto): self
-    {
-        $this->marque_moto = $marque_moto;
-        return $this;
-    }
-
-    public function getModeleMoto(): ?string
-    {
-        return $this->modele_moto;
-    }
-
-    public function setModeleMoto(string $modele_moto): self
-    {
-        $this->modele_moto = $modele_moto;
-        return $this;
-    }
-
-    public function getTypeVendeurMoto(): ?string
-    {
-        return $this->type_vendeur_moto;
-    }
-
-    public function setTypeVendeurMoto(string $type_vendeur_moto): self
-    {
-        $this->type_vendeur_moto = $type_vendeur_moto;
-        return $this;
-    }
-
-    public function getNomVendeurMoto(): ?string
-    {
-        return $this->nom_vendeur_moto;
-    }
-
-    public function setNomVendeurMoto(string $nom_vendeur_moto): self
-    {
-        $this->nom_vendeur_moto = $nom_vendeur_moto;
-        return $this;
-    }
-
-    public function getDatePremiereCirculationMoto(): ?DateTime
-    {
-        return $this->date_premiere_circulation_moto;
-    }
-
-    public function setDatePremiereCirculationMoto(?DateTime $date_premiere_circulation_moto): self
-    {
-        $this->date_premiere_circulation_moto = $date_premiere_circulation_moto;
-        return $this;
-    }
 
     public function vars() :array
     {
@@ -1866,7 +1757,7 @@ class Demandecredit
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
-        $metadata->addPropertyConstraint('montant_achat_hypo', new Validator\Regex([
+        $metadata->addPropertyConstraint('montant_achat', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
@@ -1877,33 +1768,15 @@ class Demandecredit
 
 
 
-        $metadata->addPropertyConstraint('montant_achat_voiture', new Validator\Regex([
+        $metadata->addPropertyConstraint('acompte', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le montant doit contenir uniquement des chiffres'
         ]));
-        $metadata->addPropertyConstraint('acompte_voiture', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
-        $metadata->addPropertyConstraint('nom_vendeur_voiture', new Validator\Regex([
+        $metadata->addPropertyConstraint('nom_vendeur', new Validator\Regex([
             'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
             'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
         ]));
 
-
-
-        $metadata->addPropertyConstraint('montant_achat_moto', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
-        $metadata->addPropertyConstraint('acompte_moto', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
-        $metadata->addPropertyConstraint('nom_vendeur_moto', new Validator\Regex([
-            'pattern' => '/^[a-zA-Z]+[\-]?[a-zA-Z]*$/',
-            'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
-        ]));
     }
 
 }
