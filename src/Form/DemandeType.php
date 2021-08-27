@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Credit;
 use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -17,12 +18,26 @@ use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class DemandeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('type_credit_demande', EntityType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'required' => false,
+            'label' => false,
+            'class' => Credit::class,
+            'choice_label' => 'nom',
+            'expanded' => false,
+            'multiple' => false
+        ])
+
+
         ->add('titre', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
@@ -673,7 +688,7 @@ class DemandeType extends AbstractType
             'label' => 'Valeur vénale',
             'required' => false
         ])
-        ->add('montant_achat_hypo', TextType::class,[
+        ->add('montant_achat', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'achat',
                 'class' => 'input-form input-contact'
@@ -714,15 +729,7 @@ class DemandeType extends AbstractType
 
 
 
-        ->add('montant_achat_voiture', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le montant du véhicule',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Montant du véhicule',
-            'required' => false
-        ])
-        ->add('acompte_voiture', TextType::class,[
+        ->add('acompte', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de l\'acompte',
                 'class' => 'input-form input-contact'
@@ -730,7 +737,7 @@ class DemandeType extends AbstractType
             'label' => 'Montant de l\'acompte du véhicule',
             'required' => false
         ])
-        ->add('marque_voiture', TextType::class,[
+        ->add('marque', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez la marque du véhicule',
                 'class' => 'input-form input-contact'
@@ -738,7 +745,7 @@ class DemandeType extends AbstractType
             'label' => 'Marque du véhicule',
             'required' => false
         ])
-        ->add('modele_voiture', TextType::class,[
+        ->add('modele', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le modèle du véhicule',
                 'class' => 'input-form input-contact'
@@ -746,7 +753,7 @@ class DemandeType extends AbstractType
             'label' => 'Modèle du véhicule',
             'required' => false
         ])
-        ->add('type_vendeur_voiture', ChoiceType::class,[
+        ->add('type_vendeur', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
             ],
@@ -757,7 +764,7 @@ class DemandeType extends AbstractType
             ],
             'required' => false
         ])
-        ->add('nom_vendeur_voiture', TextType::class,[
+        ->add('nom_vendeur', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le nom du vendeur du véhicule',
                 'class' => 'input-form input-contact'
@@ -765,72 +772,7 @@ class DemandeType extends AbstractType
             'label' => 'Nom du vendeur',
             'required' => false
         ])
-        ->add('date_premiere_circulation_voiture', DateType::class,[
-            'attr' => [
-                'class' => 'input-form input-contact date-css-symfony'
-            ],
-            'label' => 'Date de première circulation du véhicule',
-            'years' => range(date('Y')-100, date('Y')),
-            'required' => false,
-            'format' => 'yyyy-MM-dd',
-            'empty_data' => ''
-        ])
-
-
-
-
-        ->add('montant_achat_moto', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le montant du véhicule',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Montant du véhicule',
-            'required' => false
-        ])
-        ->add('acompte_moto', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le montant de l\'acompte',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Montant de l\'acompte du véhicule',
-            'required' => false
-        ])
-        ->add('marque_moto', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez la marque du véhicule',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Marque du véhicule',
-            'required' => false
-        ])
-        ->add('modele_moto', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le modèle du véhicule',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Modèle du véhicule',
-            'required' => false
-        ])
-        ->add('type_vendeur_moto', ChoiceType::class,[
-            'attr' => [
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Type de vendeur',
-            'choices'  => [
-                'Garage' => 'Garage',
-                'Particulier' => 'Particulier'
-            ],
-            'required' => false
-        ])
-        ->add('nom_vendeur_moto', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le nom du vendeur du véhicule',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Nom du vendeur',
-            'required' => false
-        ])
-        ->add('date_premiere_circulation_moto', DateType::class,[
+        ->add('date_premiere_circulation', DateType::class,[
             'attr' => [
                 'class' => 'input-form input-contact date-css-symfony'
             ],

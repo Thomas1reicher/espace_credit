@@ -161,20 +161,34 @@
         vertical: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 3,
         autoplay: false,
         autoplaySpeed: 2000,
         responsive: [
             {
+              breakpoint: 1500,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 3
+              }
+            },
+            {
               breakpoint: 1250,
               settings: {
-                slidesToShow: 2,
+                slidesToShow: 3,
+                slidesToScroll: 3
+              }
+            },
+            {
+              breakpoint: 925,
+              settings: {
+                slidesToShow:2,
                 slidesToScroll: 2
               }
             },
             {
-              breakpoint: 850,
+              breakpoint: 620,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -182,6 +196,7 @@
             }
         ]
     });
+
 </script>
 
 
@@ -206,7 +221,7 @@
         </div>
         
     </div>
-    <div class="div-img" style="background-image:url({{asset('assets/front/img/image-7@1x.png')}});background-position: 35% 55%;background-size: 450px">
+    <div class="div-img" style="background-image:url({{asset('assets/front/img/image-7@1x.png')}});background-position: 45% 70%;background-size: 450px">
         <img class="img-page-credit" src="assets/front/img/image-8-1@1x.png" style="width: 40%;border: solid white 10px;">
     </div>
 </div>
@@ -222,7 +237,7 @@
     </ul>
 </div>
 
-<div style="width: 100%;float: left;min-height: 350px;color: var(--nevada)">
+<div style="width: 100%;float: left;color: var(--nevada)">
     <div class="div-centre-titre"> 
         <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">
             Nos partenaires pour vos crédits
@@ -230,13 +245,34 @@
     </div>
     <div class="ligne-yellow"></div>
 
-    <ul class="ul-part" style="display: inline-flex;align-items: center;list-style: none;padding-left: 10%">
-        <li><img class="img-part" style="width: 70%;" src="assets/front/img/image-10-1@1x.png"></li>
-        <li><img class="img-part" style="width: 70%;" src="assets/front/img/image-11-1@1x.png"></li>
-        <li><img class="img-part" style="width: 70%;" src="assets/front/img/image-12-1@1x.png"></li>
-        <li><img class="img-part" style="width: 70%;" src="assets/front/img/image-13-1@1x.png"></li>
+    <ul class="partenaires-desktop" style="display: inline-flex;align-items: center;list-style: none;padding-left: 5%">
+        <li><img style="width: 100%;padding-left: 40px;padding-right: 40px;" src="assets/front/img/image-10-1@1x.png"></li>
+        <li><img style="width: 100%;padding-left: 40px;padding-right: 40px;" src="assets/front/img/image-11-1@1x.png"></li>
+        <li><img style="width: 100%;padding-left: 40px;padding-right: 40px;" src="assets/front/img/image-12-1@1x.png"></li>
+        <li><img style="width: 100%;padding-left: 40px;padding-right: 40px;" src="assets/front/img/image-13-1@1x.png"></li>
     </ul>
+    <div class="slider-partenaires" style="float: left;width: 100%;display: none">
+      <div><img style="width: 50%;margin: auto" src="assets/front/img/image-10-1@1x.png"></div>
+      <div><img style="width: 50%;margin: auto" src="assets/front/img/image-11-1@1x.png"></div>
+      <div><img style="width: 50%;margin: auto" src="assets/front/img/image-12-1@1x.png"></div>
+      <div><img style="width: 50%;margin: auto" src="assets/front/img/image-13-1@1x.png"></div>
+    </div>
 </div>
+
+<script type="text/javascript">
+    $('.slider-partenaires').slick({
+        dots: true,
+        vertical: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        arrows: false
+    });
+
+</script>
 
 <div class="txt-black div-emprunte-argent">
     Attention : emprunter de l'argent coûte aussi de l'argent
@@ -259,9 +295,10 @@
         height: 40px;
         width: 75px;
         background-size: 50px;
+        margin-top: 70px;
     }
     .slick-prev{
-        margin-left: 46%;
+        margin-left: 45%;
         top: 100%;
     }
     .slick-next{

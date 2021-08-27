@@ -1702,6 +1702,40 @@
   }
 }
 
+.slider-partenaires .slick-dots{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+  background-color: #f8f8f8;
+}
+.slider-partenaires .slick-slide{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+.slider-partenaires .slick-dots button{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--nevada);
+  text-indent: -9999px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.slider-partenaires .slick-active button{
+  background-color: var(--web-orange);
+}
+.slider-partenaires .slick-track{
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+
 @media(max-width: 1050px){
   /*page philo*/
   .div-img{
@@ -1709,6 +1743,11 @@
     background-position: 50%!important;
     padding-left: 0!important;
     padding-right: 0!important;
+    background-size: 80%!important;
+    width: 100%!important;
+  }
+  .form-pret{
+    padding-left: 50px!important;
   }
   .ul-validate{
     columns: 1!important;
@@ -1766,6 +1805,19 @@
   .home-btn-pret{
     margin-left: auto!important;
     margin-right: auto!important;
+  }
+  .div-img-home{
+    width: 100%!important;
+    background-position: center!important;
+  }
+  .typo-no-mob{
+    display: none!important;
+  }
+  .typo-mob{
+    display: block!important;
+  }
+  .div-lightgrey{
+    width: 100%!important;
   }
 }
 
@@ -1985,26 +2037,8 @@ min-height: 650px !important;
 }
 
 
-@media(min-width: 320px){
-  .div-img{
-    min-height: 400px!important;
-    background-size: 300px!important;
-  }
-}
-
-@media(min-width: 420px){
-  .div-img{
-    min-height: 400px!important;
-    background-size: 350px!important;
-  }
-}
 
 @media(max-width: 500px){
-  /*page philo*/
-  .div-img{
-    min-height: 400px!important;
-    background-size: 400px!important;
-  }
   /*page contact*/
   .div-info-contact{
     width: 100%!important;
@@ -2013,6 +2047,9 @@ min-height: 650px !important;
   .ul-philo{
     columns: 2!important;
     padding: 0!important;
+  }
+  .div-img-home{
+    background-size: 320px!important;
   }
 }
 
@@ -2059,14 +2096,11 @@ min-height: 650px !important;
   .btn-home-pret-special{
     width: 100%!important;
   }
-  .container-taux-home{
-    height: 670px!important;
-  }
 }
 
 @media(max-width: 465px){
   .div-partenaire-conf{
-    height: 60vh!important;
+    height: 65vh!important;
   }
 }
 
