@@ -25,6 +25,20 @@ class DemandePretController extends AbstractController{
         $form = $this->createForm(DemandePretType::class, $demande);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
+            /*
+            $duree = $form["duree"]->getData();
+            $montant = $form["montant"]->getData();
+            if(($duree>=30 && $montant<=2500) ||
+                ($duree>=36 && $montant<=3700) ||
+                ($duree>=42 && $montant<=5600) ||
+                ($duree>=48 && $montant<=7500) ||
+                ($duree>=60 && $montant<=10000)){
+                    //erreur
+            }
+            $name = $form["prenom"]->getData();
+            var_dump($name);
+            die();
+            */
             $em = $this->getDoctrine()->getManager();
             $random = random_bytes(10);
             $demande->setToken(bin2hex($random));
