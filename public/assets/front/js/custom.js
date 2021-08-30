@@ -195,5 +195,17 @@ console.log(burger);
             $('.credit-vehicule-form').show();
         }
     });
+
+    var distance = $('.gray-div').offset().top,
+    $window = $(window);
+
+    $window.scroll(function() {
+        if ( $window.scrollTop() >= distance ) {
+            $('.gray-div').css('position', 'fixed');
+        }
+        else{
+            $('.gray-div').css('position', 'unset');
+        }
+    });
 });
 

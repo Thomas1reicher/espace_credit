@@ -626,6 +626,11 @@
     width: 207px;
   }
   
+  .regroup-div{
+    width: 100%;
+    display: flex;
+  }
+
   .groupe-10 {
     align-items: flex-end;
     background-image: url(https://anima-uploads.s3.amazonaws.com/projects/60d053234da36ffc696aa4ed/releases/60d053312db904d587e4611a/img/trac--15@1x.png);
