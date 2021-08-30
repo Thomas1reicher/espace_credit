@@ -2113,6 +2113,9 @@ min-height: 650px !important;
   .btn-home-pret-special{
     width: 100%!important;
   }
+  .regroup-div {
+    display: initial;
+  }
 }
 
 @media(max-width: 465px){
