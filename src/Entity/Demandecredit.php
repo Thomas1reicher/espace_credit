@@ -1784,7 +1784,7 @@ class Demandecredit
             'message' => 'La durée doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('taux_credit', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
+            'pattern' => '/^[0-9]+[.]?[0-9]*$/',
             'message' => 'Le taux doit contenir uniquement des chiffres'
         ]));
         $metadata->addPropertyConstraint('montant_echeance', new Validator\Regex([

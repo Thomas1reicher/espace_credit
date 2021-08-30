@@ -39,7 +39,7 @@ console.log(burger);
         $(".big-num-orange").append(elmt);
         $(".big-num-orange").append("€");
         $(".litle-num-orange").text(',' + Math.floor(constante3_l));
-        interet = constante3 * (1 + taeg);
+        interet = constante3 * duree;
         $(".interet-info").text(interet.toFixed(2) + "€");
 
     };
@@ -195,5 +195,6 @@ console.log(burger);
             $('.credit-vehicule-form').show();
         }
     });
+
 });
 

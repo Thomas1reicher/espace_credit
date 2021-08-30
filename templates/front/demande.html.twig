@@ -13,7 +13,7 @@
         <div class="div-demande-form txt-black div-center-demande-pret">
             Type de crédit
         </div>
-        <div class="div-input-contact">{{form_widget(form.type_credit_demande)}}</div>
+        <div class="div-input-contact div-type-cred">{{form_widget(form.type_credit_demande)}}</div>
 
         <div class="div-demande-form txt-black div-center-demande-pret">
             Identité
@@ -345,4 +345,30 @@
             margin: auto;
         }
     </style>
+    <script type="text/javascript">
+    $( document ).ready(function() {
+        select = $(".div-type-cred option:selected");
+        type = select.html();
+       if(type == "PRÊT PERSO"){
+            $('.credit-perso-form').show();
+        }
+        else if(type == "PRÊT AUTO"){
+            $('.credit-auto-form').show();
+        }
+        else if(type == "PRÊT MOTO"){
+            $('.credit-moto-form').show();
+        }
+        else if(type == "PRÊT MOBILITÉ"){
+            $('.credit-mobilite-form').show();
+        }
+        else if(type == "PRÊT TRAVAUX"){
+            $('.credit-travaux-form').show();
+        }
+        if(type == "PRÊT AUTO" || type == "PRÊT MOTO"){
+            $('.credit-vehicule-form').show();
+        }
+    });
+
+
+    </script>
 {% endblock %}
