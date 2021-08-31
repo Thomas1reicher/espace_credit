@@ -18,7 +18,7 @@
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=lvvb1kdgdkmznvwrfv4xlihguzmf2guncbmdan91383b38g4"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,700,500"><link rel="shortcut icon" href="https://www.redsquare.lu/wp-content/themes/redsquare/css/favicon.gif" type="image/x-icon"/>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-
+    <link rel="shortcut icon" href="assets/front/img/favicon.ico" type="image/x-icon">  
     {# <link rel="stylesheet" href="{{ asset('assets/css/front/') }}"> #}
 
 </head>
@@ -34,17 +34,17 @@
         <div class="div-cat-header ">
             <div class="cat-header {% if( title == "home") %} main-cat  {% endif %}">
             <a href="{{ path('accueil') }}">
-                <img class="img-home-header" src="{{asset('assets/front/img/trac-2.png')}}">
+                <img class="img-home-header {% if( title == "home") %}" src="{{asset('assets/front/img/trac--2-12@1x.png')}}"{% else %}unfixed-home" src="{{asset('assets/front/img/trac-2.png')}}"{% endif %}>
             </a>
             </div>
             <div class="cat-header {% if( title == "credits") %} main-cat  {% endif %}">
-                <a href="{{ path('credits') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Crédits</h3></a>
+                <a href="{{ path('credits') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"{% if( title == "credits") %}style="color: orange"{% endif %}> Crédits</h3></a>
             </div>
             <div class="cat-header {% if( title == "philo") %} main-cat  {% endif %}">
-                <a href="{{ path('philosophie') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Notre philosophie</h3></a>
+                <a href="{{ path('philosophie') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px" {% if( title == "philo") %}style="color: orange"{% endif %}> Notre philosophie</h3></a>
             </div>
             <div class="cat-header {% if( title == "contact") %} main-cat  {% endif %}">
-                <a href="{{ path('contact') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px"> Contact</h3></a>
+                <a href="{{ path('contact') }}"><h3 class="h3-title-header montserrat-medium-dove-gray-14px" {% if( title == "contact") %}style="color: orange"{% endif %}> Contact</h3></a>
             </div>
         </div>
         <div class="btn-header">
@@ -124,50 +124,50 @@
         <div class="bande-header">
             <a href="{{ path('pretPerso') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--9-13@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT PERSO</div>
+                    <div class="logo-div-header"><img class="img-h {% if( title == "pretPerso") %}" src="{{asset('assets/front/img/trac--9-14@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--9-13@1x.png')}}" {% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "pretPerso") %}" style="color: orange"{% else %}unfixed-txt" {% endif %}>PRÊT PERSO</div>
                 </div>
             </a>
             <a href="{{ path('pretAuto') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--11-13@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT AUTO</div>
+                    <div class="logo-div-header"><img class="img-h {% if( title == "pretAuto") %}" src="{{asset('assets/front/img/trac--11-16@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--11-13@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "pretAuto") %}" style="color: orange"{% else %}unfixed-txt"{% endif %}>PRÊT AUTO</div>
                 </div>
             </a>
             <a href="{{ path('pretMoto') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header" style="width: 30%;"><img class="img-h" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOTO</div>
+                    <div class="logo-div-header" style="width: 30%;"><img class="img-h {% if( title == "pretMoto") %}" src="{{asset('assets/front/img/trac--236-42@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--236-38@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "pretMoto") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>PRÊT MOTO</div>
                 </div>
             </a>
                    <div class="div-bande-header">
             <a href="{{ path('pretMobi') }}">
-                <div class="logo-div-header" style="width: 27%;"><img class="img-h" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT MOBILITÉ</div>
+                <div class="logo-div-header" style="width: 27%;"><img class="img-h {% if( title == "pretMobi") %}" src="{{asset('assets/front/img/trac--235-43@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--235-44@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "pretMobi") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>PRÊT MOBILITÉ</div>
                     </div>
             </a>
             <a href="{{ path('pretTravaux') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--13-11@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">PRÊT TRAVAUX</div>
+                    <div class="logo-div-header"><img class="img-h {% if( title == "pretTravaux") %}" src="{{asset('assets/front/img/trac--13-19@1x.png')}}"  {% else %}unfixed" src="{{asset('assets/front/img/trac--13-11@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "pretTravaux") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>PRÊT TRAVAUX</div>
                 </div>
             </a>
             <a href="{{ path('regroupement') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--15-17@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">REGROUPEMENT</div>
+                    <div class="logo-div-header"><img class="img-h {% if( title == "regroupement") %}" src="{{asset('assets/front/img/trac--15-20@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--15-17@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "regroupement") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>REGROUPEMENT</div>
                 </div>
             </a>
             <a href="{{ path('carteCredit') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header" style="width: 28%;"><img class="img-h" src="{{asset('assets/front/img/trac--343-12@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">CARTE DE CRÉDIT</div>
+                    <div class="logo-div-header" style="width: 28%;"><img class="img-h {% if( title == "carteCredit") %}" src="{{asset('assets/front/img/trac--343-20@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--343-12@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "carteCredit") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>CARTE DE CRÉDIT</div>
                 </div>
             </a>
             <a href="{{ path('entreprise') }}">
                 <div class="div-bande-header">
-                    <div class="logo-div-header"><img class="img-h" src="{{asset('assets/front/img/trac--20-11@1x.png')}}"></div>
-                    <div class="titre-bande-header montserrat-bold-dove-gray-12px">ENTREPRISE</div>
+                    <div class="logo-div-header"><img class="img-h {% if( title == "entreprise") %}" src="{{asset('assets/front/img/trac--20-24@1x.png')}}" {% else %}unfixed" src="{{asset('assets/front/img/trac--20-11@1x.png')}}"{% endif %}></div>
+                    <div class="titre-bande-header montserrat-bold-dove-gray-12px {% if( title == "entreprise") %}" style="color: orange" {% else %}unfixed-txt"{% endif %}>ENTREPRISE</div>
                 </div>
             </a>
         </div>
