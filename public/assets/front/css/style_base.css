@@ -1752,6 +1752,9 @@
     float: none!important;
     padding-bottom: 50px!important;
   }
+  .regroup-div-carte-entreprise {
+    display: initial;
+  }
   .div-img{
     width: 100%!important;
     background-position: 50%!important;
