@@ -1284,6 +1284,10 @@
     width: 197px;
   }
   
+  .div-dec-btn{
+    margin-bottom: 35px;
+  }
+
   .text-1 {
     align-self: flex-end;
     letter-spacing: 0;
