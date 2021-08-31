@@ -38,25 +38,6 @@ class HomeController extends AbstractController
     public function home()
     {
 
-      /*  $client = new Request();
-
-        $clip_form_data="nom1: test\nprenom1: webservice\nmontant: 5000\n...etc";
-
-        //$resultat=any50_callWS($clip_form_data);
-
-       /* if($resultat["erreur"]!=""){
-            //si ERREUR
-        }else{
-            //si OK
-        }*/
-       /* $client
-        $response = $this->Request('POST',"http://grids.anysoft.lu/interclip/interclip.asmx",['test']);*/
-       /* $aHTTP['http']['header'] =  "User-Agent: PHP-SOAP/5.5.11\r\n";
-
-        $aHTTP['http']['header'].= "username: TEST \r\n"."password: TEST \r\n";
-        $context = stream_context_create($aHTTP);
-        $client=new SoapClient("http://grids.anysoft.lu/interclip/interclip.asmx",array('trace' => 1,"stream_context" => $context));
-        dd($client);*/
 
      
         $entityManager = $this->getDoctrine()->getManager();
@@ -84,9 +65,13 @@ class HomeController extends AbstractController
      */
     public function credits()
     {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Credit::class);
+        $objets = $repo->findAll();
         return $this->render('front/credits.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
+            'credits' => $objets
         ]);
     }
 
@@ -185,11 +170,11 @@ class HomeController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
-        $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
+        $obj = $repo->findOneBy(['nom' => 'REGROUPEMENT']);
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'regroupement',
-            'pret' => $obj
+            'pret' => $obj->getTaux()[0]
         ]);
     }
 

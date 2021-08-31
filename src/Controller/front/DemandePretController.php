@@ -11,6 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use App\Entity\Credit;
+use App\Entity\Taux;
 
 class DemandePretController extends AbstractController{
 
@@ -24,6 +26,10 @@ class DemandePretController extends AbstractController{
         $demande = new Demandecredit();
         $form = $this->createForm(DemandePretType::class, $demande);
         $form->handleRequest($request);
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo=$entityManager->getRepository(Taux::class);
+        $objets = $repo->findAll();
+   
         if($form->isSubmitted() && $form->isValid()){
             /*
             $duree = $form["duree"]->getData();
@@ -58,6 +64,7 @@ class DemandePretController extends AbstractController{
             'controller_name' => 'HomeController',
             "form" => $form->createView(),
             'title' => 'demandePret',
+            'objets' => $objets,
         ]);
     }
 }

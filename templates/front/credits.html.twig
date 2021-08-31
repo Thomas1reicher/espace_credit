@@ -22,14 +22,17 @@
     <div class="ligne-yellow"></div>
     <div class="txt-low-weight-black txt-part-cred" style="text-align: center;padding-bottom: 30px">Chez Espace Crédits, nous vous proposons plusieurs types de crédits<br> aux meilleurs taux* spécialement adaptés à vos besoins et envies</div>
       <div class="slider slider-credits">
+      {% for i , credit in credits %}
     <div class="slide" style="width: 5%">
-        <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt personnel </p>
+        <p class="montserrat-bold-nevada-20px" style="text-align:center">   {{credit.nom}} </p>
         <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
-              <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">5,95%</span><span class="montserrat-bold-web-orange-46px">*</span>
+          {% for i , taux in credit.taux %}
+              <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">{{taux.taux}}%</span><span class="montserrat-bold-web-orange-46px">*</span>
+          {% endfor %}
           </div>
           <p class="surname montserrat-light-tundora-16px">
-              Le prêt personnel permet de faire face à des imprévus ou de financer vos projets.
+              {{credit.description}}
           </p>
         </div>
         <div class="div-dec-btn offrepretslide">
@@ -40,6 +43,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
     <div class="slide">
         <p class="montserrat-bold-nevada-20px" style="text-align:center">   Prêt automobile </p>
         <div class="div-slide-button-align">
