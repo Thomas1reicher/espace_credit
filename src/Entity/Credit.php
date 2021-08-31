@@ -26,6 +26,10 @@ class Credit
        /**
      * @ORM\Column(type="string", length=255,nullable=true)
      */
+    private $description;
+       /**
+     * @ORM\Column(type="string", length=255,nullable=true)
+     */
     private $img;
 
     /**
@@ -60,6 +64,17 @@ class Credit
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
@@ -109,6 +124,9 @@ class Credit
         // TODO: Implement __toString() method.
 
         $tbl="";
+        $tbl.=$this->getNom();
+        $tbl.=$this->getDescription();
+        $tbl.=$this->getImg();
         return $tbl;
     }
 

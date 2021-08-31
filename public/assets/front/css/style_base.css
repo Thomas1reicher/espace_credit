@@ -2117,6 +2117,14 @@ min-height: 650px !important;
     display: initial;
   }
 }
+@media(min-width: 600px){
+  
+  .slider-credits .slide{
+
+    min-height: 360px!important;
+
+  }
+}
 
 @media(max-width: 465px){
   .div-partenaire-conf{
@@ -2146,7 +2154,7 @@ min-height: 650px !important;
 */
 
 
-}
+
 .dot {
   height: 15px;
   width: 15px;
@@ -2166,5 +2174,14 @@ min-height: 650px !important;
 }
 .td-contact a{
   color: black!important;
+}
+.div-slide-button-align .taeg{
+
+  height: 100px;
+
+}
+.slider-credits .surname{
+
+  height: 100px;
 }
 
