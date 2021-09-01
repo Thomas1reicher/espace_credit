@@ -1,7 +1,7 @@
 {% extends 'front/base-front.html.twig' %}
 {% block body %}
 
-<div class="regroup-div">
+<div class="regroup-div regroup-div-carte-entreprise">
     <img class="img-left" style="float: left;width: 50%" src="assets/front/img/shutterstock-1710472255-min-850x567-1@1x.png">
     <div class="titre-div-row" style="padding-bottom: 30px;float: left;background-color: white;width: 50%;padding-left: 40px;padding-right: 80px;padding-top: 50px;">
         <div class="titre-taux-black" style="padding-bottom:50px">Demande de <br>carte de crédit</div>
@@ -22,15 +22,15 @@
 
     </div>
     <div class="div-img" style="min-height: 350px">
-        <div class="txt-black" style="margin-top: 60px">Faites votre demande de carte de crédit chez Espace Crédits</div><br>
+        <div class="txt-black" style="margin-top: 20px;margin-bottom: 20px">Faites votre demande de carte de crédit <br>chez Espace Crédits</div><br>
         <div class="carte-exemple">
-            <img class="img-visa" style="margin-right: 10px;width: 20%;margin-bottom: 5px;" src="assets\front\img\Visa_Inc._logo.svg.png">
-            <img class="img-master-maestro" style="margin-right: 10px;width: 11%" src="assets\front\img\990px-Mastercard-logo.svg.png">
-            <img class="img-master-maestro" style="width: 11%" src="assets\front\img\1280px-Maestro_2016.svg.png">
+            <img class="img-visa" style="margin-right: 10px;width: 15%;margin-bottom: 5px;" src="assets\front\img\Visa_Inc._logo.svg.png">
+            <img class="img-master-maestro" style="margin-right: 10px;width: 8%" src="assets\front\img\990px-Mastercard-logo.svg.png">
+            <img class="img-master-maestro" style="width: 8%" src="assets\front\img\1280px-Maestro_2016.svg.png">
         </div>
         <div class="div-btn-cred" style="margin-top: 50px;">
             <div class="btn-pret">
-                <a href="" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">FAIRE UNE DEMANDE</p></a>
+                <a href="{{ path('demandePret') }}" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">FAIRE UNE DEMANDE</p></a>
             </div>
         </div>
     </div>
@@ -44,13 +44,15 @@
         </h1>
     </div>
     <div class="ligne-yellow"></div>
-    <div class="div-img-special" style="width: 100%;background-position: 80% 0%;background-size: 250px!important;background-repeat: no-repeat;background-image:url({{asset('assets/front/img/trac--329-1@1x.png')}})">
+    <div class="div-img-special" style="width: 100%;background-position: 80% 0%;background-size: 300px!important;background-repeat: no-repeat;background-image:url({{asset('assets/front/img/trac--329-1@1x.png')}})">
         <div class="txt-black">Espace crédits peut vous proposer différentes types de carte de crédit allant de la Classique à la Premium</div><br>
         <div class="txt-black" style="font-weight: 400!important;color: var(--black);font-size:17px">Lors du choix de votre carte, vous devrez prendre en considération quelques paramètres. Si vous souhaitez faire des achats, des retraits, utiliser le sans contact ou encore
          payer sur internet, une carte classique suffit.<br><br>Si vous êtes plus dépensier, vous pourrez opter pour une carte haut de gamme. Ces cartes vous permettent d'obtenir diverses
           assurances, notamment pour les voyages
         </div>
-        <div class="div-btn-cred div-btn-cred-contacter" style="margin-top: 80px;margin-left: auto;margin-right: auto">
+    </div>
+    <div class="div-contact-carte-credit" style="width: 50%;float: right">
+        <div class="div-btn-cred div-btn-cred-contacter" style="margin-left: auto;margin-right: auto">
             <div class="btn-pret">
                 <a href="{{ path('contact') }}" class="link-pret"><p class="demande-pret montserrat-medium-white-14px">NOUS CONTACTER</p></a>
             </div>

@@ -1284,6 +1284,10 @@
     width: 197px;
   }
   
+  .div-dec-btn{
+    margin-bottom: 35px;
+  }
+
   .text-1 {
     align-self: flex-end;
     letter-spacing: 0;
@@ -1317,8 +1321,9 @@
 }
 
 .div-img-special{
-  padding-left: 10%;
-  padding-right: 45%;
+  padding-left: 16%;
+  padding-right: 50%;
+  padding-top: 25px;
 }
 
 .txt-black{
@@ -1746,6 +1751,14 @@
 
 @media(max-width: 1050px){
   /*page philo*/
+  .div-contact-carte-credit{
+    width: 100%!important;
+    float: none!important;
+    padding-bottom: 50px!important;
+  }
+  .regroup-div-carte-entreprise {
+    display: initial;
+  }
   .div-img{
     width: 100%!important;
     background-position: 50%!important;
