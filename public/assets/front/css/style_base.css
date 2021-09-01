@@ -1857,7 +1857,10 @@
 
 @media(max-width: 420px){
   /*page philo*/
-
+  .demandecred{
+    width: 97%!important;
+  
+  }
   .dem-cred-btn{
     position: relative;
     left: 0;
@@ -2171,6 +2174,7 @@ min-height: 650px !important;
     margin-right: auto;
     text-align: center;
     margin-top: 3%;
+    display: none;
 }
 .td-contact a{
   color: black!important;
