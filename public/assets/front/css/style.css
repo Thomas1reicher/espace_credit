@@ -179,7 +179,7 @@
 
 }
 .link-pret{
-    
+  width: 200px; 
 }
 .num-tel{
 
@@ -191,8 +191,12 @@
 }
 .demande-pret{
 
-  padding: 3%;
+
   margin: 0px;
+  height: 40px;
+  display: table-cell;
+  vertical-align: middle;
+  width: 200px;
 
 }
 .num-tel{
@@ -257,7 +261,7 @@
   height: 40px;
   width: 41%;
   text-align: center;
-  padding-top: 0.4%;
+ 
   max-width: 250px;
 }
 .div-titre-form{
@@ -475,6 +479,9 @@ transform: translate(0, 25px);
   letter-spacing: 0;
   line-height: 40px;
   text-align: center;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
 }
 .slide{
   width: 18%;
@@ -933,4 +940,8 @@ transform: translate(0, 25px);
   .menu-burger{
     display: none;
   }
+}
+.div-slider-entreprise li{
+  margin-top: 1%;
+  margin-bottom:1%;
 }

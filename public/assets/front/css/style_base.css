@@ -1530,7 +1530,7 @@
 }
 
 .div-slide-button-align{/*utilisé dans les pages home et crédits*/
-  min-height: 190px;
+  height: 190px;
 }
 
 /*fin du CSS commun à toutes les pages*/
@@ -2194,7 +2194,7 @@ min-height: 650px !important;
 }
 .div-slide-button-align .taeg{
 
-  height: 100px;
+
 
 }
 .slider-credits .surname{
