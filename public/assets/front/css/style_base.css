@@ -1530,7 +1530,7 @@
 }
 
 .div-slide-button-align{/*utilisé dans les pages home et crédits*/
-  height: 190px;
+  height: 240px;
 }
 
 /*fin du CSS commun à toutes les pages*/
@@ -2196,7 +2196,7 @@ min-height: 650px !important;
 
 }
 .slider-credits .surname{
-
+  margin-top: 0px;
   height: 100px;
 }
 
@@ -2210,4 +2210,11 @@ min-height: 650px !important;
 }
 .div-footer-mob p{
   font-weight: 100;
+}
+.taeg-name{
+  font-size: 12px!important;
+  float: left;
+  margin-left: 8%;
+  height: 10px;
+
 }

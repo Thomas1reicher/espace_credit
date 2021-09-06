@@ -24,11 +24,11 @@
       <div class="slider slider-credits">
       {% for i , credit in credits %}
     <div class="slide" style="width: 5%">
-        <p class="montserrat-bold-nevada-20px" style="text-align:center">   {{credit.nom}} </p>
+        <p class="montserrat-bold-nevada-20px title-credits" style="text-align:center">   {{credit.nom}} </p>
         <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
           {% for i , taux in credit.taux %}
-              <span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">{{taux.taux}}%</span><span class="montserrat-bold-web-orange-46px">*</span>
+              <div>{% if taux.nom %}<span class="montserrat-light-web-orange-16px taeg-name" style="font-size: 12px!important;">({{taux.nom}}) </span> {% endif %}</br><span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">{{taux.taux}}%</span><span class="montserrat-bold-web-orange-46px">*</span></div>
           {% endfor %}
           </div>
           <p class="surname montserrat-light-tundora-16px">
@@ -37,7 +37,7 @@
         </div>
         <div class="div-dec-btn offrepretslide">
             <div class="btn-pret">
-                <a href="{{ path('pretPerso') }}" class="link-pret">
+                <a href="{{ path(credit.slug) }}" class="link-pret">
                     <p class="demande-pret montserrat-medium-white-14px">NOS OFFRES DE PRÊT</p>
                 </a>
             </div>

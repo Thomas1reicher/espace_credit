@@ -30,21 +30,6 @@
             </div>
 
             <div class="inputs label-form montserrat-medium-white-14px" style="width: 99%;">
-              <div style="width: 99%;float: left">Types de prêt</div>
-              <div class="div-input-preview" style="width: 99%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
-              {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pret.taux %}
-                    {% if first %}
-                      {% set objFirst = taux %}
-                      {% set first = false %}
-
-                  {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                    #}
-                  </select>
-              </div>
               <div style="width: 99%;float: left">Montant <span style="font-weight: 100;" class="span-euro">- euro</span></div>
               <div class="div-input-preview" style="width: 99%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
               <div style="width: 99%;float: left">Durée <span style="font-weight: 100;" class="span-mois">- mois</span></div>
