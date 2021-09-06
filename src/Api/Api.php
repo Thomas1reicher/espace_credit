@@ -6,15 +6,16 @@
 //*********************************************************************************************************************************
 namespace App\Api;
 use \DOMDocument;
+use Symfony\Component\Config\Definition\Exception\Exception;
 
 
 class Api
 {
 public function ANYSOFT_GETPARAM($p){
 	switch($p){
-		case 'URL_WS': return 'http://grids.anysoft.lu/interclip/interclip.asmx'; break;
-		case 'USR_WS': return 'TEST'; break;
-		case 'PWD_WS': return 'TEST'; break;
+		case 'URL_WS': return 'https://ic-espacec.anysoft.lu:9176/interclip/interclip.asmx'; break;
+		case 'USR_WS': return 'WSESPC'; break;
+		case 'PWD_WS': return 'ps89u28/'; break;
 	}
 }
 
@@ -57,10 +58,10 @@ public function any50_xml_helper($url, $postdata = '')
       'ignore_errors' => false
     )
   );
-  $cparams['http']['content'] = $postdata;
-
+  $cparams['http']['content'] =$test= $postdata;
   @$context = stream_context_create($cparams);
   @$fp = fopen($url, 'rb', false, $context);
+  var_dump($url);
   if (!$fp) {
     $res = false;
   } else {
@@ -152,8 +153,7 @@ public function any50_call_simple_method($methodname,$datafields){
 		.'</'.$methodname.'>'
 		.'</soap:Body></soap:Envelope>'
 	;
-	//recuperation xml et gestion d'erreur
-	
+
 	$ws_out=$this->any50_xml_helper($this->ANYSOFT_GETPARAM("URL_WS"),$xml);
 	if($ws_out=="") throw new Exception("empty xml [500]");
 	$dom=$this->any50_myparse_xml($ws_out);
@@ -188,7 +188,9 @@ public function any50_callWS($forminject, $in_ref_credit=""){
 		@$randstr.=substr($randstr,strlen($randstr)-$i-1,1);
 	}
 	try{
+		var_dump(''.str_replace("|","",$randstr).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("USR_WS")).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("PWD_WS")).'|');
 		$r=$this->any50_call_simple_method("InterCLIPInject",array("XmlRequest"=>$this->any50_base66encode(''.str_replace("|","",$randstr).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("USR_WS")).'|'.str_replace("|","",$this->ANYSOFT_GETPARAM("PWD_WS")).'|'.$XmlRequest), "in_ref_credit"=>$in_ref_credit));
+	
 	}catch(Exception $ex){
 		$r=''.$ex->getMessage();
 		$err=1;

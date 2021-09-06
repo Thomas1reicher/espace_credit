@@ -1936,12 +1936,7 @@
   width:100%!important;
   margin-left: 0%!important;
 }
-.div-img .div-btn-cred .demande-pret { 
 
-  position: absolute;
-  left: 0;
-  right: 0;
-}
 .div-img .div-btn-cred .btn-pret { 
   margin-left: auto;
   margin-right: auto;
@@ -2073,6 +2068,7 @@ min-height: 650px !important;
   }
   .div-img{
     background-size: 320px!important;
+    min-height: 350px!important;
   }
 }
 
@@ -2156,6 +2152,12 @@ min-height: 650px !important;
   .offrepretslide{
     margin-bottom: 3%;
   }
+  .tr-mob{
+    display: none;
+  }
+  .div-footer-mob{
+    display: none;
+  }
 }
 /*
 @media(max-width: 1200px){
@@ -2198,3 +2200,14 @@ min-height: 650px !important;
   height: 100px;
 }
 
+.div-footer-mob{
+  width: 100%;
+    text-align: center;
+}   
+
+.div-footer-mob a{
+  font-weight: 100;
+}
+.div-footer-mob p{
+  font-weight: 100;
+}

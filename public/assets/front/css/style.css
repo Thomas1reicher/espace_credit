@@ -69,6 +69,7 @@
     width: 50%;
     float: left;
     text-align: center;
+    height: 40px;
 }
 .cat-header{
     width: 25%;
@@ -290,6 +291,7 @@
   border-radius: 7px;
   height: 31px;
   width: 80%;
+  padding-left: 1%;
 }
 .label-mensualite{
 
@@ -944,4 +946,11 @@ transform: translate(0, 25px);
 .div-slider-entreprise li{
   margin-top: 1%;
   margin-bottom:1%;
+}
+@media(max-width: 420px){
+
+.tr-desk{
+  display: none;
+}
+
 }

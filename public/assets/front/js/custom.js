@@ -5,16 +5,44 @@ jQuery(function ($) {
     burger = $('.open-main-nav');
     nav    = document.getElementById('main-nav'),
     slowmo = document.getElementById('slowmo');
-
+    function numberWithCommas(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    $( document ).ready(function() {
+        recalculate();
+        duree = parseInt($(".duree-form").val());
+        $(".duree-info").text(duree + " mois");
+        montant = parseInt($(".montant-form").val());
+        if(montant > 999){
+            montantstr=$(this).val();            
+                $(".montant-info").text(numberWithCommas(montant) + "€");
+            }
+           else{
+            $(".montant-info").text(montant + "€");
+        }
+    });
     $(".montant-form").change(function () {
         recalculate();
         montant = parseInt($(this).val());
-        $(".montant-info").text(montant + "€");
+        if(montant > 999){
+            montantstr=$(this).val();            
+                $(".montant-info").text(numberWithCommas(montant) + "€");
+            }
+           else{
+            $(".montant-info").text(montant + "€");
+        }
+        
     });
     $(".duree-form").change(function () {
         recalculate();
         duree = parseInt($(this).val());
         $(".duree-info").text(duree + " mois");
+    });
+    $(".montant-form").click(function () {
+        $(this).val("");
+    });
+    $(".duree-form").click(function () {
+        $(this).val("");
     });
     $(".select-credit").change(function () {
         taeg = parseFloat($(".select-credit option:selected").val());
@@ -214,4 +242,5 @@ jQuery(function ($) {
         }
     });
 });
+
 

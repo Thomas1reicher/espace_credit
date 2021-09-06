@@ -37,9 +37,6 @@ class DemandeController extends AbstractController{
         $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            var_dump($_POST['tauxVoiture']);
-            var_dump($_POST['tauxMoto']);
-            var_dump($_POST['tauxTravaux']);
             switch ($objet->getTypeCreditDemande()->getNom()) {
                 case  'PRÊT AUTO':
                     $tauxActuel = $_POST['tauxVoiture'];
@@ -213,7 +210,6 @@ class DemandeController extends AbstractController{
             return $errors;
         }
         public function formatDate(?DateTime $date ){
-            var_dump($date);
         if($date != null){
           return  (empty($date)) ? '' : $date->format('d/m/Y');
         }
