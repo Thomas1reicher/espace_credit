@@ -61,7 +61,7 @@ public function any50_xml_helper($url, $postdata = '')
   $cparams['http']['content'] =$test= $postdata;
   @$context = stream_context_create($cparams);
   @$fp = fopen($url, 'rb', false, $context);
-  var_dump($url);
+
   if (!$fp) {
     $res = false;
   } else {
