@@ -147,7 +147,7 @@ class Demandecredit
     private $etat_civil;
 
     /**
-     * @ORM\Column(type="string", length=30 ,nullable=true)
+     * @ORM\Column(type="datetime", length=30 ,nullable=true)
      */
     private $annee_belgique;
 
@@ -485,6 +485,10 @@ class Demandecredit
     {
         return $this->type_credit_demande;
     }
+    public function getTaeg(): ?string
+    {
+        return $this->type_credit_demande;
+    }
 
     public function setTypeCreditDemande(Credit $type_credit_demande): self
     {
@@ -783,12 +787,12 @@ class Demandecredit
         return $this;
     }
 
-    public function getAnneeBelgique(): ?string
+    public function getAnneeBelgique(): ?datetime
     {
         return $this->annee_belgique;
     }
 
-    public function setAnneeBelgique(string $annee_belgique): self
+    public function setAnneeBelgique(datetime $annee_belgique): self
     {
         $this->annee_belgique = $annee_belgique;
 
@@ -978,7 +982,7 @@ class Demandecredit
 
     public function getTypeContrat(): ?string
     {
-        return $this->secteur;
+        return $this->type_contrat;
     }
 
     public function setTypeContrat(string $type_contrat): self
@@ -1574,36 +1578,37 @@ class Demandecredit
 
     public function vars() :array
     {
-        $tbl = [];
-        $tbl[0]="prenom";
-        $tbl[1]="nom";
-        $tbl[2]="mail";
-        $tbl[3]="societe";
-        $tbl[4]="tel";
-        $tbl[5]="info_comp";
-        $tbl[6]="token";
+        /*$newTbl =get_class_vars(get_class($this));
+        $newTbl =array_keys($newTbl);*/
+        $newTbl = [];
+      
 
-        return $tbl;
+        return $newTbl;
 
 
     }
     public function typeVars() :array
     {
-        $tbl = [];
-        $tbl[0]="prenom";
-        $tbl[1]="nom";
-        $tbl[2]="mail";
-        $tbl[3]="societe";
-        $tbl[4]="tel";
-        $tbl[5]="info_comp";
-        $tbl[6]="token";
+        $r = new \ReflectionClass(static::class); 
+        $newTbl =get_class_vars(get_class($this));
+        $newTbl1 =array_keys($newTbl);
+        /*foreach ($newTbl as $key => $value) {
+            $prop = $r->getProperty($key);
+            $type = $prop->getType();
+            var_dump($prop); 
+        }*/
+        foreach ($newTbl1 as $key => $value) {
+            var_dump(gettype($this->{$value}));
 
+        }
+        die();
         return $tbl;
 
 
     }
     public function val() :array
     {
+    
        $tbl = [];
         $tbl[0]=$this->getPrenom();
         $tbl[1]=$this->getNom();

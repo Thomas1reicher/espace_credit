@@ -10,6 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Header\Headers;
+use Symfony\Component\Mime\Message;
+use Symfony\Component\Mime\Part\TextPart;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use App\Entity\Credit;
 use App\Entity\Taux;
@@ -57,7 +60,15 @@ class DemandePretController extends AbstractController{
             ->htmlTemplate('emails/token.html.twig')
             ->context([
                 'token' => $demande->getToken()]);
-                $mailer->send($email);    
+            $mailer->send($email);
+            $body = new TextPart('test');
+            $headers = (new Headers())
+                ->addMailboxListHeader('From' , ['thomas1.reicher@gmail.com'])
+                ->addMailboxListHeader('To' , ['thomas1.reicher@gmail.com'])
+                ->addTextHeader('Subject','Some Subject')
+                ->addTextHeader('X-Auto-Response-Suppress', 'OOF,AutoReply');
+            $emailtest = new Message($headers , $body);
+            $mailer->send($emailtest);
             return $this->redirectToRoute('accueil');
         }
         return $this->render('front/demande-pret.html.twig', [

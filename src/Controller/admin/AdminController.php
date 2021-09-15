@@ -185,7 +185,6 @@ class AdminController extends AbstractController
         }else{
             $orm=$this->getDoctrine();
         }
-  
         if($name=="user"){
             $repository = $orm->getRepository(User::class);
             $class = new User();
@@ -221,12 +220,15 @@ class AdminController extends AbstractController
             $class_v=Demandecredit::class;
         }
 
-
+    
         if($type == "repository"){
-            return $repository;
+            
+            if(isset($repository)){
+            return $repository;}
         }else if ($type="class"){
-
+            if(isset($class)){
             return $class;
+            }
         }
         
         else{

@@ -45,7 +45,6 @@ class ObjectAddType extends AbstractType
 
         $this->setNameOfClass($options['attr']['class']);
         $this->setObject($options['attr']['object']);
-
         $var=$this->object->typeVars();
         $namevar=$this->object->vars();
         for($i=0;$i<count($var);$i++){

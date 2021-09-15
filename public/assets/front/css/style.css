@@ -970,3 +970,6 @@ transform: translate(0, 25px);
 
 
 }
+.select-credit option {
+  background-color: var(--nevada);
+}

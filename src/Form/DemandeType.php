@@ -122,6 +122,7 @@ class DemandeType extends AbstractType
             'label' => 'Registre national (uniquement pour les belges)',
             'required' => false
         ])
+ 
         ->add('numero_carte_identite', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de carte d\'identité',
@@ -172,7 +173,18 @@ class DemandeType extends AbstractType
                 'Veuf(ve)' => 'Veuf'
             ],
             'required' => false
-        ])            
+        ])   
+        ->add('annee_belgique', DateType::class,[
+            'attr' => [
+                'placeholder' => 'Belge depuis',
+                'class' => 'input-form input-contact date-css-symfony'
+            ],
+            'label' => "Date d'obtention de la nationalité belge",
+            'required' => false,
+            'years' => range(date('Y')-100, date('Y')),
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => '1900-01-01'
+        ])         
 
 
 
@@ -348,6 +360,19 @@ class DemandeType extends AbstractType
             ],
             'required' => false
         ])
+        ->add('type_contrat', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Type de contrat',
+            'choices'  => [
+                'CDI' => 'CDI',
+                'CDD' => 'CDD',
+                'Interim' => 'Interim',
+                'Grande entreprise (+50 personnes)' => 'Grande entreprise (+50 personnes)',
+            ],
+            'required' => false
+        ])
         ->add('secteur', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'
@@ -377,17 +402,7 @@ class DemandeType extends AbstractType
             ],
             'required' => false
         ])
-        ->add('type_contrat', ChoiceType::class,[
-            'attr' => [
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Type de contrat',
-            'choices'  => [
-                'CDI' => 'CDI',
-                'CDD' => 'CDD'
-            ],
-            'required' => false
-        ])
+    
         ->add('date_contrat', DateType::class,[
             'attr' => [
                 'class' => 'input-form input-contact date-css-symfony'

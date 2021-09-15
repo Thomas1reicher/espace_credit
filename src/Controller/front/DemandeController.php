@@ -50,9 +50,8 @@ class DemandeController extends AbstractController{
                 
                 default:
                 $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();
-
+             
             }
-          
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             $this->UpdateApi($token);
@@ -93,79 +92,82 @@ class DemandeController extends AbstractController{
             $ref = "";
             $first = true;
         }
+      
         $etapeForm = "MID".$etape;
-        $test = $clip_form_data="recipient: recipient@site.be\n".
-                        "subject: DEMANDE DE PRET\n".
-                        "return_link_url: http://www.site.be\n".
-                        "redirect: http://www.site.be/merci.htm\n".
-                        "email: ".$objet->getMail()."\n".
-                        "langue: FR\n".
-                        "montant: ".$objet->getMontantCredit()."\n".
-                        "duree: ".$objet->getDureeCredit()."\n".
-                        "taeg: 12.5\n".
-                        "mensualite: 265.94\n".       
-                        "nom1: ".$objet->getNom()."\n".
-                        "prenom1: ".$objet->getPrenom()."\n".
-                        "montant: ".$objet->getMontantCredit()."\n".
-                        "titre1: ".$objet->getTitre()."\n".
-                        "rgpd_consentement_txt1: Exemple de texte de consentement RGPD||\n".
-                        "montant_achat: ".$objet->getMontantAchat()."\n".
-                        "montant_acompte: ".$objet->getAcompte()."\n".
-                        "marque: ".$objet->getMarque()."\n".
-                        "denomination: ".$objet->getModele()."\n".
-                        "annee_construction: ".$this->formatDate($objet->getDatePremiereCirculation())."\n".
-                        "nom_vendeur: ".$objet->getNomVendeur()."\n".
-                        "type_support: ".$objet->getTypeVendeur()."\n".
-                        "ref_apporteur: \n".				
-                        "rgpd_consentement1: 1\n".
-                        "ci1: ".$objet->getNumCarteIdentite()."\n".
-                        "rn1: ".$objet->getRegistreNationalBelge()."\n".
-                        "etat_civil1: ".$objet->getEtatCivil()."\n".
-                        "adresse_depuis1: ". $this->formatDate($objet->getDateAdresse())."\n".
-                        "telephone1: ".$objet->getTel()."\n".
-                        "gsm1: ".$objet->getTelephoneMobile()."\n".
-                        "loyer1: ".$objet->getLoyer()."\n".
-                        "c_pensalim1: ".$objet->getPensionAlimentaire()."\n".
-                        "rue1: ".$objet->getNomRue()."\n".
-                        "numero1: ".$objet->getNumeroRue()."\n".
-                        "cp1: ".$objet->getCodePostal()."\n".
-                        "localite1: ".$objet->getVilleResidence()."\n".
-                        "pays1: ".$objet->getPaysResidence()."\n".
-                        "nationalite1: ".$objet->getNationalite()."\n".
-                        "employeur1: ".$objet->getNomEmployeur()."\n".
-                        "rue_employeur1: ".$objet->getNomRueEmployeur()."\n".
-                        "numero_employeur1: ".$objet->getNumeroRueEmployeur()."\n".
-                        "cp_employeur1: ".$objet->getCodePostalEmployeur()."\n".
-                        "localite_employeur1: ".$objet->getVilleEmployeur()."\n".
-                        "pays_employeur1: ".$objet->getPaysEmployeur()."\n".
-                        "employ_date1: ".$this->formatDate($objet->getDateContrat())."\n".
-                        "revenu1: ".$objet->getSalaire()."\n".
-                        "r_chomage1: ".$objet->getChomage()."\n".
-                        "r_pension1: ".$objet->getPension()."\n".
-                        "r_handic1: ".$objet->getHandicap()."\n".
-                        "r_onss1: ".$objet->getMutuelle()."\n".
-                        "r_pensalim1: ".$objet->getPensionAlimentairePayer()."\n".
-                        "r_locat1: ".$objet->getRevenuLocatif()."\n".
-                        "r_cheques_repas1: ".$objet->getChequeRepas()."\n".
-                        "r_voiture_societe1: ".$objet->getVoitureSociete()."\n".
-                        "revenu_sup1: ".$objet->getAutresRevenus()."\n".
-                        "nb_revenu_sup1: ".$objet->getDescriptionAutresRevenus()."\n".
-                        "alloc_fam1: ".$objet->getAllocation()."\n".
-                        "nb_enfants1: ".$objet->getNombreEnfants()."\n".
-                        "no_compte1: ".$objet->getNumeroCompte()."\n".
-                        "compte_depuis1: ".$this->formatDate(($objet->getDateCompte())) ."\n".
-                        "date_naissance1: ".$objet->getDateNaissance()->format('d/m/Y')."\n".
-                        "lieu_naissance1: ".$objet->getVilleNaissance()."\n".
-                        "belge_depuis1: ".$this->formatDate($objet->getAnneeBelgique())."\n".
-                        "profession1: ".$objet->getSecteur()."\n".
-                        "secteur_activite1: ".$objet->getSecteur()."\n".
-                        "type_contrat1: ".$objet->getTypeContrat()."\n".
+        $test = $clip_form_data="recipient: recipient@site.be<br/>".
+                        "subject: DEMANDE DE PRET<br/>".
+                        "return_link_url: http://www.site.be<br/>".
+                        "redirect: http://www.site.be/merci.htm<br/>".
+                        "email: ".$objet->getMail()."<br/>".
+                        "email1:".$objet->getMail()."<br/>".
+                        "langue: FR<br/>".
+                        "montant: ".$objet->getMontantCredit()."<br/>".
+                        "duree: ".$objet->getDureeCredit()."<br/>".
+                        "taeg: 12.5<br/>".
+                        "mensualite: 265.94<br/>".       
+                        "nom1: ".$objet->getNom()."<br/>".
+                        "prenom1: ".$objet->getPrenom()."<br/>".
+                        "montant: ".$objet->getMontantCredit()."<br/>".
+                        "titre1: ".$objet->getTitre()."<br/>".
+                        "rgpd_consentement_txt1: Exemple de texte de consentement RGPD||<br/>".
+                        "montant_achat: ".$objet->getMontantAchat()."<br/>".
+                        "montant_acompte: ".$objet->getAcompte()."<br/>".
+                        "marque: ".$objet->getMarque()."<br/>".
+                        "denomination: ".$objet->getModele()."<br/>".
+                        "annee_construction: ".$this->formatDate($objet->getDatePremiereCirculation())."<br/>".
+                        "nom_vendeur: ".$objet->getNomVendeur()."<br/>".
+                        "type_support: ".$objet->getTypeVendeur()."<br/>".
+                        "ref_apporteur: <br/>".				
+                        "rgpd_consentement1: 1<br/>".
+                        "ci1: ".$objet->getNumeroCarteIdentite()."<br/>".
+                        "rn1: ".$objet->getRegistreNationalBelge()."<br/>".
+                        "etat_civil1: ".$objet->getEtatCivil()."<br/>".
+                        "adresse_depuis1: ". $this->formatDate($objet->getDateAdresse())."<br/>".
+                        "telephone1: ".$objet->getTel()."<br/>".
+                        "gsm1: ".$objet->getTelephoneMobile()."<br/>".
+                        "loyer1: ".$objet->getLoyer()."<br/>".
+                        "c_pensalim1: ".$objet->getPensionAlimentaire()."<br/>".
+                        "rue1: ".$objet->getNomRue()."<br/>".
+                        "numero1: ".$objet->getNumeroRue()."<br/>".
+                        "cp1: ".$objet->getCodePostal()."<br/>".
+                        "localite1: ".$objet->getVilleResidence()."<br/>".
+                        "pays1: ".$objet->getPaysResidence()."<br/>".
+                        "nationalite1: ".$objet->getNationalite()."<br/>".
+                        "employeur1: ".$objet->getNomEmployeur()."<br/>".
+                        "rue_employeur1: ".$objet->getNomRueEmployeur()."<br/>".
+                        "numero_employeur1: ".$objet->getNumeroRueEmployeur()."<br/>".
+                        "cp_employeur1: ".$objet->getCodePostalEmployeur()."<br/>".
+                        "localite_employeur1: ".$objet->getVilleEmployeur()."<br/>".
+                        "pays_employeur1: ".$objet->getPaysEmployeur()."<br/>".
+                        "employ_date1: ".$this->formatDate($objet->getDateContrat())."<br/>".
+                        "revenu1: ".$objet->getSalaire()."<br/>".
+                        "r_chomage1: ".$objet->getChomage()."<br/>".
+                        "r_pension1: ".$objet->getPension()."<br/>".
+                        "r_handic1: ".$objet->getHandicap()."<br/>".
+                        "r_onss1: ".$objet->getMutuelle()."<br/>".
+                        "r_pensalim1: ".$objet->getPensionAlimentairePayer()."<br/>".
+                        "r_locat1: ".$objet->getRevenuLocatif()."<br/>".
+                        "r_cheques_repas1: ".$objet->getChequeRepas()."<br/>".
+                        "r_voiture_societe1: ".$objet->getVoitureSociete()."<br/>".
+                        "revenu_sup1: ".$objet->getAutresRevenus()."<br/>".
+                        "nb_revenu_sup1: ".$objet->getDescriptionAutresRevenus()."<br/>".
+                        "alloc_fam1: ".$objet->getAllocation()."<br/>".
+                        "nb_enfants1: ".$objet->getNombreEnfants()."<br/>".
+                        "no_compte1: ".$objet->getNumeroCompte()."<br/>".
+                        "compte_depuis1: ".$this->formatDate(($objet->getDateCompte())) ."<br/>".
+                        "date_naissance1: ".$objet->getDateNaissance()->format('d/m/Y')."<br/>".
+                        "lieu_naissance1: ".$objet->getVilleNaissance()."<br/>".
+                        "belge_depuis1: ".$this->formatDate($objet->getAnneeBelgique())."<br/>".
+                        "profession1: ".$objet->getSecteur()."<br/>".
+                        "secteur_activite1: ".$objet->getSecteur()."<br/>".
+                        "type_contrat1: ".$objet->getTypeContrat()."<br/>".
                         "status: ".$etapeForm ;
                    
         if(!$first){
             $clip_form_data.=", ".$ref;
         }
-  
+        echo($clip_form_data);
+        die();
         $api = new Api();
         $resultat=$api->any50_callWS($clip_form_data);
    
