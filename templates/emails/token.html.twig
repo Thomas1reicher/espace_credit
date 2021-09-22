@@ -1,11 +1,199 @@
-<h1>Bienvenue {{ email.toName }}!</h1>
 
-<p>
-    vous avez remplie le formulaire de demande de Pret 
-</p>
 
-<p>
-    Voici votre token pour procéder a la suite du formulaire de demande de prêt
-    <a href="{{ url('demande', {token: token}) }}">{{token}}</a>
+
     
-</p>
+
+<div style="margin: 0 auto; width:600px; display: block; padding: 0;">
+    <table style="background-color: white; width: 600px; border: none; border-collapse: collapse; margin: 0 auto; padding: 0;">
+
+        <!-- LOGO HEADER -->
+        <tr style="box-shadow: 0px 3px 6px #0000000d;width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="width: 150px; height: 133px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+
+                <a href="https://espacecredit.a3digital.lu/">
+                    <img src="https://espacecredit.a3digital.lu/assets/front/img/image-1.png"
+                         style="display: block; width: 150px;  display:block; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                </a>
+            </td>
+            <td style="width: 250px; height: 133px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            </td>
+            <td style="font-size: 19px;color:rgba(107, 109, 126, 1);font-family:'Arial';font-weight: 700;width: 200px; height: 133px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                <p style="font-family:'Arial';">Création de <br/>demande de crédit</p>
+            </td>
+        </tr>
+        </table>
+        <table style="background-color: white; width: 600px; border: none; border-collapse: collapse; margin: 0 auto; padding: 0;">
+        <tr style="height:100px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+        </tr>
+        <tr style="width: 600px;height: 60px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 300;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">Bonjour,</p>
+            </td>
+        </tr>
+        <tr style="width: 600px;height: 60px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 600;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">Nous avons bien reçu votre demande de crédit et nous<br/>vous en remercions.</p>
+            </td>
+        </tr>
+        <tr style="height:20px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+        </tr>
+        <tr style="width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 300;font-style: italic;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">La référence de votre dossier est : {{token}}</p>
+            </td>
+        </tr>
+        <tr style="height:30px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+        </tr>
+        <tr style="width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 300;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">Afin de compléter votre dossier, nous avons besoin de plus amples informations. Pour remplir ce formulaire,
+                 vous pourrez le faire en plusieurs temps, c'est-à-dire, quitter et y revenir plus tard,
+                  sans perte des informations déjà renseignées.<br/><b>Conservez donc bien ce mail.</b></p>
+            </td>
+        </tr>
+        <tr style="height:60px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+        </tr>
+        <tr style="width: 600px;height:40px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+           
+                <td style="font-weight: 300;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                    <table style="background-color: white; width: 600px; border: none; border-collapse: collapse; margin: 0 auto; padding: 0;">
+                        <tr style="height:40px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+                            <td style="font-weight: 300;font-family:'Arial';width: 180px;  border: none; border-collapse: collapse; margin: 0;">
+
+                            </td>
+                            <td style="font-weight: 300;font-family:'Arial';width: 240px;  border: none; border-collapse: collapse; margin: 0;">
+                                <a style="text-decoration: none;" href="{{ url('demande', {token: token}) }}"><div style="background-color:rgba(255, 170, 0, 1);width:240px;height:40px;    border-radius: 7px;"><p style="font-family:'Arial'; text-align: center;margin: 0px;height: 40px;display: table-cell;vertical-align: middle;width: 240px;color:white;font-weight: 500;font-size:15px;">COMPLÉTER MON DOSSIER</p></div></a>
+                            </td>
+                            <td style="font-weight: 300;font-family:'Arial';width: 180px;  border: none; border-collapse: collapse; margin: 0;">
+
+                            </td>
+
+                        </tr>
+                        
+                    </table>
+                    
+                </td>
+                
+        </tr>
+        <tr style="height:40px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+                        </tr>
+        <tr style="width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 300;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">Nous restons bien évidemment à votre disposition pour tous renseignements.</p>
+            </td>
+        </tr>
+        <tr style="height:40px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+                        </tr>
+                        <tr style="width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            <td style="font-weight: 300;padding-left: 20px;font-family:'Arial';width: 600px;  border: none; border-collapse: collapse; margin: 0;">
+                <p style="font-family:'Arial';">L'équipe d'Espace Crédits</p>
+            </td>
+        </tr>
+        <tr style="height:40px;width: 600px; border: none; border-collapse: collapse; margin: 0;">
+                        </tr>                
+        </table>
+        <table style="background-color: #404040; width: 600px; border: none; border-collapse: collapse; margin: 0 auto;">
+            <tr style="width: 600px;height:40px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            </tr>
+            <tr style="width: 600px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                <td style="width: 300px; border: none; border-collapse: collapse; margin: 0; ">
+                    <table style="background-color: #404040; width: 300px; border: none; border-collapse: collapse; margin: 0 auto;">
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu//assets/front/img/trac--247-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">+32 63 677 659</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu/assets/front/img/trac--248-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">+32 4 74 120 507</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu/assets/front/img/trac--248-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">+352 691 625 137</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu/assets/front/img/trac--250-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';text-decoration: none;color:white">credit@espace-credits.be</p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="padding-left: 20px;width: 300px; border: none; border-collapse: collapse; margin: 0; ">
+                    <table style="background-color: #404040; width: 300px; border: none; border-collapse: collapse; margin: 0 auto;">
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu/assets/front/img/trac--251-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">5, Grand-Rue</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">B-6791 Athus</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">BELGIQUE</p>
+                            </td>
+                        </tr>
+                        <tr style="width: 300px;height: 10px;border: none; border-collapse: collapse; margin: 0; padding: 0;">
+                        </tr>
+                        <tr style="width: 300px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+              
+                            <td style="padding-left: 20px;width: 20px; border: none; border-collapse: collapse; margin: 0;">
+                                <img src="https://espacecredit.a3digital.lu//assets/front/img/trac--247-10@1x.png" />
+                            </td>
+                            <td style="font-size: 14px;color:white;font-weight: 300;font-family:'Arial';width: 280px; border: none; border-collapse: collapse; margin: 0; ">
+                                <p style="font-family:'Arial';">Lu-Ve: 9h00 - 18h00</p>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+            <tr style="width: 600px;height:40px; border: none; border-collapse: collapse; margin: 0; padding: 0;">
+            </tr>
+        </table>
+    </div>
+<style>
+
+    @import url("https://fonts.googleapis.com/css?family=Arial:300,700,500");
+
+</style>

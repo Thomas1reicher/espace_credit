@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Webmozart\Assert\Assert;
 
 use Symfony\Component\Validator\Constraints as Validator;
+use Symfony\Component\Validator\Constraints\DateTime as ConstraintsDateTime;
 
 /**
  * @ORM\Entity(repositoryClass=DemandecreditRepository::class)
@@ -792,7 +793,7 @@ class Demandecredit
         return $this->annee_belgique;
     }
 
-    public function setAnneeBelgique(datetime $annee_belgique): self
+    public function setAnneeBelgique(DateTime $annee_belgique=null): ?self
     {
         $this->annee_belgique = $annee_belgique;
 
@@ -1580,28 +1581,30 @@ class Demandecredit
     {
         /*$newTbl =get_class_vars(get_class($this));
         $newTbl =array_keys($newTbl);*/
-        $newTbl = [];
-      
+        $tbl = [];
+        $tbl[0]="Prenom";
+        $tbl[1]="nom";
+        $tbl[2]="mail";
+        $tbl[3]="societe";
+        $tbl[4]="tel";
+        $tbl[5]="info_comp";
+        $tbl[6]="token";
 
-        return $newTbl;
+        return $tbl;
 
 
     }
     public function typeVars() :array
     {
-        $r = new \ReflectionClass(static::class); 
-        $newTbl =get_class_vars(get_class($this));
-        $newTbl1 =array_keys($newTbl);
-        /*foreach ($newTbl as $key => $value) {
-            $prop = $r->getProperty($key);
-            $type = $prop->getType();
-            var_dump($prop); 
-        }*/
-        foreach ($newTbl1 as $key => $value) {
-            var_dump(gettype($this->{$value}));
-
-        }
-        die();
+        $tbl = [];
+        $tbl[0]= "string";
+        $tbl[1]="string";
+        $tbl[2]= "string";
+        $tbl[3]= "string";
+        $tbl[4]= "string";
+        $tbl[5]= "string";
+        $tbl[6]= "string";
+        
         return $tbl;
 
 

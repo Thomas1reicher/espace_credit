@@ -38,7 +38,13 @@ class HomeController extends AbstractController
     public function home()
     {
 
-
+        if($_SESSION['email']){
+            $modal = true;
+            $_SESSION['email']=false;
+        }else{
+            $modal = false;
+            
+        }
         $entityManager = $this->getDoctrine()->getManager();
         $repo1=$entityManager->getRepository(Credit::class);
         $credits = $repo1->findAll();
@@ -57,7 +63,8 @@ class HomeController extends AbstractController
         return $this->render('front/home.html.twig', [
             'title' => 'home',
             'objets' => $objets,
-            'credits' => $credits
+            'credits' => $credits,
+            'modal' => $modal
          
         ]);
     }

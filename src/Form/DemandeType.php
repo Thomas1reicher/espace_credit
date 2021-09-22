@@ -183,7 +183,7 @@ class DemandeType extends AbstractType
             'required' => false,
             'years' => range(date('Y')-100, date('Y')),
             'format' => 'yyyy-MM-dd',
-            'empty_data' => '1900-01-01'
+            'empty_data' => ''
         ])         
 
 

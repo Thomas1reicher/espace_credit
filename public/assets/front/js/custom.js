@@ -20,6 +20,11 @@ jQuery(function ($) {
            else{
             $(".montant-info").text(montant + "€");
         }
+        if($(".modal")){
+            setTimeout(function(){ 
+                $(".modal").hide();
+             }, 5000);
+        }
     });
     $(".montant-form").change(function () {
         recalculate();
