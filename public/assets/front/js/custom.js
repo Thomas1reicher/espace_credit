@@ -6,7 +6,7 @@ jQuery(function ($) {
     nav    = document.getElementById('main-nav'),
     slowmo = document.getElementById('slowmo');
     function numberWithCommas(number) {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     $( document ).ready(function() {
         recalculate();
@@ -73,7 +73,7 @@ jQuery(function ($) {
         $(".big-num-orange").append("€");
         $(".litle-num-orange").text(',' + Math.floor(constante3_l));
         interet = constante3 * duree;
-        $(".interet-info").text(interet.toFixed(2) + "€");
+        $(".interet-info").text(numberWithCommas(interet.toFixed(2)) + "€");
 
     };
     $(".div-bande-header").hover(function () {

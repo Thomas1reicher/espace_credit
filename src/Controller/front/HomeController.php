@@ -38,13 +38,17 @@ class HomeController extends AbstractController
     public function home()
     {
 
-        if($_SESSION['email']){
+        if(isset($_SESSION['email'])){
+            if($_SESSION['email']){
             $modal = true;
             $_SESSION['email']=false;
         }else{
             $modal = false;
             
         }
+    }else{
+        $modal = false;
+    }
         $entityManager = $this->getDoctrine()->getManager();
         $repo1=$entityManager->getRepository(Credit::class);
         $credits = $repo1->findAll();
