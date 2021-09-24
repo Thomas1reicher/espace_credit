@@ -43,7 +43,7 @@ jQuery(function ($) {
         if($(".modal")){
             setTimeout(function(){ 
                 $(".modal").hide();
-             }, 5000);
+             }, 11000);
         }
     });
     $(".montant-form").change(function () {
