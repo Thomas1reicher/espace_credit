@@ -15,10 +15,10 @@ jQuery(function ($) {
         montant = parseInt($(".montant-form").val());
         if(montant > 999){
             montantstr=$(this).val();            
-                $(".montant-info").text(numberWithCommas(montant) + "€");
+                $(".montant-info").text(numberWithCommas(montant) + ".00€");
             }
            else{
-            $(".montant-info").text(montant + "€");
+            $(".montant-info").text(montant + ".00€");
         }
         if($(".modal")){
             setTimeout(function(){ 
@@ -31,10 +31,10 @@ jQuery(function ($) {
         montant = parseInt($(this).val());
         if(montant > 999){
             montantstr=$(this).val();            
-                $(".montant-info").text(numberWithCommas(montant) + "€");
+                $(".montant-info").text(numberWithCommas(montant) + ".00€");
             }
            else{
-            $(".montant-info").text(montant + "€");
+            $(".montant-info").text(montant + ".00€");
         }
         
     });
@@ -73,6 +73,7 @@ jQuery(function ($) {
         $(".big-num-orange").append("€");
         $(".litle-num-orange").text(',' + Math.floor(constante3_l));
         interet = constante3 * duree;
+        console.log(interet = (interet)-montant)
         $(".interet-info").text(numberWithCommas(interet.toFixed(2)) + "€");
 
     };

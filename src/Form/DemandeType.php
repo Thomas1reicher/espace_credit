@@ -152,7 +152,7 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez la date limite de validité de votre carte d\'identité',
                 'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => 'Date de validité de la carte d\'identité',
+            'label' => 'Date de fin de validité de la carte d\'identité',
             'years' => range(date('Y'), date('Y') + 30),
             'required' => false,
             'format' => 'yyyy-MM-dd',

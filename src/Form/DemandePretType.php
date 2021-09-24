@@ -55,6 +55,7 @@ class DemandePretType extends AbstractType
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Société',
+            'required' => false,
     
         ])
         ->add('mail', TextType::class,[
