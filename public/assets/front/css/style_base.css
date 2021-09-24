@@ -2218,3 +2218,6 @@ min-height: 650px !important;
   height: 10px;
 
 }
+.div-input-contact ul{
+  list-style-type: none;
+}

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\DemandecreditRepository;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Webmozart\Assert\Assert;
@@ -479,6 +481,15 @@ class Demandecredit
      * @ORM\Column(type="datetime", length=20, nullable=true)
      */
     private $date_premiere_circulation;
+       /**
+     * @ORM\OneToMany(targetEntity="PersonneCharge", mappedBy="demande_credit")
+     */
+    private $personne_charge;
+
+    public function __construct()
+    {
+        $this->personne_charge = new ArrayCollection();
+    }
 
     
 
@@ -1830,6 +1841,36 @@ class Demandecredit
             'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
         ]));
 
+    }
+
+    /**
+     * @return Collection|PersonneCharge[]
+     */
+    public function getPersonneCharge(): Collection
+    {
+        return $this->personne_charge;
+    }
+
+    public function addPersonneCharge(PersonneCharge $personneCharge): self
+    {
+        if (!$this->personne_charge->contains($personneCharge)) {
+            $this->personne_charge[] = $personneCharge;
+            $personneCharge->setDemandeCredit($this);
+        }
+
+        return $this;
+    }
+
+    public function removePersonneCharge(PersonneCharge $personneCharge): self
+    {
+        if ($this->personne_charge->removeElement($personneCharge)) {
+            // set the owning side to null (unless already changed)
+            if ($personneCharge->getDemandeCredit() === $this) {
+                $personneCharge->setDemandeCredit(null);
+            }
+        }
+
+        return $this;
     }
 
 }

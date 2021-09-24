@@ -14,7 +14,126 @@
             Type de crédit
         </div>
         <div class="div-input-contact div-type-cred">{{form_widget(form.type_credit_demande)}}</div>
+        <div class="credit-form credit-hypo-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit hypothécaire
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_bien)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.type_bien)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.valeur_venale)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.valeur_venale)}}</div>
+            
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit_hypo)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.duree_credit_hypo)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_echeance_hypo)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.date_echeance_hypo)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_debut_credit_hypo)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.date_debut_credit_hypo)}}</div>
+        </div>
+        
+        <div class="credit-form credit-perso-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit perso
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt perso</div></div>
+            <div class="div-input-contact">
+                <select class="input-contact input-form select-credit" name="tauxPerso"/>
+                    {% set first = true %}
+                    {% set objFirst = "" %}
+                    {% for taux in pretPerso.taux %}
+                      {% if first %}
+                        {% set objFirst = taux %}
+                        {% set first = false %}
+                        {% endif %}
+                        <option value="{{taux.taux}}">{{taux.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
 
+        <div class="credit-form credit-auto-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit voiture
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt auto</div></div>
+            <div class="div-input-contact">
+                <select class="input-contact input-form select-credit" name="tauxVoiture"/>
+                    {% set first = true %}
+                    {% set objFirst = "" %}
+                    {% for taux in pretAuto.taux %}
+                      {% if first %}
+                        {% set objFirst = taux %}
+                        {% set first = false %}
+                        {% endif %}
+                        <option value="{{taux.taux}}">{{taux.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_taux_voiture)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.type_taux_voiture)}}</div>
+        </div>
+
+        <div class="credit-form credit-moto-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit moto
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt moto</div></div>
+            <div class="div-input-contact">
+                <select class="input-contact input-form select-credit" name="tauxMoto"/>
+                    {% set first = true %}
+                    {% set objFirst = "" %}
+                    {% for taux in pretMoto.taux %}
+                      {% if first %}
+                        {% set objFirst = taux %}
+                        {% set first = false %}
+                        {% endif %}
+                        <option value="{{taux.taux}}">{{taux.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="credit-form credit-vehicule-form" style="display: none">
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.acompte)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.acompte)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.marque)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.marque)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.modele)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.modele)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_vendeur)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.type_vendeur)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_vendeur)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.nom_vendeur)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_premiere_circulation)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.date_premiere_circulation)}}</div>
+        </div>
+
+        <div class="credit-form credit-mobilite-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit mobilité
+            </div>
+ 
+        </div>
+
+        <div class="credit-form credit-travaux-form" style="display: none">
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Crédit travaux
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt travaux</div></div>
+            <div class="div-input-contact">
+                <select class="input-contact input-form select-credit" name="tauxTravaux"/>
+                    {% set first = true %}
+                    {% set objFirst = "" %}
+                    {% for taux in pretTravaux.taux %}
+                      {% if first %}
+                        {% set objFirst = taux %}
+                        {% set first = false %}
+                        {% endif %}
+                        <option value="{{taux.taux}}">{{taux.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
         <div class="div-demande-form txt-black div-center-demande-pret">
             Identité
         </div>
@@ -45,8 +164,15 @@
         <div class="div-input-contact">{{form_widget(form.etat_civil)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.annee_belgique)}}</div></div>
         <div class="div-input-contact date-select">{{form_widget(form.annee_belgique)}}</div>
-        
-
+        <div class="div-input-contact">
+            <ul class="personne_charge" data-index="{{ form.personne_charge|length > 0 ? form.personne_charge|last.vars.name + 1 : 0 }}" data-prototype="{{ form_widget(form.personne_charge.vars.prototype)|e('html_attr') }}"></ul>
+            <div class="btn-pret" style="width: 200px;    margin: auto;">
+                 <a class="add_item_link link-pret" data-collection-holder-class="personne_charge">
+                     <p class="demande-pret montserrat-medium-white-14px">Ajouter une personne a charge</p>
+                 </a>
+            </div>
+            <!-- <button type="button" class="add_item_link" data-collection-holder-class="personne_charge">Ajouter une personne a charge</button>-->
+        </div>
         <div class="div-demande-form txt-black div-center-demande-pret">
             Adresse
         </div>
@@ -184,126 +310,7 @@
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.solde_credit)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.solde_credit)}}</div>
 
-        <div class="credit-form credit-hypo-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit hypothécaire
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_bien)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.type_bien)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.valeur_venale)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.valeur_venale)}}</div>
-            
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit_hypo)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.duree_credit_hypo)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_echeance_hypo)}}</div></div>
-            <div class="div-input-contact date-select">{{form_widget(form.date_echeance_hypo)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_debut_credit_hypo)}}</div></div>
-            <div class="div-input-contact date-select">{{form_widget(form.date_debut_credit_hypo)}}</div>
-        </div>
         
-        <div class="credit-form credit-perso-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit perso
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt perso</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit" name="tauxPerso"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretPerso.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-
-        <div class="credit-form credit-auto-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit voiture
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt auto</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit" name="tauxVoiture"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretAuto.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_taux_voiture)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.type_taux_voiture)}}</div>
-        </div>
-
-        <div class="credit-form credit-moto-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit moto
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt moto</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit" name="tauxMoto"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretMoto.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
-
-        <div class="credit-form credit-vehicule-form" style="display: none">
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.acompte)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.acompte)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.marque)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.marque)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.modele)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.modele)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_vendeur)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.type_vendeur)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_vendeur)}}</div></div>
-            <div class="div-input-contact">{{form_widget(form.nom_vendeur)}}</div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_premiere_circulation)}}</div></div>
-            <div class="div-input-contact date-select">{{form_widget(form.date_premiere_circulation)}}</div>
-        </div>
-
-        <div class="credit-form credit-mobilite-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit mobilité
-            </div>
- 
-        </div>
-
-        <div class="credit-form credit-travaux-form" style="display: none">
-            <div class="div-demande-form txt-black div-center-demande-pret">
-                Crédit travaux
-            </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt travaux</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit" name="tauxTravaux"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretTravaux.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-        </div>
 
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.montant_achat)}}</div>
@@ -316,7 +323,7 @@
         </div>
 
     
-    {{ form_end(form) }}
+    {{ form_end(form,{render_rest: false}) }}
     </div>
     
     <style>

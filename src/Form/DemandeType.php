@@ -3,7 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Credit;
+use App\Entity\Demandecredit;
+use Form\Type\PersonneChargeType;
 use DateTime;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -839,6 +842,14 @@ class DemandeType extends AbstractType
             'format' => 'yyyy-MM-dd',
             'empty_data' => ''
         ])
+        ->add('personne_charge', CollectionType::class, array(
+            'entry_type' => PersonneChargeType::class,
+            'prototype'    => true,
+            'by_reference' => false,
+            'allow_delete' => true,
+            'allow_add' => true,
+            'label' => false,
+        ))
 
 
 
@@ -852,7 +863,7 @@ class DemandeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            // Configure your form options here
+            'data_class' => Demandecredit::class,
           
         ]);
     }

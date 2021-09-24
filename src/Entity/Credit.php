@@ -50,6 +50,7 @@ class Credit
     public function __construct()
     {
         $this->credit = new ArrayCollection();
+        $this->taux = new ArrayCollection();
     }
     public function getCredit(): ArrayCollection
     {
@@ -170,6 +171,38 @@ class Credit
             // set the owning side to null (unless already changed)
             if ($taux->getTaux() === $this) {
                 $taux->setTaux(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function addTaux(Taux $taux): self
+    {
+        if (!$this->taux->contains($taux)) {
+            $this->taux[] = $taux;
+            $taux->setCredit($this);
+        }
+
+        return $this;
+    }
+
+    public function addCredit(Demandecredit $credit): self
+    {
+        if (!$this->credit->contains($credit)) {
+            $this->credit[] = $credit;
+            $credit->setTypeCreditDemande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCredit(Demandecredit $credit): self
+    {
+        if ($this->credit->removeElement($credit)) {
+            // set the owning side to null (unless already changed)
+            if ($credit->getTypeCreditDemande() === $this) {
+                $credit->setTypeCreditDemande(null);
             }
         }
 

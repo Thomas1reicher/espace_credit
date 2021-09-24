@@ -27,6 +27,12 @@ class PersonneCharge
      */
     private $age;
 
+    /**
+         * @ORM\ManyToOne(targetEntity=Demandecredit::class, inversedBy="personne_charge")
+         */
+    private $demande_credit;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +58,18 @@ class PersonneCharge
     public function setAge(?int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getDemandeCredit(): ?Demandecredit
+    {
+        return $this->demande_credit;
+    }
+
+    public function setDemandeCredit(?Demandecredit $demande_credit): self
+    {
+        $this->demande_credit = $demande_credit;
 
         return $this;
     }

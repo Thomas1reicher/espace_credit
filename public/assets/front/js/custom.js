@@ -1,6 +1,26 @@
 
 
 jQuery(function ($) {
+  
+
+
+    $(".add_item_link").click(function (e) {
+        const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+
+        const item = document.createElement('li');
+
+        item.innerHTML = collectionHolder
+            .dataset
+            .prototype
+            .replace(
+            /__name__/g,
+            collectionHolder.dataset.index
+            );
+
+        collectionHolder.appendChild(item);
+
+        collectionHolder.dataset.index++;
+    });
 
     burger = $('.open-main-nav');
     nav    = document.getElementById('main-nav'),
