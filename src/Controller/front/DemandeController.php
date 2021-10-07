@@ -36,6 +36,7 @@ class DemandeController extends AbstractController{
         $creditAll = $repo->findAll();
         $form = $this->createForm(DemandeType::class, $objet);
         $form->handleRequest($request);
+        if($_POST){
         if($form->isSubmitted() && $form->isValid()){
             switch ($objet->getTypeCreditDemande()->getNom()) {
                 case  'PRÊT AUTO':
@@ -52,11 +53,23 @@ class DemandeController extends AbstractController{
                 $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();
              
             }
+            for($i=0;$i<count($objet->getPersonneCharge());$i++){
+                $objet->getPersonneCharge()[$i]->getAge();
+            }
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             $this->UpdateApi($token);
             return $this->redirectToRoute('accueil');
-        } 
+        }else{
+            foreach ($form->getErrors(true) as $error) {
+                if ($error->getOrigin()) {
+                  $errors[$error->getOrigin()->getName()][] = $error->getMessage();
+                }
+              }
+              var_dump($errors);
+         
+        }
+    }
 
         return $this->render('front/demande.html.twig', [
             'controller_name' => 'HomeController',
@@ -110,8 +123,6 @@ class DemandeController extends AbstractController{
                         "montant: ".$objet->getMontantCredit()."<br/>".
                         "titre1: ".$objet->getTitre()."<br/>".
                         "rgpd_consentement_txt1: Exemple de texte de consentement RGPD||<br/>".
-                        "montant_achat: ".$objet->getMontantAchat()."<br/>".
-                        "montant_acompte: ".$objet->getAcompte()."<br/>".
                         "marque: ".$objet->getMarque()."<br/>".
                         "denomination: ".$objet->getModele()."<br/>".
                         "annee_construction: ".$this->formatDate($objet->getDatePremiereCirculation())."<br/>".
@@ -155,13 +166,26 @@ class DemandeController extends AbstractController{
                         "nb_enfants1: ".$objet->getNombreEnfants()."<br/>".
                         "no_compte1: ".$objet->getNumeroCompte()."<br/>".
                         "compte_depuis1: ".$this->formatDate(($objet->getDateCompte())) ."<br/>".
-                        "date_naissance1: ".$objet->getDateNaissance()->format('d/m/Y')."<br/>".
+                        "date_naissance1: ".$this->formatDate(($objet->getDateNaissance()))."<br/>".
                         "lieu_naissance1: ".$objet->getVilleNaissance()."<br/>".
                         "belge_depuis1: ".$this->formatDate($objet->getAnneeBelgique())."<br/>".
                         "profession1: ".$objet->getSecteur()."<br/>".
                         "secteur_activite1: ".$objet->getSecteur()."<br/>".
-                        "type_contrat1: ".$objet->getTypeContrat()."<br/>".
-                        "status: ".$etapeForm ;
+                        "type_contrat1: ".$objet->getTypeContrat()."<br/>";
+                        for($i=0;$i<count($objet->getPersonneCharge());$i++){
+                            $clip_form_data .= "personne_charge_age_".($i+1).":".$objet->getPersonneCharge()[$i]->getAge()."<br/>";
+                        }
+                        for($i=0;$i<count($objet->getCreditCours());$i++){
+                         
+                            $clip_form_data .= "type_credit".($i+1).": ".$objet->getCreditCours()[$i]->getTypeCredit()."<br/>";
+                            $clip_form_data .= "organisme".($i+1).": ".$objet->getCreditCours()[$i]->getOrgPret()."<br/>";
+                            $clip_form_data .= "montant".($i+1).": ".$objet->getCreditCours()[$i]->getMontant()."<br/>";
+                            $clip_form_data .= "duree".($i+1).": ".$objet->getCreditCours()[$i]->getDureeCredit()."<br/>";
+                            $clip_form_data .= "echeance".($i+1).": ".$this->formatDate($objet->getCreditCours()[$i]->getDateDebut())."<br/>";
+                            $clip_form_data .= "mensualite".($i+1).": ".$objet->getCreditCours()[$i]->getMontantEcheance()."<br/>";
+                            $clip_form_data .= "solde".($i+1).": ".$objet->getCreditCours()[$i]->getSolde()."<br/>";
+                        }
+                        $clip_form_data .= "status: ".$etapeForm ;
                    
         if(!$first){
             $clip_form_data.=", ".$ref;

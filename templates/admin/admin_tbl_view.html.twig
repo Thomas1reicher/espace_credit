@@ -6,8 +6,10 @@
 <div>
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-right">
+            <div class="pull-right"> 
+            {% if(name !=  'credit')%}
                 <a href="{{ path('catAdminAdd', {name:name }) }}" class="btn cur-p btn-success">Create {{ name }}</a>
+            {% endif %}
             </div>
         </div>
     </div>
@@ -44,7 +46,14 @@
                        {% endfor %}
                        <td class="center">
                             <form method="DELETE" action="{{url('catAdminDelete',{'name': name , 'id' : object.id})}}">
+                             {% if(name ==  'demandecredit')%}
+                                <a href='{{url('creditsee',{ 'id' : object.id})}}'><i class="fas fa-eye"></i></a>
+                                {% endif  %}
+                                {% if(name !=  'credit')%}
                                 <a class="btn cur-p btn-warning" href='{{url('catAdminUpdate',{'name': name , 'id' : object.id})}}'>Modifier</a>
+                                {% else  %}
+                                <a class="btn cur-p btn-warning" href='{{url('catAdminCredit',{ 'id' : object.id})}}'>Modifier</a>
+                                {% endif  %}
                                 <button type="submit" class="btn cur-p btn-danger">Supprimer</button>
                             </form>
 

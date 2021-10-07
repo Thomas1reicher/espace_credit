@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Credit;
 use App\Entity\Demandecredit;
 use Form\Type\PersonneChargeType;
+use Form\Type\CreditCoursType;
 use DateTime;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractType;
@@ -88,7 +89,8 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Entrez votre prénom',
                 'class' => 'input-form input-contact'
             ],
-            'label' => 'Prénom'
+            'label' => 'Prénom',
+            'required' => false
         ])
         
         ->add('date_naissance', BirthdayType::class,[
@@ -158,7 +160,7 @@ class DemandeType extends AbstractType
             'label' => 'Date de fin de validité de la carte d\'identité',
             'years' => range(date('Y'), date('Y') + 30),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd/MM/yyyy',
             'empty_data' => ''
         ])
         ->add('etat_civil', ChoiceType::class,[
@@ -182,7 +184,7 @@ class DemandeType extends AbstractType
                 'placeholder' => 'Belge depuis',
                 'class' => 'input-form input-contact date-css-symfony'
             ],
-            'label' => "Date d'obtention de la nationalité belge",
+            'label' => "Date d’arrivée en Belgique/Luxembourg",
             'required' => false,
             'years' => range(date('Y')-100, date('Y')),
             'format' => 'yyyy-MM-dd',
@@ -628,92 +630,15 @@ class DemandeType extends AbstractType
 
 
 
-        ->add('nombre_credit', TextType::class,[
+       /* ->add('nombre_credit', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre nombre de crédits en cours',
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Nombre de crédits en cours',
             'required' => false
-        ])
-        ->add('type_credit', ChoiceType::class,[
-            'attr' => [
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Type de crédit',
-            'choices'  => [
-                'Prêt à tempérament' => 'Prêt à tempérament',
-                'Prêt travaux' => 'Prêt travaux',
-                'Prêt voiture' => 'Prêt voiture'
-            ],
-            'required' => false
-        ])
-        ->add('organisme_preteur', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez votre organisme prêteur',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Organisme prêteur',
-            'required' => false
-        ])
-        ->add('montant_credit', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le montant de vos crédits',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Montant crédits',
-            'required' => false
-        ])
-        ->add('duree_credit', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez la durée du crédit',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Durée en mois du crédit',
-            'required' => false
-        ])
-        ->add('taux_credit', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le taux du crédit',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Taux du crédit',
-            'required' => false
-        ])
-        ->add('montant_echeance', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le montant de l\'échéance',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Montant échéance',
-            'required' => false
-        ])
-        ->add('debut_credit', DateType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez la date de début du crédit',
-                'class' => 'input-form input-contact date-css-symfony'
-            ],
-            'label' => 'Date de début du crédit',
-            'years' => range(date('Y')-100, date('Y')),
-            'required' => false,
-            'format' => 'yyyy-MM-dd',
-            'empty_data' => ''
-        ])
-        ->add('remboursement_credit', CheckboxType::class,[
-            'attr' => [
-                'class' => 'input-form input-contact checkbox-css-symfony'
-            ],
-            'label' => 'Remboursement d\'un crédit',
-            'required' => false
-        ])
-        ->add('solde_credit', TextType::class,[
-            'attr' => [
-                'placeholder' => 'Entrez le solde du crédit',
-                'class' => 'input-form input-contact'
-            ],
-            'label' => 'Solde du crédit (si disponible)',
-            'required' => false
-        ])
+        ])*/
+        
 
 
 
@@ -849,8 +774,19 @@ class DemandeType extends AbstractType
             'allow_delete' => true,
             'allow_add' => true,
             'label' => false,
+            'required' => false,
+            'allow_extra_fields' => true
         ))
-
+        ->add('credit_cours', CollectionType::class, array(
+            'entry_type' => CreditCoursType::class,
+            'prototype'    => true,
+            'by_reference' => false,
+            'allow_delete' => true,
+            'allow_add' => true,
+            'label' => false,
+            'required' => false,
+            'allow_extra_fields' => true
+        ))
 
 
         ->add('Envoyer', SubmitType::class, [

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TauxRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
@@ -38,6 +40,16 @@ class Taux
          * @ORM\ManyToOne(targetEntity=Credit::class, inversedBy="credits")
          */
         private $credit;
+
+        /**
+         * @ORM\OneToMany(targetEntity=SousTaux::class, mappedBy="id_taux")
+         */
+        private $sous_taux;
+
+        public function __construct()
+        {
+            $this->sous_taux = new ArrayCollection();
+        }
 
     public function getId(): ?int
     {
@@ -128,5 +140,35 @@ class Taux
 
         $tbl=$this->getNom()."-".$this->getNomProjet().'-'.$this->getTaux();
         return $tbl;
+    }
+
+    /**
+     * @return Collection|SousTaux[]
+     */
+    public function getSousTaux(): Collection
+    {
+        return $this->sous_taux;
+    }
+
+    public function addSousTaux(SousTaux $sousTaux): self
+    {
+        if (!$this->sous_taux->contains($sousTaux)) {
+            $this->sous_taux[] = $sousTaux;
+            $sousTaux->setIdTaux($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSousTaux(SousTaux $sousTaux): self
+    {
+        if ($this->sous_taux->removeElement($sousTaux)) {
+            // set the owning side to null (unless already changed)
+            if ($sousTaux->getIdTaux() === $this) {
+                $sousTaux->setIdTaux(null);
+            }
+        }
+
+        return $this;
     }
 }

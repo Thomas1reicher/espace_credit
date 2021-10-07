@@ -72,6 +72,7 @@ jQuery(function ($) {
     $(".select-credit").change(function () {
         taeg = parseFloat($(".select-credit option:selected").val());
         $(".taux-info").attr("data", taeg);
+        $(".taux-info").attr("dataclass", $(".select-credit option:selected").text());
         $(".taux-info").text(taeg + "%*");
         recalculate();
 
@@ -213,7 +214,10 @@ jQuery(function ($) {
         this.classList.toggle('is-open');
         nav.classList.toggle('is-open');
     });
-
+    $(".div-form-pret .link-pret").click(function () {
+        $(".select-credit option:selected").text();
+        document.cookie = "current="+$(".select-credit option:selected").text();
+    });
    function burger() {
     burger = $('.open-main-nav');
     nav = document.getElementById('main-nav'),

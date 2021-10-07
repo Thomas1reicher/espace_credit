@@ -6,14 +6,14 @@
  * Time: 15:25
  */
 
-namespace Form\Type;
+namespace Form\AdminForm\Type;
 
 
 
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -28,31 +28,33 @@ use Model\Stage;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Validator\ForcedComment;
 use Validator\UniquePerOrganization;
-use App\Entity\PersonneCharge;
+use App\Entity\SousTaux;
 
-class PersonneChargeType extends AbstractType
+class SousTauxType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    { 
               
 
-                $builder->add('enfant', CheckboxType::class,
+                $builder->add('periode_deb', IntegerType::class,
                     [
                         'attr' => [
-                            'class' => 'input-form input-contact checkbox-css-symfony'
+                            'class' => "input-form input-contact"
                         ],
-                        'label' => 'Enfant',
+                        'label' => "periode de début",
+                        'required' => false,
+                    ]);
+             
+                    $builder->add('periode_fin', IntegerType::class,
+                    [
+                        'attr' => [
+                            'class' => "input-form input-contact"
+                        ],
+                        'label' => "periode de fin",
                         'required' => false,
                     ]);
 
-                $builder->add('age', NumberType::class,
-                    [   
-                        'attr' => [
-                            'class' => 'input-form input-contact'
-                        ],
-                        'label' => 'Âge de la personne a charge',
-                        'required' => false,
-                    ]);
+              
 
               
 
@@ -68,7 +70,7 @@ class PersonneChargeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => PersonneCharge::class,
+            'data_class' => SousTaux::class,
            
         ]);
     }

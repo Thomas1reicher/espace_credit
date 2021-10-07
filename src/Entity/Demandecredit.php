@@ -482,13 +482,18 @@ class Demandecredit
      */
     private $date_premiere_circulation;
        /**
-     * @ORM\OneToMany(targetEntity="PersonneCharge", mappedBy="demande_credit")
+     * @ORM\OneToMany(targetEntity="PersonneCharge", mappedBy="demande_credit",cascade={"persist"})
      */
     private $personne_charge;
+           /**
+     * @ORM\OneToMany(targetEntity="CreditEnCours", mappedBy="demande_credit",cascade={"persist"})
+     */
+    private $credit_cours;
 
     public function __construct()
     {
         $this->personne_charge = new ArrayCollection();
+        $this->credit_cours = new ArrayCollection();
     }
 
     
@@ -1867,6 +1872,36 @@ class Demandecredit
             // set the owning side to null (unless already changed)
             if ($personneCharge->getDemandeCredit() === $this) {
                 $personneCharge->setDemandeCredit(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CreditEnCours[]
+     */
+    public function getCreditCours(): Collection
+    {
+        return $this->credit_cours;
+    }
+
+    public function addCreditCour(CreditEnCours $creditCour): self
+    {
+        if (!$this->credit_cours->contains($creditCour)) {
+            $this->credit_cours[] = $creditCour;
+            $creditCour->setDemandeCredit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCreditCour(CreditEnCours $creditCour): self
+    {
+        if ($this->credit_cours->removeElement($creditCour)) {
+            // set the owning side to null (unless already changed)
+            if ($creditCour->getDemandeCredit() === $this) {
+                $creditCour->setDemandeCredit(null);
             }
         }
 

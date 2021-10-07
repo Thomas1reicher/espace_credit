@@ -165,8 +165,19 @@
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.annee_belgique)}}</div></div>
         <div class="div-input-contact date-select">{{form_widget(form.annee_belgique)}}</div>
         <div class="div-input-contact">
-            <ul class="personne_charge" data-index="{{ form.personne_charge|length > 0 ? form.personne_charge|last.vars.name + 1 : 0 }}" data-prototype="{{ form_widget(form.personne_charge.vars.prototype)|e('html_attr') }}"></ul>
-            <div class="btn-pret" style="width: 200px;    margin: auto;">
+       
+            <ul class="personne_charge" data-index="{{ form.personne_charge|length > 0 ? form.personne_charge|last.vars.name + 1 : 0 }}" data-prototype='{% include 'front/personne_charge.html.twig' with { 'item': form.personne_charge.vars.prototype } %}'>
+            	{% for key,item in form.personne_charge %}
+                		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
+                     <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.enfant)}}</div></div>
+                    <div class="div-input-contact">{{form_widget(item.enfant)}}</div>
+                    <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.age)}}</div></div>
+                    <div class="div-input-contact date-select">{{form_widget(item.age)}}</div>
+                    </li>
+
+                {% endfor %}
+            </ul>
+            <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;">
                  <a class="add_item_link link-pret" data-collection-holder-class="personne_charge">
                      <p class="demande-pret montserrat-medium-white-14px">Ajouter une personne a charge</p>
                  </a>
@@ -289,33 +300,45 @@
         <div class="div-demande-form txt-black div-center-demande-pret">
             Crédits en cours
         </div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nombre_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.nombre_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.type_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.organisme_preteur)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.organisme_preteur)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.montant_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.duree_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.duree_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.taux_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.taux_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_echeance)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.montant_echeance)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.debut_credit)}}</div></div>
-        <div class="div-input-contact date-select">{{form_widget(form.debut_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.remboursement_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.remboursement_credit)}}</div>
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.solde_credit)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.solde_credit)}}</div>
+        
+           <ul class="credit_cours" data-index="{{ form.credit_cours|length > 0 ? form.credit_cours|last.vars.name + 1 : 0 }}" data-prototype='{% include 'front/credit_cours.html.twig' with { 'item': form.credit_cours.vars.prototype } %}'>
+            	{% for key,item in form.credit_cours %}
+                		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
+                                        
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.type_credit)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.type_credit)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.org_pret)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.org_pret)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.montant)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.montant)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.montant_achat)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.montant_achat)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.duree_credit)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.duree_credit)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.taux)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.taux)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.montant_echeance)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.montant_echeance)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.date_debut)}}</div></div>
+                            <div class="div-input-contact date-select">{{form_widget(item.date_debut)}}</div>
+                            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.solde)}}</div></div>
+                            <div class="div-input-contact">{{form_widget(item.solde)}}</div>
+                    </li>
 
+                {% endfor %}
+            </ul>
+            <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify;float:left;width: 100%;">
+            <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;">
+                 <a class="add_item_link link-pret" data-collection-holder-class="credit_cours">
+                     <p class="demande-pret montserrat-medium-white-14px">Ajouter un credit en cours</p>
+                 </a>
+            </div>
+            </div>
         
 
-        <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.montant_achat)}}</div></div>
-        <div class="div-input-contact">{{form_widget(form.montant_achat)}}</div>
+       
 
-
+        {{ form_widget(form._token) }}
         <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
             <div style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto;text-align: center;">            
                 {{form_widget(form.Envoyer)}}

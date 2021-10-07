@@ -51,6 +51,7 @@ class DemandePretController extends AbstractController{
             $em = $this->getDoctrine()->getManager();
             $random = random_bytes(10);
             $demande->setToken(bin2hex($random));
+            
             $em->persist($demande);
             $em->flush();
             $email = (new TemplatedEmail())

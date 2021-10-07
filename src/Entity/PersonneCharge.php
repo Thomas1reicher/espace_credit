@@ -28,7 +28,7 @@ class PersonneCharge
     private $age;
 
     /**
-         * @ORM\ManyToOne(targetEntity=Demandecredit::class, inversedBy="personne_charge")
+         * @ORM\ManyToOne(targetEntity=Demandecredit::class, inversedBy="personne_charge",cascade={"persist"})
          */
     private $demande_credit;
 
@@ -73,4 +73,17 @@ class PersonneCharge
 
         return $this;
     }
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+
+       /* $tbl=$this->getEmail()."-".$this->getFullName().'-'.$this->getPassword().'-'.$this->getUsername();
+        */return "";
+    }
+    public function getList()
+    {
+        
+        return (array) $this;
+    }
+
 }

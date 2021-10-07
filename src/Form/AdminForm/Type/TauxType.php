@@ -6,10 +6,10 @@
  * Time: 15:25
  */
 
-namespace Form\Type;
+namespace Form\AdminForm\Type;
 
 
-
+use Form\AdminForm\Type\SousTauxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -28,31 +28,36 @@ use Model\Stage;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Validator\ForcedComment;
 use Validator\UniquePerOrganization;
-use App\Entity\PersonneCharge;
+use App\Entity\Taux;
 
-class PersonneChargeType extends AbstractType
+class TauxType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    { 
               
 
-                $builder->add('enfant', CheckboxType::class,
+                $builder->add('nom', TextType::class,
                     [
                         'attr' => [
-                            'class' => 'input-form input-contact checkbox-css-symfony'
+                            'class' => 'input-form input-contact '
                         ],
-                        'label' => 'Enfant',
+                        'label' => 'nom',
                         'required' => false,
                     ]);
+             
+                    $builder  ->add('sous_taux', CollectionType::class, array(
+                        
+                        'entry_type' => SousTauxType::class,
+                        'prototype'    => true,
+                        'by_reference' => false,
+                        'allow_delete' => true,
+                        'allow_add' => true,
+                        'label' => false,
+                        'required' => false,
+                        'allow_extra_fields' => true
+                    ));
 
-                $builder->add('age', NumberType::class,
-                    [   
-                        'attr' => [
-                            'class' => 'input-form input-contact'
-                        ],
-                        'label' => 'Âge de la personne a charge',
-                        'required' => false,
-                    ]);
+              
 
               
 
@@ -68,7 +73,7 @@ class PersonneChargeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => PersonneCharge::class,
+            'data_class' => Taux::class,
            
         ]);
     }

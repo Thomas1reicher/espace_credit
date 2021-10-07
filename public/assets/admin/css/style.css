@@ -79426,3 +79426,7 @@ style > < style type
 .container-checkbox input:checked ~ .checkmark:after {
 	left: 5px;
 }
+ul{
+	list-style:none;
+
+}

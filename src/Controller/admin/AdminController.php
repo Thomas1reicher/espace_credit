@@ -9,6 +9,7 @@ use App\Entity\Credit;
 use App\Entity\Page;
 use App\Entity\Info;
 use App\Form\AdminForm\ObjectAddType;
+use App\Form\AdminForm\CreditAddType;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -69,6 +70,28 @@ class AdminController extends AbstractController
                 'objects' => $Objects,
                 'tbl_var' => $tbl_var,
                 'name' => $name
+            ]
+        );
+
+
+    }
+        /**
+     *
+     *
+     * @Route("/admin/credit/{id}", name="creditsee")
+     */
+    public function Creditsee(int $id){
+  
+   
+        $entityManager = $this->getDoctrine()->getManager();
+        $repository = $this->nameClass("demandecredit","repository");
+        $object =$repository->find($id);
+        $testObj = (array)$object;
+            return $this->render('admin/admin_credit.html.twig', [
+                'itemsMenu' => $this->itemsMenu,
+                'object' => $testObj,
+      
+
             ]
         );
 
@@ -151,6 +174,38 @@ class AdminController extends AbstractController
             return $this->render('admin/admin_add_object.html.twig', [
                 'itemsMenu' => $this->itemsMenu,
                 'name' => $name,
+                'form' => $form->createView(),
+                'edit' => true,
+                'id'   => $id
+
+            ]
+        );
+
+    }
+      /**
+     *
+     *
+     * @Route("/admin/credit/update/{id}", name="catAdminCredit")
+     */
+    public function CatAdminCredit (int $id,Request $request):Response
+    {   
+   
+        $entityManager = $this->getDoctrine()->getManager();
+        $repository = $this->nameClass("credit","repository");
+        $object =$repository->find($id);
+        $form = $this->createForm(CreditAddType::class, $object);
+            if($_POST){
+     
+                $form->handleRequest($request);
+                if ($form->isSubmitted() && $form->isValid()) {
+              
+            
+                $entityManager->flush();
+                return $this->redirectToRoute("catAdmin");
+            }
+        }
+            return $this->render('admin/admin_update_credit.html.twig', [
+                'itemsMenu' => $this->itemsMenu,
                 'form' => $form->createView(),
                 'edit' => true,
                 'id'   => $id
