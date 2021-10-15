@@ -21,7 +21,7 @@
 						<div class="tab-pane active">
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12">
-				<ul class="taux" data-index="{{ form.taux|length > 0 ? form.taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/taux.html.twig' with { 'item': form.taux.vars.prototype } %}'>
+				<ul class="taux_prototype" data-index="{{ form.taux|length > 0 ? form.taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/taux.html.twig' with { 'item': form.taux.vars.prototype } %}'>
             	{% for key,item in form.taux %}
                 		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
 						 <h4 class="c-grey-900">
@@ -49,7 +49,7 @@
                 {% endfor %}
             </ul>
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
-                 <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="taux">
+                 <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="taux_prototype">
                      <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter un nouveau Taux</p>
                  </a>
             </div>
@@ -70,11 +70,11 @@
 </div>
 <script type="text/javascript">
 $(".add_item_link").click(function (e) {
-	alert("test");
+	
         const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
-
+		console.log(collectionHolder);
         const item = document.createElement('li');
-
+		console.log(item);
         item.innerHTML = collectionHolder
             .dataset
             .prototype
@@ -82,9 +82,9 @@ $(".add_item_link").click(function (e) {
             /__name__/g,
             collectionHolder.dataset.index
             );
-
+		console.log(item);
         collectionHolder.appendChild(item);
-
+		console.log(collectionHolder);
         collectionHolder.dataset.index++;
     });
 

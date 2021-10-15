@@ -20,11 +20,12 @@ class CreditAddType extends AbstractType
         $builder  ->add('taux', CollectionType::class, array(
             'entry_type' => TauxType::class,
             'prototype'    => true,
-            'by_reference' => false,
+            'by_reference' => true,
             'allow_delete' => true,
             'allow_add' => true,
             'label' => false,
             'required' => false,
+            'prototype_name' => '__taux_prot__',
             'allow_extra_fields' => true
         ));
     }

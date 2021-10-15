@@ -1,3 +1,9 @@
    <div ><div  ><label >Période fin</label></div></div>
  <div >{{form_widget(item.periode_fin)}}</div> <div ><div  ><label >Période debut</label></div></div><div >{{form_widget(item.periode_deb)}}</div>
-
+<ul class="sous_taux_period" data-prototype="{{ form_widget(item.sous_taux_period.vars.prototype)|e('html_attr') }}">              
+            		</ul>
+            <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
+                 <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="sous_taux_period">
+                     <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter une Interval </p>
+                 </a>
+            </div>

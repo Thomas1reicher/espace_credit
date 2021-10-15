@@ -9,13 +9,14 @@
 namespace Form\AdminForm\Type;
 
 
-use Form\AdminForm\Type\SousTauxType;
+
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\FloatType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -28,35 +29,40 @@ use Model\Stage;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Validator\ForcedComment;
 use Validator\UniquePerOrganization;
-use App\Entity\Taux;
+use App\Entity\SousTauxPeriode;
 
-class TauxType extends AbstractType
+class SousTauxTypePeriod extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     { 
               
 
-                $builder->add('nom', TextType::class,
+                $builder->add('montant_min', NumberType::class,
                     [
                         'attr' => [
-                            'class' => 'input-form input-contact '
+                            'class' => "input-form input-contact"
                         ],
-                        'label' => 'nom',
+                        'label' => "Montant de début",
                         'required' => false,
                     ]);
              
-                    $builder  ->add('sous_taux', CollectionType::class, array(
-                        
-                        'entry_type' => SousTauxType::class,
-                        'prototype'    => true,
-                        'by_reference' => true,
-                        'allow_delete' => true,
-                        'allow_add' => true,
-                        'label' => false,
+                    $builder->add('montant_max', IntegerType::class,
+                    [
+                        'attr' => [
+                            'class' => "input-form input-contact"
+                        ],
+                        'label' => "Montant de fin",
                         'required' => false,
-                        'allow_extra_fields' => true,
-                        'prototype_name' => '__sous_taux_prot__',
-                    ));
+                    ]);
+                    $builder->add('taeg', NumberType::class,
+                    [
+                        'attr' => [
+                            'class' => "input-form input-contact"
+                        ],
+                        'label' => "taeg",
+                        'required' => false,
+                    ]);
+                 
 
               
 
@@ -74,7 +80,7 @@ class TauxType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Taux::class,
+            'data_class' => SousTauxPeriode::class,
            
         ]);
     }

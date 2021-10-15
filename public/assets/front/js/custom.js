@@ -3,7 +3,10 @@
 jQuery(function ($) {
   
 
+    $(".delete-img").click(function (e) {
+        alert("test");
 
+    });
     $(".add_item_link").click(function (e) {
         const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
 
@@ -15,7 +18,11 @@ jQuery(function ($) {
             .replace(
             /__name__/g,
             collectionHolder.dataset.index
-            );
+            )
+            .replace(
+                /__qnb__/g,
+                parseInt(collectionHolder.dataset.index)+1
+                );
 
         collectionHolder.appendChild(item);
 

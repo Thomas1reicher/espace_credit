@@ -982,6 +982,9 @@ transform: translate(0, 25px);
   left: 50%;
   transform: translate(-50%, -50%);
 }
+ul{
+  list-style-type:none;
+}
 .slide-in-left {
 	-webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -1012,4 +1015,12 @@ transform: translate(0, 25px);
 }
 .img-philo{
   height: 60px;
+}
+.delete-img{
+  width: 2%;
+    margin-top: 3%;
+}
+.delete-img-credit{
+  margin-top: 5%!important;
+  margin-left: 22%;
 }
