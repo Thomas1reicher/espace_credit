@@ -38,7 +38,7 @@ class Credit
     private $img;
 
     /**
-     * @ORM\OneToMany(targetEntity=Taux::class, mappedBy="credit")
+     * @ORM\OneToMany(targetEntity=Taux::class, mappedBy="credit",cascade={"persist"})
      */
     private $taux;
 

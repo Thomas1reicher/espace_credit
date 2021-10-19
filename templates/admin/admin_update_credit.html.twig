@@ -13,7 +13,7 @@
 			</h4>
 			
             
-			<form action="{{ path('catAdminCredit',{id: id}) }}" method="post">
+			{{ form_start(form) }}
 			
 			<div id="exTab3" class="">
 				<div class="mT-30">
@@ -21,41 +21,80 @@
 						<div class="tab-pane active">
 							<div class="row">
 								<div class="col-xs-12 col-sm-12 col-md-12">
-				<ul class="taux_prototype" data-index="{{ form.taux|length > 0 ? form.taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/taux.html.twig' with { 'item': form.taux.vars.prototype } %}'>
+				<ul class="taux" data-index="{{ form.taux|length > 0 ? form.taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/taux.html.twig' with { 'item': form.taux.vars.prototype } %}'>
             	{% for key,item in form.taux %}
                 		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
 						 <h4 class="c-grey-900">
-				Type de taux
+				Taux n°{{key +1}}
 			</h4>
                      <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.nom)}}</div></div>
-                    <div class="div-input-contact">{{form_widget(item.nom)}}</div>
-                    </li>
-					<ul class="sous_taux" data-index="{{ item.sous_taux|length > 0 ? item.sous_taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/sous_taux.html.twig' with { 'item': item.sous_taux.vars.prototype } %}'>
+                    <div class="div-input-contact">{{form_widget(item.nom , {'value': item.vars.data.nom})}}</div>
+                    
+					<ul class="sous_taux" data-index="{{ item.sous_taux|length > 0 ? item.sous_taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/sous_taux.twig' with { 'item': item.sous_taux.vars.prototype } %}'>
             			{% for key2,item2 in item.sous_taux %}
+						<h4 class="c-grey-900">
+				Periode n° {{key2 +1}}
+			</h4>
                 			<li class="element-input  darken-1 card-panel" id="{{ key2  }}">
 								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item2.periode_deb)}}</div></div>
 								<div class="div-input-contact">{{form_widget(item2.periode_deb)}}</div>
 								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item2.periode_fin)}}</div></div>
 								<div class="div-input-contact">{{form_widget(item2.periode_fin)}}</div>
-                    		</li>
-
+                    		
+						<ul class="sous_taux_period" data-index="0" data-prototype='{% autoescape 'html' %}{% include "admin/sous_taux_period.html.twig" with { "item": item2.sous_taux_period.vars.prototype }|escape %}{% endautoescape %}'>              
+							{% for key3,item3 in item2.sous_taux_period %}
+							<li>
+								<h4 class="c-grey-900">
+									Interval montant n° {{key3 +1}}
+								</h4>
+								<div >
+									<div >
+										<label >Montant minimum</label>
+									</div>
+								</div>
+								<div >{{form_widget(item3.montant_min)}}</div>
+								<div >
+									<div >
+										<label >Montant max</label>
+									</div>
+								</div>
+								<div >{{form_widget(item3.montant_max)}}</div>
+								<div >
+									<div >
+										<label >Taeg</label>
+									</div>
+								</div>
+								<div >{{form_widget(item3.taeg)}}</div>
+								</li>
+							{% endfor %}
+					</ul>
+            <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
+                 <a class=" btn btn-primary link-pret" onclick="prototype(this);" data-collection-holder-class="sous_taux_period">
+                     <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter une Interval </p>
+                 </a>
+            </div>
+	
                 		{% endfor %}
-            		</ul>
+							</li>
+   </ul>
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
                  <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="sous_taux">
                      <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter une Periode</p>
                  </a>
             </div>
                 {% endfor %}
+				</li>
             </ul>
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
-                 <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="taux_prototype">
+                 <a class="add_item_link_taux btn btn-primary link-pret"  data-collection-holder-class="taux">
                      <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter un nouveau Taux</p>
                  </a>
             </div>
+			
 								</div>
 							</div>
 						</div>
+						{{ form_row(form._token) }}
 						<div class="col-xs-12 col-sm-12 col-md-12" style="text-align: right; padding: 0;">
 							<button type="submit" class="btn btn-primary">
 								Modifier
@@ -64,30 +103,9 @@
 					</div>
 				</div>
 			</div>
-            </form>
+            {{ form_end(form ,  {render_rest: false}) }}
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-$(".add_item_link").click(function (e) {
-	
-        const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
-		console.log(collectionHolder);
-        const item = document.createElement('li');
-		console.log(item);
-        item.innerHTML = collectionHolder
-            .dataset
-            .prototype
-            .replace(
-            /__name__/g,
-            collectionHolder.dataset.index
-            );
-		console.log(item);
-        collectionHolder.appendChild(item);
-		console.log(collectionHolder);
-        collectionHolder.dataset.index++;
-    });
 
-
-</script>
    {% endblock %}

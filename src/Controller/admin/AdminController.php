@@ -195,13 +195,21 @@ class AdminController extends AbstractController
         $object =$repository->find($id);
         $form = $this->createForm(CreditAddType::class, $object);
             if($_POST){
-     
+                $data=$form->getData();
+                /*var_dump($data->getTaux()[0]);
+                die();*/
                 $form->handleRequest($request);
                 if ($form->isSubmitted() && $form->isValid()) {
-              
-            
+                   
                 $entityManager->flush();
-                return $this->redirectToRoute("catAdmin");
+                return $this->redirectToRoute("catAdmin", array(
+                    'name' => 'credit'
+                ));
+            }
+            else{
+                $string = var_export($this->getErrorMessages($form), true);
+                var_dump($string);
+                die();
             }
         }
             return $this->render('admin/admin_update_credit.html.twig', [
@@ -213,6 +221,26 @@ class AdminController extends AbstractController
             ]
         );
 
+    }
+
+    private function getErrorMessages(\Symfony\Component\Form\Form $form) {
+        $errors = array();
+    
+        foreach ($form->getErrors() as $key => $error) {
+            if ($form->isRoot()) {
+                $errors['#'][] = $error->getMessage();
+            } else {
+                $errors[] = $error->getMessage();
+            }
+        }
+    
+        foreach ($form->all() as $child) {
+            if (!$child->isSubmitted()) {
+                $errors[$child->getName()] = $this->getErrorMessages($child);
+            }
+        }
+    
+        return $errors;
     }
     /**
      *

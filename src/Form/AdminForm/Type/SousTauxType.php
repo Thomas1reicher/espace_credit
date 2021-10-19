@@ -57,13 +57,12 @@ class SousTauxType extends AbstractType
                         
                         'entry_type' => SousTauxTypePeriod::class,
                         'prototype'    => true,
-                        'by_reference' => true,
+                        'by_reference' => false,
                         'allow_delete' => true,
                         'allow_add' => true,
                         'label' => false,
                         'required' => false,
                         'prototype_name' => '__sous_taux_period_prot__',
-                        'allow_extra_fields' => true
                     ));
               
 

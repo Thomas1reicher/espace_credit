@@ -49,12 +49,11 @@ class TauxType extends AbstractType
                         
                         'entry_type' => SousTauxType::class,
                         'prototype'    => true,
-                        'by_reference' => true,
+                        'by_reference' => false,
                         'allow_delete' => true,
                         'allow_add' => true,
                         'label' => false,
                         'required' => false,
-                        'allow_extra_fields' => true,
                         'prototype_name' => '__sous_taux_prot__',
                     ));
 

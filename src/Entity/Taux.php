@@ -20,7 +20,7 @@ class Taux
     private $id;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float" , nullable=true)
      * 
      */
     private $taux;
@@ -42,7 +42,7 @@ class Taux
         private $credit;
 
         /**
-         * @ORM\OneToMany(targetEntity=SousTaux::class, mappedBy="id_taux")
+         * @ORM\OneToMany(targetEntity=SousTaux::class, mappedBy="id_taux",cascade={"persist"})
          */
         private $sous_taux;
 

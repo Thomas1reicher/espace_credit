@@ -34,7 +34,7 @@ class SousTaux
      */
     private $id_taux;
     /**
-    * @ORM\OneToMany(targetEntity=SousTauxPeriode::class, mappedBy="id_soustaux")
+    * @ORM\OneToMany(targetEntity=SousTauxPeriode::class, mappedBy="id_soustaux",cascade={"persist"})
     */
     private $sous_taux_period;
 

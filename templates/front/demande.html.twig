@@ -38,15 +38,33 @@
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt perso</div></div>
             <div class="div-input-contact">
                 <select class="input-contact input-form select-credit" name="tauxPerso"/>
-                    {% set first = true %}
-                    {% set objFirst = "" %}
-                    {% for taux in pretPerso.taux %}
-                      {% if first %}
-                        {% set objFirst = taux %}
-                        {% set first = false %}
-                        {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
-                    {% endfor %}
+                        <option value="Besoins familiaux (autre)">Besoins familiaux (autre)</option>
+                        <option value="Divers (autres)">Divers (autres)</option>
+                        <option value="Habitation (autres)">Habitation (autres)</option>
+                        <option value="Confort maison : meubles, textiles, peinture">Confort maison : meubles, textiles, peinture</option>
+                        <option value="Cuisine équipée">Cuisine équipée</option>
+                        <option value="Décès, communion, naissance">Décès, communion, naissance</option>
+                        <option value="Déménagement">Déménagement</option>
+                        <option value="Divorce">Divorce</option>
+                        <option value="Électro-ménager">Électro-ménager</option>
+                        <option value="Énergie">Énergie</option>
+                        <option value="Frais d’installation">Frais d’installation</option>
+                        <option value="Frais d’étude">Frais d’étude</option>
+                        <option value="Frais divers">Frais divers</option>
+                        <option value="Frais judiciaire">Frais judiciaire</option>
+                        <option value="Frais médicaux">Frais médicaux</option>
+                        <option value="Frais permis voiture">Frais permis voiture</option>
+                        <option value="Hifi, multimédia, gsm, ordi">Hifi, multimédia, gsm, ordi</option>
+                        <option value="Loisirs ; voyage, sport, musique, ..">Loisirs ; voyage, sport, musique, ..</option>
+                        <option value="Mariage emprunteur">Mariage emprunteur</option>
+                        <option value="Mariage enfant">Mariage enfant</option>
+                        <option value="Outillage non professionnel">Outillage non professionnel</option>
+                        <option value="Petits travaux maison, jardin">Petits travaux maison, jardin</option>
+                        <option value="Remboursement prêt chez autre organisme">Remboursement prêt chez autre organisme</option>
+                        <option value="Remboursement prêt chez assuré">Remboursement prêt chez assuré</option>
+                        <option value="Rénovation">Rénovation</option>
+                        <option value="Réparation voiture">Réparation voiture</option>
+                        
                 </select>
             </div>
         </div>

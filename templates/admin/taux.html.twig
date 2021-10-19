@@ -1,16 +1,16 @@
  <h4 class="c-grey-900">
-				Type de taux
+				Taux n°__qnb__
 			</h4>
  <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.nom)}}</div></div>
  <div class="div-input-contact">{{form_widget(item.nom)}}</div>
 
- <ul class="sous_taux" data-prototype="{{ form_widget(item.sous_taux.vars.prototype)|e('html_attr') }}">              
+ <ul class="sous_taux" data-index="0" data-prototype=z{% autoescape 'html' %}{% include "admin/sous_taux.twig" with { "item": item.sous_taux.vars.prototype }|e %}{% endautoescape %}z>
+                  
             		</ul>
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;margin-top:5%;">
-                 <a class="add_item_link btn btn-primary link-pret"  data-collection-holder-class="sous_taux">
+                 <a class="add_item_link btn btn-primary link-pret" onclick="prototype(this);"  data-collection-holder-class="sous_taux">
                      <p class="demande-pret montserrat-medium-white-14px" style="color:white!important">Ajouter une Periode</p>
                  </a>
             </div>
-	
 
             
