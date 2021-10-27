@@ -14,7 +14,7 @@
             Type de crédit
         </div>
         <div class="div-input-contact div-type-cred">{{form_widget(form.type_credit_demande)}}</div>
-        <div class="credit-form credit-hypo-form" style="display: none">
+        <div class="credit-form credit-hypo-form credit-form-sup" style="display: none">
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit hypothécaire
             </div>
@@ -31,7 +31,7 @@
             <div class="div-input-contact date-select">{{form_widget(form.date_debut_credit_hypo)}}</div>
         </div>
         
-        <div class="credit-form credit-perso-form" style="display: none">
+        <div class="credit-form credit-perso-form credit-form-sup" style="display: none">
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit perso
             </div>
@@ -69,7 +69,7 @@
             </div>
         </div>
 
-        <div class="credit-form credit-auto-form" style="display: none">
+        <div class="credit-form credit-auto-form credit-form-sup" style="display: none">
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit voiture
             </div>
@@ -91,7 +91,7 @@
             <div class="div-input-contact">{{form_widget(form.type_taux_voiture)}}</div>
         </div>
 
-        <div class="credit-form credit-moto-form" style="display: none">
+        <div class="credit-form credit-moto-form credit-form-sup" style="display: none">
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit moto
             </div>
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <div class="credit-form credit-vehicule-form" style="display: none">
+        <div class="credit-form credit-vehicule-form credit-form-sup" style="display: none">
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.acompte)}}</div></div>
             <div class="div-input-contact">{{form_widget(form.acompte)}}</div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.marque)}}</div></div>
@@ -180,6 +180,17 @@
         <div class="div-input-contact date-select">{{form_widget(form.validite_carte_identite)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.etat_civil)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.etat_civil)}}</div>
+        <div class="div-mariee" style="display:none;">
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_naissance_mariee)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.date_naissance_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_mariee)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.nom_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.prenom_mariee)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.prenom_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.registre_national_mariee)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.registre_national_mariee)}}</div>
+        </div>
+
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.annee_belgique)}}</div></div>
         <div class="div-input-contact date-select">{{form_widget(form.annee_belgique)}}</div>
         <div class="div-input-contact">
@@ -401,22 +412,45 @@
         type = select.html();
        if(type == "PRÊT PERSO"){
             $('.credit-perso-form').show();
+            $('.credit-perso-form input').val('');
+            $('.credit-perso-form select').val('');
         }
         else if(type == "PRÊT AUTO"){
             $('.credit-auto-form').show();
+            $('.credit-auto-form input').val('');
+            $('.credit-auto-form select').val('');
         }
         else if(type == "PRÊT MOTO"){
             $('.credit-moto-form').show();
+            $('.credit-moto-form input').val('');
+            $('.credit-moto-form select').val('');
         }
         else if(type == "PRÊT MOBILITÉ"){
             $('.credit-mobilite-form').show();
+            $('.credit-mobilite-form input').val('');
+            $('.credit-mobilite-form select').val('');
         }
         else if(type == "PRÊT TRAVAUX"){
             $('.credit-travaux-form').show();
+            $('.credit-travaux-form input').val('');
+            $('.credit-travaux-form select').val('');
         }
         if(type == "PRÊT AUTO" || type == "PRÊT MOTO"){
             $('.credit-vehicule-form').show();
+            $('.credit-vehicule-form input').val('');
+            $('.credit-vehicule-form select').val('');
         }
+        $("select#demande_etat_civil").change(function() {
+         if($(this).val()=="Marié"){
+            $('.div-mariee').show();
+
+         }else{
+            $('.div-mariee').hide();
+            $('.div-mariee input').val('');
+            $('.div-mariee select').val('');
+
+         }
+       });
     });
 
 

@@ -22,19 +22,22 @@ class SousTauxPeriodeRepository extends ServiceEntityRepository
     // /**
     //  * @return SousTauxPeriode[] Returns an array of SousTauxPeriode objects
     //  */
-    /*
-    public function findByExampleField($value)
+ 
+    public function findByValue($val1 , $val2 , $val3)
     {
         return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('s.montant_min <= :val')
+            ->setParameter('val', $val3)
+            ->andWhere('s.montant_max >= :val')
+            ->setParameter('val', $val3)
+            ->leftJoin('s.id_soustaux_id', 'st')
             ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+ 
 
     /*
     public function findOneBySomeField($value): ?SousTauxPeriode

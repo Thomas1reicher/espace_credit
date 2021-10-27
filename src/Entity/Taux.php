@@ -171,4 +171,8 @@ class Taux
 
         return $this;
     }
+    
+ 
 }
+
+

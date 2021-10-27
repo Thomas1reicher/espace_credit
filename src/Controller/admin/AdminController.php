@@ -196,8 +196,7 @@ class AdminController extends AbstractController
         $form = $this->createForm(CreditAddType::class, $object);
             if($_POST){
                 $data=$form->getData();
-                /*var_dump($data->getTaux()[0]);
-                die();*/
+                
                 $form->handleRequest($request);
                 if ($form->isSubmitted() && $form->isValid()) {
                    

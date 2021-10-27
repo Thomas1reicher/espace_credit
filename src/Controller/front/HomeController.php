@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Component\Request;
 use App\Entity\Credit;
 use App\Entity\Taux;
+use App\Entity\SousTauxPeriode;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Doctrine\ORM\EntityManagerInterface;
 //require("wsbaseany_pat2.php");
@@ -68,7 +69,8 @@ class HomeController extends AbstractController
             'title' => 'home',
             'objets' => $objets,
             'credits' => $credits,
-            'modal' => $modal
+            'modal' => $modal,
+            'repo' =>$repo
          
         ]);
     }
@@ -107,7 +109,9 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
-    
+        $test = $repo->findCredit($obj->getId());
+        var_dump($test[0]);
+        die();
 
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
@@ -212,6 +216,40 @@ class HomeController extends AbstractController
             'title' => 'entreprise',
         ]);
     }
-
+      /**
+     * @Route("/recherche", name="rechercheTaux")
+     * @param Request $request
+     * @return Response
+     */
+    public function rechercheTaux(Request $request)    
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo1=$entityManager->getRepository(Credit::class);
+        $test = $repo1->findTaeg($_POST["pret"],$_POST["period"],$_POST["montant"]);
+        if(count($test)>0){
+            return new Response($test[0]["taeg"], 200);
+        }
+        else{
+            return new Response("error", 200);
+        }
+    }
+    /**
+     * @Route("/rechercheduree", name="rechercheDuree")
+     * @param Request $request
+     * @return Response
+     */
+    public function rechercheDuree(Request $request)    
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo1=$entityManager->getRepository(Credit::class);
+        $test = $repo1->findMois($_POST["pret"],$_POST["montant"]);
+        if(count($test)>0){
+           
+            return new Response($test[0]["periode_deb"], 200);
+        }
+        else{
+            return new Response("error", 200);
+        }
+    }
 
 }

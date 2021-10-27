@@ -45,14 +45,7 @@ class SousTauxType extends AbstractType
                         'required' => false,
                     ]);
              
-                    $builder->add('periode_fin', IntegerType::class,
-                    [
-                        'attr' => [
-                            'class' => "input-form input-contact"
-                        ],
-                        'label' => "periode de fin",
-                        'required' => false,
-                    ]);
+               
                     $builder  ->add('sous_taux_period', CollectionType::class, array(
                         
                         'entry_type' => SousTauxTypePeriod::class,

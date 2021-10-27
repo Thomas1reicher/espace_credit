@@ -24,10 +24,7 @@ class SousTaux
      */
     private $periode_deb;
 
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $periode_fin;
+
 
     /**
      * @ORM\ManyToOne(targetEntity=Taux::class, inversedBy="sous_taux")
@@ -60,17 +57,7 @@ class SousTaux
         return $this;
     }
 
-    public function getPeriodeFin(): ?int
-    {
-        return $this->periode_fin;
-    }
-
-    public function setPeriodeFin(?int $periode_fin): self
-    {
-        $this->periode_fin = $periode_fin;
-
-        return $this;
-    }
+   
 
     public function getIdTaux(): ?Taux
     {

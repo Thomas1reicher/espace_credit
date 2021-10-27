@@ -41,9 +41,9 @@ jQuery(function ($) {
 
     $(".add_item_link").click(function (e) {
        
-		console.log(e.currentTarget.dataset.collectionHolderClass);
-        const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
-		console.log(collectionHolder);
+        const collectionHolder1 = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+		collectionHolder = $(this).parent().parent().find('.' + e.currentTarget.dataset.collectionHolderClass)[0];
+        console.log(collectionHolder);
         const item = document.createElement('li');
 		
         item.innerHTML = collectionHolder

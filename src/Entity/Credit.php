@@ -47,10 +47,17 @@ class Credit
      */
     private $credit;
 
+
+
+
+
+   
+    
     public function __construct()
     {
         $this->credit = new ArrayCollection();
         $this->taux = new ArrayCollection();
+
     }
     public function getCredit(): ArrayCollection
     {
@@ -208,5 +215,6 @@ class Credit
 
         return $this;
     }
+
 
 }

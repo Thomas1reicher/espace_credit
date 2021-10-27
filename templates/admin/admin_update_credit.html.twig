@@ -36,12 +36,11 @@
 				Periode n° {{key2 +1}}
 			</h4>
                 			<li class="element-input  darken-1 card-panel" id="{{ key2  }}">
-								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item2.periode_deb)}}</div></div>
+								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Periode</div></div>
 								<div class="div-input-contact">{{form_widget(item2.periode_deb)}}</div>
-								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item2.periode_fin)}}</div></div>
-								<div class="div-input-contact">{{form_widget(item2.periode_fin)}}</div>
+								
                     		
-						<ul class="sous_taux_period" data-index="0" data-prototype='{% autoescape 'html' %}{% include "admin/sous_taux_period.html.twig" with { "item": item2.sous_taux_period.vars.prototype }|escape %}{% endautoescape %}'>              
+						<ul class="sous_taux_period" data-index="{{ item2.sous_taux_period|length > 0 ? item2.sous_taux_period|last.vars.name + 1 : 0 }}" data-prototype='{% autoescape 'html' %}{% include "admin/sous_taux_period.html.twig" with { "item": item2.sous_taux_period.vars.prototype }|escape %}{% endautoescape %}'>              
 							{% for key3,item3 in item2.sous_taux_period %}
 							<li>
 								<h4 class="c-grey-900">

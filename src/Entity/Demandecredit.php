@@ -148,7 +148,23 @@ class Demandecredit
      * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $etat_civil;
-
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $nom_mariee;
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $prenom_mariee;
+        /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $registre_national_mariee;
+       /**
+     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     */
+    private $date_naissance_mariee;
+  
     /**
      * @ORM\Column(type="datetime", length=30 ,nullable=true)
      */
@@ -1904,6 +1920,54 @@ class Demandecredit
                 $creditCour->setDemandeCredit(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNomMariee(): ?string
+    {
+        return $this->nom_mariee;
+    }
+
+    public function setNomMariee(?string $nom_mariee): self
+    {
+        $this->nom_mariee = $nom_mariee;
+
+        return $this;
+    }
+
+    public function getPrenomMariee(): ?string
+    {
+        return $this->prenom_mariee;
+    }
+
+    public function setPrenomMariee(?string $prenom_mariee): self
+    {
+        $this->prenom_mariee = $prenom_mariee;
+
+        return $this;
+    }
+
+    public function getRegistreNationalMariee(): ?string
+    {
+        return $this->registre_national_mariee;
+    }
+
+    public function setRegistreNationalMariee(?string $registre_national_mariee): self
+    {
+        $this->registre_national_mariee = $registre_national_mariee;
+
+        return $this;
+    }
+
+    public function getDateNaissanceMariee(): ?\DateTimeInterface
+    {
+        return $this->date_naissance_mariee;
+    }
+
+    public function setDateNaissanceMariee(?\DateTimeInterface $date_naissance_mariee): self
+    {
+        $this->date_naissance_mariee = $date_naissance_mariee;
 
         return $this;
     }

@@ -9,7 +9,6 @@ jQuery(function ($) {
     });
     $(".add_item_link").click(function (e) {
         const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
-
         const item = document.createElement('li');
 
         item.innerHTML = collectionHolder
@@ -36,6 +35,7 @@ jQuery(function ($) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     $( document ).ready(function() {
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         recalculate();
         duree = parseInt($(".duree-form").val());
         $(".duree-info").text(duree + " mois");
@@ -53,7 +53,46 @@ jQuery(function ($) {
              }, 11000);
         }
     });
+    function recherche(pret,period,montant){
+
+        $.post('/recherche',
+            {pret : pret,
+            period : period,
+            montant : montant
+            }
+        ).done( function(response) {
+            if(!isNaN(response)){
+            $(".taux-info").text(response + "%*");
+            $(".taux-info").attr("data",response);
+            $(".error-div").text("");
+            }else{
+              
+                $(".error-div").text("Les paramètres de simulation ne sont pas bon");
+                $.post('/rechercheduree',
+                {pret : pret,
+                montant : montant
+                }
+            ).done( function(response) {
+                if(!isNaN(response)){
+                    $(".duree-form").val(response);
+                    $(".error-div").text("");
+                    recherche(pret,response,montant)
+                    }else{
+                        $(".error-div").text("Les paramètres de simulation ne sont pas bon");
+                    }
+                      
+               
+            });
+            }
+        }).fail(function(jxh,textmsg,errorThrown){
+            console.log(textmsg);
+            console.log(errorThrown);
+        });
+            
+
+    }
     $(".montant-form").change(function () {
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         recalculate();
         montant = parseInt($(this).val());
         if(montant > 999){
@@ -66,22 +105,22 @@ jQuery(function ($) {
         
     });
     $(".duree-form").change(function () {
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         recalculate();
         duree = parseInt($(this).val());
         $(".duree-info").text(duree + " mois");
+        
     });
     $(".montant-form").click(function () {
         $(this).val("");
     });
     $(".duree-form").click(function () {
-        $(this).val("");
+       
     });
     $(".select-credit").change(function () {
-        taeg = parseFloat($(".select-credit option:selected").val());
-        $(".taux-info").attr("data", taeg);
-        $(".taux-info").attr("dataclass", $(".select-credit option:selected").text());
-        $(".taux-info").text(taeg + "%*");
+ 
         recalculate();
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
 
     });
     function recalculate() {

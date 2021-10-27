@@ -36,15 +36,60 @@ class CreditRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Credit
+
+    public function findCredit($value)
     {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+        $db = $this->createQueryBuilder('c')
+            ->select('p.taeg')
+            ->andWhere('c.id = :val')
             ->setParameter('val', $value)
+            ->Join('c.taux', 't')
+            ->Join('t.sous_taux', 's')
+            ->Join('s.sous_taux_period', 'p')
+            ->orderBy('p.taeg', 'ASC')
             ->getQuery()
-            ->getOneOrNullResult()
+            ->getResult()
         ;
+        return $db;
     }
-    */
+    public function findTaeg($val1,$val2,$val3)
+    {
+        $db = $this->createQueryBuilder('c')
+            ->select('p.taeg')
+            ->Join('c.taux', 't')
+            ->andWhere('t.id = :val')
+            ->setParameter('val', $val1)
+            ->Join('t.sous_taux', 's')
+            ->andWhere('s.periode_deb = :val1')
+            ->setParameter('val1', $val2)
+            ->Join('s.sous_taux_period', 'p')
+            ->andWhere('p.montant_min <= :val2')
+            ->andWhere('p.montant_max >= :val2')
+            ->setParameter('val2', $val3)
+            ->orderBy('p.taeg', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+        return $db;
+    }
+
+    public function findMois($val1,$val3)
+    {
+        $db = $this->createQueryBuilder('c')
+            ->select('s.periode_deb')
+            ->Join('c.taux', 't')
+            ->andWhere('t.id = :val')
+            ->setParameter('val', $val1)
+            ->Join('t.sous_taux', 's')
+            ->Join('s.sous_taux_period', 'p')
+            ->andWhere('p.montant_min <= :val2')
+            ->andWhere('p.montant_max >= :val2')
+            ->setParameter('val2', $val3)
+            ->orderBy('p.taeg', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+        return $db;
+    }
+    
 }

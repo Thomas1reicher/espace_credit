@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\BddCmsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=BddCmsRepository::class)
@@ -23,6 +24,7 @@ class BddCms
     private $name;
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\File(mimeTypes={ "image/png", "image/jpeg" })
      */
     private $icon;
     /**

@@ -92,6 +92,21 @@ class DemandeType extends AbstractType
             'label' => 'Prénom',
             'required' => false
         ])
+        ->add('nom_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre nom',
+                'class' => 'input-form input-contact'
+            ],
+            'required' => false
+        ])
+        ->add('prenom_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre prénom',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Prénom',
+            'required' => false
+        ])
         
         ->add('date_naissance', BirthdayType::class,[
             'attr' => [
@@ -102,7 +117,15 @@ class DemandeType extends AbstractType
             'format' => 'yyyy-MM-dd',
             'empty_data' => '1900-01-01'
         ])
-        
+        ->add('date_naissance_mariee', BirthdayType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact date-css-symfony'
+            ],
+            'label' => 'Date de naissance',
+            'required' => false,
+            'format' => 'yyyy-MM-dd',
+            'empty_data' => '1900-01-01'
+        ])
         ->add('ville_naissance', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre ville de naissance',
@@ -127,7 +150,14 @@ class DemandeType extends AbstractType
             'label' => 'Registre national (uniquement pour les belges)',
             'required' => false
         ])
- 
+        ->add('registre_national_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le registre national',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Registre national (uniquement pour les belges)',
+            'required' => false
+        ])
         ->add('numero_carte_identite', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre numéro de carte d\'identité',
@@ -679,6 +709,7 @@ class DemandeType extends AbstractType
                 'class' => 'input-form input-contact'
             ],
             'label' => 'Montant de l\'achat',
+            'empty_data' => '',
             'required' => false
         ])
         ->add('duree_credit_hypo', TextType::class,[
