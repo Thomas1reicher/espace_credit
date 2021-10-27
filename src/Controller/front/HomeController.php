@@ -110,8 +110,7 @@ class HomeController extends AbstractController
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
         $test = $repo->findCredit($obj->getId());
-        var_dump($test[0]);
-        die();
+        
 
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
