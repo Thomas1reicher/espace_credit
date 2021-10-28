@@ -28,7 +28,7 @@
         <div class="div-slide-button-align">
           <div class="taeg montserrat-bold-web-orange-20px">
           {% for i , taux in credit.taux %}
-              <div>{% if taux.nom %}<span class="montserrat-light-web-orange-16px taeg-name" style="font-size: 12px!important;">({{taux.nom}}) </span> {% endif %}</br><span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">{{taux.taux}}%</span><span class="montserrat-bold-web-orange-46px">*</span></div>
+              <div>{% if taux.nom %}<span class="montserrat-light-web-orange-16px taeg-name" style="font-size: 12px!important;">({{taux.nom}}) </span> {% endif %}</br><span class="montserrat-medium-web-orange-20px">TAEG àpd</span><span class="montserrat-bold-web-orange-20px-2">&nbsp;</span><span class="montserrat-bold-web-orange-46px">{% if (repo.findMinTaeg(taux.id)) %} {{repo.findMinTaeg(taux.id)}} {% else %} {{taux.taux}} {% endif %}%</span><span class="montserrat-bold-web-orange-46px">*</span></div>
           {% endfor %}
           </div>
           <p class="surname montserrat-light-tundora-16px">

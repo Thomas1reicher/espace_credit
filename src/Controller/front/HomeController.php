@@ -82,11 +82,13 @@ class HomeController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
+        $repot=$entityManager->getRepository(Taux::class);
         $objets = $repo->findAll();
         return $this->render('front/credits.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'credits',
-            'credits' => $objets
+            'credits' => $objets,
+            'repo' => $repot
         ]);
     }
 

@@ -1021,10 +1021,15 @@ ul{
     margin-top: 3%;
 }
 .delete-img-credit{
-  margin-top: 5%!important;
-  margin-left: 22%;
+  margin-top: 10%!important;
+  margin-left: 100%;
+  width: 6%!important;
 }
 select option{
   background-color: var(--nevada);
   color: var(--white);
+}
+.delete-btn-prototype_1{
+  float: left;
+  width: 28%;
 }

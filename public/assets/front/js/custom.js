@@ -56,6 +56,8 @@ jQuery(function ($) {
     function recherche(pret,period,montant){
 
         console.log(pret,period,montant);
+        if(pret !== undefined && period !== undefined && montant !== undefined){
+       
         $.post('/recherche',
             {pret : pret,
             period : period,
@@ -76,8 +78,10 @@ jQuery(function ($) {
             ).done( function(response) {
                 if(!isNaN(response)){
                     $(".duree-form").val(response);
+                    $(".duree-info").text(response + " mois");
                     $(".error-div").text("");
                     recherche(pret,response,montant)
+                    recalculate();
                     }else{
                         $(".error-div").text("Les paramètres de simulation ne sont pas bon");
                     }
@@ -88,8 +92,8 @@ jQuery(function ($) {
         }).fail(function(jxh,textmsg,errorThrown){
 
         });
-            
-
+    }
+    recalculate();
     }
     $(".montant-form").change(function () {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));

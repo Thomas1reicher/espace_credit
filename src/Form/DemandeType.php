@@ -217,7 +217,7 @@ class DemandeType extends AbstractType
             'label' => "Date d’arrivée en Belgique/Luxembourg",
             'required' => false,
             'years' => range(date('Y')-100, date('Y')),
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])         
 
@@ -293,7 +293,7 @@ class DemandeType extends AbstractType
             'label' => 'Installé depuis',
             'years' => range(date('Y')-100, date('Y')),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
         ->add('tel', TelType::class,[
@@ -335,7 +335,7 @@ class DemandeType extends AbstractType
             'label' => 'Date d\'ouverture du compte',
             'years' => range(date('Y')-100, date('Y')),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
 
@@ -445,7 +445,7 @@ class DemandeType extends AbstractType
             'label' => 'Date du contrat',
             'years' => range(date('Y')-100, date('Y')),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
 
@@ -728,7 +728,7 @@ class DemandeType extends AbstractType
             'label' => 'Échéance',
             'years' => range(date('Y'), date('Y') + 100),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
         ->add('date_debut_credit_hypo', DateType::class,[
@@ -739,7 +739,7 @@ class DemandeType extends AbstractType
             'label' => 'Date de début',
             'years' => range(date('Y')-100, date('Y')),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
 
@@ -795,7 +795,7 @@ class DemandeType extends AbstractType
             'label' => 'Date de première circulation du véhicule',
             'years' => range(date('Y')-100, date('Y')),
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => ''
         ])
         ->add('personne_charge', CollectionType::class, array(
