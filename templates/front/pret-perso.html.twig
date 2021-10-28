@@ -3,9 +3,9 @@
 <div class="regroup-div">
     <div class="left-form">
         <div class="titre-taux-black" style="min-height: auto">Prêt personnel</div>
-        {% for taux in pret.taux %}
-        <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">{{taux.taux}}%*</span></div><br><br>
-        {% endfor %}
+  
+        <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">{{tauxmin}}%*</span></div><br><br>
+
         <div class="div-btn-cred redirect-button" style="margin-bottom: 20px;margin-left: auto;margin-right: auto;width: 100%;display: none">
             <div style="width: 100%;background-color: var(--web-orange);border-radius: 7px;">
                 <a href="#redirect-simulation" class="link-pret"><p class="demande-pret nous-cont montserrat-medium-white-14px">SIMULER UN PRET</p></a>
@@ -30,6 +30,9 @@
             </div>
 
             <div class="inputs label-form montserrat-medium-white-14px" style="width: 99%;">
+            <select class="input-form select-credit txt-low-weight-white" style="display: none"/>
+                    <option class="txt-low-weight-white"  data-credit="1"></option>
+            </select>
               <div style="width: 99%;float: left">Montant <span style="font-weight: 100;" class="span-euro">- euro</span></div>
               <div class="div-input-preview" style="width: 99%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="12000"/></div>
               <div style="width: 99%;float: left">Durée <span style="font-weight: 100;" class="span-mois">- mois</span></div>

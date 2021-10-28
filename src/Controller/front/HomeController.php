@@ -109,13 +109,15 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT PERSO']);
-        $test = $repo->findCredit($obj->getId());
+        $tauxmin = $repo->findMinTaeg($obj->getId());
+       
         
 
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretPerso',
-            'pret' => $obj
+            'pret' => $obj,
+            'tauxmin' => $tauxmin
         ]);
     }
 
@@ -187,10 +189,12 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'REGROUPEMENT']);
+        $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'regroupement',
-            'pret' => $obj->getTaux()[0]
+            'pret' => $obj->getTaux()[0],
+            'tauxmin' => $tauxmin
         ]);
     }
 

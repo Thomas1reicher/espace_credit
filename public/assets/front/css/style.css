@@ -1024,3 +1024,7 @@ ul{
   margin-top: 5%!important;
   margin-left: 22%;
 }
+select option{
+  background-color: var(--nevada);
+  color: var(--white);
+}

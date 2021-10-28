@@ -91,5 +91,26 @@ class CreditRepository extends ServiceEntityRepository
         ;
         return $db;
     }
+    public function findMinTaeg($val2)
+    {
+        $db = $this->createQueryBuilder('c')
+            ->select('p.taeg')
+            ->andWhere('c.id = :val1')
+            ->setParameter('val1', $val2)
+            ->Join('c.taux', 't')
+            ->Join('t.sous_taux', 's')
+            ->Join('s.sous_taux_period', 'p')
+            ->orderBy('p.taeg', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getResult()
+        ;
+        if(count($db)>0){
+        return $db[0]["taeg"];
+        }
+        else{
+            return null;
+        }
+    }
     
 }

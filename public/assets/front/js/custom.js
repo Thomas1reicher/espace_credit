@@ -55,6 +55,7 @@ jQuery(function ($) {
     });
     function recherche(pret,period,montant){
 
+        console.log(pret,period,montant);
         $.post('/recherche',
             {pret : pret,
             period : period,
@@ -85,8 +86,7 @@ jQuery(function ($) {
             });
             }
         }).fail(function(jxh,textmsg,errorThrown){
-            console.log(textmsg);
-            console.log(errorThrown);
+
         });
             
 
@@ -128,7 +128,6 @@ jQuery(function ($) {
         taeg = parseFloat($(".taux-info").attr("data"));
         taeg = taeg / 100;
         duree = parseInt($(".duree-form").val());
-        console.log($(".montant-form"),duree,montant,taeg);
         v1 = (Math.pow((1 + taeg), (1 / 12)) - 1);
         v2 = (1 - Math.pow((1 / (1 + taeg)), (duree / 12)));
         constante3 = (montant * v1 / v2);
@@ -140,7 +139,6 @@ jQuery(function ($) {
         $(".big-num-orange").append("€");
         $(".litle-num-orange").text(',' + Math.floor(constante3_l));
         interet = constante3 * duree;
-        console.log(interet = (interet)-montant)
         $(".interet-info").text(numberWithCommas(interet.toFixed(2)) + "€");
 
     };
@@ -278,7 +276,7 @@ jQuery(function ($) {
 
 
     $('.slide').on('afterChange', function(event, slick, currentSlide){
-        console.log(currentSlide);
+
       }); 
 
     $( "#demande_type_credit_demande").change(function() {
