@@ -52,14 +52,7 @@ jQuery(function ($) {
         recalculate();
         duree = parseInt($(".duree-form").val());
         $(".duree-info").text(duree + " mois");
-        montant = parseInt($(".montant-form").val());
-        if(montant > 999){
-            montantstr=$(this).val();            
-                $(".montant-info").text(numberWithCommas(montant) + ".00€");
-            }
-           else{
-            $(".montant-info").text(montant + ".00€");
-        }
+        
         if($(".modal")){
             setTimeout(function(){ 
                 $(".modal").hide();
@@ -112,15 +105,19 @@ jQuery(function ($) {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         recalculate();
         montant = parseInt($(this).val());
-        if(montant > 999){
-            montantstr=$(this).val();            
-                $(".montant-info").text(numberWithCommas(montant) + ".00€");
-            }
-           else{
-            $(".montant-info").text(montant + ".00€");
-        }
+        
         
     });
+    function chaine(montant){
+        if(montant > 999){
+                        
+                return numberWithCommas(montant) + ".00€";
+            }
+           else{
+            return montant + ".00€";
+        }
+
+    }
     $(".duree-form").change(function () {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         recalculate();
@@ -141,6 +138,7 @@ jQuery(function ($) {
 
     });
     function recalculate() {
+       
         montant = parseInt($(".montant-form").val());
         taeg = parseFloat($(".taux-info").attr("data"));
         taeg = taeg / 100;
@@ -155,7 +153,9 @@ jQuery(function ($) {
         $(".big-num-orange").append(elmt);
         $(".big-num-orange").append("€");
         $(".litle-num-orange").text(',' + Math.floor(constante3_l));
-        interet = constante3 * duree;
+        montantinteret = constante3 * duree;
+        $(".montant-info").text(numberWithCommas(montantinteret.toFixed(2)) + "€");
+        interet = montantinteret -montant;
         $(".interet-info").text(numberWithCommas(interet.toFixed(2)) + "€");
 
     };
