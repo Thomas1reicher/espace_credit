@@ -127,6 +127,27 @@ jQuery(function ($) {
         collectionHolder.appendChild(item);
         collectionHolder.dataset.index++;
     });
+    $(".display-none-list").click(function (e) {
+        ul = $(this).parent().next().find("ul");
+        
+        if(ul.length == 0) {
+        ul = $(this).parent().parent();
+
+        }
+        console.log(ul);
+        if($(this).text() == '+'){
+   
+       
+        ul.show();
+        $(this).text("-");
+        } else{
+
+            ul.hide();
+            $(this).text("+");
+        }
+
+
+    });
 });
 
 
