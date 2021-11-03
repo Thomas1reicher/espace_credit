@@ -3,7 +3,7 @@
 <div class="regroup-div">
     <div class="left-form">
         <div class="titre-taux-black" style="min-height: auto">Prêt mobilité</div>
-        <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">1,99%*</span></div><br><br>
+        <div class="txt-black" style="color: orange">TAEG à partir de <span class="big-number-orange">{{tauxmin}}%*</span></div><br><br>
         <div class="div-btn-cred redirect-button" style="margin-bottom: 20px;margin-left: auto;margin-right: auto;width: 100%;display: none">
             <div style="width: 100%;background-color: var(--web-orange);border-radius: 7px;">
                 <a href="#redirect-simulation" class="link-pret"><p class="demande-pret nous-cont montserrat-medium-white-14px">SIMULER UN PRET</p></a>
@@ -39,7 +39,7 @@
                       {% set first = false %}
 
                   {% endif %}
-                        <option value="{{taux.taux}}">{{taux.nom}}</option>
+                        <option value="{{tauxmin}}">{{taux.nom}}</option>
                     {% endfor %}
                   </select>
               </div>
@@ -69,7 +69,7 @@
             <div class="desc-div" style="line-height: 1.5;">
                 <div class="txt-black txt-low-weight-white">Total à rembourser: <span class=" montant-info numbers-right">14.000€</span></div>
                 <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="interet-info numbers-right">2.330€</span></div>
-                <div class="txt-black txt-low-weight-white">TAEG: <span data="{{objFirst.taux}}" class="numbers-right taux-info">{{objFirst.taux}}%*</span></div>
+                <div class="txt-black txt-low-weight-white">TAEG: <span data="{{tauxmin}}" class="numbers-right taux-info">{{tauxmin}}%*</span></div>
                 <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
             </div>
             <div class="div-btn-cred" style="margin-bottom: 40px;margin-top: 40px">

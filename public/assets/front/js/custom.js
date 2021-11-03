@@ -1,12 +1,25 @@
+function removePrototype(e) {
+    li = $(e).parent().parent();
+    datai = $(e).attr('data-index');
+    ul = li.parent();
+    ul.attr("data-index",parseInt(ul.attr("data-index")-1));
+    li.remove();
+    child = ul.children();
+    child.each(function() {
 
+        id = $(this).find(".delete-img").attr('data-index');
+        if(parseInt(id) != 1 ){
+            //this.replace(id ,parseInt(id)-1);
+            console.log(this);
+            console.log(this.innerHTML.replace("["+id,"["+parseInt(id)-1));
+        }
+    })
+
+}
 
 jQuery(function ($) {
   
 
-    $(".delete-img").click(function (e) {
-        alert("test");
-
-    });
     $(".add_item_link").click(function (e) {
         const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
         const item = document.createElement('li');

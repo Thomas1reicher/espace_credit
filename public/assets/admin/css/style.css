@@ -79433,3 +79433,8 @@ ul{
 li::marker{
 	display:none;
 }
+.no-btn{
+  background: transparent;
+    border: none;
+ 
+}

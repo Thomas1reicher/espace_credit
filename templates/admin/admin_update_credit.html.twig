@@ -25,15 +25,15 @@
             	{% for key,item in form.taux %}
                 		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
 						 <h4 class="c-grey-900">
-				Taux n°{{key +1}}
-			</h4>
+							Taux n°{{key +1}} <button class="no-btn display-none-list">-</button>
+						</h4>
                      <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(item.nom)}}</div></div>
                     <div class="div-input-contact">{{form_widget(item.nom , {'value': item.vars.data.nom})}}</div>
                     
 					<ul class="sous_taux" data-index="{{ item.sous_taux|length > 0 ? item.sous_taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/sous_taux.twig' with { 'item': item.sous_taux.vars.prototype } %}'>
             			{% for key2,item2 in item.sous_taux %}
 						<h4 class="c-grey-900">
-				Periode n° {{key2 +1}}
+				Periode n° {{key2 +1}} <button class="no-btn display-none-list">-</button>
 			</h4>
                 			<li class="element-input  darken-1 card-panel" id="{{ key2  }}">
 								<div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Periode</div></div>
@@ -44,7 +44,7 @@
 							{% for key3,item3 in item2.sous_taux_period %}
 							<li>
 								<h4 class="c-grey-900">
-									Interval montant n° {{key3 +1}}
+									Interval montant n° {{key3 +1}} 
 								</h4>
 								<div >
 									<div >

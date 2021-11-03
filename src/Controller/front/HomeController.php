@@ -131,10 +131,12 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT AUTO']);
+        $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretAuto',
-            'pret' => $obj
+            'pret' => $obj,
+            'tauxmin' => $tauxmin
         ]);
     }
 
@@ -146,10 +148,12 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT MOTO']);
+        $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretMoto',
-            'pret' => $obj
+            'pret' => $obj ,
+            'tauxmin' => $tauxmin
         ]);
     }
 
@@ -161,10 +165,14 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
+        $tauxmin = $repo->findMinTaeg($obj->getId());
+        var_dump($tauxmin);
+        die();
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretMobi',
-            'pret' => $obj
+            'pret' => $obj ,
+            'tauxmin' => $tauxmin
         ]);
     }
 
@@ -176,10 +184,12 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT TRAVAUX']);
+        $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretTravaux',
-            'pret' => $obj
+            'pret' => $obj ,
+            'tauxmin' => $tauxmin
         ]);
     }
 
