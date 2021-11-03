@@ -166,8 +166,7 @@ class HomeController extends AbstractController
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT MOBILITÉ']);
         $tauxmin = $repo->findMinTaeg($obj->getId());
-        var_dump($tauxmin);
-        die();
+
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretMobi',
