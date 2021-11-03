@@ -131,12 +131,12 @@ class HomeController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT AUTO']);
-        $tauxmin = $repo->findMinTaeg($obj->getId());
+        $repot=$entityManager->getRepository(Taux::class);
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretAuto',
             'pret' => $obj,
-            'tauxmin' => $tauxmin
+            'repo' => $repot
         ]);
     }
 
@@ -147,13 +147,14 @@ class HomeController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Credit::class);
+        $repot=$entityManager->getRepository(Taux::class);
         $obj = $repo->findOneBy(['nom' => 'PRÊT MOTO']);
-        $tauxmin = $repo->findMinTaeg($obj->getId());
+        
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
             'title' => 'pretMoto',
             'pret' => $obj ,
-            'tauxmin' => $tauxmin
+            'repo' => $repot
         ]);
     }
 
