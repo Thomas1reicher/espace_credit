@@ -131,7 +131,7 @@ jQuery(function ($) {
         ul = $(this).parent().next().find("ul");
         
         if(ul.length == 0) {
-        ul = $(this).parent().parent();
+        ul = $(this).parent().parent().find("ul");
 
         }
         console.log(ul);
