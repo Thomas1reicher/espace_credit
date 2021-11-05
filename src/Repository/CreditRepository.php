@@ -91,6 +91,24 @@ class CreditRepository extends ServiceEntityRepository
         ;
         return $db;
     }
+    public function findMoisMax($val1,$val3)
+    {
+        $db = $this->createQueryBuilder('c')
+            ->select('s.periode_deb')
+            ->Join('c.taux', 't')
+            ->andWhere('t.id = :val')
+            ->setParameter('val', $val1)
+            ->Join('t.sous_taux', 's')
+            ->Join('s.sous_taux_period', 'p')
+            ->andWhere('p.montant_min <= :val2')
+            ->andWhere('p.montant_max >= :val2')
+            ->setParameter('val2', $val3)
+            ->orderBy('s.periode_deb', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+        return $db;
+    }
     public function findMinTaeg($val2)
     {
         $db = $this->createQueryBuilder('c')

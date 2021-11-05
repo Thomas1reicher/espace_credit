@@ -220,7 +220,10 @@ class Demandecredit
      * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $numero_compte;
-
+    /**
+     * @ORM\Column(type="boolean", length=20, nullable=true)
+     */
+    private $assurance_vie;
     /**
      * @ORM\Column(type="datetime", length=20, nullable=true)
      */
@@ -1968,6 +1971,18 @@ class Demandecredit
     public function setDateNaissanceMariee(?\DateTimeInterface $date_naissance_mariee): self
     {
         $this->date_naissance_mariee = $date_naissance_mariee;
+
+        return $this;
+    }
+
+    public function getAssuranceVie(): ?bool
+    {
+        return $this->assurance_vie;
+    }
+
+    public function setAssuranceVie(?bool $assurance_vie): self
+    {
+        $this->assurance_vie = $assurance_vie;
 
         return $this;
     }

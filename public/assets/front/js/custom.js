@@ -49,6 +49,7 @@ jQuery(function ($) {
     }
     $( document ).ready(function() {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
         duree = parseInt($(".duree-form").val());
         $(".duree-info").text(duree + " mois");
@@ -59,6 +60,16 @@ jQuery(function ($) {
              }, 11000);
         }
     });
+    function rechercheMax(pret,montant){
+
+        $.post('/recherchedureemax',
+        {pret : pret,
+        montant : montant
+        }
+    ).done( function(response) {
+        $(".duree-info-max").text(response + " mois");
+    });
+}
     function recherche(pret,period,montant){
 
         console.log(pret,period,montant);
@@ -76,7 +87,7 @@ jQuery(function ($) {
             $(".error-div").text("");
             }else{
               
-                $(".error-div").text("Les paramètres de simulation ne sont pas bon");
+          
                 $.post('/rechercheduree',
                 {pret : pret,
                 montant : montant
@@ -86,7 +97,9 @@ jQuery(function ($) {
                     $(".duree-form").val(response);
                     $(".duree-info").text(response + " mois");
                     $(".error-div").text("");
-                    recherche(pret,response,montant)
+                    recherche(pret,response,montant);
+                    rechercheMax(pret,montant);
+
                     recalculate();
                     }else{
                         $(".error-div").text("Les paramètres de simulation ne sont pas bon");
@@ -103,6 +116,7 @@ jQuery(function ($) {
     }
     $(".montant-form").change(function () {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
         montant = parseInt($(this).val());
         
@@ -120,6 +134,7 @@ jQuery(function ($) {
     }
     $(".duree-form").change(function () {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
         duree = parseInt($(this).val());
         $(".duree-info").text(duree + " mois");
@@ -133,9 +148,10 @@ jQuery(function ($) {
     });
     $(".select-credit").change(function () {
  
-        recalculate();
+        
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
-
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
     });
     function recalculate() {
        

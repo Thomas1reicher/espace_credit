@@ -266,5 +266,23 @@ class HomeController extends AbstractController
             return new Response("error", 200);
         }
     }
+    /**
+     * @Route("/recherchedureemax", name="rechercheDureeMax")
+     * @param Request $request
+     * @return Response
+     */
+    public function rechercheDureeMax(Request $request)    
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $repo1=$entityManager->getRepository(Credit::class);
+        $test = $repo1->findMoisMax($_POST["pret"],$_POST["montant"]);
+        if(count($test)>0){
+           
+            return new Response($test[0]["periode_deb"], 200);
+        }
+        else{
+            return new Response("error", 200);
+        }
+    }
 
 }

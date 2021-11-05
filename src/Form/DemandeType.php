@@ -114,7 +114,7 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de naissance',
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => '1900-01-01'
         ])
         ->add('date_naissance_mariee', BirthdayType::class,[
@@ -123,7 +123,7 @@ class DemandeType extends AbstractType
             ],
             'label' => 'Date de naissance',
             'required' => false,
-            'format' => 'yyyy-MM-dd',
+            'format' => 'dd-MM-yyyy',
             'empty_data' => '1900-01-01'
         ])
         ->add('ville_naissance', TextType::class,[
@@ -616,7 +616,14 @@ class DemandeType extends AbstractType
         ])
 
 
-
+        ->add('assurance_vie', CheckboxType::class,[
+            'attr' => [
+                'placeholder' => 'Avez vous une assurance vie ?',
+                'class' => 'input-form input-contact checkbox-css-symfony'
+            ],
+            'label' => 'Avez vous une assurance vie ?',
+            'required' => false
+        ])
         ->add('loyer', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le montant de votre loyer',
