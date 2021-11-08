@@ -66,10 +66,11 @@ class HomeController extends AbstractController
         }*/
         
         return $this->render('front/home.html.twig', [
-            'title' => 'home',
             'objets' => $objets,
             'credits' => $credits,
             'modal' => $modal,
+            'title' => 'Espace Crédits | Les meilleurs taux en Belgique et au Luxembourg',
+            'description' => 'Que ce soit un prêt auto, travaux, perso, Espace Crédits est votre partenaire de confiance en Belgique et Luxembourg avec des taux défiants toute concurrence',
             'repo' =>$repo
          
         ]);
@@ -86,8 +87,9 @@ class HomeController extends AbstractController
         $objets = $repo->findAll();
         return $this->render('front/credits.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'credits',
             'credits' => $objets,
+            'title' => 'Espace Crédits | Découvrez tous nos divers types de crédits',
+            'description' => "Chez Espace Crédits, nous vous proposons plusieurs types de crédits aux meilleurs taux spécialement adaptés à vos besoins et envies. Venez-vite les découvrir ! ",
             'repo' => $repot
         ]);
     }
@@ -99,10 +101,21 @@ class HomeController extends AbstractController
     {
         return $this->render('front/philosophie.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'philo',
+            'title' => 'Espace Crédits | Une affaire de famille et des valeurs',
+            'description' => 'Composé de trois personnes, Espace Crédits est une entreprise à taille humaine et familiale focalisée sur vos besoins et vos projets. ',
         ]);
     }
-
+    /**
+     * @Route("/mentionslegales", name="mentionslegales")
+     */
+    public function mentionslegales()
+    {
+        return $this->render('front/mention.html.twig', [
+            'controller_name' => 'HomeController',
+            'title' => 'Espace Crédits | Mentions Légales',
+            'description' => 'Découvrez-ici nos mentions légales',
+        ]);
+    }
     /**
      * @Route("/pretPerso", name="pretPerso")
      */
@@ -117,8 +130,9 @@ class HomeController extends AbstractController
 
         return $this->render('front/pret-perso.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'pretPerso',
             'pret' => $obj,
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre prochain prêt perso',
+            'description' => "Un besoin d'argent immédiat ? Qu'il s'agisse de l'achat de meubles, d'un déménagement ou d'un voyage, Espace Crédits vous accompagne dans vos projets",
             'tauxmin' => $tauxmin
         ]);
     }
@@ -134,8 +148,9 @@ class HomeController extends AbstractController
         $repot=$entityManager->getRepository(Taux::class);
         return $this->render('front/pret-auto.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'pretAuto',
             'pret' => $obj,
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre prochain prêt auto',
+            'description' => "Un achat de véhicule neuf ou d'occasion de prévu ? Espace Crédits vous trouvera le meilleur taux du marché afin de financer votre voiture de rêve.",
             'repo' => $repot
         ]);
     }
@@ -152,8 +167,9 @@ class HomeController extends AbstractController
         
         return $this->render('front/pret-moto.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'pretMoto',
             'pret' => $obj ,
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre prochain prêt moto',
+            'description' => 'Un achat de moto de prévu ? Espace Crédits vous trouvera le meilleur taux du marché afin de financer votre deux-roues.',
             'repo' => $repot
         ]);
     }
@@ -170,8 +186,9 @@ class HomeController extends AbstractController
 
         return $this->render('front/pret-mobi.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'pretMobi',
             'pret' => $obj ,
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre prochain prêt mobilité',
+            'description' => 'Un achat de vélo, trottinette ou overboard de prévu ? Espace Crédits vous trouvera le meilleur taux du marché afin de financer votre engin de mobilité douce.',
             'tauxmin' => $tauxmin
         ]);
     }
@@ -187,8 +204,9 @@ class HomeController extends AbstractController
         $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/pret-travaux.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'pretTravaux',
             'pret' => $obj ,
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre prochain prêt travaux',
+            'description' => 'Envie de réaménagement et de renouveau dans votre chez-vous ? Espace Crédits vous trouvera le meilleur taux du marché afin de financer vos travaux.',
             'tauxmin' => $tauxmin
         ]);
     }
@@ -204,7 +222,8 @@ class HomeController extends AbstractController
         $tauxmin = $repo->findMinTaeg($obj->getId());
         return $this->render('front/regroupement.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'regroupement',
+            'title' => 'Espace Crédits | Découvrez nos taux pour votre regroupement de prêts',
+            'description' => 'Afin de mieux gérer votre budget, le regroupement de crédits vous permettra de rassembler tous vos prêts en un seul. Espace Crédits vous accompagne.',
             'pret' => $obj->getTaux()[0],
             'tauxmin' => $tauxmin
         ]);
@@ -217,7 +236,8 @@ class HomeController extends AbstractController
     {
         return $this->render('front/carte-credit.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'carteCredit',
+            'title' => 'Espace Crédits | Découvrez notre carte de crédit Cofidis ',
+            'description' => "Les courtiers d'Espace Crédits vous aideront à trouver la carte la plus adaptée à vos besoins en fonction de vos habitudes et situation financière.",
         ]);
     }
 
@@ -228,7 +248,8 @@ class HomeController extends AbstractController
     {
         return $this->render('front/entreprise.html.twig', [
             'controller_name' => 'HomeController',
-            'title' => 'entreprise',
+            'title' => 'Espace Crédits | Découvrez nos crédits pour les entreprises',
+            'description' => "Espace Crédits propose des solutions de financement pour les entreprises, artisans, et indépendants. Leasing, Renting ou Crédit d'Affaires.",
         ]);
     }
       /**

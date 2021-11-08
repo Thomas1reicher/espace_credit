@@ -1,7 +1,72 @@
 {% extends 'front/base-front.html.twig' %}
+{% block title %}{{title}}{% endblock %}
+{% block description %}{{description}}{% endblock %}
 {% block body %}
     {{ form_start(form) }}
-  
+    <div class="form-pret form-demande">
+   <div class="div-form-pret">
+        <div class="div-titre-form">
+          <h1 class="titre-form animate-enter1">
+              Crédit actuel demandé </h1>
+        </div>
+        
+        <div class="inputs label-form montserrat-medium-white-14px" style="width: 99%;">
+          <div style="width: 99%;float: left">Types de prêt</div>
+          <div class="div-input-preview" style="width: 99%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
+          {% set first = true %}
+              {% set objFirst = "" %}
+              {% for i , objet1 in objets %}
+                {% if first %}
+                    {% set objFirst = objet1 %}
+                    {% set first = false %}
+                {% endif %}
+                  <option class="txt-low-weight-white" value="{% if (repo.findMinTaeg(objet1.id)) %} {{repo.findMinTaeg(objet1.id)}} {% else %} {{objet1.taux}} {% endif %}" data="{{objet1.nom}}" data-mintaeg="{{repo.findMinTaeg(objet1.id)}}" data-credit="{{objet1.id}}">{{objet1.credit.nom}}{% if objet1.nom != "" %} - {{objet1.nom}}{% endif %}</option>
+
+              {% endfor %}
+              </select>
+          </div>
+          <div style="width: 99%;float: left">Montant <span style="font-weight: 100;" class="span-euro">- euro</span></div>
+          <div class="div-input-preview" style="width: 99%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="{% if(objet.getMontantCredit)  %}{{objet.getMontantCredit}}{% else %} 12000 {% endif %}"/></div>
+          <div style="width: 99%;float: left">Durée <span style="font-weight: 100;" class="span-mois">- mois</span></div>
+          <div class="div-input-preview" style="width: 99%;float: left"><!--<input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/>-->
+            <select class="input-form duree-form txt-low-weight-white">
+              <option value="24">24</option>
+              <option value="30">30</option>
+              <option value="36">36</option>
+              <option value="42">42</option>
+              <option value="48">48</option>
+              <option value="60">60</option>
+              <option value="72">72</option>
+              <option value="84">84</option>
+              <option value="96">96</option>
+              <option value="108">108</option>
+              <option value="120">120</option>
+            </select> 
+          </div>
+          <div style="width: 99%;float: left" class="error-div"> </div>
+        </div>
+
+        <div class="txt-black big-number-orange big-num-orange" style="width: 100%;float: left;padding-top: 10px;padding-bottom: 5px">
+        <div class="label-form  montserrat-medium-white-14px" style="width: 99%;float: left;">Mensualités</div>526<span class="litle-num-orange" style="font-size: 25px">,23</span>€</div>
+        <div class="desc-div" style="line-height: 1.5;">
+            <div class="txt-black txt-low-weight-white">Total à rembourser: <span class="numbers-right montant-form montant-info">14.000€</span></div>
+            <div class="txt-black txt-low-weight-white">Intérêts à payer: <span class="numbers-right interet-info">2.330€</span></div>
+            <div class="txt-black txt-low-weight-white">TAEG: <span data="{% if (repo.findMinTaeg(objFirst.id)) %} {{repo.findMinTaeg(objFirst.id)}} {% else %} {{objFirst.taux}}{% endif %}" dataclass="{{objFirst.nom}}" class="numbers-right taux-info">{% if (repo.findMinTaeg(objFirst.id)) %} {{repo.findMinTaeg(objFirst.id)}}{% else %} {{objFirst.taux}}{% endif %}%*</span></div>
+            <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
+            <div class="txt-black txt-low-weight-white">Durée Max: <span class="numbers-right duree-info-max">60 mois</span></div>
+        </div>
+        <div class="div-btn-cred demandecred" style="margin-bottom: 40px;margin-top: 40px">
+            <div class="btn-pret" style="width: 200px;">
+                 <a href="{{ path('demandePret') }}" class="link-pret">
+                     <p class="demande-pret montserrat-medium-white-14px">DEMANDE DE CRÉDIT</p>
+                 </a>
+            </div>
+        </div>
+        <div class="typo" style="color: var(--white)">
+            *Taux préférentiel sous réserve d'acceptation du dossier par la société de crédit.
+        </div>
+   </div>
+</div>
     <div class="div-lightgrey">
         <div class="div-centre-titre"> 
             <h1 class="titre-part montserrat-bold-white-32px animate-enter" style="color: var(--nevada)">

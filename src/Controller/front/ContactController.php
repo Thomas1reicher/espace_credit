@@ -50,7 +50,8 @@ class ContactController extends AbstractController{
         return $this->render('front/contact.html.twig', [
             'controller_name' => 'HomeController',
             "form" => $form->createView(),
-            'title' => 'contact',
+            'title' => 'Espace Crédits | Contactez-nous afin de connaître nos taux',
+            'description' => 'Prenons contact avec votre projet, via mail, téléphone ou même à notre agence située à Athus, à deux pas de la frontière avec le Luxembourg',
         ]);
     }
 }

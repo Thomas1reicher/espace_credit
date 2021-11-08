@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Taux;
 
 class DemandeController extends AbstractController{
 
@@ -24,6 +25,9 @@ class DemandeController extends AbstractController{
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Demandecredit::class);
         $repo1=$entityManager->getRepository(Credit::class);
+        $credits = $repo1->findAll();
+        $repoT=$entityManager->getRepository(Taux::class);
+        $objets = $repoT->findAll();
         $objet = $repo->findOneBy(['token' => $token]);
         if($objet == null){
             return $this->redirectToRoute('accueil');
@@ -76,11 +80,15 @@ class DemandeController extends AbstractController{
             'form' => $form->createView(),
             'title' => 'demande',
             'objet' => $objet,
+            'objets' => $objets,
             'pretPerso' => $tauxPerso,
             'pretAuto' => $tauxVoiture,
             'pretMoto' => $tauxMoto,
             'pretMobilite' => $tauxMobilite,
             'pretTravaux' => $tauxTravaux,
+            'repo' => $repoT,
+            'title' => 'Espace Crédits | Formulaire de prêt',
+            'description' => "Demandez votre prêt auto, prêt moto, prêt perso et bien d'autres en quelques clics grâce à ce formulaire",
             //'currentCred' => $objet->getTypeCreditDemande()->getNom()
         ]);
     }
@@ -190,6 +198,8 @@ class DemandeController extends AbstractController{
         if(!$first){
             $clip_form_data.=", ".$ref;
         }
+        var_dump($ref);
+        die();
    
         $api = new Api();
         $resultat=$api->any50_callWS($clip_form_data);

@@ -1,4 +1,6 @@
 {% extends 'front/base-front.html.twig' %}
+{% block title %}{{title}}{% endblock %}
+{% block description %}{{description}}{% endblock %}
 {% block body %}
     <div class="txt-black" style="width: 100%;float: left;color: var(--nevada);">
     {{ form_start(form) }}

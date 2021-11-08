@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block titre %}Parent{% endblock%}</title>
+    <title>{% block title %}{% endblock%}</title>
     <meta name="robots" content="noindex,nofollow">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
+    <meta name="description" content="{% block description %}  {% endblock %}">
     <title>menu</title>
     <link rel="stylesheet" href="{{ asset('assets/front/css/style_base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
@@ -34,7 +35,7 @@
         <div class="div-cat-header ">
             <div class="cat-header {% if( title == "home") %} main-cat  {% endif %}">
             <a href="{{ path('accueil') }}">
-                <img class="img-home-header {% if( title == "home") %}" src="{{asset('assets/front/img/trac--2-12@1x.png')}}"{% else %}unfixed-home" src="{{asset('assets/front/img/trac-2.png')}}"{% endif %}>
+                <img class="img-home-header {% if( title == "home") %}" src="{{asset('assets/front/img/trac--2-12@1x.png')}}"{% else %} src="{{asset('assets/front/img/trac-2.png')}}"{% endif %}>
             </a>
             </div>
             <div class="cat-header {% if( title == "credits") %} main-cat  {% endif %}">
@@ -446,7 +447,7 @@
 
     <div class="txt-black" style="float: left;width: 100%;text-align: center;background-color: #2f2f2f;color: white;padding-top: 10px;padding-bottom: 10px;
     font-weight: 300!important;font-size:13px;">
-        Mentions légales - Gestion des données - CGU<br>@2021 - Agence de communication A3COM
+        <a href="{{ path('mentionslegales') }}" style="color:white!important;">Mentions légales</a> - Gestion des données - CGU<br>@2021 - Agence de communication A3COM
     </div>
     <style>
         

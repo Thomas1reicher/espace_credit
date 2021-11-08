@@ -78,6 +78,8 @@ class DemandePretController extends AbstractController{
             'controller_name' => 'HomeController',
             "form" => $form->createView(),
             'title' => 'demandePret',
+            'title' => 'Espace Crédits | Demandez votre prêt en quelques minutes',
+            'description' => "Demandez votre prêt auto, prêt moto, prêt perso et bien d'autres en quelques clics grâce à ce formulaire",
             'objets' => $objets,
         ]);
     }

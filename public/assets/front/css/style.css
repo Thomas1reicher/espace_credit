@@ -1033,3 +1033,29 @@ select option{
   float: left;
   width: 28%;
 }
+.div-mention{
+  width:80%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flow-root;
+  font-family: var(--font-family-montserrat);
+  padding-bottom: 2%;
+}
+.h1-mention{
+  margin-top:5%;
+  color:var(--web-orange);
+}
+.l-mention{
+  color: var(--dove-gray);
+  font-size: 18px !important;
+  font-weight: 700;
+}
+.form-demande{
+  width: 100%;
+  padding-left:0px;
+}
+.form-demande .div-form-pret {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
