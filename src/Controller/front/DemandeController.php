@@ -74,8 +74,7 @@ class DemandeController extends AbstractController{
             for($i=0;$i<count($objet->getPersonneCharge());$i++){
                 $objet->getPersonneCharge()[$i]->getAge();
             }
-            var_dump($objet->getAcompte());
-            die();
+            
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             if(isset($_POST['final'])){
