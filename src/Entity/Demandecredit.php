@@ -1825,10 +1825,7 @@ class Demandecredit
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le nombre de crédit(s) doit contenir uniquement des chiffres'
         ]));
-        $metadata->addPropertyConstraint('montant_credit', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
+        
         $metadata->addPropertyConstraint('duree_credit', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',
             'message' => 'La durée doit contenir uniquement des chiffres'
