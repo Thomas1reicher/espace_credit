@@ -1496,7 +1496,7 @@ class Demandecredit
         return $this->type_taux_voiture;
     }
 
-    public function setTypeTauxVoiture(string $type_taux_voiture): self
+    public function setTypeTauxVoiture(?string $type_taux_voiture): self
     {
         $this->type_taux_voiture = $type_taux_voiture;
 
