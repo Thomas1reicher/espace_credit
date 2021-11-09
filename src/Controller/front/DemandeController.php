@@ -43,21 +43,30 @@ class DemandeController extends AbstractController{
         if($_POST){
         if($form->isSubmitted() && $form->isValid()){
             switch ($objet->getTypeCreditDemande()->getNom()) {
-               /* case  'PRÊT AUTO':
+                case  'PRÊT AUTO':
+                    if(isset($_POST['tauxVoiture'])):
                     $tauxActuel = $_POST['tauxVoiture'];
+                    endif;
                     break;
                 case 'PRÊT MOTO':
+                    if(isset($_POST['tauxMoto'])):
                     $tauxActuel = $_POST['tauxMoto'];
+                endif;
                     break;
                 case 'PRÊT TRAVAUX':
+                    if(isset($_POST['tauxTravaux'])):
                     $tauxActuel = $_POST['tauxTravaux'];
+                    endif;
                 break;
                 
                 default:
-                $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();*/
+                $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();
              
             }
-
+            if(isset($tauxActuel)){
+                $tauxrech= $repoT->find(intval($tauxActuel));
+                $objet->setTauxCreditDemande($tauxrech);
+            }
             if(isset($_POST['montant'])){
                $objet->setMontantCredit($_POST['montant']);
             }
@@ -75,8 +84,8 @@ class DemandeController extends AbstractController{
                 $objet->getPersonneCharge()[$i]->getAge();
             }
             
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
+           
+            $entityManager->flush();
             if(isset($_POST['final'])){
                 if($_POST['final']){
                     $this->UpdateApi($token);
