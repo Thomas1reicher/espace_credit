@@ -48,9 +48,16 @@ jQuery(function ($) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
     }
     $( document ).ready(function() {
+        if($('select#demande_type_credit_demande').length > 0) {
+            option = $('select#demande_type_credit_demande').find('option:selected').html();
+            selectoption = $(".form-select-demande").find('option');
+            test = $(selectoption).filter(function () { return $(this).attr('data-credit-nom') == option; });
+            $(test).prop("selected", true);
+        }
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
+        changehidden();
         duree = parseInt($(".duree-form").val());
         $(".duree-info").text(duree + " mois");
         
@@ -101,6 +108,7 @@ jQuery(function ($) {
                     rechercheMax(pret,montant);
 
                     recalculate();
+                  
                     }else{
                         $(".error-div").text("Les paramètres de simulation ne sont pas bon");
                     }
@@ -113,11 +121,13 @@ jQuery(function ($) {
         });
     }
     recalculate();
+  
     }
     $(".montant-form").change(function () {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
+        changehidden();
         montant = parseInt($(this).val());
         
         
@@ -136,6 +146,7 @@ jQuery(function ($) {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
+        changehidden();
         duree = parseInt($(this).val());
         $(".duree-info").text(duree + " mois");
         
@@ -152,7 +163,16 @@ jQuery(function ($) {
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
+        changehidden();
     });
+    function changehidden(){
+
+        if($('.input-taeg').length > 0) {
+            taux = $('.taux-info').attr("data");
+            $('.input-taeg').val(taux);
+        }
+
+    }
     function recalculate() {
        
         montant = parseInt($(".montant-form").val());
@@ -336,6 +356,10 @@ jQuery(function ($) {
             $('.credit-vehicule-form').show();
         }
     });
+    $('.div-btn-cred btn-pret').click(function(){
+        alert('testtt');
+
+    });
 
     var distance = $('.gray-div').offset().top,
     $window = $(window);
@@ -347,6 +371,47 @@ jQuery(function ($) {
         else{
             $('.gray-div').css('position', 'unset');
         }
+    });
+    $('.form-select-demande').change(function() {
+        nom = $(this).find('option:selected').attr('data-credit-nom');
+        type= $('select#demande_type_credit_demande').find('option');
+        test = type.filter(function () { return $(this).html() == nom; });
+        $(test).prop("selected", true);
+        $('.credit-form').each(function(index, value) {
+            $(this).hide();
+          });
+          if(nom == "PRÊT PERSO"){
+              $('.credit-perso-form').show();
+          }
+          else if(nom == "PRÊT AUTO"){
+              $('.credit-auto-form').show();
+          }
+          else if(nom == "PRÊT MOTO"){
+              $('.credit-moto-form').show();
+          }
+          else if(nom == "PRÊT MOBILITÉ"){
+              $('.credit-mobilite-form').show();
+          }
+          else if(nom == "PRÊT TRAVAUX"){
+              $('.credit-travaux-form').show();
+          }
+          if(nom == "PRÊT AUTO" || nom == "PRÊT MOTO"){
+              $('.credit-vehicule-form').show();
+          }
+          recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
+        changehidden();
+    });
+    $('select#demande_type_credit_demande').change(function() {
+        option = $(this).find('option:selected').html();
+        selectoption = $(".form-select-demande").find('option');
+        test = $(selectoption).filter(function () { return $(this).attr('data-credit-nom') == option; });
+        $(test).prop("selected", true);
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
+        changehidden();
     });
 });
 

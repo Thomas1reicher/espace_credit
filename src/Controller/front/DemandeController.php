@@ -57,12 +57,31 @@ class DemandeController extends AbstractController{
                 $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();
              
             }
+
+            if(isset($_POST['montant'])){
+               $objet->setMontantCredit($_POST['montant']);
+            }
+
+            if(isset($_POST['month'])){
+                $objet->setDureeCredit($_POST['month']);
+            }
+            if(isset($_POST['taeg'])){
+                $objet->setTauxCredit(floatval($_POST['taeg']));
+            }
+           /* if(isset($_POST['tauxPerso'])){
+                $objet->setTypeTauxPerso($_POST['tauxPerso']);
+            }*/
             for($i=0;$i<count($objet->getPersonneCharge());$i++){
                 $objet->getPersonneCharge()[$i]->getAge();
             }
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            $this->UpdateApi($token);
+            if(isset($_POST['final'])){
+                if($_POST['final']){
+                    $this->UpdateApi($token);
+                }
+            }
+    
             return $this->redirectToRoute('accueil');
         }else{
             foreach ($form->getErrors(true) as $error) {
@@ -93,6 +112,7 @@ class DemandeController extends AbstractController{
         ]);
     }
     public function UpdateApi($token){
+     
         $entityManager = $this->getDoctrine()->getManager();
         $repo=$entityManager->getRepository(Demandecredit::class);
         $objet = $repo->findOneBy(['token' => $token]);
@@ -193,13 +213,12 @@ class DemandeController extends AbstractController{
                             $clip_form_data .= "mensualite".($i+1).": ".$objet->getCreditCours()[$i]->getMontantEcheance()." \n";
                             $clip_form_data .= "solde".($i+1).": ".$objet->getCreditCours()[$i]->getSolde()." \n";
                         }
-                        $clip_form_data .= "status: ".$etapeForm ;
+                        
                    
         if(!$first){
             $clip_form_data.=", ".$ref;
         }
-        var_dump($ref);
-        die();
+
    
         $api = new Api();
         $resultat=$api->any50_callWS($clip_form_data);
@@ -210,17 +229,12 @@ class DemandeController extends AbstractController{
             die();
         }else{
 
-            if($first){
-                $objet->setStrongId($resultat["ref_credit"]);
-                $em = $this->getDoctrine()->getManager();
-                $em->flush();
-            }
-            if(($etape+1)>=10){
+           
                 $objet->setToken("");
                 $em = $this->getDoctrine()->getManager();
                 $em->flush();
 
-            }
+            
            
         }
   

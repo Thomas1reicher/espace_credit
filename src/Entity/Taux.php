@@ -40,6 +40,10 @@ class Taux
          * @ORM\ManyToOne(targetEntity=Credit::class, inversedBy="credits")
          */
         private $credit;
+    /**
+         * @ORM\ManyToOne(targetEntity=Credit::class, inversedBy="taux_credit_demande")
+         */
+        private $credit_demande;
 
         /**
          * @ORM\OneToMany(targetEntity=SousTaux::class, mappedBy="id_taux",cascade={"persist"})
@@ -168,6 +172,18 @@ class Taux
                 $sousTaux->setIdTaux(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCreditDemande(): ?Credit
+    {
+        return $this->credit_demande;
+    }
+
+    public function setCreditDemande(?Credit $credit_demande): self
+    {
+        $this->credit_demande = $credit_demande;
 
         return $this;
     }

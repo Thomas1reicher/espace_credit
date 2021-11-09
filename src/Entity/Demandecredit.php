@@ -29,7 +29,10 @@ class Demandecredit
      * @ORM\ManyToOne(targetEntity="Credit", inversedBy="credit")
      */
     private $type_credit_demande;
-
+      /**
+     * @ORM\ManyToOne(targetEntity="Taux", inversedBy="credit_demande")
+     */
+    private $taux_credit_demande;
     /**
      * @ORM\Column(type="string", length=15 , nullable=true)
      */
@@ -508,6 +511,10 @@ class Demandecredit
      * @ORM\OneToMany(targetEntity="CreditEnCours", mappedBy="demande_credit",cascade={"persist"})
      */
     private $credit_cours;
+        /**
+     * @ORM\Column(type="string", length=70, nullable=true)
+     */
+    private $type_taux_perso;
 
     public function __construct()
     {
@@ -1826,10 +1833,7 @@ class Demandecredit
             'pattern' => '/^[0-9]+$/',
             'message' => 'La durée doit contenir uniquement des chiffres'
         ]));
-        $metadata->addPropertyConstraint('taux_credit', new Validator\Regex([
-            'pattern' => '/^[0-9]+[.]?[0-9]*$/',
-            'message' => 'Le taux doit contenir uniquement des chiffres'
-        ]));
+    
         $metadata->addPropertyConstraint('montant_echeance', new Validator\Regex([
             'pattern' => '/^[0-9]+$/',
             'message' => 'Le montant doit contenir uniquement des chiffres'
@@ -1983,6 +1987,30 @@ class Demandecredit
     public function setAssuranceVie(?bool $assurance_vie): self
     {
         $this->assurance_vie = $assurance_vie;
+
+        return $this;
+    }
+
+    public function getTauxCreditDemande(): ?Taux
+    {
+        return $this->taux_credit_demande;
+    }
+
+    public function setTauxCreditDemande(?Taux $taux_credit_demande): self
+    {
+        $this->taux_credit_demande = $taux_credit_demande;
+
+        return $this;
+    }
+
+    public function getTypeTauxPerso(): ?string
+    {
+        return $this->type_taux_perso;
+    }
+
+    public function setTypeTauxPerso(?string $type_taux_perso): self
+    {
+        $this->type_taux_perso = $type_taux_perso;
 
         return $this;
     }

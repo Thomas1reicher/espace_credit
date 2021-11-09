@@ -426,6 +426,41 @@ class DemandeType extends AbstractType
             ],
             'required' => false
         ])
+        ->add('type_taux_perso', ChoiceType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Type de prêt perso',
+            'choices'  => [
+                'Besoins familiaux (autre)' => 'Besoins familiaux (autre)',
+                'Divers (autres)' => 'Divers (autres)',
+                'Habitation (autres)' => 'Habitation (autres)',
+                'Confort maison : meubles, textiles, peinture' => 'Confort maison : meubles, textiles, peinture',
+                'Cuisine équipée' => 'Cuisine équipée',
+                'Décès, communion, naissance' => 'Décès, communion, naissance',
+                'Déménagement' => 'Déménagement',
+                'Divorce' => 'Divorce',
+                'Électro-ménager' => 'Électro-ménager',
+                'Énergie'  => 'Énergie',
+                'Frais d’installation'  => 'Frais d’installation',
+                'Frais d’étude'  => 'Frais d’étude',
+                'Frais divers'  => 'Frais divers',
+                'Frais judiciaire'  => 'Frais judiciaire',
+                'Frais médicaux'  => 'Frais médicaux',
+                'Frais permis voiture'  => 'Frais permis voiture',
+                'Hifi, multimédia, gsm, ordi'  => 'Hifi, multimédia, gsm, ordi',
+                'Loisirs ; voyage, sport, musique, ..'  => 'Loisirs ; voyage, sport, musique, ..',
+                'Mariage emprunteur'  => 'Mariage emprunteur',
+                'Mariage enfant'  => 'Mariage enfant',
+                'Outillage non professionnel'  => 'Outillage non professionnel',
+                'Petits travaux maison, jardin'  => 'Petits travaux maison, jardin',
+                'Remboursement prêt chez autre organisme'  => 'Remboursement prêt chez autre organisme',
+                'Remboursement prêt chez assuré'  => 'Remboursement prêt chez assuré',
+                'Rénovation'  => 'Rénovation',
+                'Réparation voiture'  => 'Réparation voiture',
+            ],
+            'required' => false
+        ])
         ->add('temps_contrat', ChoiceType::class,[
             'attr' => [
                 'class' => 'input-form input-contact'

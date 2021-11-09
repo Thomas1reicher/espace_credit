@@ -12,7 +12,7 @@
         
         <div class="inputs label-form montserrat-medium-white-14px" style="width: 99%;">
           <div style="width: 99%;float: left">Types de prêt</div>
-          <div class="div-input-preview" style="width: 99%;float: left"><select class="input-form select-credit txt-low-weight-white"/>
+          <div class="div-input-preview" style="width: 99%;float: left"><select class="input-form select-credit txt-low-weight-white form-select-demande"/>
           {% set first = true %}
               {% set objFirst = "" %}
               {% for i , objet1 in objets %}
@@ -20,16 +20,16 @@
                     {% set objFirst = objet1 %}
                     {% set first = false %}
                 {% endif %}
-                  <option class="txt-low-weight-white" value="{% if (repo.findMinTaeg(objet1.id)) %} {{repo.findMinTaeg(objet1.id)}} {% else %} {{objet1.taux}} {% endif %}" data="{{objet1.nom}}" data-mintaeg="{{repo.findMinTaeg(objet1.id)}}" data-credit="{{objet1.id}}">{{objet1.credit.nom}}{% if objet1.nom != "" %} - {{objet1.nom}}{% endif %}</option>
+                  <option class="txt-low-weight-white" data-credit-nom="{{objet1.credit.nom}}" value="{% if (repo.findMinTaeg(objet1.id)) %} {{repo.findMinTaeg(objet1.id)}} {% else %} {{objet1.taux}} {% endif %}" data="{{objet1.nom}}" data-mintaeg="{{repo.findMinTaeg(objet1.id)}}" data-credit="{{objet1.id}}">{{objet1.credit.nom}}{% if objet1.nom != "" %} - {{objet1.nom}}{% endif %}</option>
 
               {% endfor %}
               </select>
           </div>
           <div style="width: 99%;float: left">Montant <span style="font-weight: 100;" class="span-euro">- euro</span></div>
-          <div class="div-input-preview" style="width: 99%;float: left"><input class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="{% if(objet.getMontantCredit)  %}{{objet.getMontantCredit}}{% else %} 12000 {% endif %}"/></div>
+          <div class="div-input-preview" style="width: 99%;float: left"><input name="montant" class="input-form montant-form txt-low-weight-white" placeholder="Entez un montant" value="{% if(objet.getMontantCredit)  %}{{objet.getMontantCredit}}{% else %} 12000 {% endif %}"/></div>
           <div style="width: 99%;float: left">Durée <span style="font-weight: 100;" class="span-mois">- mois</span></div>
           <div class="div-input-preview" style="width: 99%;float: left"><!--<input class="input-form duree-form txt-low-weight-white" placeholder="Sélectionnez une durée" value="60"/>-->
-            <select class="input-form duree-form txt-low-weight-white">
+            <select class="input-form duree-form txt-low-weight-white" name="month" {% if(objet.getDureeCredit)  %} value="{{objet.getDureeCredit}}" {% endif %}>
               <option value="24">24</option>
               <option value="30">30</option>
               <option value="36">36</option>
@@ -54,10 +54,11 @@
             <div class="txt-black txt-low-weight-white">TAEG: <span data="{% if (repo.findMinTaeg(objFirst.id)) %} {{repo.findMinTaeg(objFirst.id)}} {% else %} {{objFirst.taux}}{% endif %}" dataclass="{{objFirst.nom}}" class="numbers-right taux-info">{% if (repo.findMinTaeg(objFirst.id)) %} {{repo.findMinTaeg(objFirst.id)}}{% else %} {{objFirst.taux}}{% endif %}%*</span></div>
             <div class="txt-black txt-low-weight-white">Durée: <span class="numbers-right duree-info">60 mois</span></div>
             <div class="txt-black txt-low-weight-white">Durée Max: <span class="numbers-right duree-info-max">60 mois</span></div>
+            <input type="hidden" class="input-taeg" style="display:none;" name="taeg" />
         </div>
         <div class="div-btn-cred demandecred" style="margin-bottom: 40px;margin-top: 40px">
             <div class="btn-pret" style="width: 200px;">
-                 <a href="{{ path('demandePret') }}" class="link-pret">
+                 <a href="{{ path('demandePret') }}" onclick="alert('test');" class="link-pret">
                      <p class="demande-pret montserrat-medium-white-14px">DEMANDE DE CRÉDIT</p>
                  </a>
             </div>
@@ -100,37 +101,9 @@
             <div class="div-demande-form txt-black div-center-demande-pret">
                 Crédit perso
             </div>
-            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt perso</div></div>
-            <div class="div-input-contact">
-                <select class="input-contact input-form select-credit" name="tauxPerso"/>
-                        <option value="Besoins familiaux (autre)">Besoins familiaux (autre)</option>
-                        <option value="Divers (autres)">Divers (autres)</option>
-                        <option value="Habitation (autres)">Habitation (autres)</option>
-                        <option value="Confort maison : meubles, textiles, peinture">Confort maison : meubles, textiles, peinture</option>
-                        <option value="Cuisine équipée">Cuisine équipée</option>
-                        <option value="Décès, communion, naissance">Décès, communion, naissance</option>
-                        <option value="Déménagement">Déménagement</option>
-                        <option value="Divorce">Divorce</option>
-                        <option value="Électro-ménager">Électro-ménager</option>
-                        <option value="Énergie">Énergie</option>
-                        <option value="Frais d’installation">Frais d’installation</option>
-                        <option value="Frais d’étude">Frais d’étude</option>
-                        <option value="Frais divers">Frais divers</option>
-                        <option value="Frais judiciaire">Frais judiciaire</option>
-                        <option value="Frais médicaux">Frais médicaux</option>
-                        <option value="Frais permis voiture">Frais permis voiture</option>
-                        <option value="Hifi, multimédia, gsm, ordi">Hifi, multimédia, gsm, ordi</option>
-                        <option value="Loisirs ; voyage, sport, musique, ..">Loisirs ; voyage, sport, musique, ..</option>
-                        <option value="Mariage emprunteur">Mariage emprunteur</option>
-                        <option value="Mariage enfant">Mariage enfant</option>
-                        <option value="Outillage non professionnel">Outillage non professionnel</option>
-                        <option value="Petits travaux maison, jardin">Petits travaux maison, jardin</option>
-                        <option value="Remboursement prêt chez autre organisme">Remboursement prêt chez autre organisme</option>
-                        <option value="Remboursement prêt chez assuré">Remboursement prêt chez assuré</option>
-                        <option value="Rénovation">Rénovation</option>
-                        <option value="Réparation voiture">Réparation voiture</option>
-                        
-                </select>
+              <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.type_taux_perso)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.type_taux_perso)}}
+               
             </div>
         </div>
 
@@ -272,7 +245,7 @@
                 {% endfor %}
             </ul>
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;">
-                 <a class="add_item_link link-pret" data-collection-holder-class="personne_charge">
+                 <a class="add_item_link link-pret" style="text-align: center;"  data-collection-holder-class="personne_charge">
                      <p class="demande-pret montserrat-medium-white-14px">Ajouter une personne a charge</p>
                  </a>
             </div>
@@ -424,7 +397,7 @@
             </ul>
             <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify;float:left;width: 100%;">
             <div class="btn-pret" style="width: 200px; height: 40px;   margin: auto;    display: flex;">
-                 <a class="add_item_link link-pret" data-collection-holder-class="credit_cours">
+                 <a class="add_item_link link-pret" style="text-align: center;" data-collection-holder-class="credit_cours">
                      <p class="demande-pret montserrat-medium-white-14px">Ajouter un credit en cours</p>
                  </a>
             </div>
@@ -439,7 +412,11 @@
                 {{form_widget(form.Envoyer)}}
             </div>
         </div>
-
+ <div class="input-title-contact" style="color: grey;font-size: 13px;text-align: justify">
+            <div style="width: 100%!important;float: left;padding-top: 40px;padding-bottom: 100px;height: auto;text-align: center;">            
+                <input type="submit" id="demande_final" name="final" class="demande-pret montserrat-medium-white-14px btn" style="background-color: orange; border: none; border-radius: 10px;" value="FINALISER MA DEMANDE"></inpu>
+            </div>
+        </div>
     
     {{ form_end(form,{render_rest: false}) }}
     </div>
