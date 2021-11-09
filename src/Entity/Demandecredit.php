@@ -1557,7 +1557,7 @@ class Demandecredit
         return $this->acompte;
     }
 
-    public function setAcompte(string $acompte): self
+    public function setAcompte(?string $acompte): self
     {
         $this->acompte = $acompte;
         return $this;
@@ -1568,7 +1568,7 @@ class Demandecredit
         return $this->marque;
     }
 
-    public function setMarque(string $marque): self
+    public function setMarque(?string $marque): self
     {
         $this->marque = $marque;
         return $this;
@@ -1579,7 +1579,7 @@ class Demandecredit
         return $this->modele;
     }
 
-    public function setModele(string $modele): self
+    public function setModele(?string $modele): self
     {
         $this->modele = $modele;
         return $this;
@@ -1590,7 +1590,7 @@ class Demandecredit
         return $this->type_vendeur;
     }
 
-    public function setTypeVendeur(string $type_vendeur): self
+    public function setTypeVendeur(?string $type_vendeur): self
     {
         $this->type_vendeur = $type_vendeur;
         return $this;
@@ -1601,7 +1601,7 @@ class Demandecredit
         return $this->nom_vendeur;
     }
 
-    public function setNomVendeur(string $nom_vendeur): self
+    public function setNomVendeur(?string $nom_vendeur): self
     {
         $this->nom_vendeur = $nom_vendeur;
         return $this;
