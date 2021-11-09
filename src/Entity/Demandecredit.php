@@ -1857,10 +1857,7 @@ class Demandecredit
 
 
 
-        $metadata->addPropertyConstraint('acompte', new Validator\Regex([
-            'pattern' => '/^[0-9]+$/',
-            'message' => 'Le montant doit contenir uniquement des chiffres'
-        ]));
+       
         $metadata->addPropertyConstraint('nom_vendeur', new Validator\Regex([
             'pattern' => '/^[a-zA-Zâäàêëéèîïôöûüù ]+[\-]?[ a-zA-Zâäàêëéèîïôöûüù]*$/',
             'message' => 'Le nom du vendeur doit contenir uniquement des lettres'
