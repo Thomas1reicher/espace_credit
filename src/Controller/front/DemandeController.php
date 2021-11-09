@@ -42,6 +42,7 @@ class DemandeController extends AbstractController{
         $form->handleRequest($request);
         if($_POST){
         if($form->isSubmitted() && $form->isValid()){
+
             switch ($objet->getTypeCreditDemande()->getNom()) {
                 case  'PRÊT AUTO':
                     if(isset($_POST['tauxVoiture'])):
@@ -63,6 +64,7 @@ class DemandeController extends AbstractController{
                 $tauxActuel = $objet->getTypeCreditDemande()->getTaux()[0]->getTaux();
              
             }
+            
             if(isset($tauxActuel)){
                 $tauxrech= $repoT->find(intval($tauxActuel));
                 $objet->setTauxCreditDemande($tauxrech);

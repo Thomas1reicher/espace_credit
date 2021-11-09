@@ -26,7 +26,11 @@
                                                     {% if u|slice(26) == "date_debut" %}
                                                         <p>{{val|date("m/d/Y")}}</p>
                                                     {% else %}
-                                                        <p>{{val}}</p>
+                                                        {% if val.date.timezone is defined %}
+                                                            {{ val|date('m/d/Y') }}
+                                                        {% else %}
+                                                            {{ val }}
+                                                        {% endif %}
                                                     {% endif %}
                                                 {% endfor %}
                                             {% endfor %}
@@ -34,7 +38,12 @@
                                         {% else %}
                                         <div class="form-group">
                                         <label >{{key|slice(25)}} :</label>
-                                        <p> <b>{{ variable }}</b></p>
+                                          {% if variable.timezone is defined %}
+                                                          <p> <b>  {{ variable|date('m/d/Y') }}</b></p>
+                                            {% else %}
+                                                       <p> <b>     {{ variable }} </b></p>
+                                            {% endif %}
+                                  
                                         </div>
                                         {% endif %}
                                     {% endfor %}
