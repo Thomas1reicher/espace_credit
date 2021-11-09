@@ -1869,7 +1869,7 @@
   }
 }
 
-@media(max-width: 450px){
+@media(max-width: 4650px){
   /*page philo*/
   .demandecred{
     width: 97%!important;
@@ -2082,7 +2082,7 @@ min-height: 650px !important;
   }
 }
 
-@media(max-width: 450px){
+@media(max-width: 465px){
   .company .slick-slide{
     padding-top: 10%!important;
   }
@@ -2144,7 +2144,7 @@ min-height: 650px !important;
   }
 }
 
-@media(min-width: 450px){
+@media(min-width: 465px){
   .demandecred{
     width: 45%!important;
     height: 40px!important;
@@ -2225,7 +2225,7 @@ min-height: 650px !important;
 .div-input-contact ul{
   list-style-type: none;
 }
-@media (max-width: 450px){
+@media (max-width: 465px){
 .taux-menu {
     
     float: left;

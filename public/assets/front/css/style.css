@@ -947,7 +947,7 @@ transform: translate(0, 25px);
   margin-top: 1%;
   margin-bottom:1%;
 }
-@media(max-width: 450px){
+@media(max-width: 465px){
 
 .tr-desk{
   display: none;
