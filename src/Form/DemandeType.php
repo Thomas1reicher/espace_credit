@@ -865,7 +865,7 @@ class DemandeType extends AbstractType
         ->add('Envoyer', SubmitType::class, [
             'attr' => ['class' => 'demande-pret montserrat-medium-white-14px',
                         'style' => 'background-color: orange;border: none;border-radius: 10px;'],
-            'label' => 'ENVOYER MA DEMANDE'
+            'label' => 'ENREGISTER MA DEMANDE'
         ]);
     }
 

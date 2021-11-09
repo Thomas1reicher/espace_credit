@@ -147,10 +147,8 @@ class DemandeController extends AbstractController{
         }
       
         $etapeForm = "MID".$etape;
-        $test = $clip_form_data="recipient: recipient@site.be \n".
+        $test = $clip_form_data="recipient: thomas.reicher@a3com.lu \n".
                         "subject: DEMANDE DE PRET \n".
-                        "return_link_url: http://www.site.be \n".
-                        "redirect: http://www.site.be/merci.html \n".
                         "email: ".$objet->getMail()." \n".
                         "email1:".$objet->getMail()." \n".
                         "langue: FR \n".
@@ -163,6 +161,7 @@ class DemandeController extends AbstractController{
                         "montant: ".$objet->getMontantCredit()." \n".
                         "titre1: ".$objet->getTitre()." \n".
                         "rgpd_consentement_txt1: Exemple de texte de consentement RGPD|| \n".
+                        "rgpd_consentement1: 1\n".
                         "marque: ".$objet->getMarque()." \n".
                         "denomination: ".$objet->getModele()." \n".
                         "annee_construction: ".$this->formatDate($objet->getDatePremiereCirculation())." \n".
@@ -190,6 +189,7 @@ class DemandeController extends AbstractController{
                         "cp_employeur1: ".$objet->getCodePostalEmployeur()." \n".
                         "localite_employeur1: ".$objet->getVilleEmployeur()." \n".
                         "pays_employeur1: ".$objet->getPaysEmployeur()." \n".
+                        "telephone_employeur1:".$objet->getTelEmployeur()." n".
                         "employ_date1: ".$this->formatDate($objet->getDateContrat())." \n".
                         "revenu1: ".$objet->getSalaire()." \n".
                         "r_chomage1: ".$objet->getChomage()." \n".
@@ -224,6 +224,7 @@ class DemandeController extends AbstractController{
                             $clip_form_data .= "echeance".($i+1).": ".$this->formatDate($objet->getCreditCours()[$i]->getDateDebut())." \n";
                             $clip_form_data .= "mensualite".($i+1).": ".$objet->getCreditCours()[$i]->getMontantEcheance()." \n";
                             $clip_form_data .= "solde".($i+1).": ".$objet->getCreditCours()[$i]->getSolde()." \n";
+                            $clip_form_data .= "taeg".($i+1).": ".$objet->getCreditCours()[$i]->getTaux()." \n";
                         }
                         
                    
