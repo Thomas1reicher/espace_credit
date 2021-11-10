@@ -3,10 +3,10 @@
 {% block description %}{{description}}{% endblock %}
 {% block body %}
 <div class="regroup-div">
-    <div class="left-form">
+    <div class="left-form form-auto">
         <div class="titre-taux-black" style="min-height: auto">Prêt auto</div>
          {% for taux in pret.taux %}
-            <div class="txt-black" style="color: orange">{{taux.nom}} : TAEG à partir de <span class="big-number-orange">{% if (repo.findMinTaeg(taux.id)) %} {{repo.findMinTaeg(taux.id)}} {% else %} {{taux.taux}} {% endif %}%*</span></div>
+            <div class="txt-black p-taeg" style="color: orange">{{taux.nom}} : TAEG à partir de <span class="big-number-orange">{% if (repo.findMinTaeg(taux.id)) %} {{repo.findMinTaeg(taux.id)}} {% else %} {{taux.taux}} {% endif %}%*</span></div>
             <!--<div class="txt-black" style="color: orange">Occasion : TAEG à partir de <span class="big-number-orange">3,59%*</span></div><br><br>-->
         {% endfor %}       
         <div class="div-btn-cred redirect-button" style="margin-bottom: 20px;margin-left: auto;margin-right: auto;width: 100%;display: none">
@@ -14,7 +14,7 @@
                 <a href="#redirect-simulation" class="link-pret"><p class="demande-pret nous-cont montserrat-medium-white-14px">SIMULER UN PRET</p></a>
             </div>
         </div>
-        <div class="txt-black" style="margin-top: 3%;">Tout roule pour financer l'achat de votre véhicule</div><br>
+        <div class="txt-black r-txt-auto" style="margin-top: 3%;">Tout roule pour financer l'achat de votre véhicule</div><br>
         <div class="txt-black txt-low-weight-black">
             Le prêt auto vous permet de financer votre véhicule neuf ou d'occasion.<br><br>
             Vous remboursez des mensualités fixes, prévues à l'avance sur une durée déterminée.<br><br>

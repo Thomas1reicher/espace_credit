@@ -2,9 +2,9 @@
 {% block title %}{{title}}{% endblock %}
 {% block description %}{{description}}{% endblock %}
 {% block body %}
-<div class="img-header-homes" style="min-height: 248px;background-image:url({{asset('assets/front/img/shutterstock-1890826546-3@1x.png')}});">
+<div class="img-header-homes photo-banner-home" style="min-height: 248px;background-image:url({{asset('assets/front/img/shutterstock-1890826546-3@1x.png')}});">
     <div style="background-color: var(--black);min-height: 248px">
-        <div style="color: white;padding-top: 50px;padding-left: 50px;" class="titre-taux-black">Nos crédits <br>aux meilleurs taux</div>
+        <div style="color: white;padding-top: 50px;padding-left: 50px;" class="titre-taux-black titre-taux-credits">Nos crédits <br>aux meilleurs taux</div>
     </div>
 </div>
 
@@ -91,14 +91,16 @@
               breakpoint: 925,
               settings: {
                 slidesToShow:2,
-                slidesToScroll: 2
+                slidesToScroll: 2,
+                dots: true
               }
             },
             {
               breakpoint: 620,
               settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                dots: true
               }
             }
         ]

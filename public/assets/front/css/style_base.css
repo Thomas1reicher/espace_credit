@@ -1724,6 +1724,14 @@
   list-style-type: none;
   background-color: #f8f8f8;
 }
+.slider-credits .slick-dots{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+  list-style-type: none;
+  background-color: #f8f8f8;
+}
 .slick-dots{
   display: flex;
   justify-content: center;
@@ -1737,7 +1745,24 @@
   align-items: center;
   padding-top: 10px;
 }
+.slider-credits .slick-slide{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
 .slider-partenaires .slick-dots button{
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--nevada);
+  text-indent: -9999px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.slider-credits .slick-dots button{
   display: block;
   width: 0.5rem;
   height: 0.5rem;
@@ -1762,9 +1787,14 @@
   margin-right: 2px;
 }
  .slick-active button{
-  background-color: var(--web-orange);
+  background-color: var(--web-orange)!important;
 }
 .slider-partenaires .slick-track{
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+.slider-credits .slick-track{
   display: flex;
   align-items: center;
   background-color: #f8f8f8;
@@ -2167,11 +2197,11 @@ min-height: 650px !important;
     height: 75vh!important;
   }
   .div-right-opacity{
-    height: 88%;
+    height: 92%;
     margin-top: 6%;
-    width: 80%!important;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 84%!important;
+    margin-left: 8%;
+    margin-right: 8%;
   }
   .philosophiebtn{
     margin-left: auto!important;
@@ -2210,7 +2240,7 @@ min-height: 650px !important;
     line-height: 38px;
   }
   .txt-p-cred{
-    font-size: 28px!important;
+    font-size: 24px!important;
   }
   .txt-p-cred.fontt{
     font-size: 28px!important;
@@ -2228,6 +2258,16 @@ min-height: 650px !important;
 }
 .div-input-contact button{
   border-radius: 15%;
+}
+.form-pret .input-form{
+
+  width: 85%;
+}
+.titre-carte-t{
+  font-size: 30px!important;
+}
+.div-slide-button-align {
+  height: 166px!important;
 }
 }
 
@@ -2330,6 +2370,22 @@ min-height: 650px !important;
   background-size: 340px!important;
   background-position: top!important;
   min-height: 300px!important;
+}
+.p-taeg{
+  font-size: 16px;
+}
+.p-taeg .big-number-orange{
+  font-size: 24px;
+}
+.form-auto .div-btn-cred{
+  margin-top: 8%!important;
+}
+.r-txt-auto{
+  font-weight:700!important;
+}
+.div-emprunte-argent {
+  padding-left: 10%;
+  padding-right: 10%;
 }
 }
 .mob-br{
