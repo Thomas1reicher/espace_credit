@@ -2249,6 +2249,11 @@ min-height: 650px !important;
   .input-contact, .input-title-contact {
     width: 85%!important;
     font-size: 20px!important;
+    
+}
+.div-input-contact input {
+  padding-left: 4%!important;
+  
 }
 .txt-div-rgpd{
   width: 85%!important;
@@ -2267,7 +2272,64 @@ min-height: 650px !important;
   font-size: 30px!important;
 }
 .div-slide-button-align {
-  height: 166px!important;
+  height: 251px!important;
+}
+.photo-banner-home{
+
+  background-size: 980px;
+    background-position-x: -294px;
+    max-height: 159px;
+    min-height: 137px!important;
+
+}
+.titre-taux-credits {
+  font-size: 30px;
+}
+.cred-typo{
+  color: var(--web-orange)!important;
+}
+.div-quest-cred{
+  font-size:17px;
+}
+.sous-back-div{
+  min-height: 147px!important;
+}
+.back-div-philo{
+
+      background-size: 1044px;
+      background-position-x: -460px;
+      min-height: 122px!important;
+      max-height: 147px;
+}
+.titre-philo-mob{
+  font-size: 30px!important;
+  padding-left: 30px;
+
+}
+.philo-section-div .div-btn-cred{
+  margin-top: 10%;
+}
+.ul-philo li {
+
+    display: block!important;
+}
+.icones-philo{
+  margin-top:5%;
+}
+.table-desc{
+  display: none;
+}
+.table-mob{
+  display:block!important;
+  padding-left: 8%;
+}
+.td-contact{
+  width: 82%!important;
+  font-size: 20px;
+  padding-bottom: 2%;
+}
+.td-contact.new-part{
+  padding-top: 5%;
 }
 }
 
@@ -2289,6 +2351,7 @@ min-height: 650px !important;
   .div-footer-mob{
     display: none;
   }
+
 }
 /*
 @media(max-width: 1200px){
