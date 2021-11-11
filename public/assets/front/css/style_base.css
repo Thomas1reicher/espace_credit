@@ -2173,8 +2173,17 @@ min-height: 650px !important;
   .slider-credits .slide{
     background-color:white !important;
   }
+  .div-right-opacity .titre-part{
+    padding-top: 2%;
+  }
+
+}
+@media (max-width: 340px){
+.div-partenaire-conf {
+    height: 107vh!important;
 }
 
+}
 @media(max-width: 360px){
   .company .slick-slide{
     padding-top: 13%!important;
@@ -2182,6 +2191,7 @@ min-height: 650px !important;
 }
 
 @media(max-width: 800px){
+  
   .div-right-opacity{
     width: 100%!important;
     font-size: 10px!important;

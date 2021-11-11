@@ -55,7 +55,7 @@ class DemandePretController extends AbstractController{
             $em->persist($demande);
             $em->flush();
             $email = (new TemplatedEmail())
-            ->from('thomas1.reicher@gmail.com')
+            ->from('credit@espace-credits.be')
             ->to($demande->getMail())
             ->subject('Demande de prêt')
             ->htmlTemplate('emails/token.html.twig')
@@ -64,7 +64,7 @@ class DemandePretController extends AbstractController{
             $mailer->send($email);
             $body = new TextPart('test');
             $headers = (new Headers())
-                ->addMailboxListHeader('From' , ['thomas1.reicher@gmail.com'])
+                ->addMailboxListHeader('From' , ['credit@espace-credits.be'])
                 ->addMailboxListHeader('To' , [$demande->getMail()])
                 ->addTextHeader('Subject','Some Subject')
                 ->addTextHeader('X-Auto-Response-Suppress', 'OOF,AutoReply');

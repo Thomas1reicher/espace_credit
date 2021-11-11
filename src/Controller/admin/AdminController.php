@@ -207,8 +207,7 @@ class AdminController extends AbstractController
             }
             else{
                 $string = var_export($this->getErrorMessages($form), true);
-                var_dump($string);
-                die();
+             
             }
         }
             return $this->render('admin/admin_update_credit.html.twig', [

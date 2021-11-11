@@ -154,7 +154,7 @@ class DemandeController extends AbstractController{
                         "langue: FR \n".
                         "montant: ".$objet->getMontantCredit()." \n".
                         "duree: ".$objet->getDureeCredit()." \n".
-                        "taeg: 12.5 \n".
+                        "taeg: ".$objet->getTauxCredit()." \n".
                         "mensualite: 265.94 \n".       
                         "nom1: ".$objet->getNom()." \n".
                         "prenom1: ".$objet->getPrenom()." \n".
@@ -239,7 +239,7 @@ class DemandeController extends AbstractController{
         if($resultat["erreur"]!=""){
     
             var_dump($resultat["erreur"]);
-            die();
+          
         }else{
 
            
