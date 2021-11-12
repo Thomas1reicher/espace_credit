@@ -170,7 +170,6 @@ class DemandeController extends AbstractController{
                         "nom_vendeur: ".$objet->getNomVendeur()." \n".
                         "type_support: ".$objet->getTypeVendeur()." \n".
                         "ref_apporteur:  \n".				
-                        "rgpd_consentement1: 1 \n".
                         "ci1: ".$objet->getNumeroCarteIdentite()." \n".
                         "rn1: ".$objet->getRegistreNationalBelge()." \n".
                         "etat_civil1: ".$objet->getEtatCivil()." \n".
