@@ -159,7 +159,13 @@ jQuery(function ($) {
     });
     $(".select-credit").change(function () {
  
-        
+        val = $(this).find('option:selected').attr("data-credit");
+        if(val != "1"){
+            $('.min-option-perso').hide();
+        }
+        else{
+            $('.min-option-perso').show();
+        }
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
