@@ -3,7 +3,7 @@
 {% block description %}{{description}}{% endblock %}
 {% block body %}
     {{ form_start(form) }}
-    <div class="form-pret form-demande">
+    <div class="form-pret form-demande form-demande-t ">
    <div class="div-form-pret">
         <div class="div-titre-form">
           <h1 class="titre-form animate-enter1">
@@ -108,7 +108,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt auto</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form " name="tauxVoiture"/>
+                <select class="input-contact input-form input-tauxvoiture" name="tauxVoiture"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretAuto.taux %}
@@ -130,7 +130,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt moto</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form " name="tauxMoto" />
+                <select class="input-contact input-form input-tauxmoto" name="tauxMoto" />
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretMoto.taux %}
@@ -172,7 +172,7 @@
             </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">Type de prêt travaux</div></div>
             <div class="div-input-contact">
-                <select class="input-contact input-form "  name="tauxTravaux"/>
+                <select class="input-contact input-form input-tauxtravaux"  name="tauxTravaux"/>
                     {% set first = true %}
                     {% set objFirst = "" %}
                     {% for taux in pretTravaux.taux %}

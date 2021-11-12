@@ -72,7 +72,9 @@ class DemandeController extends AbstractController{
             if(isset($_POST['montant'])){
                $objet->setMontantCredit($_POST['montant']);
             }
-
+            if(isset($_POST['mensualite'])){
+                $objet->setMensualite($_POST['mensualite']);
+            }
             if(isset($_POST['month'])){
                 $objet->setDureeCredit($_POST['month']);
             }
@@ -155,7 +157,7 @@ class DemandeController extends AbstractController{
                         "montant: ".$objet->getMontantCredit()." \n".
                         "duree: ".$objet->getDureeCredit()." \n".
                         "taeg: ".$objet->getTauxCredit()." \n".
-                        "mensualite: 265.94 \n".       
+                        "mensualite: ".$objet->getMensualite()." \n".       
                         "nom1: ".$objet->getNom()." \n".
                         "prenom1: ".$objet->getPrenom()." \n".
                         "montant: ".$objet->getMontantCredit()." \n".

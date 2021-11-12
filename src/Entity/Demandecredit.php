@@ -72,7 +72,10 @@ class Demandecredit
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $info_comp;
-
+    /**
+     * @ORM\Column(type="string", length=25, nullable=true)
+     */
+    private $mensualite;
     /**
      * @ORM\Column(type="string", length=200 , nullable=true)
      */
@@ -2005,6 +2008,18 @@ class Demandecredit
     public function setTypeTauxPerso(?string $type_taux_perso): self
     {
         $this->type_taux_perso = $type_taux_perso;
+
+        return $this;
+    }
+
+    public function getMensualite(): ?string
+    {
+        return $this->mensualite;
+    }
+
+    public function setMensualite(?string $mensualite): self
+    {
+        $this->mensualite = $mensualite;
 
         return $this;
     }

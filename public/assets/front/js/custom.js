@@ -166,7 +166,7 @@ jQuery(function ($) {
         changehidden();
     });
     function changehidden(){
-
+        credit = $(".form-select-demande").find('option:selected').attr('data-credit-nom');
         if($('.input-taeg').length > 0) {
             taux = $('.taux-info').attr("data");
             $('.input-taeg').val(taux);
@@ -193,6 +193,9 @@ jQuery(function ($) {
         $(".montant-info").text(numberWithCommas(montantinteret.toFixed(2)) + "€");
         interet = montantinteret -montant;
         $(".interet-info").text(numberWithCommas(interet.toFixed(2)) + "€");
+        if($('.input-mensualite').length){
+            $('.input-mensualite').val(constante3);
+        }
 
     };
     $(".div-bande-header").hover(function () {
@@ -406,13 +409,67 @@ jQuery(function ($) {
     $('select#demande_type_credit_demande').change(function() {
         option = $(this).find('option:selected').html();
         selectoption = $(".form-select-demande").find('option');
-        test = $(selectoption).filter(function () { return $(this).attr('data-credit-nom') == option; });
+        if(option == "PRÊT MOTO"){
+            val = $('.input-tauxmoto option:selected').val();
+       
+            test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+
+        }else if(option == "PRÊT AUTO"){
+            val = $('.input-tauxvoiture option:selected').val();
+            test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+
+        }
+        else if(option == "PRÊT TRAVAUX"){
+            val = $('.input-tauxtravaux option:selected').val();
+            test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+
+        }
+        else{
+            test = $(selectoption).filter(function () { return $(this).attr('data-credit-nom') == option; });
+
+        }
         $(test).prop("selected", true);
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
         recalculate();
         changehidden();
     });
+    $('.input-tauxtravaux').change(function() {
+
+        val = $(this).find('option:selected').val();
+        selectoption = $(".form-select-demande").find('option');
+        $(this).find('option:selected').val();
+        test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+        $(test).prop("selected", true);
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
+        changehidden();
+    });
+    $('.input-tauxvoiture').change(function() {
+
+        val = $(this).find('option:selected').val();
+        selectoption = $(".form-select-demande").find('option');
+        test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+        $(test).prop("selected", true);
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
+        changehidden();
+    });
+    $('.input-tauxmoto').change(function() {
+
+        val = $(this).find('option:selected').val();
+        selectoption = $(".form-select-demande").find('option');
+        $(this).find('option:selected').val();
+        test = $(selectoption).filter(function () { return $(this).attr('data-credit') == val; });
+        $(test).prop("selected", true);
+        recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
+        rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
+        recalculate();
+        changehidden();
+    });
+   
 });
 
 

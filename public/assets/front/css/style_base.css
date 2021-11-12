@@ -2176,7 +2176,7 @@ min-height: 650px !important;
   .div-right-opacity .titre-part{
     padding-top: 2%;
   }
-
+  
 }
 @media (max-width: 340px){
 .div-partenaire-conf {
@@ -2191,7 +2191,7 @@ min-height: 650px !important;
 }
 
 @media(max-width: 800px){
-  
+
   .div-right-opacity{
     width: 100%!important;
     font-size: 10px!important;
@@ -2476,4 +2476,8 @@ min-height: 650px !important;
 }
 .mob-br{
   display: none;
+}
+.form-demande-t{
+  max-height: 524px;
+      min-height: 621px!important;
 }
