@@ -126,10 +126,9 @@ jQuery(function ($) {
     $(".montant-form").change(function () {
         val = $('.select-credit').find('option:selected').attr("data-credit");
         montant = parseInt($(this).val());
-        if(val == "1"){
-            $('.min-option-perso').hide();  
-        }
-        else if (val == "6" && montant < 2500){
+        
+       
+         if (val == "6" && montant < 2500){
             $(this).val(2500); 
         }
         else if (val == "8"  && montant < 2500){
@@ -143,6 +142,9 @@ jQuery(function ($) {
         }
         else if (val == "12"  && montant < 2500){
             $(this).val(2500); 
+        }
+        if(montant < 1000){
+            $(this).val(1000);
         }
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
@@ -187,23 +189,50 @@ jQuery(function ($) {
         $('.min-option-moto-neuf').show(); 
         $('.min-option-moto-occas').show();
         $('.min-option-pret-mobi').show();
+        montantF = $('.montant-form');
+        
+        
+      
         if(val == "1"){
+            $(".duree-form").val(12); 
             $('.min-option-perso').show();  
         }
         else if (val == "6"){
-            $('.min-option-voit-neuv').hide();  
+            $(".duree-form").val(24); 
+            $('.min-option-voit-neuv').hide();
+            if ( montant < 2500){
+                $(montantF).val(2500); 
+            }  
         }
         else if (val == "7"){
+            $(".duree-form").val(24); 
             $('.min-option-voit-occas').hide(); 
         }
         else if (val == "8"){
+            $(".duree-form").val(24); 
             $('.min-option-moto-neuf').hide(); 
+            if ( montant < 2500){
+                $(montantF).val(2500);
+                 
+            }
         }
         else if (val == "9"){
+            $(".duree-form").val(24); 
             $('.min-option-moto-occas').hide(); 
         }
         else if (val == "10"){
+            $(".duree-form").val(24); 
             $('.min-option-pret-mobi').hide(); 
+            if (montant > 7500){
+                $(montantF).val(7500);
+            }
+        }
+
+        if (val == "11"  && montant < 2500){
+            $(montantF).val(2500); 
+        }
+         if (val == "12"  && montant < 2500){
+            $(montantF).val(2500); 
         }
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
