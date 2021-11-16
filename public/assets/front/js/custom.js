@@ -143,8 +143,8 @@ jQuery(function ($) {
         else if (val == "12"  && montant < 2500){
             $(this).val(2500); 
         }
-        if(montant < 1000){
-            $(this).val(1000);
+        if(montant < 2500){
+            $(this).val(2500);
         }
         recherche($(".select-credit option:selected").attr("data-credit"),$(".duree-form").val(),parseInt($(".montant-form").val()));
         rechercheMax($(".select-credit option:selected").attr("data-credit"),parseInt($(".montant-form").val()));
