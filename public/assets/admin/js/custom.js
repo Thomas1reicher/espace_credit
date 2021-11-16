@@ -148,6 +148,23 @@ jQuery(function ($) {
 
 
     });
+    $(".delete-li-admin").click(function (e) {
+
+        ul = $(this).parent().parent();
+        li =$(this).parent().remove();
+        child = ul.children();
+        child.each(function() {
+
+            id = $(this).attr('id');
+
+            if(parseInt(id) != 1 ){
+                //this.replace(id ,parseInt(id)-1);
+                console.log(this);
+                console.log(this.innerHTML.replace("["+id,"["+parseInt(id)-1));
+            }
+        })
+
+    });
 });
 
 

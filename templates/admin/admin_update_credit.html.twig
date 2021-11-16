@@ -24,6 +24,7 @@
 				<ul class="taux" data-index="{{ form.taux|length > 0 ? form.taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/taux.html.twig' with { 'item': form.taux.vars.prototype } %}'>
             	{% for key,item in form.taux %}
                 		<li class="element-input  darken-1 card-panel" id="{{ key  }}">
+							<i class="fas fa-trash delete-li-admin" style="float: left;padding-top: 1%;padding-right: 1%;"></i>
 						 <h4 class="c-grey-900">
 							Taux n°{{key +1}} <button type="button" class="no-btn display-none-list">-</button>
 						</h4>
@@ -32,7 +33,7 @@
                     
 					<ul class="sous_taux" data-index="{{ item.sous_taux|length > 0 ? item.sous_taux|last.vars.name + 1 : 0 }}" data-prototype='{% include 'admin/sous_taux.twig' with { 'item': item.sous_taux.vars.prototype } %}'>
             			{% for key2,item2 in item.sous_taux %}
-			
+						<i class="fas fa-trash delete-li-admin" style="float: left;padding-top: 1%;padding-right: 1%;"></i>
 						<h4 class="c-grey-900">
 				Periode n° {{key2 +1}} <button type="button" class="no-btn display-none-list">-</button>
 			</h4>
@@ -44,6 +45,7 @@
 						<ul class="sous_taux_period" data-index="{{ item2.sous_taux_period|length > 0 ? item2.sous_taux_period|last.vars.name + 1 : 0 }}" data-prototype='{% autoescape 'html' %}{% include "admin/sous_taux_period.html.twig" with { "item": item2.sous_taux_period.vars.prototype }|escape %}{% endautoescape %}'>              
 							{% for key3,item3 in item2.sous_taux_period %}
 							<li id="{{ key3   }}">
+								<i class="fas fa-trash delete-li-admin" style="float: left;padding-top: 1%;padding-right: 1%;"></i>
 								<h4 class="c-grey-900">
 									Interval montant n° {{key3 +1}} 
 								</h4>
