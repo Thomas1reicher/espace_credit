@@ -170,7 +170,46 @@ class Demandecredit
      * @ORM\Column(type="datetime", length=30 ,nullable=true)
      */
     private $date_naissance_mariee;
-  
+   /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $profession_mariee;
+     /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $employeur_mariee;
+     /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $salaire_mariee;
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $nom_cohabitant;
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $prenom_cohabitant;
+        /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $registre_national_cohabitant;
+       /**
+     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     */
+    private $date_naissance_cohabitant;
+   /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $profession_cohabitant;
+     /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $employeur_cohabitant;
+     /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $salaire_cohabitant;
     /**
      * @ORM\Column(type="datetime", length=30 ,nullable=true)
      */
@@ -2020,6 +2059,126 @@ class Demandecredit
     public function setMensualite(?string $mensualite): self
     {
         $this->mensualite = $mensualite;
+
+        return $this;
+    }
+
+    public function getProfessionMariee(): ?string
+    {
+        return $this->profession_mariee;
+    }
+
+    public function setProfessionMariee(?string $profession_mariee): self
+    {
+        $this->profession_mariee = $profession_mariee;
+
+        return $this;
+    }
+
+    public function getEmployeurMariee(): ?string
+    {
+        return $this->employeur_mariee;
+    }
+
+    public function setEmployeurMariee(?string $employeur_mariee): self
+    {
+        $this->employeur_mariee = $employeur_mariee;
+
+        return $this;
+    }
+
+    public function getSalaireMariee(): ?string
+    {
+        return $this->salaire_mariee;
+    }
+
+    public function setSalaireMariee(?string $salaire_mariee): self
+    {
+        $this->salaire_mariee = $salaire_mariee;
+
+        return $this;
+    }
+
+    public function getNomCohabitant(): ?string
+    {
+        return $this->nom_cohabitant;
+    }
+
+    public function setNomCohabitant(?string $nom_cohabitant): self
+    {
+        $this->nom_cohabitant = $nom_cohabitant;
+
+        return $this;
+    }
+
+    public function getPrenomCohabitant(): ?string
+    {
+        return $this->prenom_cohabitant;
+    }
+
+    public function setPrenomCohabitant(?string $prenom_cohabitant): self
+    {
+        $this->prenom_cohabitant = $prenom_cohabitant;
+
+        return $this;
+    }
+
+    public function getRegistreNationalCohabitant(): ?string
+    {
+        return $this->registre_national_cohabitant;
+    }
+
+    public function setRegistreNationalCohabitant(?string $registre_national_cohabitant): self
+    {
+        $this->registre_national_cohabitant = $registre_national_cohabitant;
+
+        return $this;
+    }
+
+    public function getDateNaissanceCohabitant(): ?\DateTimeInterface
+    {
+        return $this->date_naissance_cohabitant;
+    }
+
+    public function setDateNaissanceCohabitant(?\DateTimeInterface $date_naissance_cohabitant): self
+    {
+        $this->date_naissance_cohabitant = $date_naissance_cohabitant;
+
+        return $this;
+    }
+
+    public function getProfessionCohabitant(): ?string
+    {
+        return $this->profession_cohabitant;
+    }
+
+    public function setProfessionCohabitant(?string $profession_cohabitant): self
+    {
+        $this->profession_cohabitant = $profession_cohabitant;
+
+        return $this;
+    }
+
+    public function getEmployeurCohabitant(): ?string
+    {
+        return $this->employeur_cohabitant;
+    }
+
+    public function setEmployeurCohabitant(?string $employeur_cohabitant): self
+    {
+        $this->employeur_cohabitant = $employeur_cohabitant;
+
+        return $this;
+    }
+
+    public function getSalaireCohabitant(): ?string
+    {
+        return $this->salaire_cohabitant;
+    }
+
+    public function setSalaireCohabitant(?string $salaire_cohabitant): self
+    {
+        $this->salaire_cohabitant = $salaire_cohabitant;
 
         return $this;
     }

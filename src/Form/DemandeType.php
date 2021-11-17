@@ -126,6 +126,78 @@ class DemandeType extends AbstractType
             'format' => 'dd-MM-yyyy',
             'empty_data' => '1900-01-01'
         ])
+        ->add('profession_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre profession',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Profession',
+            'required' => false
+        ])
+        ->add('employeur_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le nom de votre employeur',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'nom employeur',
+            'required' => false
+        ])
+        ->add('salaire_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le salaire',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Salaire',
+            'required' => false
+        ])
+        ->add('nom_cohabitant', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre nom',
+                'class' => 'input-form input-contact'
+            ],
+            'required' => false
+        ])
+        ->add('prenom_cohabitant', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre prénom',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Prénom',
+            'required' => false
+        ])
+        ->add('date_naissance_cohabitant', BirthdayType::class,[
+            'attr' => [
+                'class' => 'input-form input-contact date-css-symfony'
+            ],
+            'label' => 'Date de naissance',
+            'required' => false,
+            'format' => 'dd-MM-yyyy',
+            'empty_data' => '1900-01-01'
+        ])
+        ->add('profession_cohabitant', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez votre profession',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Profession',
+            'required' => false
+        ])
+        ->add('employeur_cohabitant', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le nom de votre employeur',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'nom employeur',
+            'required' => false
+        ])
+        ->add('salaire_cohabitant', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le salaire',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Salaire',
+            'required' => false
+        ])
         ->add('ville_naissance', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez votre ville de naissance',
@@ -151,6 +223,14 @@ class DemandeType extends AbstractType
             'required' => false
         ])
         ->add('registre_national_mariee', TextType::class,[
+            'attr' => [
+                'placeholder' => 'Entrez le registre national',
+                'class' => 'input-form input-contact'
+            ],
+            'label' => 'Registre national (uniquement pour les belges)',
+            'required' => false
+        ])
+        ->add('registre_national_cohabitant', TextType::class,[
             'attr' => [
                 'placeholder' => 'Entrez le registre national',
                 'class' => 'input-form input-contact'

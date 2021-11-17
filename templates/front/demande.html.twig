@@ -214,7 +214,11 @@
         <div class="div-input-contact date-select">{{form_widget(form.validite_carte_identite)}}</div>
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.etat_civil)}}</div></div>
         <div class="div-input-contact">{{form_widget(form.etat_civil)}}</div>
-        <div class="div-mariee" style="display:none;">
+        
+        <div class="div-mariee" {% if(objet.etatcivil == "Marié") %}  {% else %} style="display:none;" {% endif %}>
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Marié
+            </div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_naissance_mariee)}}</div></div>
             <div class="div-input-contact date-select">{{form_widget(form.date_naissance_mariee)}}</div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_mariee)}}</div></div>
@@ -223,6 +227,31 @@
             <div class="div-input-contact">{{form_widget(form.prenom_mariee)}}</div>
             <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.registre_national_mariee)}}</div></div>
             <div class="div-input-contact">{{form_widget(form.registre_national_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.profession_mariee)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.profession_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.employeur_mariee)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.employeur_mariee)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.salaire_mariee)}}</div></div>
+            <div class="div-input-contact" style="margin-bottom:5%;">{{form_widget(form.salaire_mariee)}}</div>
+        </div>
+        <div class="div-cohabitant" {% if(objet.etatcivil == "Cohabitation") %}  {% else %} style="display:none;" {% endif %} >
+            <div class="div-demande-form txt-black div-center-demande-pret">
+                Cohabitant
+            </div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.date_naissance_cohabitant)}}</div></div>
+            <div class="div-input-contact date-select">{{form_widget(form.date_naissance_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.nom_cohabitant)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.nom_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.prenom_cohabitant)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.prenom_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.registre_national_cohabitant)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.registre_national_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.profession_cohabitant)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.profession_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.employeur_cohabitant)}}</div></div>
+            <div class="div-input-contact">{{form_widget(form.employeur_cohabitant)}}</div>
+            <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.salaire_cohabitant)}}</div></div>
+            <div class="div-input-contact" style="margin-bottom:5%;">{{form_widget(form.salaire_cohabitant)}}</div>
         </div>
 
         <div class="div-input-contact"><div class="input-title-contact txt-black" style="color: grey;font-size: 15px">{{form_label(form.annee_belgique)}}</div></div>
@@ -482,12 +511,23 @@
         $("select#demande_etat_civil").change(function() {
          if($(this).val()=="Marié"){
             $('.div-mariee').show();
-
-         }else{
+            $('.div-cohabitant').hide();
+            $('.div-cohabitant input').val('');
+            $('.div-cohabitant select').val('');
+         }
+         else if($(this).val()=="Cohabitation"){
+            $('.div-cohabitant').show();
             $('.div-mariee').hide();
             $('.div-mariee input').val('');
             $('.div-mariee select').val('');
-
+         }
+         else{
+            $('.div-mariee').hide();
+            $('.div-mariee input').val('');
+            $('.div-mariee select').val('');
+            $('.div-cohabitant').hide();
+            $('.div-cohabitant input').val('');
+            $('.div-cohabitant select').val('');
          }
        });
     });
