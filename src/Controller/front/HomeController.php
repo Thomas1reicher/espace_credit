@@ -116,6 +116,17 @@ class HomeController extends AbstractController
             'description' => 'Découvrez-ici nos mentions légales',
         ]);
     }
+      /**
+     * @Route("/donnees-personnelles", name="donneespersonnelles")
+     */
+    public function donneespersonnelles()
+    {
+        return $this->render('front/donneesperso.html.twig', [
+            'controller_name' => 'HomeController',
+            'title' => 'Espace Crédits | Donnees personnelles',
+            'description' => 'Découvrez-ici nos mentions légales',
+        ]);
+    }
     /**
      * @Route("/pretPerso", name="pretPerso")
      */
