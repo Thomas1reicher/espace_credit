@@ -1067,3 +1067,33 @@ select option{
   padding-bottom: 1%;
   margin-top: 2%;
 }
+@media(max-width: 1380px) and (min-width:800px){
+
+  .div-partenaire-conf {
+    height: 70vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+}
+@media(max-width: 1118px) and (min-width:800px){
+.contacthome{
+  margin-left: 10%!important;
+}
+
+}
+
+.crd-entreprise-titre{
+
+  font-size:50px;
+}
+.slider-entreprise .slick-dots button{
+  text-indent:0px;
+  width: 11em;
+  background-color:transparent!important;
+  text-align: center;
+}
+.slider-entreprise .slick-active button{
+  background-color:transparent!important;
+}
