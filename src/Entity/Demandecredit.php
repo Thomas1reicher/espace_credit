@@ -39,23 +39,23 @@ class Demandecredit
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=20)
      */
     private $prenom;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=20)
      */
     private $nom;
 
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=60)
      */
     private $mail;
 
       /**
-     * @ORM\Column(type="integer", length=100, nullable=true)
+     * @ORM\Column(type="integer", length=5, nullable=true)
      */
     private $etapeform;
     /**
@@ -69,29 +69,29 @@ class Demandecredit
     private $tel;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=90, nullable=true)
      */
     private $info_comp;
     /**
-     * @ORM\Column(type="string", length=25, nullable=true)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $mensualite;
     /**
-     * @ORM\Column(type="string", length=200 , nullable=true)
+     * @ORM\Column(type="string", length=80 , nullable=true)
      */
     private $token;
  /**
-     * @ORM\Column(type="string", length=255 , nullable=true)
+     * @ORM\Column(type="string", length=105 , nullable=true)
      */
     private $strongId;
 
     /**
-     * @ORM\Column(type="string", length=50 , nullable=true)
+     * @ORM\Column(type="string", length=35 , nullable=true)
      */
     private $secu_social;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=40, nullable=true)
      */
     private $num_carte_identite;
 
@@ -101,27 +101,27 @@ class Demandecredit
     private $nationalite;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $echeance_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=255,nullable=true)
+     * @ORM\Column(type="string", length=10,nullable=true)
      */
     private $file_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     * @ORM\Column(type="datetime", length=12 ,nullable=true)
      */
     private $date_naissance;
 
     /**
-     * @ORM\Column(type="string", length=30,nullable=true)
+     * @ORM\Column(type="string", length=20,nullable=true)
      */
     private $ville_naissance;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=22, nullable=true)
      */
     private $pays_naissance;
 
@@ -141,25 +141,25 @@ class Demandecredit
     private $numero_attestation_enregistrement;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $pays_carte_identite;
 
     /**
-     * @ORM\Column(type="datetime", length=30, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $validite_carte_identite;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $etat_civil;
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $nom_mariee;
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $prenom_mariee;
         /**
@@ -167,7 +167,7 @@ class Demandecredit
      */
     private $registre_national_mariee;
        /**
-     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     * @ORM\Column(type="datetime", length=12 ,nullable=true)
      */
     private $date_naissance_mariee;
    /**
@@ -179,7 +179,7 @@ class Demandecredit
      */
     private $employeur_mariee;
      /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $salaire_mariee;
     /**
@@ -187,7 +187,7 @@ class Demandecredit
      */
     private $nom_cohabitant;
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $prenom_cohabitant;
         /**
@@ -195,7 +195,7 @@ class Demandecredit
      */
     private $registre_national_cohabitant;
        /**
-     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     * @ORM\Column(type="datetime", length=12 ,nullable=true)
      */
     private $date_naissance_cohabitant;
    /**
@@ -207,11 +207,11 @@ class Demandecredit
      */
     private $employeur_cohabitant;
      /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $salaire_cohabitant;
     /**
-     * @ORM\Column(type="datetime", length=30 ,nullable=true)
+     * @ORM\Column(type="datetime", length=12 ,nullable=true)
      */
     private $annee_belgique;
 
@@ -226,12 +226,12 @@ class Demandecredit
     private $numero_rue;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $nom_rue;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $boite;
 
@@ -246,7 +246,7 @@ class Demandecredit
     private $ville_residence;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=20, nullable=true)
      */
     private $pays_residence;
 
@@ -262,15 +262,15 @@ class Demandecredit
     private $telephone_mobile;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $numero_compte;
     /**
-     * @ORM\Column(type="boolean", length=20, nullable=true)
+     * @ORM\Column(type="boolean", length=8, nullable=true)
      */
     private $assurance_vie;
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $date_compte;
 
@@ -285,12 +285,12 @@ class Demandecredit
     private $emploi;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $secteur;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $temps_contrat;
 
@@ -300,7 +300,7 @@ class Demandecredit
     private $type_contrat;
 
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $date_contrat;
 
@@ -316,33 +316,33 @@ class Demandecredit
     private $numero_rue_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $nom_rue_employeur;
 
     
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=12, nullable=true)
      */
     private $tel_employeur;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     private $code_postal_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $ville_employeur;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $pays_employeur;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $salaire;
 
@@ -372,27 +372,27 @@ class Demandecredit
     private $mutuelle;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     private $chomage;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=6, nullable=true)
      */
     private $handicap;
 
     /**
-     * @ORM\Column(type="string", length=30, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $revenu_locatif;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $cheque_repas;
 
     /**
-     * @ORM\Column(type="boolean", length=20, nullable=true)
+     * @ORM\Column(type="boolean", length=10, nullable=true)
      */
     private $voiture_societe;
 
@@ -402,7 +402,7 @@ class Demandecredit
     private $autres_revenus;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $description_autres_revenus;
 
@@ -422,7 +422,7 @@ class Demandecredit
     private $autres_charges;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $description_autres_charges;
 
@@ -452,7 +452,7 @@ class Demandecredit
     private $montant_credit;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=12, nullable=true)
      */
     private $duree_credit;
 
@@ -467,17 +467,17 @@ class Demandecredit
     private $montant_echeance;
 
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=10, nullable=true)
      */
     private $debut_credit;
 
     /**
-     * @ORM\Column(type="boolean", length=20, nullable=true)
+     * @ORM\Column(type="boolean", length=10, nullable=true)
      */
     private $remboursement_credit;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=12, nullable=true)
      */
     private $solde_credit;
 
@@ -491,10 +491,6 @@ class Demandecredit
      */
     private $valeur_venale;
 
-    /**
-     * @ORM\Column(type="string", length=20, nullable=true)
-     */
-    private $type_taux_voiture;
 
     /**
      * @ORM\Column(type="string", length=10, nullable=true)
@@ -502,17 +498,17 @@ class Demandecredit
     private $montant_achat;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=12, nullable=true)
      */
     private $duree_credit_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $date_echeance_hypo;
 
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $date_debut_credit_hypo;
 
@@ -542,7 +538,7 @@ class Demandecredit
     private $nom_vendeur;
 
     /**
-     * @ORM\Column(type="datetime", length=20, nullable=true)
+     * @ORM\Column(type="datetime", length=12, nullable=true)
      */
     private $date_premiere_circulation;
        /**
@@ -554,7 +550,7 @@ class Demandecredit
      */
     private $credit_cours;
         /**
-     * @ORM\Column(type="string", length=70, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $type_taux_perso;
 
